@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  语法参考 - Swift 3.0 自翻译 - 说了是村长
+  下标 - Swift 3.0 自翻译 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -243,72 +243,161 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>下标</h1>
+
+<p>类，结构和枚举可以定义标，这是用于访问的集合，列表或序列的部件元素的快捷方式。您可以使用标来设置和读取索引值，而无需进行设置和检索单独的方法。例如，您可以访问在元素Array实例作为someArray[index]和元素的Dictionary实例作为someDictionary[key]。</p>
+
+<p>您可以定义多个标为单一类型，及相应的标超载使用基于传递给下标索引值的类型来选择。标不局限于单一的维度，您可以定义多个输入参数标来满足您的自定义类型的需求。</p>
+
+<p>标语法</p>
+
+<p>标允许您通过实例名称后写在方括号中的一个或多个值来查询一个类型的实例。他们的语法类似于两个实例方法语法和计算的属性语法。编写与标定义subscript关键字，并指定一个或多个输入参数和返回类型，以同样的方式作为实例方法。不像实例方法，下标可以读写或只读。这种行为是由相同的方法计算性能的getter和setter沟通：</p>
+
+<p>subscript(index: Int) -&gt; Int {<br/>
+    get {<br/>
+        // return an appropriate subscript value here<br/>
+    }<br/>
+    set(newValue) {<br/>
+        // perform a suitable setting action here<br/>
+    }<br/>
+}<br/>
+的类型newValue是相同的标的返回值。与计算性能，你可以选择不指定setter方法的(newValue)参数。所谓默认的参数newValue提供给您的二传手，如果你不自己提供一个。</p>
+
+<p>作为具有只读属性计算，你可以删除get的只读标关键字：</p>
+
+<p>subscript(index: Int) -&gt; Int {<br/>
+    // return an appropriate subscript value here<br/>
+}<br/>
+这里的一个只读标实现，它定义了的一个例子TimesTable的结构来表示Ñ整数-times表：</p>
+
+<p>struct TimesTable {<br/>
+    let multiplier: Int<br/>
+    subscript(index: Int) -&gt; Int {<br/>
+        return multiplier * index<br/>
+    }<br/>
+}<br/>
+let threeTimesTable = TimesTable(multiplier: 3)<br/>
+print(<q>six times three is (threeTimesTable[6])</q>)<br/>
+// Prints <q>six times three is 18</q><br/>
+在这个例子中，一个新的实例TimesTable被创建以代表三次的表。这是通过一个值所指示3的结构是initializer作为值要用于实例的multiplier参数。</p>
+
+<p>可以查询threeTimesTable通过调用其下标，如图调用实例threeTimesTable[6]。这就要求在三次表，它返回的值第六项18，或3时间6。</p>
+
+<p>注意</p>
+
+<p>一个Ñ -times表是基于一个固定的数学规则。这是不恰当设置threeTimesTable[someIndex]到一个新的值，并且因此对于下标TimesTable被定义为只读标。</p>
+
+<p>标用法</p>
+
+<p>“标”的确切含义取决于使用它的上下文。下标通常用作用于访问在一个集合，列表或序列的部件元素的快捷方式。你可以自由的实现您的特定类或结构的功能最合适的标的方式。</p>
+
+<p>例如，迅捷的Dictionary类型实现一个下标设置和检索存储在该值Dictionary的实例。您可以通过提供标括号内的字典中的主要类型的密钥，并指定字典的值类型为下标值设定在字典中的值：</p>
+
+<p>var numberOfLegs = [<q>spider</q>: 8, <q>ant</q>: 6, <q>cat</q>: 4]<br/>
+numberOfLegs[<q>bird</q>] = 2<br/>
+上面的例子定义了一个名为变量numberOfLegs并包含三个键-值对字典的文字初始化。的类型的numberOfLegs字典被推断为[String: Int]。创建字典之后，本示例使用标分配来添加String的键<q>bird</q>和Int的值2到词典中。</p>
+
+<p>有关详细信息，Dictionary下标，请参阅访问和修改字典。</p>
+
+<p>注意</p>
+
+<p>斯威夫特的Dictionary类型实现其键值下标作为下标这需要并返回一个可选类型。对于numberOfLegs上述解释，key-value的下标取和返回类型的值Int?，或“可选INT”。的Dictionary类型使用一个可选标类型的事实，不是每一个键将具有的值，并以得到的方式通过分配给删除一个关键值建模nil为密钥值。</p>
+
+<p>标选项</p>
+
+<p>标可以采取任何数量的输入参数，并且这些输入参数可以是任何类型的。标也可以返回任何类型。下标可以使用可变参数的参数，但它们不能在超时使用参数或提供默认参数值。</p>
+
+<p>类或结构能提供尽可能多的标实现，因为它需要，和要使用的适当标将基于所述类型中包含的点的下标使用下标括号内的值或值的推断。多个下标这个定义称为标超载。</p>
+
+<p>虽然这是最常见的下标采取单一的参数，也可以定义多个参数的下标，如果它是适合你的类型。下面的例子中定义了一个Matrix结构，它代表一个二维矩阵Double的值。该Matrix结构的标有两个整型参数：</p>
+
+<p>struct Matrix {<br/>
+    let rows: Int, columns: Int<br/>
+    var grid: [Double]<br/>
+    init(rows: Int, columns: Int) {<br/>
+        self.rows = rows<br/>
+        self.columns = columns<br/>
+        grid = Array(repeating: 0.0, count: rows * columns)<br/>
+    }<br/>
+    func indexIsValid(row: Int, column: Int) -&gt; Bool {<br/>
+        return row &gt;= 0 &amp;&amp; row &lt; rows &amp;&amp; column &gt;= 0 &amp;&amp; column &lt; columns<br/>
+    }<br/>
+    subscript(row: Int, column: Int) -&gt; Double {<br/>
+        get {<br/>
+            assert(indexIsValid(row: row, column: column), <q>Index out of range</q>)<br/>
+            return grid[(row * columns) + column]<br/>
+        }<br/>
+        set {<br/>
+            assert(indexIsValid(row: row, column: column), <q>Index out of range</q>)<br/>
+            grid[(row * columns) + column] = newValue<br/>
+        }<br/>
+    }<br/>
+}<br/>
+Matrix提供了采用两个参数称为初始化rows和columns，并创建一个数组，它是足够大的存储rows * columns类型的值Double。矩阵中的每个位置被给定的初始值0.0。为了实现这一目标，阵列的大小，并以初始细胞值0.0，被传递到创建和初始化正确大小的一个新的数组的数组初始化。这个初始化更详细描述创建一个带有默认值的Array。</p>
+
+<p>您可以构建一个新的Matrix通过传递适当的行和列数其初始化实例：</p>
+
+<p>var matrix = Matrix(rows: 2, columns: 2)<br/>
+上面的例子创建一个新的Matrix两行两列实例。在grid此数组Matrix实例实际上是矩阵的扁平版本，从左上角到右下角写着：</p>
+
+<p>图片：../Art/subscriptMatrix01_2x.png<br/>
+在矩阵的值可以通过传递行和列值到下标，用逗号分隔进行设置：</p>
+
+<p>matrix[0, 1] = 1.5<br/>
+matrix[1, 0] = 3.2<br/>
+这两个语句调用标的setter设置的一个值1.5的矩阵（其中的右上方位置row是0与column是1），并3.2在左下位置（其中，row是1和column是0）：</p>
+
+<p>图片：../Art/subscriptMatrix02_2x.png<br/>
+该Matrix标的getter和setter都包含一个断言，以检查标的row和column值是有效的。为了帮助这些说法，Matrix包括被称为一个方便的方法indexIsValid(row:column:)，检查是否有要求row和column有基体的边界内：</p>
+
+<p>func indexIsValidForRow(row: Int, column: Int) -&gt; Bool {<br/>
+    return row &gt;= 0 &amp;&amp; row &lt; rows &amp;&amp; column &gt;= 0 &amp;&amp; column &lt; columns<br/>
+}<br/>
+如果您尝试访问该标是矩阵范围之外的断言被触发：</p>
+
+<p>let someValue = matrix[2, 2]<br/>
+// this triggers an assert, because [2, 2] is outside of the matrix bounds</p>
 
 
-	
-		<div class="markdown-body">
-		<h1>关于语言参考</h1>
+</div>
 
-		<p>这本书的部分描述了斯威夫特编程语言的形式语法。这里所描述的语法是为了帮助您了解更详细的语言，而不是让你直接实现解析器或编译器。</p>
+<br /><br />
+<hr />
 
-<p>雨燕的语言是比较小的，因为很多常见的类型，函数和几乎无处不出现在雨燕代码运营商都在斯威夫特标准库实际上定义。尽管这些类型，函数和运营商不斯威夫特语言本身的一部分，他们在本书的这一部分的讨论和代码示例广泛使用。</p>
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743598422216.html"  title="Previous Post: 方法">&laquo; 方法</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743598699234.html" 
+	        title="Next Post: 继承">继承 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
-<p>如何阅读语法</p>
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
-<p>用来形容斯威夫特编程语言的形式语法的符号如下几个约定：</p>
-
-<p>一个箭头（→）用于标记语法制作和可以理解为“可以由”。<br/>
-句法类别以表示斜体文字出现在文法产生式规则的两侧。<br/>
-文字和标点用黑体字显示constant width的文字和只出现在语法产生式规则的右手边。<br/>
-（|）替代语法产生由竖线分隔。当替代产品有太长轻松地阅读，他们被分成上新生产线的多个语法产生式规则。<br/>
-在少数情况下，普通字体的文本用于描述一个文法产生式规则的右手边。<br/>
-可选的语法范畴和文字是由一个尾部标标注，选择。<br/>
-作为一个例子，一个消气部件设置器块的语法定义如下：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择二传手子句消气条款 ­ {­}­  {­}­<br/>
-这个定义表明，一个getter，setter方法块可以由一个getter条款跟着一个可选的二传手条款，括在大括号，中或一个setter条款后跟一个getter条款，括在大括号。上面的文法产生等效于以下两个产生，其中所述替代明确阐明：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择{­}­<br/>
-吸气制定者块 → 二传手子句消气条款 ­{­}­</p>
-
-
-		</div>
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743598556978.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 

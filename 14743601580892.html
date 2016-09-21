@@ -1,0 +1,570 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  词法结构 - Swift 3.0 自翻译 - 说了是村长
+  
+  </title>
+ <meta name="description" content="说了是村长，Swift 3.0 中文版">
+ <link href="atom.xml" rel="alternate" title="Swift 3.0 自翻译 - 说了是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">Swift 3.0 自翻译 - 说了是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Swift 3.0 自翻译 - 说了是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>欢迎加入 Swift</label></li>
+
+          
+            <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+          
+            <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>开发指南</label></li>
+
+          
+            <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+          
+            <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+          
+            <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+          
+            <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+          
+            <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+          
+            <li><a title="功能" href="14743597582027.html">功能</a></li>
+          
+            <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+          
+            <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+          
+            <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+          
+            <li><a title="属性" href="14743598294467.html">属性</a></li>
+          
+            <li><a title="方法" href="14743598422216.html">方法</a></li>
+          
+            <li><a title="下标" href="14743598556978.html">下标</a></li>
+          
+            <li><a title="继承" href="14743598699234.html">继承</a></li>
+          
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+          
+            <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+          
+            <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+          
+            <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+          
+            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+          
+            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+          
+            <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+          
+            <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+          
+            <li><a title="协议" href="14743600314526.html">协议</a></li>
+          
+            <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+          
+            <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+          
+            <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>语法参考</label></li>
+
+          
+            <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+          
+            <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+          
+            <li><a title="类型" href="14743601607750.html">类型</a></li>
+          
+            <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+          
+            <li><a title="声明" href="14743601868497.html">声明</a></li>
+          
+            <li><a title="声明" href="14743602139425.html">声明</a></li>
+          
+            <li><a title="属性" href="14743602336703.html">属性</a></li>
+          
+            <li><a title="模式" href="14743602627751.html">模式</a></li>
+          
+            <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+          
+            <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>欢迎加入 Swift</span></li>
+                        
+                          <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+                        
+                          <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>开发指南</span></li>
+                        
+                          <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+                        
+                          <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+                        
+                          <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+                        
+                          <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+                        
+                          <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+                        
+                          <li><a title="功能" href="14743597582027.html">功能</a></li>
+                        
+                          <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+                        
+                          <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+                        
+                          <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+                        
+                          <li><a title="属性" href="14743598294467.html">属性</a></li>
+                        
+                          <li><a title="方法" href="14743598422216.html">方法</a></li>
+                        
+                          <li><a title="下标" href="14743598556978.html">下标</a></li>
+                        
+                          <li><a title="继承" href="14743598699234.html">继承</a></li>
+                        
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+                        
+                          <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+                        
+                          <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+                        
+                          <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+                        
+                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                        
+                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                        
+                          <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+                        
+                          <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+                        
+                          <li><a title="协议" href="14743600314526.html">协议</a></li>
+                        
+                          <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+                        
+                          <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+                        
+                          <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>语法参考</span></li>
+                        
+                          <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+                        
+                          <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+                        
+                          <li><a title="类型" href="14743601607750.html">类型</a></li>
+                        
+                          <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+                        
+                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                        
+                          <li><a title="声明" href="14743602139425.html">声明</a></li>
+                        
+                          <li><a title="属性" href="14743602336703.html">属性</a></li>
+                        
+                          <li><a title="模式" href="14743602627751.html">模式</a></li>
+                        
+                          <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+                        
+                          <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>词法结构</h1>
+
+<p>该词法结构斯威夫特的描述了字符序列形成的语言有效令牌。这些有效的令牌构成语言的最低层构建块，用于描述在后续章节语言的其余部分。令牌包含一个标识符，关键字，标点符号，文字或运营商。</p>
+
+<p>在大多数情况下，是从夫特源文件的字符通过考虑从输入文本可能的最长子串，被下面指定的语法的约束内生成的标记。这种行为被称为最长匹配或最大适合。</p>
+
+<p>空白和注释</p>
+
+<p>空白有两种用途：源文件在不同的令牌，并帮助确定操作员是否是一个前缀或后缀（见运算符），否则忽略。以下字符被认为是空白：空格（U + 0020），换行符（U + 000A），回车（U + 000D），水平制表符（U + 0009），垂直制表符（U + 000B），换页（U + 000C）和空（U + 0000）。</p>
+
+<p>评论被视为由编译器的空白。单行注释以开始//和继续下去，直到一个换行符（U + 000A）或回车（U + 000D）。多行注释开头/<em>和结尾</em>/。嵌套多行注释是允许的，但注释标记必须平衡。</p>
+
+<p>注释可以包含其他格式和标记，如描述的标记格式参考。</p>
+
+<p>身份标识</p>
+
+<p>标识符以大写或小写字母A开头到Z，下划线（_），在基本多文种平面一个noncombining字母数字Unicode字符或基本多文种平面以外的字符不是在专用区。第一个字符后，数字和混合Unicode字符也是允许的。</p>
+
+<p>要使用保留字作为标识符，把反引号（<code>）之前和之后。例如，class是不是一个有效标识符，但</code>class<code>是有效的。反引号不考虑所述标识符的一部分;</code>x`及x具有相同的含义。</p>
+
+<p>与没有明确的参数名称的闭包内，参数隐式地命名\(0，\)1，$2，等。这些名称是封闭的范围内有效的标识符。</p>
+
+<p>的识别符的语法</p>
+
+<p>识别 → 标识头标识字符选择<br/>
+识别 → 标识头标识字符选择<code>­</code>­<br/>
+标识符 → 隐含参数名 ­<br/>
+标识符表 → 标识符标识符 标识符表 ­  ,­<br/>
+标识头 → 大写或小写字母A到Z<br/>
+标识头 → _­<br/>
+标识头 → U + 00A8，U + 00AA，U + 00AD，U + 00AF，U + 00B2-U + 00B5，或U + 00B7-U + 00BA<br/>
+标识头 → U + 00BC-U + 00BE，U + 00C0-U + 00D6，U + 00D8-U + 00F6，或U + 00F8-U + 00FF<br/>
+标识头 → U + 0100-U + 02FF，U + 0370-U + 167F，U + 1681-U + 180D，或U + 180F-U + 1DBF<br/>
+标识头 → U + 1E00-U + 1FFF<br/>
+标识头 → U + 200B-U + 200D，U + 202A-U + 202E，U + 203F-U + 2040 U + 2054或U + 2060-U + 206F<br/>
+标识头 → U + 2070-U + 20CF，U + 2100-U + 218F，U + 2460-U + 24FF，或U + 2776-U + 2793<br/>
+标识头 → U +格拉哥里字母-U + 2DFF或U + 2E80-U + 2FFF<br/>
+标识头 → U + 3004-U + 3007，U + 3021-U + 302F，U + 3031-U + 303F或U + 3040-U + D7FF<br/>
+标识头 → U + F900-U + FD3D，U + FD40-U + FDCF，U + FDF0-U + FE1F，或U + FE30-U + FE44<br/>
+标识头 → U + FE47-U + FFFD<br/>
+标识头 → U + 10000-U + 1FFFD，U + 20000-U + 2FFFD，U + 30000-U + 3FFFD，或U + 40000-U + 4FFFD<br/>
+标识头 → U + 50000-U + 5FFFD，U + 60000-U + 6FFFD，U + 70000-U + 7FFFD，或U + 80000 U + 8FFFD<br/>
+标识头 → U + 90000-U + 9FFFD，U + A0000-U + AFFFD，U + B0000-U + BFFFD，或U + C0000-U + CFFFD<br/>
+标识头 → U + D0000-U + DFFFD或U + E0000-U + EFFFD<br/>
+标识字符 → 数字0到9<br/>
+标识字符 → U + 0300-U + 036F，U +曼尼普尔语-U + 1DFF，U + 20D0-U + 20FF，或U + FE20-U + FE2F<br/>
+标识字符 → 标识头 ­<br/>
+标识字符 → 标识字符标识字符选择<br/>
+隐含参数名称 → 小数位数 ­$­<br/>
+关键字和标点符号</p>
+
+<p>以下关键字是保留的，不能用作标识符，除非他们与反引号逃脱，如在上述标识符。比其他的关键词inout，var以及let可以作为在函数声明或函数调用参数名称不与反引号被转义。当一个部件具有相同的名称作为关键字，该成员引用并不需要与反引号，转义除非有参照部件和使用关键字-例如间歧义，self，Type，和Protocol有特殊意义一个明确的成员表达式，所以必须在这方面反引号逃脱。</p>
+
+<p>：在声明中使用的关键字associatedtype，class，deinit，enum，extension，fileprivate<code>,</code><code>func，import，init，inout，internal，let，open，operator，private，protocol，public，static，struct，subscript，typealias，和var。<br/>
+：在语句中使用的关键字break，case，continue，default，defer，do，else，fallthrough，for，guard，if，in，repeat，return，switch，where，和while。<br/>
+：在表达式和类型的关键字as，Any，catch，false，is，nil，rethrows，super，self，Self，throw，throws，true，和try。<br/>
+在图案中使用关键词：_。<br/>
+以数字符号开始关键字（#）： ，#available，#colorLiteral，#column，#else，#elseif，#endif，#file，#fileLiteral，#function，#if，#imageLiteral，。#line #selector和#sourceLocation。<br/>
+：在特定情况下保留关键字associativity，convenience，dynamic，didSet，final，get，infix，indirect，lazy，left，mutating，none，nonmutating，optional，override，postfix，precedence，prefix，Protocol，required，right，set，Type，unowned，weak，和willSet。它们出现在语法的上下文之外，它们可以被用作标识符。<br/>
+以下标记被保留作为标点符号，不能用作运营商定制：(，)，{，}，[，]，.，,，:，;，=，@，#，&amp;（作为前缀运营商）， ，-&gt;，</code>，?和!（作为后缀运算符）。</p>
+
+<p>字面</p>
+
+<p>一个文字是一个类型，值的源代码表示，如数字或字符串。</p>
+
+<p>以下是面值的例子：</p>
+
+<p>42               // Integer literal<br/>
+3.14159          // Floating-point literal<br/>
+<q>Hello, world!</q>  // String literal<br/>
+true             // Boolean literal<br/>
+字面上并没有对自己的一种类型。相反，字面解析为具有无限的精度和斯威夫特的类型推断会尝试推断适合文字类型。例如，在声明中let x: Int8 = 42，雨燕采用显式类型注解（: Int8）来推断整数文字的类型42是Int8。如果没有可用的合适类型的信息，斯威夫特推断字面的类型是在雨燕标准库中定义的默认文字类型之一。默认类型是Int整数常量，Double浮点文字，String为字符串文字和Bool布尔文字。例如，在声明let str = <q>Hello, world</q>中，默认推断类型的字符串的<q>Hello, world</q>是String。</p>
+
+<p>当指定为文字值的类型注释，注释的类型必须是可以从字面数值实例化一个类型。也就是说，类型必须符合下列雨燕标准库协议之一：ExpressibleByIntegerLiteral字面上，整型变量，ExpressibleByFloatLiteral浮点文字，ExpressibleByStringLiteral对于字符串，ExpressibleByBooleanLiteral布尔文字，ExpressibleByUnicodeScalarLiteral对于只包含一个Unicode标字符串，并ExpressibleByExtendedGraphemeClusterLiteral为字符串仅包含单个扩展字形集群。例如，Int8符合ExpressibleByIntegerLiteral协议，因此它可以在类型标注为整数文字使用42在声明let x: Int8 = 42。</p>
+
+<p>文字的语法</p>
+
+<p>文字 → 数字字面字符串字面布尔字面零字面 ­<br/><br/>
+数字字面 → 选择整数字面选择 浮点字面 ­ -­  -­<br/>
+布尔文字 → true­  false­<br/>
+未缴文字 → nil­<br/>
+整数字面</p>
+
+<p>整型常量代表未指定的精度整数值。默认情况下，整型常量在十进制表示; 你可以使用前缀指定备用基地。二进制文字开始0b，八进制文字首先0o，和十六进制文字开头0x。</p>
+
+<p>十进制文本包含数字0通过9。二进制文字包含0和1，八进制文字包含0通过7和十六进制文字包含0通过9，以及A通过F在大写或小写。</p>
+
+<p>负整数文字前面加上一个减号（表示-）字面一个整数，如-42。</p>
+
+<p>下划线（_）的数字是为了便于阅读之间允许的，但它们将被忽略，因此不会影响到文字的值。整数文字可以带前导零的（开始0），但他们也同样被忽略，并且不影响文字的基础和价值。</p>
+
+<p>除非另有规定，默认推断类型字面的整数的是夫特标准库类型Int。雨燕标准库还定义了类型符号和无符号整数的各种尺寸，如描述的整数。</p>
+
+<p>字面整数语法</p>
+
+<p>整数字面 → 二进制字面 ­<br/>
+整数字面 → 八进制字面 ­<br/>
+整数字面 → 十进制字面 ­<br/>
+整数字面 → 十六进制字面 ­<br/>
+二进制文字 → 二进制位二进制文字字符选择0b­<br/>
+二进制位数 → 数字0或1<br/>
+二进制文字字符 → 二进制位数 ­  _­<br/>
+二进制文字字符 → 二进制文字字符的二进制文字字符选择<br/>
+八进制字面 → 八进制数字的八进制字面字符选择0o­<br/>
+八进制数字 → 数字0到7<br/>
+八进制字面字符 → 八进制数字 ­  _­<br/>
+八进制字面字符 → 八进制字面字符的八进制字面字符选择<br/>
+十进制字面 → 十进制数十进制字面字符选择<br/>
+十进制数字 → 数字0到9<br/>
+小数位数 → 十进制数的小数位数选择<br/>
+十进制字面字符 → 小数位数 ­  _­<br/>
+十进制字面字符 → 十进制字面字符十进制字面字符选择<br/>
+十六进制字面 → 十六进制数字十六进制字面字符选择0x­<br/>
+十六进制数字 → 数字0至9，一个至f，或A到F<br/>
+十六进制字面字符 → 十六进制数字 ­  _­<br/>
+十六进制字面字符 → 十六进制字面字符的十六进制字面字符选择<br/>
+浮点文本</p>
+
+<p>浮点文本代表未指定精度浮点值。</p>
+
+<p>缺省情况下，浮点文本在小数（没有前缀）来表示，但它们也可以以十六进制表示（具有0x前缀）。</p>
+
+<p>十进制浮点文本由十进制数字后跟一个小数，小数指数，或两者序列。小数由小数点（中.），其次是十进制数字的序列。该指数由大写或小写字母的e前缀，后跟的十进制数字序列，表明权力的什么10前的值e乘以。例如，1.25e2代表1.25×10 2，计算结果为125.0。同样，1.25e-2代表1.25×10 -2，计算结果为0.0125。</p>
+
+<p>十六进制浮点文本由的0x前缀，后面跟着一个可选的十六进制分数，后面跟十六进制指数。十六进制部分由一个小数点后面的十六进制数字序列。该指数由大写或小写字母的p前缀，后跟的十进制数字序列，表示的是什么力量2之前的值p乘以。例如，0xFp2代表15×2 2 ，计算结果为60。同样，0xFp-2代表15×2 -2，计算结果为3.75。</p>
+
+<p>负浮点文字前面加上一个减号（表示-）到浮点文字，如-42.5。</p>
+
+<p>下划线（_）的数字是为了便于阅读之间允许的，但将被忽略，因此不会影响到文字的值。浮点文本可以带前导零（开始0），但同样被忽略，并且不影响文字的基础和价值。</p>
+
+<p>除非另有规定，默认推断类型浮点字面的是夫特标准库型Double，它表示64位浮点数。迅捷标准库还定义了Float类型，它表示32位浮点数。</p>
+
+<p>浮点字面语法</p>
+
+<p>浮点字面 → 十进制字面小数分数选择十进制指数选择<br/>
+浮点字面 → 十六进制字面十六进制部分选择十六进制指数 ­<br/>
+小数分数 → 十进制字面 ­.­<br/>
+十进制指数 → 浮点-E 标志选择十进制字面 ­<br/>
+十六进制的分数 → 十六进制数字十六进制字面字符选择.­<br/>
+十六进制指数 → 浮点-P 标志选择十进制字面 ­<br/>
+浮点-E → e­  E­<br/>
+浮点-对 → p­  P­<br/>
+签字 → +­  -­<br/>
+字符串字面</p>
+
+<p>字符串文字是由双引号包围，具有以下形式的字符序列：</p>
+
+<p>“ 人物 ”<br/>
+字符串不能包含转义双引号（&quot;），在反斜杠（\），回车或换行。</p>
+
+<p>特殊字符可以包含在使用下列转义序列字符串：</p>
+
+<p>空字符（\0）<br/>
+反斜杠（\）<br/>
+水平选项卡（\t）<br/>
+换行（\n）<br/>
+回车（\r）<br/>
+双引号（&quot;）<br/>
+单引号（\&#39;）<br/>
+Unicode标（ñ），其中ñ一个和八个之间的十六进制数字 \u{}<br/>
+表达式的值可以插入一个串放置在括号中的表达式反斜杠后文字（\）。内插表达式可以包含字符串文字，但不能包含在反斜杠（\），回车或换行。</p>
+
+<p>例如，下面所有的字符串值相同：</p>
+
+<p><q>1 2 3</q><br/>
+<q>1 2 (</q>3<q>)</q><br/>
+<q>1 2 (3)</q><br/>
+<q>1 2 (1 + 2)</q><br/>
+let x = 3; <q>1 2 (x)</q><br/>
+默认的推断类型的字符串字面量是String。有关更多信息String类型，请参阅字符串和字符和字符串结构参考。</p>
+
+<p>由串联的字符串字面+运营商在编译时被连接起来。例如，值textA并textB在下面的例子中是相同的，没有执行运行时并置。</p>
+
+<p>let textA = <q>Hello</q> + <q>world</q><br/>
+let textB = <q>Hello world</q><br/>
+字符串文字的语法</p>
+
+<p>字符串字面 → 静态字符串字面插字符串字面 ­<br/><br/>
+静态字符串字面 → 带引号的文本选择<q>­</q>­<br/>
+带引号的文本 → 带引号的文本项引用的文本选择<br/>
+带引号的文本项 → 转义字符 ­<br/>
+带引号的文本项 → 任何Unicode标量值除<q>­，\­，U + 000A，或U + 000D<br/>
+插字符串字面 → 插入文本选择</q>­&quot;­<br/>
+插入文本 → 插入文本项插入文本选择<br/>
+插入文本项 → 表达引用文本项 ­ (­)­<br/><br/>
+逃脱字符 → \0­  \­  \t­  \n­  \r­  &quot;­  \&#39;­<br/>
+逃脱字符 → Unicode的标量数字 ­\u­{­}­<br/>
+Unicode的标量数字 → 使用一到八位十六进制数字<br/>
+运营商</p>
+
+<p>雨燕标准库定义了一些运营商供您使用，其中许多在讨论基本运算和高级操作员。本节描述了字符可以用于定义自定义操作符。</p>
+
+<p>运营商定制可以用ASCII字符中的一个开头/，=，-，+，!，*，%，&lt;，&gt;，&amp;，|，<sup>，?，或者~，或者在下面的语法定义的Unicode字符（包括从人物的一个数学运算，杂项符号和装饰</sup> Unicode的块，等等）。第一个字符后，结合Unicode字符也是允许的。</p>
+
+<p>您还可以定义以点（开始运营商定制.）。这些运营商可以包含其他点如.+.。如果操作者不以点开始的，它不能包含一个点在其他地方。例如，+.+被视为+操作者随后.+操作者。</p>
+
+<p>虽然你可以定义包含问号（运营商定制?），他们不能只包含一个问号字符。此外，尽管运营商可以包含一个感叹号（!），后缀运算符不能与任何一个问号或感叹号开始。</p>
+
+<p>注意</p>
+
+<p>该令牌=，-&gt;，//，/<em>，</em>/，.，前缀运营商&lt;，&amp;和?，管道符?和后缀运算符&gt;，!和?保留。这些令牌不能被重载，也不能被用作运营商定制。</p>
+
+<p>围绕操作员的空白被用来确定操作者是否被用作一个前缀操作员，一个后缀符，或二进制运算符。此行为总结于以下规则：</p>
+
+<p>如果运营商已经围绕两侧或周围没有任何一方空白字符，它被视为一个二元运算。作为一个例子，+++在操作者a+++b和a +++ b被视为一个二进制运算符。<br/>
+如果操作员对仅在左侧的空白，它被视为前缀元运算符。作为一个例子，在+++操作者在a +++b被视为前缀元运算符。<br/>
+如果操作员对只有右侧的空白，它被当作一个后缀元运算符。作为一个例子，在+++操作者在a+++ b将被视为一个后缀元运算符。<br/>
+如果操作员在左侧没有空白而是用点（紧跟.），它被视为一个后缀元运算符。作为一个例子，在+++操作者在a+++.b将被视为一个后缀元运算符（a+++ .b而非a +++ .b）。<br/>
+对于这些规则的目的，人物(，[和{运营商之前，人物)，]和}运营商，和人物后,，;和:也被认为是空白。</p>
+
+<p>有一点需要注意上述规则。如果!或?预定操作者在左侧没有空白，它被当作一个后缀符，而不管其是否具有在右侧的空白。要使用?作为可选链运营商，它不能在左边空白。在三元条件（使用）运营商，它必须有左右两侧的空白。 ? :</p>
+
+<p>在某些构建体中，具有领先运营&lt;或&gt;可被分成两个或多个令牌。其余部分相同的方式处理，并且可以再次分裂。其结果是，没有必要使用空白闭合之间的歧义&gt;在样构建的字符Dictionary<String, Array<Int>&gt;。在这个例子中，闭合&gt;的字符不被视为其然后可以被误解为一个比特移位的单个令牌&gt;&gt;操作者。</p>
+
+<p>要了解如何定义新的，运营商定制，看到运营商定制和运营商宣言。要了解如何重载现有的运营商，请参阅操作方法。</p>
+
+<p>运营商的语法</p>
+
+<p>运营商 → 运营商头操作员角色选择<br/>
+运营商 → 点操作符头点操作员角色 ­<br/>
+运营商头 → /­  =­  -­  +­  !­  *­  %­  &lt;­  &gt;­  &amp;­  |­  <sup>­</sup>  ~­  ?­<br/>
+运营商头 → U + 00A1-U + 00A7<br/>
+运营商头 → U + 00A9或U + 00AB<br/>
+运营商头 → U + 00AC或U + 00AE<br/>
+运营商头 → U + 00B0-U + 00B1，U + 00B6，U + 00BB，U + 00BF，U + 00D7，或U + 00F7<br/>
+运营商头 → U + 2016 U + 2017年或U + 2020-U + 2027<br/>
+运营商头 → U + 2030-U + 203E<br/>
+运营商头 → U + 2041-U + 2053<br/>
+运营商头 → U + 2055-U + 205E<br/>
+运营商头 → U + 2190-U + 23FF<br/>
+运营商头 → U + 2500-U + 2775<br/>
+运营商头 → U + 2794-U + 2BFF<br/>
+运营商头 → U + 2E00-U + 2E7F<br/>
+运营商头 → U + 3001-U + 3003<br/>
+运营商头 → U + 3008-U + 3030<br/>
+运营商字符 → 运营商头 ­<br/>
+运营商字符 → U + 0300-U + 036F<br/>
+运营商字符 → U +曼尼普尔语-U + 1DFF<br/>
+运营商字符 → U + 20D0-U + 20FF<br/>
+运营商字符 → U + FE00-U + FE0F<br/>
+运营商字符 → U + FE20-U + FE2F<br/>
+运营商字符 → U + E0100-U + E01EF<br/>
+运营商字符 → 操作员角色操作员角色选择<br/>
+点操作符头 → .­<br/>
+点操作符字符 → 运营商角色 ­ .­<br/><br/>
+点操作符字符 → 点运营字符点阵运营商角色选择<br/>
+二进制运营商 → 运营商 ­<br/>
+前缀运营商 → 运营商 ­<br/>
+后缀运营商 → 运营商 ­</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743601362358.html"  title="Previous Post: 关于语言参考">&laquo; 关于语言参考</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743601607750.html" 
+	        title="Next Post: 类型">类型 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743601580892.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  关于 Swift - Swift 3.0 自翻译 - 说了是村长
+  属性 - Swift 3.0 自翻译 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -244,20 +244,169 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1>关于 Swift</h1>
+<h1>属性</h1>
 
-<p>写之前：</p>
+<p>属性提供了有关声明或类型的更多信息。有两种属性中夫特，那些适用于声明和那些适用于类型。</p>
 
-<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0">The Swift Programming Language (Swift 3) 官方文档</a></p>
+<p>您可以通过写指定属性@的符号后跟属性的名称和属性接受任何参数：</p>
 
-<ul>
-<li><p>Swift是一个新的编程语言适，用于开发iOS，MacOS，watchOS和tvOS应用程序。建立在C和Objective-C的基础之上，没有C兼容性的限制。采用了安全的编程模式，并增加了现代的功能，使编程更简单，更灵活，更有趣。支持成熟的Cocoa和Cocoa Touch框架。有机会带来不同的软件开发体验。</p></li>
-<li><p>Swift已经开发多年。苹果公司通过推进我们现有的编译器，调试器和框架的基础设施奠定了Swift的基础。我们简化了内存管理与自动引用计数（ARC）。我们的框架协议栈，建立在Foundation和Cocoa的基础上，已实现了现代化和整个标准化。Objective-C的本身已经发展到支持block，集合，模块，使框架更贴近现代化的编程语言。由于这个基础，我们现在可以引入苹果软件开发的未来的新的语言Swift中。</p></li>
-<li><p>SObjective-C的开发人员对wift应该比较熟悉。它采用的Objective-C可读性的命名参数，动态对象模型。提供了无缝接入现有的Cocoa框架，混合操作Objective-C代码。从这个共同点的基础上，结合了面向过程和面向对象，Swift引入了许多新的功能。</p></li>
-<li><p>Swift对新的程序员友好的。它是现代化的编程语言，类似现有的脚本语言。它支持playgrounds，这个创新的功能，无需构建和运行应用程序就能立即看到结果。</p></li>
-<li><p>Swift结合现代语言思维以及世界上优秀苹果工程师的智慧。编译器的性能得到优化，语言的发展进行了优化。它的设计从“hello，world”扩展到整个操作系统。这一切都使得Swift的开发者和苹果对为了充满希望。</p></li>
-<li><p>Swift是写的iOS，macOS，watchOS和tvOS应用一个很神奇的方式，并会继续发展新的特性和功能。我们对Swift的目标是雄心勃勃的。我们不能等待，看看你用它创造什么。 </p></li>
-</ul>
+<p>@ 属性名<br/>
+@ 属性名（属性参数）<br/>
+一些声明属性接受指定有关属性以及如何适用于特定的声明更多信息参数。这些属性参数包含在括号中，其格式是由他们所属的属性定义。</p>
+
+<p>声明属性</p>
+
+<p>你可以申请一个声明属性，只声明。</p>
+
+<p>available<br/>
+应用此属性的任何声明，表示该声明的生命周期相对于某些平台和操作系统版本。</p>
+
+<p>该available属性总是与两个或多个以逗号分隔的属性参数列表出现。这些争论开始与下列平台名称之一：</p>
+
+<p>iOS<br/>
+iOSApplicationExtension<br/>
+macOS<br/>
+macOSApplicationExtension<br/>
+watchOS<br/>
+watchOSApplicationExtension<br/>
+tvOS<br/>
+tvOSApplicationExtension<br/>
+您也可以使用星号（*）来表示对上面列出的所有平台名称申报的可用性。</p>
+
+<p>其余的参数可以按任何顺序出现，并指定有关声明的生命周期的其他信息，包括重要的里程碑。</p>
+
+<p>该unavailable参数表示该声明不提供指定的平台上。<br/>
+该introduced参数表示在其中引入了声明中的指定平台的第一个版本。它有以下形式：<br/>
+介绍：版本号<br/>
+的版本号由一个或多个正整数，由句点分隔的。<br/>
+该deprecated参数表示指定的平台，在该声明已被否决的第一个版本。它有以下形式：<br/>
+弃用：版本号<br/>
+可选的版本号由一个或多个正整数，由句点分隔的。省略版本号表示该声明目前正在过时，无需提供有关发生的废弃时的任何信息。如果省略了版本号，省略冒号（:）也是如此。<br/>
+该obsoleted参数表示指定的平台，在该声明被废弃的第一个版本。当一个声明过时，它是从指定的平台中清除，不能再使用。它有以下形式：<br/>
+过时：版本号<br/>
+的版本号由一个或多个正整数，由句点分隔的。<br/>
+该message参数用于提供的编译器发出关于使用取消或已过时声明警告或错误时显示的文本消息。它有以下形式：<br/>
+消息：消息<br/>
+该消息由一个字符串的。<br/>
+该renamed参数用于提供指示的新名称为一个已经更名声明的文本消息。新的名称是由编译器发出关于使用更名声明的错误时显示。它有以下形式：<br/>
+更名为：新名称<br/>
+该新名称由字符串文本。<br/>
+您可以使用renamed参数与配合unavailable参数和一个类型别名声明，表示该声明已被重命名你的代码的客户。例如，当一个声明的名称是一个框架或库的版本之间的变化，这是很有用的。<br/>
+// First release<br/>
+protocol MyProtocol {<br/>
+    // protocol definition<br/>
+}<br/>
+// Subsequent release renames MyProtocol<br/>
+protocol MyRenamedProtocol {<br/>
+    // protocol definition<br/>
+}</p>
+
+<p>@available(*, unavailable, renamed: <q>MyRenamedProtocol</q>)<br/>
+typealias MyProtocol = MyRenamedProtocol<br/>
+您可以将多个available单一声明属性在不同的平台指定声明的可用性。编译器使用的available，只有当属性指定当前的目标平台相匹配的平台属性。</p>
+
+<p>如果某个available属性只指定了一个introduced除平台名称参数参数，以下简写语法来代替：</p>
+
+<p>@available（平台名称 版本号，*）<br/>
+为简化语法available属性使得可用性进行精确表达的多种平台。尽管两种形式是相同的功能，简写形式是首选只要有可能。</p>
+
+<p>@available(iOS 10.0, macOS 10.12, *)<br/>
+class MyClass {<br/>
+    // class definition<br/>
+}<br/>
+discardableResult<br/>
+应用此属性的函数或方法声明来抑制编译器警告时返回一个值的函数或方法被调用，而无需使用其结果。</p>
+
+<p>GKInspectable<br/>
+应用此属性，露出一个自定义GameplayKit组件属性的SpriteKit编辑器UI。</p>
+
+<p>objc<br/>
+应用此属性，可以在Objective-C，例如表示任何声明，非嵌套类，协议，非泛型枚举（受限于整数原始值类型），属性和方法（包括getter和setter）类和协议，初始化，deinitializers，和下标。该objc属性告诉编译器，一个声明提供Objective-C代码使用。</p>
+
+<p>标有类objc属性必须在Objective-C中定义的类继承。如果你申请的objc属性类或协议，它含蓄地应用于类或协议的Objective-C的兼容成员。编译器还含蓄地添加objc属性，从 ​​标有另一个类继承的类objc属性或在Objective-C中定义的类。标有协议的objc属性不能从没有协议继承。</p>
+
+<p>如果你申请的objc属性为枚举，每个枚举情况下，暴露在Objective-C代码为枚举名称的串联和案件名称。案件名字的第一个字母大写。例如，一个名为案件venus在斯威夫特Planet枚举暴露在Objective-C代码为命名的情况PlanetVenus。</p>
+
+<p>该objc属性选择性地接受一个属性的参数，它由一个标识符。当你要暴露一个不同的名称的Objective-C的实体使用该属性objc属性应用于。您可以使用此参数名称类，枚举，枚举的情况下，协议，方法的getter，setter以及初始化。下面的例子揭示了吸气enabled的财产ExampleClass，以Objective-C代码isEnabled，而不是仅仅作为属性本身的名称。</p>
+
+<p>@objc<br/>
+class ExampleClass: NSObject {<br/>
+    var enabled: Bool {<br/>
+        @objc(isEnabled) get {<br/>
+            // Return the appropriate value<br/>
+        }<br/>
+    }<br/>
+}<br/>
+nonobjc<br/>
+应用此属性的方法，属性，下标，或初始化声明以抑制隐性objc属性。该nonobjc属性告诉编译器作出声明的Objective-C代码可用，即使它可能代表它在Objective-C。</p>
+
+<p>您可以使用nonobjc属性来解析圆弥合在标有一类方法objc的属性，并允许的方法和初始化超载在标有一类objc属性。</p>
+
+<p>标有一种方法，nonobjc属性不能覆盖打上一个方法objc属性。然而，标有一个方法objc属性可以覆盖打上一个方法nonobjc属性。类似地，方法标有nonobjc属性不能满足标明的方法的协议的要求objc属性。</p>
+
+<p>NSApplicationMain<br/>
+应用此属性的一类，表明它是应用程序委托。使用此属性等同于调用的NSApplicationMain(<u>:</u>:)函数。</p>
+
+<p>如果不使用该属性，提供一个main.swift与调用的顶级代码文件NSApplicationMain(<u>:</u>:)如下功能：</p>
+
+<p>import AppKit<br/>
+NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)<br/>
+NSCopying<br/>
+应用此属性类的存储变量属性。此属性将导致财产的setter与一个合成副本属性的值，返回用的copyWithZone(_:)方法，而不是物业本身的价值。该属性的类型必须符合NSCopying协议。</p>
+
+<p>该NSCopying属性作用类似Objective-C的方式copy财产属性。</p>
+
+<p>NSManaged<br/>
+应用该属性的实例方法或从继承的类的存储变量属性NSManagedObject表明，核心数据动态提供其在运行时实现，基于相关实体描述。对于标有一个属性NSManaged的属性，核心数据也提供了在运行时的存储。应用这一属性也意味着objc属性。</p>
+
+<p>testable<br/>
+应用此属性import的声明与测试编译的模块使访问标有任何实体的internal访问级别修饰符，如果他们与申报的public访问级别修饰符。测试还可以访问类和标有集体成员internal或public访问级别修饰符如同它们与声明open访问级别修饰符。</p>
+
+<p>UIApplicationMain<br/>
+应用此属性的一类，表明它是应用程序委托。使用这个属性相当于调用UIApplicationMain函数并传递这个类的名字作为委托类的名称。</p>
+
+<p>如果不使用该属性，提供一个main.swift在调用顶层的代码文件UIApplicationMain(<u>:</u>:<u>:)的功能。例如，如果您的应用程序使用的自定义子类UIApplication为主要阶级，调用UIApplicationMain(</u>:<u>:</u>:)使用这个属性的函数。</p>
+
+<p>声明属性由Interface Builder使用</p>
+
+<p>Interface Builder的属性是使用由Interface Builder和Xcode同步声明属性。雨燕提供了以下接口生成器属性：IBAction，IBOutlet，IBDesignable，和IBInspectable。这些属性在概念上与它们的Objective-C的同行。</p>
+
+<p>在应用IBOutlet和IBInspectable属性类的属性声明。在应用IBAction属性的一类方法声明和IBDesignable属性类的声明。</p>
+
+<p>两个IBAction和IBOutlet属性意味着objc属性。</p>
+
+<p>类型属性</p>
+
+<p>您可以申请类型的属性只类型。</p>
+
+<p>autoclosure<br/>
+此属性用于自动包装在一个无参数的闭包表达式推迟表达式的评价。应用此属性的参数的类型方法或函数的声明，不带任何参数，并返回表达式的类型的值的函数类型的参数。对于如何使用的示例autoclosure属性，参见Autoclosures和功能类型。</p>
+
+<p>convention<br/>
+应用该属性函数的类型，以表明其调用约定。</p>
+
+<p>该convention属性始终与下面的属性参数中的一个出现。</p>
+
+<p>该swift参数用于指示斯威夫特函数引用。这是斯威夫特函数值标准调用约定。<br/>
+该block参数用于指示一个Objective-C兼容块参照。函数值被表示为，以块对象，它是一个参考id兼容目的-C的对象，该对象内嵌入其调用函数。调用函数使用C调用约定。<br/>
+该c参数用于指示一个C函数引用。函数值进行没有上下文，并使用C调用约定。<br/>
+使用C函数调用约定函数可以被用来作为与Objective-C的块调用约定的函数，并与Objective-C的块调用约定的函数可以被用作与雨燕函数调用约定的函数。然而，不捕获任何局部变量仅非泛型全局函数，和本地的功能或关闭，可以用作与C函数调用约定的功能。</p>
+
+<p>escaping<br/>
+在一个方法或函数声明将此属性的参数的类型以指示该参数的值可被存储以便以后执行。这意味着它们的值被允许活得比呼叫的寿命。函数类型参数的escaping类型属性需要明确使用self.的属性或方法。有关如何使用一个例子escaping属性，看到逃逸瓶盖。</p>
+
+<p>属性的语法</p>
+
+<p>属性 → 属性名称属性参数条款选择@­<br/>
+属性名 → 标识 ­<br/>
+属性参数条款 → 平衡令牌选择(­)­<br/>
+属性 → 属性属性 选择<br/>
+平衡标记 → 平衡令牌平衡令牌选择<br/>
+平衡标记 → 平衡令牌选择(­)­<br/>
+平衡标记 → 平衡令牌选择[­]­<br/>
+平衡标记 → 平衡令牌选择{­}­<br/>
+平衡标记 → 任何标识符，关键字，文字，或操作员<br/>
+平衡标记 → 任何标点符号除(­，)­，[­，]­，{­，或者}­</p>
 
 
 </div>
@@ -269,15 +418,15 @@
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
-	        <a href="14743600739128.html"  title="Previous Post: 高级操作员">&laquo; 高级操作员</a>
+	        <a href="14743602139425.html"  title="Previous Post: 声明">&laquo; 声明</a>
 	    
 	</div>
   </div>
   <div class="large-6 columns">
 	<div class="text-right" style="padding:15px 0px;">
 		
-	        <a href="14743413996803.html" 
-	        title="Next Post: Swift 之旅">Swift 之旅 &raquo;</a>
+	        <a href="14743602627751.html" 
+	        title="Next Post: 模式">模式 &raquo;</a>
 	    
 	</div>
   </div>
@@ -290,7 +439,7 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		var currentURL = '14743413991106.html';
+		var currentURL = '14743602336703.html';
 		$('#side-nav a').each(function(){
 			if($(this).attr('href') == currentURL){
 				$(this).parent().addClass('active');

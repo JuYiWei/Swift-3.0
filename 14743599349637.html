@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  语法参考 - Swift 3.0 自翻译 - 说了是村长
+  反初始化 - Swift 3.0 自翻译 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -243,72 +243,125 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>反初始化</h1>
+
+<p>一deinitializer一个类的实例被释放之前，立即调用。你写的deinitializers deinit关键字，类似于初始化如何与书面init关键字。Deinitializers只在类类型可用。</p>
+
+<p>如何反初始化工作原理</p>
+
+<p>当他们不再需要，以释放资源雨燕自动将释放您的实例。斯威夫特经过处理实例的内存管理自动引用计数（ARC），如描述的自动引用计数。通常情况下你不需要的时候你的情况下被释放，以进行手动清除。但是，当你与自己的资源，那么您可能需要自己进行一些额外的清理工作。例如，如果你创建一个自定义类来打开一个文件，写一些数据，你可能需要关闭该文件类实例被释放之前。</p>
+
+<p>类定义可以有每班最多一个deinitializer。该deinitializer不带任何参数，并没有括号写的是：</p>
+
+<p>deinit {<br/>
+    // perform the deinitialization<br/>
+}<br/>
+Deinitializers被自动调用，比如释放发生之前。你不允许调用deinitializer自己。超deinitializers由其子类继承，并且超deinitializer是在子类deinitializer执行结束自动调用。超deinitializers总是调用，即使一个子类不提供其自身deinitializer。</p>
+
+<p>因为一个实例不释放，直到其deinitializer被调用之后，一个deinitializer可以访问实例它被称为上和基于这些属性可以修改其行为的所有属性（如仰视需要被关闭的文件的文件名）。</p>
+
+<p>在行动Deinitializers</p>
+
+<p>下面是行动的deinitializer的一个例子。这个例子定义了两种新的，Bank和Player，一个简单的游戏。本Bank类管理一个虚构的货币，这绝不能有超过10,000的硬币在流通。有永远只能为一个Bank在游戏中，并因此Bank被实现为类型的属性和方法来存储和管理其当前状态类：</p>
+
+<p>class Bank {<br/>
+    static var coinsInBank = 10_000<br/>
+    static func distribute(coins numberOfCoinsRequested: Int) -&gt; Int {<br/>
+        let numberOfCoinsToVend = min(numberOfCoinsRequested, coinsInBank)<br/>
+        coinsInBank -= numberOfCoinsToVend<br/>
+        return numberOfCoinsToVend<br/>
+    }<br/>
+    static func receive(coins: Int) {<br/>
+        coinsInBank += coins<br/>
+    }<br/>
+}<br/>
+Bank跟踪当前的硬币数量它与它持有的coinsInBank财产。它还提供了两个方法- distribute(coins:)和receive(coins:)-to处理硬币的分发和收集。</p>
+
+<p>该distribute(coins:)方法检查，有足够的硬币在银行发行之前。如果没有足够的硬币，Bank返回除请求（并且如果没有硬币在银行左返回零），该数目的较小的数字。它返回一个整数值，以指示被提供的硬币的实际数目。</p>
+
+<p>该receive(coins:)方法简单地增加硬币收到的号码放回银行的钱币商店。</p>
+
+<p>本Player类描述了游戏中的球员 ​​。每个玩家都有一定数量的随时存储在自己的钱包里的硬币。这是由游戏者的表示coinsInPurse属性：</p>
+
+<p>class Player {<br/>
+    var coinsInPurse: Int<br/>
+    init(coins: Int) {<br/>
+        coinsInPurse = Bank.distribute(coins: coins)<br/>
+    }<br/>
+    func win(coins: Int) {<br/>
+        coinsInPurse += Bank.distribute(coins: coins)<br/>
+    }<br/>
+    deinit {<br/>
+        Bank.receive(coins: coinsInPurse)<br/>
+    }<br/>
+}<br/>
+每个Player实例被初始化为从初始化期间银行硬币的指定数目的起始津贴，虽然Player如果没有足够的硬币是可用的实例可以接收比数以内。</p>
+
+<p>在Player类定义了一个win(coins:)方法，以检索一定数量从银行硬币并将它们添加到该玩家的钱包。本Player类还实现了deinitializer，这被称为之前Player实例被释放。在这里，deinitializer简单地返回所有玩家的硬币银行：</p>
+
+<p>var playerOne: Player? = Player(coins: 100)<br/>
+print(<q>A new player has joined the game with (playerOne!.coinsInPurse) coins</q>)<br/>
+// Prints <q>A new player has joined the game with 100 coins</q><br/>
+print(<q>There are now (Bank.coinsInBank) coins left in the bank</q>)<br/>
+// Prints <q>There are now 9900 coins left in the bank</q><br/>
+一个新的Player实例被创建，为100个硬币的请求，如果他们都可用。这个Player实例被存储在可选的Player调用变量playerOne。一个可选变量用在这里，因为玩家可以在任何一点离开游戏。可选，您可以跟踪是否有目前在游戏中的球员 ​​。</p>
+
+<p>因为playerOne是一个可选的，它有资格以感叹号（!）时，它的coinsInPurse属性被访问到打印其硬币默认数量，每当它的winCoins(_:)方法被称为：</p>
+
+<p>playerOne!.win(coins: 2_000)<br/>
+print(<q>PlayerOne won 2000 coins &amp; now has (playerOne!.coinsInPurse) coins</q>)<br/>
+// Prints <q>PlayerOne won 2000 coins &amp; now has 2100 coins</q><br/>
+print(<q>The bank now only has (Bank.coinsInBank) coins left</q>)<br/>
+// Prints <q>The bank now only has 7900 coins left</q><br/>
+在这里，玩家赢得了2000硬币。玩家的钱包现在包含2100金币，而银行只有7900金币离开了。</p>
+
+<p>playerOne = nil<br/>
+print(<q>PlayerOne has left the game</q>)<br/>
+// Prints <q>PlayerOne has left the game</q><br/>
+print(<q>The bank now has (Bank.coinsInBank) coins</q>)<br/>
+// Prints <q>The bank now has 10000 coins</q><br/>
+玩家现在已经离开了游戏。这是通过设置可选的指示playerOne变量nil，意思是“没有Player实例。”在这种情况的发生的时刻，playerOne变量对参考Player实例是断开的。没有其他属性或变量仍参照Player实例，因此它在以释放其存储器释放。这种情况发生之前，其deinitializer自动调用，并且其硬币被返回到银行。</p>
 
 
-	
-		<div class="markdown-body">
-		<h1>关于语言参考</h1>
+</div>
 
-		<p>这本书的部分描述了斯威夫特编程语言的形式语法。这里所描述的语法是为了帮助您了解更详细的语言，而不是让你直接实现解析器或编译器。</p>
+<br /><br />
+<hr />
 
-<p>雨燕的语言是比较小的，因为很多常见的类型，函数和几乎无处不出现在雨燕代码运营商都在斯威夫特标准库实际上定义。尽管这些类型，函数和运营商不斯威夫特语言本身的一部分，他们在本书的这一部分的讨论和代码示例广泛使用。</p>
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743599314901.html"  title="Previous Post: 初始化">&laquo; 初始化</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743599484388.html" 
+	        title="Next Post: 自动引用计数">自动引用计数 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
-<p>如何阅读语法</p>
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
-<p>用来形容斯威夫特编程语言的形式语法的符号如下几个约定：</p>
-
-<p>一个箭头（→）用于标记语法制作和可以理解为“可以由”。<br/>
-句法类别以表示斜体文字出现在文法产生式规则的两侧。<br/>
-文字和标点用黑体字显示constant width的文字和只出现在语法产生式规则的右手边。<br/>
-（|）替代语法产生由竖线分隔。当替代产品有太长轻松地阅读，他们被分成上新生产线的多个语法产生式规则。<br/>
-在少数情况下，普通字体的文本用于描述一个文法产生式规则的右手边。<br/>
-可选的语法范畴和文字是由一个尾部标标注，选择。<br/>
-作为一个例子，一个消气部件设置器块的语法定义如下：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择二传手子句消气条款 ­ {­}­  {­}­<br/>
-这个定义表明，一个getter，setter方法块可以由一个getter条款跟着一个可选的二传手条款，括在大括号，中或一个setter条款后跟一个getter条款，括在大括号。上面的文法产生等效于以下两个产生，其中所述替代明确阐明：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择{­}­<br/>
-吸气制定者块 → 二传手子句消气条款 ­{­}­</p>
-
-
-		</div>
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743599349637.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 

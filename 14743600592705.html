@@ -1,0 +1,630 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  访问控制 - Swift 3.0 自翻译 - 说了是村长
+  
+  </title>
+ <meta name="description" content="说了是村长，Swift 3.0 中文版">
+ <link href="atom.xml" rel="alternate" title="Swift 3.0 自翻译 - 说了是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">Swift 3.0 自翻译 - 说了是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Swift 3.0 自翻译 - 说了是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>欢迎加入 Swift</label></li>
+
+          
+            <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+          
+            <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>开发指南</label></li>
+
+          
+            <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+          
+            <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+          
+            <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+          
+            <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+          
+            <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+          
+            <li><a title="功能" href="14743597582027.html">功能</a></li>
+          
+            <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+          
+            <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+          
+            <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+          
+            <li><a title="属性" href="14743598294467.html">属性</a></li>
+          
+            <li><a title="方法" href="14743598422216.html">方法</a></li>
+          
+            <li><a title="下标" href="14743598556978.html">下标</a></li>
+          
+            <li><a title="继承" href="14743598699234.html">继承</a></li>
+          
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+          
+            <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+          
+            <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+          
+            <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+          
+            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+          
+            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+          
+            <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+          
+            <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+          
+            <li><a title="协议" href="14743600314526.html">协议</a></li>
+          
+            <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+          
+            <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+          
+            <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>语法参考</label></li>
+
+          
+            <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+          
+            <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+          
+            <li><a title="类型" href="14743601607750.html">类型</a></li>
+          
+            <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+          
+            <li><a title="声明" href="14743601868497.html">声明</a></li>
+          
+            <li><a title="声明" href="14743602139425.html">声明</a></li>
+          
+            <li><a title="属性" href="14743602336703.html">属性</a></li>
+          
+            <li><a title="模式" href="14743602627751.html">模式</a></li>
+          
+            <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+          
+            <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>欢迎加入 Swift</span></li>
+                        
+                          <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+                        
+                          <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>开发指南</span></li>
+                        
+                          <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+                        
+                          <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+                        
+                          <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+                        
+                          <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+                        
+                          <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+                        
+                          <li><a title="功能" href="14743597582027.html">功能</a></li>
+                        
+                          <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+                        
+                          <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+                        
+                          <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+                        
+                          <li><a title="属性" href="14743598294467.html">属性</a></li>
+                        
+                          <li><a title="方法" href="14743598422216.html">方法</a></li>
+                        
+                          <li><a title="下标" href="14743598556978.html">下标</a></li>
+                        
+                          <li><a title="继承" href="14743598699234.html">继承</a></li>
+                        
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+                        
+                          <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+                        
+                          <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+                        
+                          <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+                        
+                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                        
+                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                        
+                          <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+                        
+                          <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+                        
+                          <li><a title="协议" href="14743600314526.html">协议</a></li>
+                        
+                          <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+                        
+                          <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+                        
+                          <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>语法参考</span></li>
+                        
+                          <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+                        
+                          <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+                        
+                          <li><a title="类型" href="14743601607750.html">类型</a></li>
+                        
+                          <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+                        
+                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                        
+                          <li><a title="声明" href="14743602139425.html">声明</a></li>
+                        
+                          <li><a title="属性" href="14743602336703.html">属性</a></li>
+                        
+                          <li><a title="模式" href="14743602627751.html">模式</a></li>
+                        
+                          <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+                        
+                          <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>访问控制</h1>
+
+<p>访问控制限制了其他源文件和模块从代码中访问您的部分代码。此功能可以隐藏你的代码的实施细则，并指定首选接口，通过它的代码可以访问和使用。</p>
+
+<p>可以分配属于这些类型的特定的访问级别各个类型（类，结构和枚举），以及属性，方法，初始化，和下标。协议可以被限制在一定范围内，如可以全局常量，变量和函数。</p>
+
+<p>除了提供访问控制的各个层面，斯威夫特减少了需要通过为典型场景提供的默认访问级别指定明确的访问控制级别。事实上，如果你正在编写一个单一目标的应用程序，你可能不需要在所有指定明确的访问控制级别。</p>
+
+<p>注意</p>
+
+<p>可以有访问控制代码的各个方面适用于他们（属性，类型，函数等）被称为在下面的部分“实体”，为简便起见。</p>
+
+<p>模块和源文件</p>
+
+<p>迅速的访问控制模型是基于模块和源文件的概念。</p>
+
+<p>一个模块是代码分发一个框架或应用程序构建和运输为单个单元，并且可以通过与斯威夫特的另一个模块被导入的单个单元import关键字。</p>
+
+<p>每个构建目标（如应用程序包和框架）在Xcode被视为在斯威夫特一个独立的模块。如果组合在一起时，它导入和应用程序中使用的应用程序的代码，你定义框架内一个独立的框架，或许是封装和重复使用多个代码的应用程序，那么一切都将是一个单独的模块的组成部分方面时，或当它被另一个框架内使用。</p>
+
+<p>一个源文件是一个模块内的单个斯威夫特源代码文件（实际上是一个应用程序或框架内的单个文件）。虽然它是常见的单独的源文件中定义个别类型，一个源文件可以包含多个种类，功能定义，等等。</p>
+
+<p>访问级别</p>
+
+<p>雨燕提供五种不同的访问级别为你的代码中的实体。这些访问级别是相对于在一个实体被定义源文件，并且也相对于该源文件所属的模块。</p>
+
+<p>开放获取和公共接入使得能够从他们的定义模块的源文件中使用的实体，并且还从导入定义模块另一个模块源文件。通常，您指定的公共接口的框架时，使用开放或公共接入。开放和公共访问之间的差异进行说明。<br/>
+内部访问使得能够从它们的定义模块任何源文件中使用的实体，但不是在模块的外部的任何源文件。通常，您可以定义一个应用程序的或者框架的内部结构时使用的内部访问。<br/>
+文件私接限制使用一个实体的自身定义的源文件。使用文件私人访问隐藏特定的功能块的实施细则时，这些细节都在整个文件中使用。<br/>
+私接限制使用的实体来封闭声明。使用私人通道隐藏特定的功能块的实施细则时，这些细节都仅在单个声明中使用。<br/>
+开放获取是最高的（最少限制）的访问级别和私人的访问是最低的（最严格）访问级别。</p>
+
+<p>开放存取只适用于类和类成员，并从公共访问的区别如下：</p>
+
+<p>与公众访问，或任何限制性更强的访问级别类，只能他们定义所在的模块中被继承。<br/>
+类成员与公众访问，或更严格的访问级别，只能由他们定义成模块内的子类覆盖。<br/>
+公开课可他们哪里定义的模块中被继承，而且进口他们定义成模块的任何模块中。<br/>
+公开课会员可以通过他们定义成模块内的子类中重写，并且进口他们定义成模块的任何模块中。<br/>
+标一类开放明确表明您已经考虑代码使用该类作为超类的其他模块的影响，你已经相应地设计类的代码。</p>
+
+<p>访问级别的指导原则</p>
+
+<p>在斯威夫特访问级别遵循的总体指导原则：任何单位可以在具有较低的（更严格的）访问级别其他实体来定义。</p>
+
+<p>例如：</p>
+
+<p>一个公共变量不能被定义为具有一个内部，文件私有，或私人的类型，因为该类型可能不提供到处该公共变量被使用。<br/>
+函数不能超过它的参数的类型和返回类型的更高的访问级别，因为该函数可以在其组成类型不向周围的代码的情况下使用。<br/>
+对语言的不同方面这一指导原则的具体影响都覆盖在下面详细。</p>
+
+<p>默认访问级别</p>
+
+<p>在代码中所有实体（有一些特定的异常，如本章后面介绍）有内部默认的访问级别，如果你没有指定自己一个明确的访问级别。其结果是，在很多情况下，你不需要指定你的代码一个明确的访问级别。</p>
+
+<p>访问级别为单一目标应用程序</p>
+
+<p>当你写一个简单的单一目标的应用程序，在您的应用程序中的代码通常是自包含的应用程序内并不需要进行应用程序的模块外提供。内部默认的访问级别相匹配已经这个要求。因此，您不需要指定自定义访问级别。您可能，但是，要标记为私人文件或私有代码的某些部分，以隐藏应用程序的模块中的其他代码的实现细节。</p>
+
+<p>访问级别为框架</p>
+
+<p>当你制定一个框架，标志着面向公众的接口，该框架公开或公开，这样它可以被看作和其他模块，如导入框架应用程序访问。这个面向公众的接口是框架的应用程序编程接口（或API）。</p>
+
+<p>注意</p>
+
+<p>您框架的任何内部实现细节仍然可以使用内部的默认访问级别，或者可以被标记为私有，或者如果你想从框架的内部代码的其他部分隐藏文件的私密性。您需要标注的实体开放或公共只有当你想让它成为你的框架的API的一部分。</p>
+
+<p>访问级别为单元测试目标</p>
+
+<p>当你写一个单元测试目标的应用程序，在您的应用程序代码需要提供给该模块以进行测试。默认情况下，只有实体标记为公开或公开的其他模块访问。然而，一个单元测试目标可以访问任何内部实体，如果标记为同一个产品模块的进口报关@testable属性和编译该产品模块的测试功能。</p>
+
+<p>访问控制语法</p>
+
+<p>通过将之一定义为一个实体的访问级别open，public，internal，fileprivate，或private实体的介绍人前修饰语：</p>
+
+<p>public class SomePublicClass {}<br/>
+internal class SomeInternalClass {}<br/>
+fileprivate class SomeFilePrivateClass {}<br/>
+private class SomePrivateClass {}</p>
+
+<p>public var somePublicVariable = 0<br/>
+internal let someInternalConstant = 0<br/>
+fileprivate func someFilePrivateFunction() {}<br/>
+private func somePrivateFunction() {}<br/>
+除非另有说明，默认的访问级别是内部的，如描述的默认访问级别。这意味着，SomeInternalClass和someInternalConstant可以在不明确的存取级修改写入，仍会有内部的访问级别：</p>
+
+<p>class SomeInternalClass {}              // implicitly internal<br/>
+let someInternalConstant = 0            // implicitly internal<br/>
+自定义类型</p>
+
+<p>如果要指定一个自定义类型明确的访问级别，在您定义的类型角度这样做。然后，新类型可以用于任何其访问级别许可证。例如，如果你定义了一个文件的私有类，该类只能用作属性的类型，或者作为函数参数或者返回类型，在源文件中，并且该文件，私有类的定义。</p>
+
+<p>一个类型的访问控制级别也影响该类型的默认访问级别会员（其属性，方法，初始化，和下标）。如果你定义一个类型的访问级别为私人或私人文件，其成员的默认访问级别也将是私人或私人文件。如果你定义一个类型的访问级别为内部或公共（或使用内部的默认访问级别没有明确指定的访问级别），类型成员的默认访问级别将是内部的。</p>
+
+<p>重要</p>
+
+<p>公共类型默认为有内部成员，而不是公共成员。如果你想要一个类型的成员是公共的，必须明确标记为这样的。这要求确保一种面向公众的API是你选择加入的东西发布，避免呈现类型的内部工作被误公共API。</p>
+
+<p>public class SomePublicClass {                  // explicitly public class<br/>
+    public var somePublicProperty = 0            // explicitly public class member<br/>
+    var someInternalProperty = 0                 // implicitly internal class member<br/>
+    fileprivate func someFilePrivateMethod() {}  // explicitly file-private class member<br/>
+    private func somePrivateMethod() {}          // explicitly private class member<br/>
+}</p>
+
+<p>class SomeInternalClass {                       // implicitly internal class<br/>
+    var someInternalProperty = 0                 // implicitly internal class member<br/>
+    fileprivate func someFilePrivateMethod() {}  // explicitly file-private class member<br/>
+    private func somePrivateMethod() {}          // explicitly private class member<br/>
+}</p>
+
+<p>fileprivate class SomeFilePrivateClass {        // explicitly file-private class<br/>
+    func someFilePrivateMethod() {}              // implicitly file-private class member<br/>
+    private func somePrivateMethod() {}          // explicitly private class member<br/>
+}</p>
+
+<p>private class SomePrivateClass {                // explicitly private class<br/>
+    func somePrivateMethod() {}                  // implicitly private class member<br/>
+}<br/>
+元组类型</p>
+
+<p>一个元组类型的访问级别是在元组中使用的所有类型的最严格的访问级别。例如，如果您撰写从两个不同的类型，一种具有内部访问和一个私人访问的元组，在该复合元组类型的访问级别将是私有的。</p>
+
+<p>注意</p>
+
+<p>元组类型没有在这类，结构，枚举和功能的方式做独立的定义。使用元组类型时的元组类型的访问级别自动推导，并且不能明确地规定。</p>
+
+<p>功能类型</p>
+
+<p>一个函数类型的访问级别计算为函数的参数类型和返回类型的最严格的访问级别。你必须明确指定的访问级别作为函数定义的一部分，如果函数的计算的访问级别不匹配上下文默认。</p>
+
+<p>下面的例子定义了一个名为全局函数someFunction()，而不考虑函数本身提供特定的访问级别修饰符。你可能期望这一功能为具有“内部”的默认访问级别，但这种情况并非如此。事实上，someFunction()将无法编译书面如下：</p>
+
+<p>func someFunction() -&gt; (SomeInternalClass, SomePrivateClass) {<br/>
+    // function implementation goes here<br/>
+}<br/>
+该函数的返回类型是从两个上面定义的自定义类组成的元组类型的自定义类型。一这些类被定义为“内部”，而另一个被定义为“私人”。因此，该化合物元组类型的整体访问级别是“私人”（最小访问元组的构成类型的级别）。</p>
+
+<p>由于该函数的返回类型是私有的，必须标记与功能的整体访问级别private修饰符函数声明为有效：</p>
+
+<p>private func someFunction() -&gt; (SomeInternalClass, SomePrivateClass) {<br/>
+    // function implementation goes here<br/>
+}<br/>
+它是无效的，以纪念的定义someFunction()与public或internal改性剂，或者使用内部的默认设置，由于功能的公共或内部用户可能没有在函数的返回类型使用的私有类适当的访问。</p>
+
+<p>枚举类型</p>
+
+<p>枚举的个别情况下自动接收相同的访问级别，因为他们属于枚举。您不能指定单个枚举情况下，不同的访问级别。</p>
+
+<p>在下面的例子中，CompassPoint列举了“公”的显式访问级别。枚举的情况下north，south，east，和west因此也有“公”的访问级别：</p>
+
+<p>public enum CompassPoint {<br/>
+    case north<br/>
+    case south<br/>
+    case east<br/>
+    case west<br/>
+}<br/>
+原始数据和关联值</p>
+
+<p>在枚举定义用于任何原始值或关联值的类型必须具有的访问级别至少高达枚举的访问级别。你不能用一个private类型作为枚举具有的原始值类型internal的访问级别，例如。</p>
+
+<p>嵌套类型</p>
+
+<p>私人类型中定义的嵌套类型有专用自动访问级别。一个文件私有类型内定义嵌套类型有私人文件的自动访问级别。公共类或内部类中定义的嵌套类型具有内部自动访问级别。如果你想有一个public类型中嵌套的类型是公开的，你必须显式声明嵌套类型为public。</p>
+
+<p>子类化</p>
+
+<p>你也可以继承，可以在当前访问上下文访问的任何类。子类不能超过它的父类，例如更高的访问级别，你可以不写内部超的公共子类。</p>
+
+<p>此外，您可以覆盖任何类成员（方法，属性，初始，或下标）是在一定的范围内获得可见。</p>
+
+<p>一个覆盖可以继承的类成员比它的超类版本更容易获得。在下面的例子中，类A是一个公共类称为私有方法someMethod()。类B是的一个子类A，以“内部”减少的访问级别。尽管如此，类B提供的覆盖someMethod()用的“内部”的访问级别，这是较高的比原来执行someMethod()：</p>
+
+<p>public class A {<br/>
+    private func someMethod() {}<br/>
+}</p>
+
+<p>internal class B: A {<br/>
+    override internal func someMethod() {}<br/>
+}<br/>
+一个子类成员调用具有比子成员较低访问权限的超类成员，它甚至有效的，只要调用父类的成员需要一个允许访问级别范围内进行（即相同的源文件中超类的私有成员通话，或同一模块的超类中的成员调用中）：</p>
+
+<p>public class A {<br/>
+    private func someMethod() {}<br/>
+}</p>
+
+<p>internal class B: A {<br/>
+    override internal func someMethod() {<br/>
+        super.someMethod()<br/>
+    }<br/>
+}<br/>
+由于超A和子类B在同一个源文件中定义，它是有效的B实施someMethod()来调用super.someMethod()。</p>
+
+<p>常量，变量，属性和下标</p>
+
+<p>常量，变量或财产不能超过它的类型更多的公众。这是无效写一个公共财产与私有类型，例如。类似地，下标不能比其任一索引类型或返回类型更公开。</p>
+
+<p>如果一个常量，变量，属性或标利用私有类型的常量，变量，属性或下标也必须标记为private：</p>
+
+<p>private var privateInstance = SomePrivateClass()<br/>
+getter和setter</p>
+
+<p>getter和setter方法​​常量，变量，属性和标自动接收相同的访问级别的常量，变量，属性或标它们属于。</p>
+
+<p>你可以给一个setter一个较低的比其相应的获取访问级别，以限制变量，属性或下标的读写范围。通过编写分配较低访问级别fileprivate(set)，private(set)或internal(set)前var或subscript介绍人。</p>
+
+<p>注意</p>
+
+<p>此规则适用于存储性能以及计算性能。即使你不写一个存储的属性明确的getter和setter，斯威夫特还是合成一个隐含的getter和setter为您提供访问存储的属性的后备存储。使用fileprivate(set)，private(set)和internal(set)改变这种合成设定器的访问级别中完全相同的方式，作为在计算属性的显式设定器。</p>
+
+<p>下面的例子中定义了一个称为结构TrackedString，它跟踪字符串属性被修改的次数的：</p>
+
+<p>struct TrackedString {<br/>
+    private(set) var numberOfEdits = 0<br/>
+    var value: String = <q>{<br/>
+        didSet {<br/>
+            numberOfEdits += 1<br/>
+        }<br/>
+    }<br/>
+}<br/>
+该TrackedString结构定义调用的存储字符串属性value，用的初始值</q>（一个空字符串）。结构还定义调用的存储整数属性numberOfEdits，这是用于跟踪的该次数value被修改。该变形例的跟踪与实现didSet的财产观察者value属性，它增加numberOfEdits每时间value属性被设置为一个新的值。</p>
+
+<p>的TrackedString结构和value属性不提供一个明确的存取级修改，因此它们都接收的内部缺省访问级别。但是，对于访问级别numberOfEdits属性被打上了private(set)修改，以表明属性的getter仍然有内部的默认访问级别，但属性只从内部代码，这就是一部分是可设置TrackedString的结构。这使得TrackedString修改numberOfEdits内部属性，但到目前的属性作为只读属性，当它被使用的结构的定义，包括任何扩展到外面TrackedString。</p>
+
+<p>如果您创建一个TrackedString实例，并修改其字符串值几次，你可以看到numberOfEdits属性值更新，以匹配修改的次数：</p>
+
+<p>var stringToEdit = TrackedString()<br/>
+stringToEdit.value = <q>This string will be tracked.</q><br/>
+stringToEdit.value += <q>This edit will increment numberOfEdits.</q><br/>
+stringToEdit.value += <q>So will this one.</q><br/>
+print(<q>The number of edits is (stringToEdit.numberOfEdits)</q>)<br/>
+// Prints <q>The number of edits is 3</q><br/>
+虽然你可以查询的当前值numberOfEdits从另一个源文件中的属性，不能修改从另一个源文件的属性。这一限制可以保护的实施细则TrackedString编辑跟踪功能，同时还提供给该功能的一个方面都很方便。</p>
+
+<p>请注意，您可以根据需要为一个getter和一个setter分配一个明确的访问级别。下面的例子显示了一个版本的TrackedString，其中结构是与公众一个明确的访问级别定义的结构。该结构的成员（包括numberOfEdits因此属性）在默认情况下内部的访问级别。您可以将结构的numberOfEdits属性getter公开，其属性setter私人，通过结合public和private(set)访问修饰符级别：</p>
+
+<p>public struct TrackedString {<br/>
+    public private(set) var numberOfEdits = 0<br/>
+    public var value: String = &quot;&quot; {<br/>
+        didSet {<br/>
+            numberOfEdits += 1<br/>
+        }<br/>
+    }<br/>
+    public init() {}<br/>
+}<br/>
+初始化器</p>
+
+<p>定制初始化可以分配的接入级别小于或等于它们初始化的类型。唯一的例外是所需的初始化（定义所需的初始化器）。一个必需的初始化必须具有相同的访问级别，因为它属于类。</p>
+
+<p>与函数和方法的参数，类型的初始化的参数不能超过初始化自己的访问级别更私密。</p>
+
+<p>默认初始化器</p>
+
+<p>正如描述的默认初始化器，斯威夫特自动提供一个默认初始值没有任何结构或基类，其所有属性提供了默认值，并且不提供至少一个初始化本身的任何参数。</p>
+
+<p>默认初始化具有相同的访问级别，因为它初始化，除非该类型被定义为类型public。对于被定义为类型public，默认初始被认为是内部的。如果你想要一个公共类型为initializable一个无参数初始化另一个模块中使用时，必须明确提供一个公共的无参数初始化自己作为类型定义的一部分。</p>
+
+<p>默认按成员初始化器的结构类型</p>
+
+<p>如果有任何结构的存储属性是私有的结构类型的默认成员逐一初始化被认为是私有的。同样，如果任何结构的存储属性是私有文件，初始化文件是私有的。否则，初始化具有内部的访问级别。</p>
+
+<p>与上面的默认初始值，如果你想在其他模块中使用时，公众的结构类型为initializable与按成员初始化，你必须提供一个公共成员逐一初始化自己作为类型定义的一部分。</p>
+
+<p>协议</p>
+
+<p>如果你想分配一个明确的访问级别的协议类型，在您定义的协议点这样做。这使您可以创建一个只能在一定范围内的访问内通过协议。</p>
+
+<p>的一个协议定义内的每个要求的访问级别被自动设置到相同的访问级别作为协议。你不能设置一个协议要求比它支持该协议不同的访问级别。这确保了所有的协议的要求将是可见的任何类型的采用的协议。</p>
+
+<p>注意</p>
+
+<p>如果你定义一个公共的协议，该协议的要求，要求对这些要求的公共接入水平，他们实施的时候。此行为与其他类型的，其中一个公共类型定义意味着内部的类型成员的访问级别不同。</p>
+
+<p>协议继承</p>
+
+<p>如果你定义一个新的协议，从现有的继承协议，新协议最多只能有相同的访问级别，因为它继承的协议。你可以不写，从内部协议继承，例如一个公共协议。</p>
+
+<p>协议一致性</p>
+
+<p>A型能够符合比类型本身较低访问级别的协议。例如，您可以定义在其他模块中使用的公共类型，但其符合内部协议只能在内部协议的定义模块内使用。</p>
+
+<p>在其中一个类型符合特定协议的上下文的类型的访问级和协议的访问级别的最小值。如果一个类型是公开的，但协议是符合是内部的，该类型的符合该协议也是内部。</p>
+
+<p>当你写或扩展类型以符合协议，则必须确保该类型的实现每个协议要求至少具有相同的访问级别与类型的符合该协议。例如，如果一个公共类型符合内部协议，该类型的实施各协议的要求必须至少“内部”。</p>
+
+<p>注意</p>
+
+<p>在斯威夫特，如在Objective-C，协议一致性是全球性的，这是不可能的类型以符合协议在同一个程序中的两个不同的方法。</p>
+
+<p>扩展</p>
+
+<p>您可以在其中类，结构或枚举可用任何访问上下文扩展一个类，结构或枚举。任何类型的成员扩展添加具有相同的默认访问级别类型成员的原始类型被扩展声明。如果扩展了公共或内部的类型，任何新的类型成员添加有内部默认的访问级别。如果扩展了文件的私有类型，任何新的类型成员添加有私人文件的默认访问级别。如果您扩展私有类型，任何新的类型成员添加有私人默认的访问级别。</p>
+
+<p>或者，你可以标记与明确的访问级别修饰符的扩展名（例如，private extension）设置为扩展中定义的所有成员一个新的默认访问级别。这种新的默认仍然可以扩展单个类型成员内覆盖。</p>
+
+<p>添加协议一致性与扩展</p>
+
+<p>如果您使用的是分机来增加协议一致性不能延期提供一个明确的访问级别修饰符。取而代之的是，协议本身的访问级别是用来提供为扩展内每个协议的要求执行默认的访问级别。</p>
+
+<p>泛型</p>
+
+<p>一个泛型类型或泛型函数的访问级别泛型类型或函数本身和其类型参数的任何类型约束的访问级别的访问级别最低。</p>
+
+<p>类型别名</p>
+
+<p>定义的任何类型的别名被视为不同类型的访问控制的目的。A型别名可以有一个访问级别小于或等于其别名类型的访问级别。例如，一个私有类型别名别名私人文件的私有内部，公共或开放式的，但公共类型别名不能别名的内部文件私人或私有类型。</p>
+
+<p>注意</p>
+
+<p>这一规则也适用于键入用于满足协议相关的不合格类型的别名。</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743600461552.html"  title="Previous Post: 泛型">&laquo; 泛型</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743600739128.html" 
+	        title="Next Post: 高级操作员">高级操作员 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743600592705.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

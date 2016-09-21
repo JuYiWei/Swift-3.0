@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  语法参考 - Swift 3.0 自翻译 - 说了是村长
+  扩展 - Swift 3.0 自翻译 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -243,72 +243,272 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>扩展</h1>
+
+<p>扩展增加新的功能，以现有的类，结构，枚举或协议类型。这包括扩展类型，你没有访问原始源代码（被称为能力追溯模型）。扩展类似于在Objective-C类。（与Objective-C的类别，斯威夫特扩展没有名称。）</p>
+
+<p>扩展斯威夫特可以：</p>
+
+<p>添加计算实例属性和计算机类型属性<br/>
+定义实例方法和类型的方法<br/>
+提供新的初始化<br/>
+定义标<br/>
+定义和使用新的嵌套类型<br/>
+使现有的类型遵循的协议<br/>
+在斯威夫特，你甚至可以扩展协议来提供其要求的实现或添加符合类型可以利用的附加 ​​功能。有关详细信息，请参阅协议扩展。</p>
+
+<p>注意</p>
+
+<p>扩展可以添加新的功能，以一个类型，但它们不能覆盖现有的功能。</p>
+
+<p>扩展语法</p>
+
+<p>声明的扩展extension关键字：</p>
+
+<p>extension SomeType {<br/>
+    // new functionality to add to SomeType goes here<br/>
+}<br/>
+一个扩展可以扩展现有类型，使其通过一个或多个协议。如果是这种情况下，该协议的名称被写在完全相同的方式，作为一个类或结构：</p>
+
+<p>extension SomeType: SomeProtocol, AnotherProtocol {<br/>
+    // implementation of protocol requirements goes here<br/>
+}<br/>
+以这种方式加入协议一致性中介绍了与扩展添加协议一致性。</p>
+
+<p>注意</p>
+
+<p>如果定义了扩展新的功能添加到现有的类型，新功能将可在该类型的所有现有实例，即使是定义的扩展才创建的。</p>
+
+<p>计算属性</p>
+
+<p>扩展可以添加计算实例属性和计算的类型属性现有类型。这个例子将五个计算实例属性斯威夫特的内置Double式，为有距离单位工作提供了基本的支持：</p>
+
+<p>extension Double {<br/>
+    var km: Double { return self * 1<u>000.0 }<br/>
+    var m: Double { return self }<br/>
+    var cm: Double { return self / 100.0 }<br/>
+    var mm: Double { return self / 1</u>000.0 }<br/>
+    var ft: Double { return self / 3.28084 }<br/>
+}<br/>
+let oneInch = 25.4.mm<br/>
+print(<q>One inch is (oneInch) meters</q>)<br/>
+// Prints <q>One inch is 0.0254 meters</q><br/>
+let threeFeet = 3.ft<br/>
+print(<q>Three feet is (threeFeet) meters</q>)<br/>
+// Prints <q>Three feet is 0.914399970739201 meters</q><br/>
+这些计算特性表示一个Double值应该被视为长度的某一单元。虽然他们的计算性能实现的，这些属性的名称可以附加与点语法浮点字面值，作为一种使用该文本值进行距离的转换。</p>
+
+<p>在这个例子中，一个Double的值1.0被认为是代表“一计”。这就是为什么m计算属性返回self-the表达1.m被认为是计算Double的值1.0。</p>
+
+<p>其它单位需要一些转换被表示为以米为单位的值。一公里是一样的1000米，所以km计算属性乘以值1_000.00转换为以米为单位的数字。同样，也有3.28084英尺在一米，所以ft计算出的属性划分的基本Double按值3.28084，将其从英尺转换为米。</p>
+
+<p>这些属性是只读计算属性，所以它们没有表示get关键字，为简便起见。其返回值的类型的Double，并且只要一个可以数学计算中使用Double被采纳：</p>
+
+<p>let aMarathon = 42.km + 195.m<br/>
+print(<q>A marathon is (aMarathon) meters long</q>)<br/>
+// Prints <q>A marathon is 42195.0 meters long</q><br/>
+注意</p>
+
+<p>扩展可以添加新的计算性能，但不能添加存储性能，或添加属性观察员现有属性。</p>
+
+<p>初始化器</p>
+
+<p>扩展可以添加新的初始化到现有的类型。这使您可以扩展其他类型的接受自己的自定义类型作为参数初始化，或提供不包括作为类型的原实施的一部分额外的初始化选项。</p>
+
+<p>扩展可以添加新的便利初始化的一类，但他们不能添加新的指定初始化或deinitializers一类。指定的初始值和deinitializers必须由原始类的实现来提供。</p>
+
+<p>注意</p>
+
+<p>如果您使用的扩展，一个初始化添加到其所有的存储性能提供了默认值，并没有定义任何自定义初始化值类型，你可以从你的扩展的初始化程序中调用该值类型的默认初始值和按成员初始化。</p>
+
+<p>这不会是这种情况，如果你写初始化为值类型的原始实现的一部分，作为描述值类型初始化程序代表团。</p>
+
+<p>下面的例子定义一个定制的Rect结构来表示几何矩形。该示例还定义了两个称为支撑结构Size和Point，这两者提供的默认值0.0对于所有的属性：</p>
+
+<p>struct Size {<br/>
+    var width = 0.0, height = 0.0<br/>
+}<br/>
+struct Point {<br/>
+    var x = 0.0, y = 0.0<br/>
+}<br/>
+struct Rect {<br/>
+    var origin = Point()<br/>
+    var size = Size()<br/>
+}<br/>
+由于Rect结构其所有属性提供了默认值，它接受一个默认初始值和成员逐一初始化自动，如描述默认初始化器。这些初始化可用于创建新的Rect实例：</p>
+
+<p>let defaultRect = Rect()<br/>
+let memberwiseRect = Rect(origin: Point(x: 2.0, y: 2.0),<br/>
+                          size: Size(width: 5.0, height: 5.0))<br/>
+您可以扩展Rect的结构，可提供额外的初始化，需要一个特定的中心点和尺寸：</p>
+
+<p>extension Rect {<br/>
+    init(center: Point, size: Size) {<br/>
+        let originX = center.x - (size.width / 2)<br/>
+        let originY = center.y - (size.height / 2)<br/>
+        self.init(origin: Point(x: originX, y: originY), size: size)<br/>
+    }<br/>
+}<br/>
+这个新的初始化通过计算基于所提供的适当的原点开始center点和size值。然后调用初始化结构的自动初始化按成员init(origin:size:)，存储在相应的属性中的新的来源和大小值：</p>
+
+<p>let centerRect = Rect(center: Point(x: 4.0, y: 4.0),<br/>
+                      size: Size(width: 3.0, height: 3.0))<br/>
+// centerRect&#39;s origin is (2.5, 2.5) and its size is (3.0, 3.0)<br/>
+注意</p>
+
+<p>如果您提供具有扩展新的初始化，你仍然要负责确保一旦初始化完成每个实例完全初始化。</p>
+
+<p>方法</p>
+
+<p>扩展可以添加新的实例方法和类型的方法，以现有的类型。下面的示例添加一个新的名为实例方法repetitions的Int类型：</p>
+
+<p>extension Int {<br/>
+    func repetitions(task: () -&gt; Void) {<br/>
+        for _ in 0..<self {<br/>
+            task()<br/>
+        }<br/>
+    }<br/>
+}<br/>
+该repetitions(task:)方法采用类型的一个参数() -> Void，这表明没有参数和不返回值的函数。</p>
+
+<p>定义该扩展后，可以调用repetitions(task:)任何整数方法来执行，很多很多次任务：</p>
+
+<p>3.repetitions {<br/>
+    print(<q>Hello!</q>)<br/>
+}<br/>
+// Hello!<br/>
+// Hello!<br/>
+// Hello!<br/>
+不同诱变实例方法</p>
+
+<p>添加了一个扩展也可以修改（或实例方法突变）的实例本身。修改结构和枚举的方法self或者其属性必须标记实例方法mutating，就像从最初的实现方式突变。</p>
+
+<p>下面的例子增加了一个新的名为不同诱变方法square来斯威夫特的Int类型，它的正方形原始值：</p>
+
+<p>extension Int {<br/>
+    mutating func square() {<br/>
+        self = self * self<br/>
+    }<br/>
+}<br/>
+var someInt = 3<br/>
+someInt.square()<br/>
+// someInt is now 9<br/>
+下标</p>
+
+<p>扩展可以添加新的标到现有的类型。此示例将一个整数标斯威夫特的内置Int型。这下标[n]返回十进制数n从数量的正确的地方：</p>
+
+<p>123456789[0] 回报 9<br/>
+123456789[1] 回报 8<br/>
+…等等：</p>
+
+<p>extension Int {<br/>
+    subscript(digitIndex: Int) -&gt; Int {<br/>
+        var decimalBase = 1<br/>
+        for _ in 0..&lt;digitIndex {<br/>
+            decimalBase *= 10<br/>
+        }<br/>
+        return (self / decimalBase) % 10<br/>
+    }<br/>
+}<br/>
+746381295[0]<br/>
+// returns 5<br/>
+746381295[1]<br/>
+// returns 9<br/>
+746381295[2]<br/>
+// returns 2<br/>
+746381295[8]<br/>
+// returns 7<br/>
+如果该Int值没有足够的位数为请求的索引，标实现返回0，因为如果数字已被用零填充到左：</p>
+
+<p>746381295[9]<br/>
+// returns 0, as if you had requested:<br/>
+0746381295[9]<br/>
+嵌套类型</p>
+
+<p>扩展可以添加新的嵌套类型现有的类，结构和枚举：</p>
+
+<p>extension Int {<br/>
+    enum Kind {<br/>
+        case negative, zero, positive<br/>
+    }<br/>
+    var kind: Kind {<br/>
+        switch self {<br/>
+        case 0:<br/>
+            return .zero<br/>
+        case let x where x &gt; 0:<br/>
+            return .positive<br/>
+        default:<br/>
+            return .negative<br/>
+        }<br/>
+    }<br/>
+}<br/>
+这个例子增加了一个新的嵌套枚举Int。此枚举，叫Kind，表达了那种特定的整数代表数量。具体地讲，它表示数是否为负，零或正数。</p>
+
+<p>这个例子还增加了一个新的计算实例属性Int，叫kind，它返回相应Kind于该整数枚举情况。</p>
+
+<p>嵌套枚举现在可以与任何使用Int值：</p>
+
+<p>func printIntegerKinds(_ numbers: [Int]) {<br/>
+    for number in numbers {<br/>
+        switch number.kind {<br/>
+        case .negative:<br/>
+            print(<q>-</q>, terminator: <q>)<br/>
+        case .zero:<br/>
+            print(<q>0</q>, terminator:</q>)<br/>
+        case .positive:<br/>
+            print(<q>+</q>, terminator: <q>)<br/>
+        }<br/>
+    }<br/>
+    print(</q>)<br/>
+}<br/>
+printIntegerKinds([3, 19, -27, 0, -6, 0, 7])<br/>
+// Prints <q>+ + - 0 - 0 +</q><br/>
+此功能，printIntegerKinds(_:)，占用的输入数组Int的价值观和迭代又将这些值。对于数组中的每个整数，函数认为kind该整数计算性能，并打印相应的说明。</p>
+
+<p>注意</p>
+
+<p>number.kind已经是已知的类型Int.Kind。由于这个原因，所有的Int.Kind情况下，值可以简写形式内侧switch语句，如.negative，而不是Int.Kind.negative。</p>
 
 
-	
-		<div class="markdown-body">
-		<h1>关于语言参考</h1>
+</div>
 
-		<p>这本书的部分描述了斯威夫特编程语言的形式语法。这里所描述的语法是为了帮助您了解更详细的语言，而不是让你直接实现解析器或编译器。</p>
+<br /><br />
+<hr />
 
-<p>雨燕的语言是比较小的，因为很多常见的类型，函数和几乎无处不出现在雨燕代码运营商都在斯威夫特标准库实际上定义。尽管这些类型，函数和运营商不斯威夫特语言本身的一部分，他们在本书的这一部分的讨论和代码示例广泛使用。</p>
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743600051579.html"  title="Previous Post: 嵌套类型">&laquo; 嵌套类型</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743600314526.html" 
+	        title="Next Post: 协议">协议 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
-<p>如何阅读语法</p>
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
-<p>用来形容斯威夫特编程语言的形式语法的符号如下几个约定：</p>
-
-<p>一个箭头（→）用于标记语法制作和可以理解为“可以由”。<br/>
-句法类别以表示斜体文字出现在文法产生式规则的两侧。<br/>
-文字和标点用黑体字显示constant width的文字和只出现在语法产生式规则的右手边。<br/>
-（|）替代语法产生由竖线分隔。当替代产品有太长轻松地阅读，他们被分成上新生产线的多个语法产生式规则。<br/>
-在少数情况下，普通字体的文本用于描述一个文法产生式规则的右手边。<br/>
-可选的语法范畴和文字是由一个尾部标标注，选择。<br/>
-作为一个例子，一个消气部件设置器块的语法定义如下：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择二传手子句消气条款 ­ {­}­  {­}­<br/>
-这个定义表明，一个getter，setter方法块可以由一个getter条款跟着一个可选的二传手条款，括在大括号，中或一个setter条款后跟一个getter条款，括在大括号。上面的文法产生等效于以下两个产生，其中所述替代明确阐明：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择{­}­<br/>
-吸气制定者块 → 二传手子句消气条款 ­{­}­</p>
-
-
-		</div>
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743600183280.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 

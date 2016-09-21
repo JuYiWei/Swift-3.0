@@ -1,0 +1,819 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  集合类型 - Swift 3.0 自翻译 - 说了是村长
+  
+  </title>
+ <meta name="description" content="说了是村长，Swift 3.0 中文版">
+ <link href="atom.xml" rel="alternate" title="Swift 3.0 自翻译 - 说了是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">Swift 3.0 自翻译 - 说了是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Swift 3.0 自翻译 - 说了是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>欢迎加入 Swift</label></li>
+
+          
+            <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+          
+            <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>开发指南</label></li>
+
+          
+            <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+          
+            <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+          
+            <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+          
+            <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+          
+            <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+          
+            <li><a title="功能" href="14743597582027.html">功能</a></li>
+          
+            <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+          
+            <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+          
+            <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+          
+            <li><a title="属性" href="14743598294467.html">属性</a></li>
+          
+            <li><a title="方法" href="14743598422216.html">方法</a></li>
+          
+            <li><a title="下标" href="14743598556978.html">下标</a></li>
+          
+            <li><a title="继承" href="14743598699234.html">继承</a></li>
+          
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+          
+            <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+          
+            <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+          
+            <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+          
+            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+          
+            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+          
+            <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+          
+            <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+          
+            <li><a title="协议" href="14743600314526.html">协议</a></li>
+          
+            <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+          
+            <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+          
+            <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>语法参考</label></li>
+
+          
+            <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+          
+            <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+          
+            <li><a title="类型" href="14743601607750.html">类型</a></li>
+          
+            <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+          
+            <li><a title="声明" href="14743601868497.html">声明</a></li>
+          
+            <li><a title="声明" href="14743602139425.html">声明</a></li>
+          
+            <li><a title="属性" href="14743602336703.html">属性</a></li>
+          
+            <li><a title="模式" href="14743602627751.html">模式</a></li>
+          
+            <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+          
+            <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>欢迎加入 Swift</span></li>
+                        
+                          <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+                        
+                          <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>开发指南</span></li>
+                        
+                          <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+                        
+                          <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+                        
+                          <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+                        
+                          <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+                        
+                          <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+                        
+                          <li><a title="功能" href="14743597582027.html">功能</a></li>
+                        
+                          <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+                        
+                          <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+                        
+                          <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+                        
+                          <li><a title="属性" href="14743598294467.html">属性</a></li>
+                        
+                          <li><a title="方法" href="14743598422216.html">方法</a></li>
+                        
+                          <li><a title="下标" href="14743598556978.html">下标</a></li>
+                        
+                          <li><a title="继承" href="14743598699234.html">继承</a></li>
+                        
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+                        
+                          <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+                        
+                          <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+                        
+                          <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+                        
+                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                        
+                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                        
+                          <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+                        
+                          <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+                        
+                          <li><a title="协议" href="14743600314526.html">协议</a></li>
+                        
+                          <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+                        
+                          <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+                        
+                          <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>语法参考</span></li>
+                        
+                          <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+                        
+                          <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+                        
+                          <li><a title="类型" href="14743601607750.html">类型</a></li>
+                        
+                          <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+                        
+                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                        
+                          <li><a title="声明" href="14743602139425.html">声明</a></li>
+                        
+                          <li><a title="属性" href="14743602336703.html">属性</a></li>
+                        
+                          <li><a title="模式" href="14743602627751.html">模式</a></li>
+                        
+                          <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+                        
+                          <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>集合类型</h1>
+
+<p>雨燕提供了三种主要的集合类型，被称为数组，集合和字典，用于存储值的集合。数组是值的有序集合。集是唯一值的无序集合。字典是键-值关联的无序集合。</p>
+
+<p>图片：../Art/CollectionTypes<u>intro</u>2x.png<br/>
+数组，集，而在斯威夫特字典总是清楚的类型值和键，它们可以存储。这意味着您不能错误地插入错误类型的一个值的集合。这也意味着你可以相信你会检索一个集合值的类型。</p>
+
+<p>注意</p>
+
+<p>斯威夫特的阵列中，设置和字典类型为实现泛型集合。欲了解更多关于泛型类型和集合，看到泛型。</p>
+
+<p>的集合可变性</p>
+
+<p>如果你创建一个数组，一组或一本字典，并将其分配给一个变量，创建的集将是可变的。这意味着，你可以改变（或突变）集合是通过添加，删除或更改集合中的项目创建后。如果分配一个数组，一组或一个字典为一个常数，该集合是不可变的，其大小和内容不能被改变。</p>
+
+<p>注意</p>
+
+<p>这是很好的做法，建立在收集并不需要将所有的情况下，一成不变的集合。这样做可以使你更容易来思考你的代码，使雨燕编译器优化创建集合的性能。</p>
+
+<p>阵列</p>
+
+<p>一个阵列存储在一个有序列表相同类型的值。相同的值可以在一个阵列多次在不同的位置出现。</p>
+
+<p>注意</p>
+
+<p>斯威夫特的Array类型是桥接至基金会的NSArray类。</p>
+
+<p>有关使用的详细信息Array与基金会和可可，看到与可可数据类型的工作中使用SWIFT与可可和Objective-C（SWIFT 3） 。</p>
+
+<p>数组类型简写语法</p>
+
+<p>类型一夫特阵列的写入满如Array<Element>，其中Element为阵列允许存储值的类型。你也可以写简写形式作为数组的类型[Element]。虽然两种形式的功能相同，简写形式为优选，指的是一个数组的类型时使用本指南。</p>
+
+<p>创建一个空数组</p>
+
+<p>您可以使用初始化语法某种类型的空数组：</p>
+
+<p>var someInts = <a href="">Int</a><br/>
+print(<q>someInts is of type [Int] with (someInts.count) items.</q>)<br/>
+// Prints <q>someInts is of type [Int] with 0 items.</q><br/>
+注意，类型someInts变量被推断为[Int]从初始的类型。</p>
+
+<p>另外，如果中已经提供的类型信息，如函数参数或已经输入变量或常量，您可以创建一个空数组文本，这是写为一个空数组[]（一对空的方括号中）：</p>
+
+<p>someInts.append(3)<br/>
+// someInts now contains 1 value of type Int<br/>
+someInts = []<br/>
+// someInts is now an empty array, but is still of type [Int]<br/>
+创建一个带有默认值的Array</p>
+
+<p>斯威夫特的Array类型还提供了与所有设置为相同的默认值的值造成一定大小的数组的初始化。你通过这个初始化适当类型（所谓的默认值repeating）和倍值是新的数组（称为重复号count）：</p>
+
+<p>var threeDoubles = Array(repeating: 0.0, count: 3)<br/>
+// threeDoubles is of type [Double], and equals [0.0, 0.0, 0.0]<br/>
+通过共同努力增加两个阵列创建阵列</p>
+
+<p>您可以通过使用加法运算符（添加兼容类型的两个现有的阵列共同创造一个新的数组+）。新阵列的类型是从两个数组你加在一起的类型推断：</p>
+
+<p>var anotherThreeDoubles = Array(repeating: 2.5, count: 3)<br/>
+// anotherThreeDoubles is of type [Double], and equals [2.5, 2.5, 2.5]</p>
+
+<p>var sixDoubles = threeDoubles + anotherThreeDoubles<br/>
+// sixDoubles is inferred as [Double], and equals [0.0, 0.0, 0.0, 2.5, 2.5, 2.5]<br/>
+创建具有数组文本数组</p>
+
+<p>也可初始化与阵列阵列文字，这是写一个或多个值作为数组集合的简便方法。数组文本写成值的列表，以逗号分隔，由一对括号包围：</p>
+
+<p>[ 值1，值2，值3 ]<br/>
+下面的示例创建一个名为数组shoppingList存储String值：</p>
+
+<p>var shoppingList: [String] = [<q>Eggs</q>, <q>Milk</q>]<br/>
+// shoppingList has been initialized with two initial items<br/>
+该shoppingList变量声明为“字符串值的数组”，写成[String]。因为这个特定的阵列已经指定的值类型String，它允许存储String唯一值。这里，shoppingList数组初始化具有两个String值（<q>Eggs</q>和<q>Milk</q>），阵列字面内写入。</p>
+
+<p>注意</p>
+
+<p>该shoppingList阵列被声明为一个变量（与var导引），而不是一个常数（与let因为更多的项目被添加到以下实施例的购物清单导引）。</p>
+
+<p>在这种情况下，数组文本包含两个String值，而不是其他。这个模式匹配的类型shoppingList变量的声明（一个数组，只能包含String值的），所以数组文本的分配是允许作为一种方法来初始化shoppingList与两个初始项目。</p>
+
+<p>由于斯威夫特的类型推断，你没有，如果你有一个数组常量，其中包含相同类型的值初始化它来写数组的类型。初始化shoppingList可能已被写在一个较短的形式：</p>
+
+<p>var shoppingList = [<q>Eggs</q>, <q>Milk</q>]<br/>
+因为阵列中的所有值字面是相同类型的，夫特可以推断[String]是正确的类型要用于shoppingList变量。</p>
+
+<p>访问和修改数组</p>
+
+<p>访问，并通过其方法和属性，或通过使用下标语法修改阵列。</p>
+
+<p>为了找出数组中的项目数，检查其只读count属性：</p>
+
+<p>print(<q>The shopping list contains (shoppingList.count) items.</q>)<br/>
+// Prints <q>The shopping list contains 2 items.</q><br/>
+使用布尔isEmpty财产作为检查是否快捷方式count属性等于0：</p>
+
+<p>if shoppingList.isEmpty {<br/>
+    print(<q>The shopping list is empty.</q>)<br/>
+} else {<br/>
+    print(<q>The shopping list is not empty.</q>)<br/>
+}<br/>
+// Prints <q>The shopping list is not empty.</q><br/>
+你可以通过调用数组的一个新的项目添加到数组的结尾append(_:)方法：</p>
+
+<p>shoppingList.append(<q>Flour</q>)<br/>
+// shoppingList now contains 3 items, and someone is making pancakes<br/>
+可替代地，附加的通过加入赋值操作的一个或多个兼容的项目（一个阵列+=）：</p>
+
+<p>shoppingList += [<q>Baking Powder</q>]<br/>
+// shoppingList now contains 4 items<br/>
+shoppingList += [<q>Chocolate Spread</q>, <q>Cheese</q>, <q>Butter</q>]<br/>
+// shoppingList now contains 7 items<br/>
+通过使用从该数组检索值标语法，传递你想要的数组名后括号内检索值的指标：</p>
+
+<p>var firstItem = shoppingList[0]<br/>
+// firstItem is equal to <q>Eggs</q><br/>
+注意</p>
+
+<p>数组中的第一项具有的索引0，而不是1。在斯威夫特数组总是零索引。</p>
+
+<p>您可以使用标语法定索引处改变现有的价值：</p>
+
+<p>shoppingList[0] = <q>Six eggs</q><br/>
+// the first item in the list is now equal to <q>Six eggs</q> rather than <q>Eggs</q><br/>
+您还可以使用标语法一次更改值的范围，即使更换设定值有不同的长度大于要更换的范围。下面的例子中替换<q>Chocolate Spread</q>，<q>Cheese</q>以及<q>Butter</q>与<q>Bananas</q>和<q>Apples</q>：</p>
+
+<p>shoppingList[4...6] = [<q>Bananas</q>, <q>Apples</q>]<br/>
+// shoppingList now contains 6 items<br/>
+注意</p>
+
+<p>不能使用标语法来一个新的项目追加到数组的末尾。</p>
+
+<p>要在指定索引中插入项目到数组，调用数组的insert(_:at:)方法：</p>
+
+<p>shoppingList.insert(<q>Maple Syrup</q>, at: 0)<br/>
+// shoppingList now contains 7 items<br/>
+// <q>Maple Syrup</q> is now the first item in the list<br/>
+这调用insert(_:at:)方法插入一个新的项目具有的价值<q>Maple Syrup</q>在购物清单的开始，通过指数表示0。</p>
+
+<p>同样的，你从与数组中删除项目remove(at:)的方法。此方法删除指定索引处的项目并返回删除的项目（尽管你可以忽略返回值，如果你不需要它）：</p>
+
+<p>let mapleSyrup = shoppingList.remove(at: 0)<br/>
+// the item that was at index 0 has just been removed<br/>
+// shoppingList now contains 6 items, and no Maple Syrup<br/>
+// the mapleSyrup constant is now equal to the removed <q>Maple Syrup</q> string<br/>
+注意</p>
+
+<p>如果您尝试访问或修改这是一个阵列的现有边界外的指数值，你会触发一个运行时错误。您可以检查索引是使用它通过比较数组的前有效的count财产。除非count是0（意味着数组为空），在数组中最大的有效的索引将永远是count - 1，因为数组是从0开始索引。</p>
+
+<p>当一个项目被移除以阵列的任何间隙是封闭的，并因此在指数的值0是再次等于<q>Six eggs</q>：</p>
+
+<p>firstItem = shoppingList[0]<br/>
+// firstItem is now equal to <q>Six eggs</q><br/>
+如果你想从一个数组中删除最后一个项目，使用removeLast()方法，而不是remove(at:)方法来避免需要查询阵列的count属性。像remove(at:)法，removeLast()返回已删除的项目：</p>
+
+<p>let apples = shoppingList.removeLast()<br/>
+// the last item in the array has just been removed<br/>
+// shoppingList now contains 5 items, and no apples<br/>
+// the apples constant is now equal to the removed <q>Apples</q> string<br/>
+迭代数组</p>
+
+<p>您可以遍历整个集合值与数组for- in循环：</p>
+
+<p>for item in shoppingList {<br/>
+    print(item)<br/>
+}<br/>
+// Six eggs<br/>
+// Milk<br/>
+// Flour<br/>
+// Baking Powder<br/>
+// Bananas<br/>
+如果你需要每个项目的整数索引以及它的价值，使用enumerated()方法遍历数组来代替。对于数组中的每一项，该enumerated()方法返回一个整数，该项目组成的元组。整数从零开始，并通过为每个项目计数; 如果你列举了一整个阵列，这些整数匹配项的索引。您可以分解成元组临时常量或变量作为迭代的一部分：</p>
+
+<p>for (index, value) in shoppingList.enumerated() {<br/>
+    print(<q>Item (index + 1): (value)</q>)<br/>
+}<br/>
+// Item 1: Six eggs<br/>
+// Item 2: Milk<br/>
+// Item 3: Flour<br/>
+// Item 4: Baking Powder<br/>
+// Item 5: Bananas<br/>
+欲了解更多有关for- in环，见换循环中。</p>
+
+<p>集</p>
+
+<p>一组存储的集合中没有定义的排序的相同类型的不同的值。您可以使用一组而不是数组时，项目的顺序并不重要，或者当你需要确保一个项目只出现一次。</p>
+
+<p>注意</p>
+
+<p>斯威夫特的Set类型是桥接至基金会的NSSet类。</p>
+
+<p>有关使用的详细信息Set与基金会和可可，看到与可可数据类型的工作中使用SWIFT与可可和Objective-C（SWIFT 3） 。</p>
+
+<p>哈希值集合类型</p>
+
+<p>A型必须是可哈希在要被存储在一组，也就是说，类型必须提供一种方法来计算一个顺序散列值本身。散列值是一个Int是对于同样比较所有对象，例如，如果相同的值a == b，可以得出a.hashValue == b.hashValue。</p>
+
+<p>所有斯威夫特的基本类型（如String，Int，Double，和Bool）是默认哈希，并且可以作为设定值类型或字典的密钥类型。无关联值枚举值的情况下（如在描述枚举）也默认哈希。</p>
+
+<p>注意</p>
+
+<p>您可以通过它们符合使用自定义的类型，设定值类型或字典的密钥类型Hashable从斯威夫特的标准库协议。符合类型Hashable协议必须提供的GetTable Int称为属性hashValue。一个类型的返回的值hashValue属性不要求是在不同的执行相同的程序，或者在不同的程序相同。</p>
+
+<p>因为Hashable协议符合Equatable，相符类型还必须提供等于操作员的实现（<mark>）。该Equatable协议要求任何符合标准的实现</mark>是一个等价关系。也就是说，一个实现==必须满足以下三个条件，对于所有的值a，b和c：</p>
+
+<p>a == a （自反性）</p>
+
+<p>a == b意味着b == a（对称）</p>
+
+<p>a == b &amp;&amp; b == c意味着a == c（及物）</p>
+
+<p>有关符合协议的详细信息，请参阅协议。</p>
+
+<p>设置类型语法</p>
+
+<p>类型一夫特组被写成Set<Element>，其中Element是该组被允许商店的类型。与数组不同，套不具备等效的简写形式。</p>
+
+<p>创建和初始化一个空集</p>
+
+<p>你可以创建一个空的组使用初始化语法某种类型的：</p>
+
+<p>var letters = Set<Character>()<br/>
+print(<q>letters is of type Set<Character> with (letters.count) items.</q>)<br/>
+// Prints <q>letters is of type Set<Character> with 0 items.</q><br/>
+注意</p>
+
+<p>的类型的letters变量被推断为Set<Character>，从初始的类型。</p>
+
+<p>另外，如果中已经提供的类型信息，如函数参数或已经输入变量或常量，您可以创建一个空集与空数组文本：</p>
+
+<p>letters.insert(<q>a</q>)<br/>
+// letters now contains 1 value of type Character<br/>
+letters = []<br/>
+// letters is now an empty set, but is still of type Set<Character><br/>
+创建一组使用数组文本</p>
+
+<p>也可初始化一组与数组文本，作为一个速记方式写一个或多个值作为一组集合。</p>
+
+<p>下面的示例创建一组称为favoriteGenres存储String值：</p>
+
+<p>var favoriteGenres: Set<String> = [<q>Rock</q>, <q>Classical</q>, <q>Hip hop</q>]<br/>
+// favoriteGenres has been initialized with three initial items<br/>
+该favoriteGenres变量声明为“一套String价值”，写成Set<String>。因为这个特定集已经指定的值类型String，则仅允许存储String的值。在这里，favoriteGenres一组被初始化为3 String的值（<q>Rock</q>，<q>Classical</q>，和<q>Hip hop</q>），数组文本中写入。</p>
+
+<p>注意</p>
+
+<p>该favoriteGenres集被声明为一个变量（与var导引），而不是一个常数（与let导引），因为项目被添加和去除在下面的实施例。</p>
+
+<p>集合类型不能从一个数组字面单独推断，这样的类型Set必须显式声明。然而，由于斯威夫特的类型推断的，你没有，如果你与常量，其中包含相同类型的值数组初始化它写集的类型。初始化favoriteGenres可能已被写在一个较短的形式：</p>
+
+<p>var favoriteGenres: Set = [<q>Rock</q>, <q>Classical</q>, <q>Hip hop</q>]<br/>
+因为阵列中的所有值字面是相同类型的，夫特可以推断Set<String>是正确的类型要用于favoriteGenres变量。</p>
+
+<p>访问和修改设置</p>
+
+<p>访问，并通过其方法和属性修改的一组。</p>
+
+<p>要找出一组项目的数量，检查其只读count属性：</p>
+
+<p>print(<q>I have (favoriteGenres.count) favorite music genres.</q>)<br/>
+// Prints <q>I have 3 favorite music genres.</q><br/>
+使用布尔isEmpty财产作为检查是否快捷方式count属性等于0：</p>
+
+<p>if favoriteGenres.isEmpty {<br/>
+    print(<q>As far as music goes, I&#39;m not picky.</q>)<br/>
+} else {<br/>
+    print(<q>I have particular music preferences.</q>)<br/>
+}<br/>
+// Prints <q>I have particular music preferences.</q><br/>
+你可以通过调用集合的添加新项为一组insert(_:)的方法：</p>
+
+<p>favoriteGenres.insert(<q>Jazz</q>)<br/>
+// favoriteGenres now contains 4 items<br/>
+你可以通过调用集合的删除一组项目remove(_:)的方法，如果它是一组的一员，并返回被移除的值，或返回其删除项目nil如果设定不包含它。可替代地，在一组的所有项目可以与它的去除removeAll()方法。</p>
+
+<p>if let removedGenre = favoriteGenres.remove(<q>Rock</q>) {<br/>
+    print(<q>(removedGenre)? I&#39;m over it.</q>)<br/>
+} else {<br/>
+    print(<q>I never much cared for that.</q>)<br/>
+}<br/>
+// Prints <q>Rock? I&#39;m over it.</q><br/>
+要检查集是否包含一个特定的项目，使用contains(_:)方法。</p>
+
+<p>if favoriteGenres.contains(<q>Funk</q>) {<br/>
+    print(<q>I get up on the good foot.</q>)<br/>
+} else {<br/>
+    print(<q>It&#39;s too funky in here.</q>)<br/>
+}<br/>
+// Prints <q>It&#39;s too funky in here.</q><br/>
+迭代在一组</p>
+
+<p>你可以在一组与一个迭代值for- in循环。</p>
+
+<p>for genre in favoriteGenres {<br/>
+    print(<q>(genre)</q>)<br/>
+}<br/>
+// Jazz<br/>
+// Hip hop<br/>
+// Classical<br/>
+欲了解更多有关for- in环，见换循环中。</p>
+
+<p>斯威夫特的Set类型没有一个定义排序。遍历集合的值以特定的顺序，使用sorted()方法，为数组使用排序，返回集合的元素&lt;符。</p>
+
+<p>for genre in favoriteGenres.sorted() {<br/>
+    print(<q>(genre)</q>)<br/>
+}<br/>
+// Classical<br/>
+// Hip hop<br/>
+// Jazz<br/>
+执行集合运算</p>
+
+<p>可以有效地执行基本操作集，例如两个集相结合，确定哪些值两套有共同点，或确定两套是否包含所有，一些或相同的值的无。</p>
+
+<p>基本设置操作</p>
+
+<p>下面的示意图描绘了两个集- a和b-附由阴影区域表示的各种设定操作的结果。</p>
+
+<p>图片：../Art/setVennDiagram<u>2x.png<br/>
+使用intersection(</u>:)方法以创建一组新的与仅共用这两组的值。<br/>
+使用symmetricDifference(<u>:)方法在任一组以创建一组新的与值，但不能同时使用。<br/>
+使用union(</u>:)方法以创建一组新的与所有在这两组中的值。<br/>
+使用subtracting(_:)方法不在指定的集合创建一组新的与值。<br/>
+let oddDigits: Set = [1, 3, 5, 7, 9]<br/>
+let evenDigits: Set = [0, 2, 4, 6, 8]<br/>
+let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]</p>
+
+<p>oddDigits.union(evenDigits).sorted()<br/>
+// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]<br/>
+oddDigits.intersection(evenDigits).sorted()<br/>
+// []<br/>
+oddDigits.subtracting(singleDigitPrimeNumbers).sorted()<br/>
+// [1, 9]<br/>
+oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()<br/>
+// [1, 2, 9]<br/>
+集合成员资格与平等</p>
+
+<p>下图描述了三种集- a，b和c-with重叠代表组之间共享内容的区域。组a是一超集的b，因为a包含在所有元素b，相反，集b是一子组的a，因为在所有的元素b也被包含a。设置b和设置c是不相交彼此，因为它们共享在没有相同的元素。</p>
+
+<p>图片：../Art/setEulerDiagram_2x.png<br/>
+使用“等于”运算符（==），以确定两套是否包含所有相同的价值观。<br/>
+使用isSubset(of:)方法，以确定是否所有的一组的值被包含在指定集合。<br/>
+使用isSuperset(of:)方法确定集是否包含在一组指定的所有值。<br/>
+使用isStrictSubset(of:)或isStrictSuperset(of:)方法，以确定一组是否是一个子集或超集，但不等于，指定的一组。<br/>
+使用isDisjoint(with:)的方法来确定两个集合是否有任何共同的值。<br/>
+let houseAnimals: Set = [<q>🐶</q>, <q>🐱</q>]<br/>
+let farmAnimals: Set = [<q>🐮</q>, <q>🐔</q>, <q>🐑</q>, <q>🐶</q>, <q>🐱</q>]<br/>
+let cityAnimals: Set = [<q>🐦</q>, <q>🐭</q>]</p>
+
+<p>houseAnimals.isSubset(of: farmAnimals)<br/>
+// true<br/>
+farmAnimals.isSuperset(of: houseAnimals)<br/>
+// true<br/>
+farmAnimals.isDisjoint(with: cityAnimals)<br/>
+// true<br/>
+字典</p>
+
+<p>一个字典存储相同类型的钥匙和一个集合中的相同类型的值，没有定义排序之间的关联。每个值与唯一关联键，它充当为字典内的值的标识符。不像在阵列的物品，在词典项没有指定顺序。您可以使用一本字典，当你需要查找值根据他们的标识符，在大致相同的方式，一个真实世界的字典用于查找定义为一个特定的词。</p>
+
+<p>注意</p>
+
+<p>斯威夫特的Dictionary类型是桥接至基金会的NSDictionary类。</p>
+
+<p>有关使用的详细信息Dictionary与基金会和可可，看到与可可数据类型的工作中使用SWIFT与可可和Objective-C（SWIFT 3） 。</p>
+
+<p>字典类型语法速记</p>
+
+<p>类型一夫特字典写入全为Dictionary<Key, Value>，其中Key是可被用作一个字典密钥的值的类型，并且Value是值的类型，对于那些键的字典中存储。</p>
+
+<p>注意</p>
+
+<p>字典Key类型必须符合Hashable协议，就像一组的值类型。</p>
+
+<p>你也可以写一本字典的简写形式的类型[Key: Value]。虽然这两种形式在功能上是相同的，简写形式是优选的，指的是一个辞典的类型时使用本指南。</p>
+
+<p>创建一个空的字典</p>
+
+<p>与数组，您可以创建一个空的Dictionary使用初始化语法某种类型的：</p>
+
+<p>var namesOfIntegers = <a href="">Int: String</a><br/>
+// namesOfIntegers is an empty [Int: String] dictionary<br/>
+此示例创建类型的一个空字典[Int: String]来存储整数值的人类可读的名字。它的键类型Int，且其值类型String。</p>
+
+<p>如果中已经提供的类型信息，您可以创建一个空的字典文本，这被写成一个空字典[:]（一对括号内的冒号）：</p>
+
+<p>namesOfIntegers[16] = <q>sixteen</q><br/>
+// namesOfIntegers now contains 1 key-value pair<br/>
+namesOfIntegers = [:]<br/>
+// namesOfIntegers is once again an empty dictionary of type [Int: String]<br/>
+创建一个字典文字字典</p>
+
+<p>您也可以初始化一个字典词典的文字，其中有一个类似的语法前 ​​面字面看到的数组。字典文字是写一个或多个键-值对作为一个简便方法Dictionary集合。</p>
+
+<p>一个键值对是一个关键和值的组合。在字典中的文字中，每个键值对键和值用冒号隔开。键-值对被写成一个列表，以逗号分隔，由一对括号包围：</p>
+
+<p>[ 键1：值1，关键2：值2，重点3：值3 ]<br/>
+下面的示例创建一个字典来存储的国际机场的名字。在本词典中，键是三个字母的国际航空运输协会代码和值是机场的名字：</p>
+
+<p>var airports: [String: String] = [<q>YYZ</q>: <q>Toronto Pearson</q>, <q>DUB</q>: <q>Dublin</q>]<br/>
+该airports字典声明为一个类型的[String: String]，这意味着“一Dictionary键均为类型String，且其值的类型也String”。</p>
+
+<p>注意</p>
+
+<p>该airports字典被声明为一个变量（与var导引），而不是一个常数（与let导引），因为更多的机场被添加到词典中下面的实施例。</p>
+
+<p>该airports字典进行初始化，包含两个键-值对的字典文字。第一对具有一键<q>YYZ</q>和的值<q>Toronto Pearson</q>。第二对具有一个键<q>DUB</q>和值<q>Dublin</q>。</p>
+
+<p>这本词典的文字包含两String: String对。该键值类型的类型相匹配airports变量声明（只有一本字典String的键，只String值），因此字典文字的分配是允许作为一种方法来初始化airports与两个初始项目字典。</p>
+
+<p>与数组，你没有，如果你有一个字典文字，其键和值具有一致类型初始化它来编写字典的类型。初始化airports可能已被写在一个较短的形式：</p>
+
+<p>var airports = [<q>YYZ</q>: <q>Toronto Pearson</q>, <q>DUB</q>: <q>Dublin</q>]<br/>
+因为在字面的所有键都是同一类型彼此的，并且同样的所有值都是相同的类型彼此的，夫特可以推断[String: String]是正确的类型要用于airports字典。</p>
+
+<p>访问和修改词典</p>
+
+<p>访问和修改字典通过其方法和属性，或通过使用下标语法。</p>
+
+<p>正如一个数组，你发现在项目的数量Dictionary通过检查其只读count属性：</p>
+
+<p>print(<q>The airports dictionary contains (airports.count) items.</q>)<br/>
+// Prints <q>The airports dictionary contains 2 items.</q><br/>
+使用布尔isEmpty财产作为检查是否快捷方式count属性等于0：</p>
+
+<p>if airports.isEmpty {<br/>
+    print(<q>The airports dictionary is empty.</q>)<br/>
+} else {<br/>
+    print(<q>The airports dictionary is not empty.</q>)<br/>
+}<br/>
+// Prints <q>The airports dictionary is not empty.</q><br/>
+您可以添加新的项目与标语法的字典。使用适当的类型为下标指数的一个新的密钥，并指定相应类型的新价值：</p>
+
+<p>airports[<q>LHR</q>] = <q>London</q><br/>
+// the airports dictionary now contains 3 items<br/>
+您还可以使用标语法更改与特定键关联的值：</p>
+
+<p>airports[<q>LHR</q>] = <q>London Heathrow</q><br/>
+// the value for <q>LHR</q> has been changed to <q>London Heathrow</q><br/>
+作为替代下标，使用字典的updateValue(<u>:forKey:)方法来设置或更新为一个特定键的值。像上面的例子标中，updateValue(</u>:forKey:)如果不存在，或者如果该键已经存在更新值方法设置一个键的值。不像标，但是，该updateValue(_:forKey:)方法返回旧执行更新后的值。这使您可以检查更新是否没有发生。</p>
+
+<p>该updateValue(_:forKey:)方法返回字典的值类型的可选值。用于存储字典String的值，例如，该方法返回类型的值String?，或者“可选的String”。这个可选值包含该键的旧值，如果一个更新之前存在，或者nil如果没有存在的价值：</p>
+
+<p>if let oldValue = airports.updateValue(<q>Dublin Airport</q>, forKey: <q>DUB</q>) {<br/>
+    print(<q>The old value for DUB was (oldValue).</q>)<br/>
+}<br/>
+// Prints <q>The old value for DUB was Dublin.</q><br/>
+您还可以使用标语法检索字典中的值，为特定的密钥。因为可能要求对于没有值存在一个键，一个字典的标返回字典的值类型的可选值。如果字典包含请求的密钥的值，下标返回包含该键的现有值的可选值。否则，下标返回nil：</p>
+
+<p>if let airportName = airports[<q>DUB</q>] {<br/>
+    print(<q>The name of the airport is (airportName).</q>)<br/>
+} else {<br/>
+    print(<q>That airport is not in the airports dictionary.</q>)<br/>
+}<br/>
+// Prints <q>The name of the airport is Dublin Airport.</q><br/>
+您可以使用标语法通过分配的值删除从字典中的键值对nil为关键：</p>
+
+<p>airports[<q>APL</q>] = <q>Apple International</q><br/>
+// <q>Apple International</q> is not the real airport for APL, so delete it<br/>
+airports[<q>APL</q>] = nil<br/>
+// APL has now been removed from the dictionary<br/>
+另外，从与字典中删除键值对removeValue(forKey:)的方法。如果它存在，并返回被移除的值，或返回该方法删除键值对nil，如果没有存在的价值：</p>
+
+<p>if let removedValue = airports.removeValue(forKey: <q>DUB</q>) {<br/>
+    print(<q>The removed airport&#39;s name is (removedValue).</q>)<br/>
+} else {<br/>
+    print(<q>The airports dictionary does not contain a value for DUB.</q>)<br/>
+}<br/>
+// Prints <q>The removed airport&#39;s name is Dublin Airport.</q><br/>
+遍历字典</p>
+
+<p>你可以用字典遍历键-值对for- in循环。字典中的每个项目返回一个(key, value)元组，你可以分解元组的成员进入临时常量或变量作为迭代的一部分：</p>
+
+<p>for (airportCode, airportName) in airports {<br/>
+    print(<q>(airportCode): (airportName)</q>)<br/>
+}<br/>
+// YYZ: Toronto Pearson<br/>
+// LHR: London Heathrow<br/>
+欲了解更多有关for- in环，见换循环中。</p>
+
+<p>您也可以通过访问检索字典的键或值的迭代收集keys和values属性：</p>
+
+<p>for airportCode in airports.keys {<br/>
+    print(<q>Airport code: (airportCode)</q>)<br/>
+}<br/>
+// Airport code: YYZ<br/>
+// Airport code: LHR</p>
+
+<p>for airportName in airports.values {<br/>
+    print(<q>Airport name: (airportName)</q>)<br/>
+}<br/>
+// Airport name: Toronto Pearson<br/>
+// Airport name: London Heathrow<br/>
+如果你需要使用字典的键或值与接受一个一个API Array实例初始化与一个新的数组keys或values属性：</p>
+
+<p>let airportCodes = <a href="airports.keys">String</a><br/>
+// airportCodes is [<q>YYZ</q>, <q>LHR</q>]</p>
+
+<p>let airportNames = <a href="airports.values">String</a><br/>
+// airportNames is [<q>Toronto Pearson</q>, <q>London Heathrow</q>]<br/>
+斯威夫特的Dictionary类型没有一个定义排序。遍历特定顺序字典的键或值，使用sorted()它的方法keys或values属性。</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743596689452.html"  title="Previous Post: 字符串和字符">&laquo; 字符串和字符</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743597355186.html" 
+	        title="Next Post: 控制流">控制流 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743596859367.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

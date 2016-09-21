@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  语法参考 - Swift 3.0 自翻译 - 说了是村长
+  类型转换 - Swift 3.0 自翻译 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -243,72 +243,215 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>类型转换</h1>
+
+<p>型铸造是检查一个实例的类型，或用于治疗该实例作为不同的超类或亚类从其它地方在它自己的类层次结构的一种方式。</p>
+
+<p>在斯威夫特类型转换与实现is和as运营商。这两个运营商提供了一种简单和表达的方法来检查一个值的类型或某个值转换为不同的类型。</p>
+
+<p>您也可以使用强制类型转换来检查类型是否符合一个协议，在描述的检查协 ​​议一致性。</p>
+
+<p>定义一个类层次结构类型转换</p>
+
+<p>您可以使用类型转换与类和子类层次结构来检查特定类实例的类型，并到该实例转换为另一个类相同的层次结构中。下面三个代码片段定义类层次和含有这些类的实例的阵列，用于在型铸造的一个例子。</p>
+
+<p>第一个片段定义了一个新的名为基类MediaItem。这个类提供任何类型的项目出现在数字媒体库的基本功能。具体来说，它声明了一个name类型的财产String，和init name初始化。（假设所有媒体项目，包括所有的电影和歌曲，将有一个名字。）</p>
+
+<p>class MediaItem {<br/>
+    var name: String<br/>
+    init(name: String) {<br/>
+        self.name = name<br/>
+    }<br/>
+}<br/>
+接下来的片段定义的两个子类MediaItem。第一个子类，Movie，封装了有关电影或电影的附加 ​​信息。它增加了director对基础的顶级物业MediaItem类，具有相应的初始化。第二子类，Song，增加了一个artist上的基类的顶部属性和初始值：</p>
+
+<p>class Movie: MediaItem {<br/>
+    var director: String<br/>
+    init(name: String, director: String) {<br/>
+        self.director = director<br/>
+        super.init(name: name)<br/>
+    }<br/>
+}</p>
+
+<p>class Song: MediaItem {<br/>
+    var artist: String<br/>
+    init(name: String, artist: String) {<br/>
+        self.artist = artist<br/>
+        super.init(name: name)<br/>
+    }<br/>
+}<br/>
+最后的片断创建一个常量数组叫library，它包含两个Movie实例和3个Song实例。该类型的library阵列通过使用数组文本的内容初始化它推断。迅速的类型检查器能够推断出Movie并Song具有一公共超MediaItem，因此它推断的类型[MediaItem]的library数组：</p>
+
+<p>let library = [<br/>
+    Movie(name: <q>Casablanca</q>, director: <q>Michael Curtiz</q>),<br/>
+    Song(name: <q>Blue Suede Shoes</q>, artist: <q>Elvis Presley</q>),<br/>
+    Movie(name: <q>Citizen Kane</q>, director: <q>Orson Welles</q>),<br/>
+    Song(name: <q>The One And Only</q>, artist: <q>Chesney Hawkes</q>),<br/>
+    Song(name: <q>Never Gonna Give You Up</q>, artist: <q>Rick Astley</q>)<br/>
+]<br/>
+// the type of <q>library</q> is inferred to be [MediaItem]<br/>
+存储在项目library仍然Movie和Song幕后的实例。但是，如果您遍历这个数组的内容，您会收到后面的项目类型为MediaItem，而不是Movie或Song。为了与他们合作，作为其自身的类型，则需要检查其类型，或垂头丧气他们不同的类型，如下所述。</p>
+
+<p>检查类型</p>
+
+<p>使用类型检查运算符（is）来检查一个实例是否是有一定的子类型。类型检查操作员返回true如果实例是该子类型的，false如果它不是。</p>
+
+<p>下面的例子中定义了两个变量，movieCount并且songCount，其计数的数量Movie和Song实例中library阵列：</p>
+
+<p>var movieCount = 0<br/>
+var songCount = 0</p>
+
+<p>for item in library {<br/>
+    if item is Movie {<br/>
+        movieCount += 1<br/>
+    } else if item is Song {<br/>
+        songCount += 1<br/>
+    }<br/>
+}</p>
+
+<p>print(<q>Media library contains (movieCount) movies and (songCount) songs</q>)<br/>
+// Prints <q>Media library contains 2 movies and 3 songs</q><br/>
+通过在所有项目这个例子遍历library数组。在每次通过时，for- in环设置item恒定下MediaItem的数组中为止。</p>
+
+<p>item is Movie返回true如果当前MediaItem是一个Movie实例，并且false，如果它不是。类似地，item is Song检查该项目是否为Song实例。在年底for- in循环的价值观movieCount和songCount包含了多少的计数MediaItem情况下被发现每种类型的。</p>
+
+<p>向下转型</p>
+
+<p>某一类类型的固定或可变实际上指的是幕后的子类的实例。在那里你认为是这样的话，你可以试着向下转换到子类型与类型转换操作符（as?或as!）。</p>
+
+<p>因为向下转换可能失败，类型转换操作符有两种不同的形式。有条件的形式，as?返回你正试图向下转换类型的可选值。强制形式as!，试图丧气和力解开的结果作为一个单一的复合动作。</p>
+
+<p>使用类型转换操作符（的条件形式as?，当你不知道，如果垂头丧气会成功）。操作者的这种形式将总是返回一个可选值，并且该值将是nil如果垂头丧气是不可能的。这使您可以检查一个成功的垂头丧气。</p>
+
+<p>使用类型转换操作符的强迫形式（as!）只有当你确信丧气总是会成功的。如果您尝试向下转换到一个不正确的类型运营商的这种形式会触发一个运行时错误。</p>
+
+<p>下面在每个迭代的例子MediaItem中library，并打印每个项目的相应说明。要做到这一点，它需要访问的每个项目作为一个真正的Movie或Song，而不是仅仅作为一个MediaItem。这是为了必要为它是能够访问director或artist的属性Movie或Song在描述中使用。</p>
+
+<p>在本实施例中，阵列中的每个项目可能是一个Movie，也可能是一个Song。你不事先知道实际类用于每个项目当中，因此它是适合使用的类型转换操作符（的条件形式as?），通过循环每次检查垂头丧气：</p>
+
+<p>for item in library {<br/>
+    if let movie = item as? Movie {<br/>
+        print(<q>Movie: (movie.name), dir. (movie.director)</q>)<br/>
+    } else if let song = item as? Song {<br/>
+        print(<q>Song: (song.name), by (song.artist)</q>)<br/>
+    }<br/>
+}</p>
+
+<p>// Movie: Casablanca, dir. Michael Curtiz<br/>
+// Song: Blue Suede Shoes, by Elvis Presley<br/>
+// Movie: Citizen Kane, dir. Orson Welles<br/>
+// Song: The One And Only, by Chesney Hawkes<br/>
+// Song: Never Gonna Give You Up, by Rick Astley<br/>
+这个例子，试图向下转换电流开始item作为Movie。因为item是一个MediaItem例子，这是可能的，这可能是一个Movie; 同样，这也是可能的，它可能是一个Song，甚至只是一个基础MediaItem。由于这种不确定性，该as?类型转换操作符的形式返回一个可选试图向下转换的子类类型时的价值。的结果item as? Movie是类型的Movie?，或“任选的Movie”。</p>
+
+<p>向下转换到Movie当施加到失败Song库阵列中的实例。为了解决这个问题，上面的例子中使用可选的绑定来检查是否可选Movie实际上包含的值（即找出垂头丧气是否成功。）这个可选的结合是写“ if let movie = item as? Movie”，这可以理解为：</p>
+
+<p>“尝试访问item作为Movie。如果成功，将被称为新的临时常数movie存储在返回可选的值Movie“。</p>
+
+<p>如果向下转换成功，的属性movie，然后用于打印的描述为Movie实例，包括其的名称director。类似的原理是用于检查Song的情况下，并打印一个适当的说明（包括artist每当名称）Song在库中找到。</p>
+
+<p>注意</p>
+
+<p>铸造实际上并不修改实例或改变其值。底层的实例保持不变; 它被简单地处理，并作为类型的一个实例，它已被投访问。</p>
+
+<p>类型转换所有和AnyObject</p>
+
+<p>斯威夫特提供了两种特殊类型的非特异性类型的工作：</p>
+
+<p>Any 可以在所有代表任何类型的实例，包括功能类型。<br/>
+AnyObject 可以表示任何类型的一个实例。<br/>
+使用Any和AnyObject只有当你需要明确的行为以及它们提供的功能。它始终是要明确你希望在你的代码一起工作的类型。</p>
+
+<p>下面是使用的例子Any有不同的类型，包括函数类型和非类类型的混合工作。该示例创建一个名为数组things，它可以存储类型的值Any：</p>
+
+<p>var things = <a href="">Any</a></p>
+
+<p>things.append(0)<br/>
+things.append(0.0)<br/>
+things.append(42)<br/>
+things.append(3.14159)<br/>
+things.append(<q>hello</q>)<br/>
+things.append((3.0, 5.0))<br/>
+things.append(Movie(name: <q>Ghostbusters</q>, director: <q>Ivan Reitman</q>))<br/>
+things.append({ (name: String) -&gt; String in <q>Hello, (name)</q> })<br/>
+该things数组包含两个Int值，二Double值，一个String值，类型的元组(Double, Double)，电影“捉鬼敢死队”和闭合的表达，需要一个String值，并返回另一个String值。</p>
+
+<p>您可以使用is，并as在运营商switch陈述的案件来发现特定类型的只是已知类型的固定或可变的Any或AnyObject。下面通过在项目迭代的例子things阵列和查询每个项目的一个类型switch声明。数的switch语句的情况下，结合它们匹配的值为指定的类型的一个常数，以使其值要打印：</p>
+
+<p>for thing in things {<br/>
+    switch thing {<br/>
+    case 0 as Int:<br/>
+        print(<q>zero as an Int</q>)<br/>
+    case 0 as Double:<br/>
+        print(<q>zero as a Double</q>)<br/>
+    case let someInt as Int:<br/>
+        print(<q>an integer value of (someInt)</q>)<br/>
+    case let someDouble as Double where someDouble &gt; 0:<br/>
+        print(<q>a positive double value of (someDouble)</q>)<br/>
+    case is Double:<br/>
+        print(<q>some other double value that I don&#39;t want to print</q>)<br/>
+    case let someString as String:<br/>
+        print(<q>a string value of &quot;(someString)&quot;</q>)<br/>
+    case let (x, y) as (Double, Double):<br/>
+        print(<q>an (x, y) point at (x), (y)</q>)<br/>
+    case let movie as Movie:<br/>
+        print(<q>a movie called (movie.name), dir. (movie.director)</q>)<br/>
+    case let stringConverter as (String) -&gt; String:<br/>
+        print(stringConverter(<q>Michael</q>))<br/>
+    default:<br/>
+        print(<q>something else</q>)<br/>
+    }<br/>
+}</p>
+
+<p>// zero as an Int<br/>
+// zero as a Double<br/>
+// an integer value of 42<br/>
+// a positive double value of 3.14159<br/>
+// a string value of <q>hello</q><br/>
+// an (x, y) point at 3.0, 5.0<br/>
+// a movie called Ghostbusters, dir. Ivan Reitman<br/>
+// Hello, Michael</p>
 
 
-	
-		<div class="markdown-body">
-		<h1>关于语言参考</h1>
+</div>
 
-		<p>这本书的部分描述了斯威夫特编程语言的形式语法。这里所描述的语法是为了帮助您了解更详细的语言，而不是让你直接实现解析器或编译器。</p>
+<br /><br />
+<hr />
 
-<p>雨燕的语言是比较小的，因为很多常见的类型，函数和几乎无处不出现在雨燕代码运营商都在斯威夫特标准库实际上定义。尽管这些类型，函数和运营商不斯威夫特语言本身的一部分，他们在本书的这一部分的讨论和代码示例广泛使用。</p>
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743599754782.html"  title="Previous Post: 错误处理">&laquo; 错误处理</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743600051579.html" 
+	        title="Next Post: 嵌套类型">嵌套类型 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
-<p>如何阅读语法</p>
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
-<p>用来形容斯威夫特编程语言的形式语法的符号如下几个约定：</p>
-
-<p>一个箭头（→）用于标记语法制作和可以理解为“可以由”。<br/>
-句法类别以表示斜体文字出现在文法产生式规则的两侧。<br/>
-文字和标点用黑体字显示constant width的文字和只出现在语法产生式规则的右手边。<br/>
-（|）替代语法产生由竖线分隔。当替代产品有太长轻松地阅读，他们被分成上新生产线的多个语法产生式规则。<br/>
-在少数情况下，普通字体的文本用于描述一个文法产生式规则的右手边。<br/>
-可选的语法范畴和文字是由一个尾部标标注，选择。<br/>
-作为一个例子，一个消气部件设置器块的语法定义如下：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择二传手子句消气条款 ­ {­}­  {­}­<br/>
-这个定义表明，一个getter，setter方法块可以由一个getter条款跟着一个可选的二传手条款，括在大括号，中或一个setter条款后跟一个getter条款，括在大括号。上面的文法产生等效于以下两个产生，其中所述替代明确阐明：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择{­}­<br/>
-吸气制定者块 → 二传手子句消气条款 ­{­}­</p>
-
-
-		</div>
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743599908626.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 

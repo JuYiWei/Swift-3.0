@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  关于 Swift - Swift 3.0 自翻译 - 说了是村长
+  错误处理 - Swift 3.0 自翻译 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -244,20 +244,207 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1>关于 Swift</h1>
+<h1>错误处理</h1>
 
-<p>写之前：</p>
+<p>错误处理是响应并在程序从错误状况中恢复的过程。斯威夫特为投掷，接球，传播，并在运行时操作恢复的错误一流的支持。</p>
 
-<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0">The Swift Programming Language (Swift 3) 官方文档</a></p>
+<p>一些操作不保证始终完整执行或产生有用的输出。选配用于表示不存在的价值，但当操作失败，但是这是可以理解什么引起的故障，从而使你的代码可以做出相应的反应。</p>
 
-<ul>
-<li><p>Swift是一个新的编程语言适，用于开发iOS，MacOS，watchOS和tvOS应用程序。建立在C和Objective-C的基础之上，没有C兼容性的限制。采用了安全的编程模式，并增加了现代的功能，使编程更简单，更灵活，更有趣。支持成熟的Cocoa和Cocoa Touch框架。有机会带来不同的软件开发体验。</p></li>
-<li><p>Swift已经开发多年。苹果公司通过推进我们现有的编译器，调试器和框架的基础设施奠定了Swift的基础。我们简化了内存管理与自动引用计数（ARC）。我们的框架协议栈，建立在Foundation和Cocoa的基础上，已实现了现代化和整个标准化。Objective-C的本身已经发展到支持block，集合，模块，使框架更贴近现代化的编程语言。由于这个基础，我们现在可以引入苹果软件开发的未来的新的语言Swift中。</p></li>
-<li><p>SObjective-C的开发人员对wift应该比较熟悉。它采用的Objective-C可读性的命名参数，动态对象模型。提供了无缝接入现有的Cocoa框架，混合操作Objective-C代码。从这个共同点的基础上，结合了面向过程和面向对象，Swift引入了许多新的功能。</p></li>
-<li><p>Swift对新的程序员友好的。它是现代化的编程语言，类似现有的脚本语言。它支持playgrounds，这个创新的功能，无需构建和运行应用程序就能立即看到结果。</p></li>
-<li><p>Swift结合现代语言思维以及世界上优秀苹果工程师的智慧。编译器的性能得到优化，语言的发展进行了优化。它的设计从“hello，world”扩展到整个操作系统。这一切都使得Swift的开发者和苹果对为了充满希望。</p></li>
-<li><p>Swift是写的iOS，macOS，watchOS和tvOS应用一个很神奇的方式，并会继续发展新的特性和功能。我们对Swift的目标是雄心勃勃的。我们不能等待，看看你用它创造什么。 </p></li>
-</ul>
+<p>作为一个例子，考虑读取和处理的数据从磁盘上的文件的任务。有多种方式这项任务可能会失败，包括文件在指定的路径不存在，不具有该文件读取权限，或在一个兼容的格式不被编码的文件。这些不同的情况之间区分允许程序，以解决一些误差和向用户它不能解析的任何错误进行通信。</p>
+
+<p>注意</p>
+
+<p>在斯威夫特错误处理与使用错误处理的模式进行互操作NSError可可类和Objective-C。有关此类的详细信息，请参阅错误处理在使用SWIFT与可可和Objective-C（SWIFT 3） 。</p>
+
+<p>代表和引发错误</p>
+
+<p>在斯威夫特，错误是由符合类型的值表示Error的协议。这个空协议指示类型，可用于错误处理。</p>
+
+<p>迅速枚举特别适合于模拟一组相关的错误条件，在允许约一个错误的性质来传达附加信息关联的值。例如，这里是你怎么可能代表一个游戏里面运行的自动售货机的错误条件：</p>
+
+<p>enum VendingMachineError: Error {<br/>
+    case invalidSelection<br/>
+    case insufficientFunds(coinsNeeded: Int)<br/>
+    case outOfStock<br/>
+}<br/>
+抛出一个错误，您可以指明意想不到的事情发生和执行的正常流程无法继续。您可以使用一个throw语句来抛出一个错误。例如，下面的代码抛出一个错误，表明另外五个硬币通过自动售货机需要：</p>
+
+<p>throw VendingMachineError.insufficientFunds(coinsNeeded: 5)<br/>
+处理错误</p>
+
+<p>当发生错误时，一些代码周围一片必须负责处理错误，例如，纠正问题，尝试另一种方法，或者告知故障的用户。</p>
+
+<p>有四种方式斯威夫特来处理错误。您可以从功能传播错误调用该函数的代码，使用处理错误do- catch声明，处理错误作为可选值，或断言不会发生错误。每一种方法在下面一节中描述。</p>
+
+<p>当一个函数抛出一个错误，它改变你的程序的流程，这样就可以快速识别代码中的地方是可以引发错误是很重要的。要在代码中找出这些地方，写try关键字或try?或try!变化，前一段代码调用一个函数，方法或初始化，可以抛出一个错误。这些关键字在下面的章节中描述。</p>
+
+<p>注意</p>
+
+<p>在斯威夫特的错误处理类似异常处理其他语言，配合使用的try，catch和throw关键字。不像许多语言，包括斯威夫特的Objective-C-错误处理不涉及展开调用堆栈，这个过程可能是计算昂贵的异常处理。这样，一个的性能特点throw语句比得上那些的return语句。</p>
+
+<p>传播错误使用投掷功能</p>
+
+<p>为了表明一个函数，方法或初始化程序可以抛出一个错误，你写throws它的参数后，在函数的声明关键字。函数标有throws被称为投掷功能。如果函数指定了一个返回类型，你写的throws关键字返回箭头前（-&gt;）。</p>
+
+<p>func canThrowErrors() throws -&gt; String</p>
+
+<p>func cannotThrowErrors() -&gt; String<br/>
+投掷功能传播的都扔在它的内部，从它的名字叫范围的误差。</p>
+
+<p>注意</p>
+
+<p>只有扔功能可以传播错误。一个nonthrowing函数内部抛出的任何错误必须在函数内部处理。</p>
+
+<p>在下面的例子中，VendingMachine类有一个vend(itemNamed:)抛出适当的方法VendingMachineError，如果请求的项不可用，缺货，或具有超过当前存款额有代价的：</p>
+
+<p>struct Item {<br/>
+    var price: Int<br/>
+    var count: Int<br/>
+}</p>
+
+<p>class VendingMachine {<br/>
+    var inventory = [<br/>
+        <q>Candy Bar</q>: Item(price: 12, count: 7),<br/>
+        <q>Chips</q>: Item(price: 10, count: 4),<br/>
+        <q>Pretzels</q>: Item(price: 7, count: 11)<br/>
+    ]<br/>
+    var coinsDeposited = 0</p>
+
+<pre><code>func vend(itemNamed name: String) throws {
+    guard let item = inventory[name] else {
+        throw VendingMachineError.invalidSelection
+    }
+
+    guard item.count &gt; 0 else {
+        throw VendingMachineError.outOfStock
+    }
+
+    guard item.price &lt;= coinsDeposited else {
+        throw VendingMachineError.insufficientFunds(coinsNeeded: item.price - coinsDeposited)
+    }
+
+    coinsDeposited -= item.price
+
+    var newItem = item
+    newItem.count -= 1
+    inventory[name] = newItem
+
+    print(&quot;Dispensing \(name)&quot;)
+}
+</code></pre>
+
+<p>}<br/>
+在实施vend(itemNamed:)方法使用guard语句提前退出方式，如果任何的购买零食的要求没有得到满足抛出相应错误。由于throw声明立即把系统控制，项目将只有当所有这些要求都满足被贩卖的。</p>
+
+<p>由于该vend(itemNamed:)方法传播它引发的任何错误，调用此方法必须要么处理任何代码错误-使用do- catch声明，try?或try!-or继续传播他们。例如，buyFavoriteSnack(person:vendingMachine:)在下面的例子中也是一个投掷功能，并且该任何错误vend(itemNamed:)方法抛出将传播到其中的点buyFavoriteSnack(person:vendingMachine:)的功能将被调用。</p>
+
+<p>let favoriteSnacks = [<br/>
+    <q>Alice</q>: <q>Chips</q>,<br/>
+    <q>Bob</q>: <q>Licorice</q>,<br/>
+    <q>Eve</q>: <q>Pretzels</q>,<br/>
+]<br/>
+func buyFavoriteSnack(person: String, vendingMachine: VendingMachine) throws {<br/>
+    let snackName = favoriteSnacks[person] ?? <q>Candy Bar</q><br/>
+    try vendingMachine.vend(itemNamed: snackName)<br/>
+}<br/>
+在这个例子中，该buyFavoriteSnack(person: vendingMachine:)功能查找特定人的最喜欢的零食，并尝试通过调用买给他们vend(itemNamed:)方法。由于该vend(itemNamed:)方法可以抛出一个错误，这就是所谓的try在它前面的关键字。</p>
+
+<p>投掷初始化所用的相同的方式抛函数传播错误。例如，对于初始化PurchasedSnack在列表结构下方调用一个投掷函数作为初始化过程的一部分，它处理它遇到它们传播到它的调用者的任何错误。</p>
+
+<p>struct PurchasedSnack {<br/>
+    let name: String<br/>
+    init(name: String, vendingMachine: VendingMachine) throws {<br/>
+        try vendingMachine.vend(itemNamed: name)<br/>
+        self.name = name<br/>
+    }<br/>
+}<br/>
+处理错误使用do​​-抓</p>
+
+<p>您可以使用do- catch声明通过运行一个代码块来处理错误。如果错误是由在代码中抛出do条款，它是对匹配的catch条款，以确定哪些人可以处理错误。</p>
+
+<p>这里是一个的一般形式do- catch语句：</p>
+
+<p>做 {<br/>
+    尝试 表达<br/>
+    声明<br/>
+} 捕捉 模式1 {<br/>
+    声明<br/>
+} 捕捉 模式2  ，其中 条件 {<br/>
+    声明<br/>
+}<br/>
+你写后得到的图案catch，表明该条款可以处理哪些错误。如果catch条款没有一个模式，子句匹配任何错误并绑定错误命名的局部常量error。有关模式匹配的更多信息，请参阅模式。</p>
+
+<p>该catch条款没有处理好每一个可能的错误，它在代码do子句可以抛出。如果没有的catch条款处理错误，错误传播到周围的范围。但是，错误必须处理一些周边范围，无论是封闭do- catch子句处理错误或者是一个投掷函数中。例如，下面的代码处理所有三种情况下的VendingMachineError枚举，但是所有其他错误必须通过其周围的范围进行处理：</p>
+
+<p>var vendingMachine = VendingMachine()<br/>
+vendingMachine.coinsDeposited = 8<br/>
+do {<br/>
+    try buyFavoriteSnack(person: <q>Alice</q>, vendingMachine: vendingMachine)<br/>
+} catch VendingMachineError.invalidSelection {<br/>
+    print(<q>Invalid Selection.</q>)<br/>
+} catch VendingMachineError.outOfStock {<br/>
+    print(<q>Out of Stock.</q>)<br/>
+} catch VendingMachineError.insufficientFunds(let coinsNeeded) {<br/>
+    print(<q>Insufficient funds. Please insert an additional (coinsNeeded) coins.</q>)<br/>
+}<br/>
+// Prints <q>Insufficient funds. Please insert an additional 2 coins.</q><br/>
+在上述的例子中，buyFavoriteSnack(person:vendingMachine:)函数被调用在一个try表达，因为它可以引发错误。如果错误被抛出，立即执行转移到catch条款，这决定是否允许传播继续。如果没有错误被抛出，在余下的陈述do语句被执行。</p>
+
+<p>把错误转化为可选值</p>
+
+<p>您可以使用try?通过将其转换为一个可选值来处理错误。如果在评估时抛出一个错误try?表达式，表达式的值nil。例如，在下面的代码x和y具有相同的值和行为：</p>
+
+<p>func someThrowingFunction() throws -&gt; Int {<br/>
+    // ...<br/>
+}</p>
+
+<p>let x = try? someThrowingFunction()</p>
+
+<p>let y: Int?<br/>
+do {<br/>
+    y = try someThrowingFunction()<br/>
+} catch {<br/>
+    y = nil<br/>
+}<br/>
+如果someThrowingFunction()抛出一个错误，价值x和y为nil。否则，值x和y是该函数的返回值。需要注意的是x和y是任何类型的可选someThrowingFunction()回报。在这里，函数返回一个整数，所以x和y是可选的整数。</p>
+
+<p>使用try?可以让你编写简洁的错误处理代码，当你要处理相同的方式的所有错误。例如，下面的代码使用几种方法来获取数据，或返回nil如果所有方法都失败。</p>
+
+<p>func fetchData() -&gt; Data? {<br/>
+    if let data = try? fetchDataFromDisk() { return data }<br/>
+    if let data = try? fetchDataFromServer() { return data }<br/>
+    return nil<br/>
+}<br/>
+禁用误差传播</p>
+
+<p>有时候你知道一个投掷的函数或方法不会，事实上，在运行时抛出一个错误。在这些场合，你可以写try!表达式之前禁用错误传播，敷在运行时断言，没有错误将被抛出呼叫。如果错误实际上被抛出，你会得到一个运行时错误。</p>
+
+<p>例如，下面的代码使用一个loadImage(atPath:)函数，该函数在给定的路径将图像加载资源或者如果图像不能被加载引发错误。在这种情况下，因为图像是随应用程序，没有错误将在运行时抛出，所以它是合适的禁用错误传播。</p>
+
+<p>let photo = try! loadImage(atPath: <q>./Resources/John Appleseed.jpg</q>)<br/>
+指定清理行动</p>
+
+<p>您可以使用defer的语句代码执行离开代码当前块之前执行一组语句。这种说法让你做的应该不管执行的任何必要的清理如何执行离开的代码是否当前块离开，因为一个错误被抛出，或因为声明如return或break。例如，你可以使用一个defer语句来确保文件描述符被关闭，手动分配的内存被释放。</p>
+
+<p>一defer直到当前范围退出声明推迟执行。该声明由的defer关键字，并在以后执行的语句。递延陈述可能不包含将控制转移出来的语句，如一个任意代码break或者return，或抛出错误陈述。延迟动作在它们是如何指定，也就是，在第一代码相反的顺序执行defer的语句在第二代码后执行，等等。</p>
+
+<p>func processFile(filename: String) throws {<br/>
+    if exists(filename) {<br/>
+        let file = open(filename)<br/>
+        defer {<br/>
+            close(file)<br/>
+        }<br/>
+        while let line = try file.readline() {<br/>
+            // Work with the file.<br/>
+        }<br/>
+        // close(file) is called here, at the end of the scope.<br/>
+    }<br/>
+}<br/>
+上面的例子中使用defer的语句，以确保open(<u>:)功能具有一个相应的呼叫close(</u>:)。</p>
+
+<p>注意</p>
+
+<p>您可以使用defer，即使没有任何错误处理代码中包含的语句。</p>
 
 
 </div>
@@ -269,15 +456,15 @@
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
-	        <a href="14743600739128.html"  title="Previous Post: 高级操作员">&laquo; 高级操作员</a>
+	        <a href="14743599610249.html"  title="Previous Post: 可选链接">&laquo; 可选链接</a>
 	    
 	</div>
   </div>
   <div class="large-6 columns">
 	<div class="text-right" style="padding:15px 0px;">
 		
-	        <a href="14743413996803.html" 
-	        title="Next Post: Swift 之旅">Swift 之旅 &raquo;</a>
+	        <a href="14743599908626.html" 
+	        title="Next Post: 类型转换">类型转换 &raquo;</a>
 	    
 	</div>
   </div>
@@ -290,7 +477,7 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		var currentURL = '14743413991106.html';
+		var currentURL = '14743599754782.html';
 		$('#side-nav a').each(function(){
 			if($(this).attr('href') == currentURL){
 				$(this).parent().addClass('active');

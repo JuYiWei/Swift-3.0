@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  语法参考 - Swift 3.0 自翻译 - 说了是村长
+  嵌套类型 - Swift 3.0 自翻译 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -243,72 +243,124 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>嵌套类型</h1>
+
+<p>枚举通常为支持一个特定的类或结构的功能。同样地，它可以方便地定义工具类和结构纯粹是为了更复杂类型的范围内使用。要做到这一点，斯威夫特，可以定义嵌套类型，即嵌套支持他们所支持的类型的定义中枚举，类和结构。</p>
+
+<p>嵌套其他类型中的一个类型，它支持的类型外括号内写它的定义。类型可以嵌套到尽可能多的水平是必需的。</p>
+
+<p>在行动嵌套类型</p>
+
+<p>下面的例子定义了一个名为结构BlackjackCard，其型号扑克牌在二十一点游戏中使用。该BlackJack结构包含两个嵌套枚举类型叫Suit和Rank。</p>
+
+<p>在大酒杯，王牌卡有一方或11的值。此功能是通过一个叫做结构表示Values，这是嵌套在内部Rank枚举：</p>
+
+<p>struct BlackjackCard {</p>
+
+<pre><code>// nested Suit enumeration
+enum Suit: Character {
+    case spades = &quot;♠&quot;, hearts = &quot;♡&quot;, diamonds = &quot;♢&quot;, clubs = &quot;♣&quot;
+}
+
+// nested Rank enumeration
+enum Rank: Int {
+    case two = 2, three, four, five, six, seven, eight, nine, ten
+    case jack, queen, king, ace
+    struct Values {
+        let first: Int, second: Int?
+    }
+    var values: Values {
+        switch self {
+        case .ace:
+            return Values(first: 1, second: 11)
+        case .jack, .queen, .king:
+            return Values(first: 10, second: nil)
+        default:
+            return Values(first: self.rawValue, second: nil)
+        }
+    }
+}
+
+// BlackjackCard properties and methods
+let rank: Rank, suit: Suit
+var description: String {
+    var output = &quot;suit is \(suit.rawValue),&quot;
+    output += &quot; value is \(rank.values.first)&quot;
+    if let second = rank.values.second {
+        output += &quot; or \(second)&quot;
+    }
+    return output
+}
+</code></pre>
+
+<p>}<br/>
+该Suit枚举描述了四种常见的纸牌套装，具有共同的原始Character值来表示自己的符号。</p>
+
+<p>该Rank枚举描述了十三个可能扑克牌行列，与原料一起Int值来表示其面值。（这些原始Int值不用于杰克，皇后，国王和王牌卡。）</p>
+
+<p>如上述提到的，Rank枚举定义它自己的，被称为的进一步嵌套结构Values。这种结构封装的事实，大多数卡有一个值，但王牌卡有两个值。该Values结构定义了两个属性来表示这样的：</p>
+
+<p>first，类型 Int<br/>
+second的类型Int?，或“任选的Int”<br/>
+Rank也定义一个计算属性，values，它返回的一个实例Values结构。此计算性能考虑卡片的等级和初始化一个新的Values基于它的等级相应的值的实例。它采用特殊的值jack，queen，king，和ace。对于数字卡片，它采用了排名的原始Int价值。</p>
+
+<p>的BlackjackCard结构本身有两个属性- rank和suit。它还定义一个计算属性调用description，它使用存储在所述值rank与suit建立的名称和卡的值的描述。该description属性使用可选的绑定来检查是否有显示第二值，如果是这样，插入该第二个值附加描述细节。</p>
+
+<p>因为BlackjackCard是没有自定义初始化一个结构，它有一个隐含的成员逐一初始化，如描述的结构类型按成员初始化器。您可以使用此初始化初始化一个所谓的新常数theAceOfSpades：</p>
+
+<p>let theAceOfSpades = BlackjackCard(rank: .ace, suit: .spades)<br/>
+print(<q>theAceOfSpades: (theAceOfSpades.description)</q>)<br/>
+// Prints <q>theAceOfSpades: suit is ♠, value is 1 or 11</q><br/>
+即使Rank和Suit被内嵌套BlackjackCard，其类型可以从上下文中推断，所以本实例的初始化能够通过他们的情况名（指枚举例.ace和.spades单独）。在上面的例子中，description属性正确地报告黑桃A具有值1或11。</p>
+
+<p>谈到嵌套类型</p>
+
+<p>使用嵌套类型及其定义上下文之外，可以在前面的名称与它嵌套在该类型的名称：</p>
+
+<p>let heartsSymbol = BlackjackCard.Suit.hearts.rawValue<br/>
+// heartsSymbol is <q>♡</q><br/>
+对于上面的例子，这使得的名字Suit，Rank和Values被保持故意短，因为它们的名称是自然由它们所限定的范围内限定。</p>
 
 
-	
-		<div class="markdown-body">
-		<h1>关于语言参考</h1>
+</div>
 
-		<p>这本书的部分描述了斯威夫特编程语言的形式语法。这里所描述的语法是为了帮助您了解更详细的语言，而不是让你直接实现解析器或编译器。</p>
+<br /><br />
+<hr />
 
-<p>雨燕的语言是比较小的，因为很多常见的类型，函数和几乎无处不出现在雨燕代码运营商都在斯威夫特标准库实际上定义。尽管这些类型，函数和运营商不斯威夫特语言本身的一部分，他们在本书的这一部分的讨论和代码示例广泛使用。</p>
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743599908626.html"  title="Previous Post: 类型转换">&laquo; 类型转换</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743600183280.html" 
+	        title="Next Post: 扩展">扩展 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
-<p>如何阅读语法</p>
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
-<p>用来形容斯威夫特编程语言的形式语法的符号如下几个约定：</p>
-
-<p>一个箭头（→）用于标记语法制作和可以理解为“可以由”。<br/>
-句法类别以表示斜体文字出现在文法产生式规则的两侧。<br/>
-文字和标点用黑体字显示constant width的文字和只出现在语法产生式规则的右手边。<br/>
-（|）替代语法产生由竖线分隔。当替代产品有太长轻松地阅读，他们被分成上新生产线的多个语法产生式规则。<br/>
-在少数情况下，普通字体的文本用于描述一个文法产生式规则的右手边。<br/>
-可选的语法范畴和文字是由一个尾部标标注，选择。<br/>
-作为一个例子，一个消气部件设置器块的语法定义如下：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择二传手子句消气条款 ­ {­}­  {­}­<br/>
-这个定义表明，一个getter，setter方法块可以由一个getter条款跟着一个可选的二传手条款，括在大括号，中或一个setter条款后跟一个getter条款，括在大括号。上面的文法产生等效于以下两个产生，其中所述替代明确阐明：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择{­}­<br/>
-吸气制定者块 → 二传手子句消气条款 ­{­}­</p>
-
-
-		</div>
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743600051579.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 

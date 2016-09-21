@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  语法参考 - Swift 3.0 自翻译 - 说了是村长
+  泛型参数和参数 - Swift 3.0 自翻译 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -243,72 +243,125 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>泛型参数和参数</h1>
+
+<p>本章介绍了泛型类型，函数和初始化参数和参数。当你声明一个泛型类型，函数或初始化，您可以指定类型参数的泛型类型，函数或初始化程序可以工作。这些类型参数作为由实际的具体类型参数替换创建了一个泛型类型的实例或一个泛型函数或初始化程序被调用时占位符。</p>
+
+<p>对于仿制药的斯威夫特概述，请参见泛型。</p>
+
+<p>泛型参数条款</p>
+
+<p>一个泛型参数子句指定泛型类型或函数的类型参数，对这些参数的任何相关的约束和要求一起。泛型参数子句中的尖括号（&lt;&gt;），并具有以下形式：</p>
+
+<p>&lt; 通用参数表 &gt;<br/>
+在通用的参数列表是一个逗号分隔的泛型参数，各自有以下形式的列表：</p>
+
+<p>类型参数：约束<br/>
+泛型参数由一个的类型参数后跟一个可选的约束。一个类型参数仅仅是一个占位符类型的名称（例如T，U，V，Key，Value，等）。你必须在类型，函数或初始化声明的其余部分访问类型参数（及任何与其相关的类型），包括在功能或初始化的签名。</p>
+
+<p>该约束指定类型参数从一个特定的类继承或符合协议或协议组成。例如，在下面的通用功能，泛型参数T: Comparable表示的类型参数取代任何类型的参数T必须符合Comparable协议。</p>
+
+<p>func simpleMax<T: Comparable>(_ x: T, _ y: T) -&gt; T {<br/>
+    if x &lt; y {<br/>
+        return y<br/>
+    }<br/>
+    return x<br/>
+}<br/>
+因为Int与Double，例如，既符合Comparable协议，该函数接受任一类型的参数。在泛型类型相反，当你使用一个通用的函数或初始化你不指定一个通用的说法条款。该类型的参数，而不是从传递给函数或初始化参数的类型推断。</p>
+
+<p>simpleMax(17, 42) // T is inferred to be Int<br/>
+simpleMax(3.14159, 2.71828) // T is inferred to be Double<br/>
+通用WHERE子句</p>
+
+<p>您可以通过包括通用指定的类型参数及其相关类型的其他要求where一类或函数体的大括号之前条款的权利。一个普通的where条款包含的where关键字，后跟一个逗号分隔的一个或多个列表的要求。</p>
+
+<p>其中， 要求<br/>
+该要求在通用where条款指定类型参数从类继承或符合协议或协议组成。虽然通用where条款为对类型参数的简单的约束提供了语法糖（例如，<T: Comparable>相当于<T> where T: Comparable等等），你可以用它来 ​​提供类型参数及其相关类型更为复杂的约束。例如，您可以约束相关类型的类型参数符合协议。例如，<S: Sequence> where S.Iterator.Element: Equatable指定S符合Sequence协议和相关类型S.Iterator.Element符合Equatable协议。这个约束确保了序列中的每个元素是equatable。</p>
+
+<p>你还可以指定两种类型是相同的要求，使用==运算符。例如，<S1: Sequence, S2: Sequence> where S1.Iterator.Element == S2.Iterator.Element表示了约束S1和S2符合Sequence协议并且这两个序列的元素必须是同一类型的。</p>
+
+<p>对于类型参数取代任何类型的参数必须符合置于类型参数的所有限制和要求。</p>
+
+<p>您可以通过类型参数提供不同的约束条件，要求，或两者重载一个泛型函数或初始化程序。当你调用一个重载的泛型函数或初始化程序，编译器使用这些约束来解决这些重载函数或初始化程序来调用。</p>
+
+<p>有关通用的更多信息，where条款和看到一个泛型函数声明的一个例子，看看通用where子句。</p>
+
+<p>一个泛型参数条款的语法</p>
+
+<p>通用参数子句 → 通用参数列表 ­&lt;­&gt;­<br/>
+通用参数列表 → 通用参数通用参数通用参数列表 ­  ,­<br/>
+通用参数 → 类型名 ­<br/>
+通用参数 → 类型名称类型标识符 ­:­<br/>
+通用参数 → 类型名称协议组成型 ­:­<br/>
+仿制WHERE子句 → 需求列表 ­where­<br/>
+需求列表 → 需求需求 需求列表 ­  ,­<br/>
+需求 → 一致性，要求同型需求 ­<br/><br/>
+波及需求 → 类型标识符类型标识符 ­:­<br/>
+波及需求 → 类型标识符协议的组成型 ­:­<br/>
+同型需求 → 类型标识符类型==­<br/>
+一般的参数条款</p>
+
+<p>一个一般的参数子句指定泛型类型的类型参数。一个通用的说法子句在尖括号（&lt;&gt;），并具有以下形式：</p>
+
+<p>&lt; 通用参数列表 &gt;<br/>
+在通用的参数列表是一个逗号分隔的类型参数列表。一个类型参数是一个实际的具体类型替换泛型类型的泛型参数子句中相应类型参数的名称。其结果是，一般类型的一个专门的版本。下面的例子显示了雨燕标准库的通用字典类型的简化版本。</p>
+
+<p>struct Dictionary<Key: Hashable, Value>: Collection, ExpressibleByDictionaryLiteral {<br/>
+    /* ... */<br/>
+}<br/>
+通用的专门版本Dictionary类型，Dictionary<String, Int>是通过更换通用参数形成Key: Hashable并Value与混凝土类型参数String和Int。每种类型的参数必须满足它取代了泛型参数的所有限制，包括在通用规定的任何附加要求where条款。在上面的例子中，Key类型参数被约束为符合Hashable协议，因此String也必须符合Hashable协议。</p>
+
+<p>你也可以更换一个类型参数本身就是一个泛型类型的专用版本（只要它满足相应的约束和要求）类型参数。例如，您可以替换类型参数Element在Array<Element>同一个阵列的专用版本，Array<Int>以形成一个数组的元素本身是整数数组。</p>
+
+<p>let arrayOfArrays: Array<Array<Int>&gt; = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]<br/>
+正如提到的泛型参数条款，您不使用一个通用的参数子句指定一个泛型函数或初始化程序的类型参数。</p>
+
+<p>一般的说法条款的语法</p>
+
+<p>通用参数的子句 → 通用参数列表 ­&lt;­&gt;­<br/>
+通用参数列表 → 通用参数的泛型参数的泛型参数列表 ­  ,­<br/>
+仿制参数 → 型 ­</p>
 
 
-	
-		<div class="markdown-body">
-		<h1>关于语言参考</h1>
+</div>
 
-		<p>这本书的部分描述了斯威夫特编程语言的形式语法。这里所描述的语法是为了帮助您了解更详细的语言，而不是让你直接实现解析器或编译器。</p>
+<br /><br />
+<hr />
 
-<p>雨燕的语言是比较小的，因为很多常见的类型，函数和几乎无处不出现在雨燕代码运营商都在斯威夫特标准库实际上定义。尽管这些类型，函数和运营商不斯威夫特语言本身的一部分，他们在本书的这一部分的讨论和代码示例广泛使用。</p>
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743602627751.html"  title="Previous Post: 模式">&laquo; 模式</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743602864403.html" 
+	        title="Next Post: 语法摘要">语法摘要 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
-<p>如何阅读语法</p>
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
-<p>用来形容斯威夫特编程语言的形式语法的符号如下几个约定：</p>
-
-<p>一个箭头（→）用于标记语法制作和可以理解为“可以由”。<br/>
-句法类别以表示斜体文字出现在文法产生式规则的两侧。<br/>
-文字和标点用黑体字显示constant width的文字和只出现在语法产生式规则的右手边。<br/>
-（|）替代语法产生由竖线分隔。当替代产品有太长轻松地阅读，他们被分成上新生产线的多个语法产生式规则。<br/>
-在少数情况下，普通字体的文本用于描述一个文法产生式规则的右手边。<br/>
-可选的语法范畴和文字是由一个尾部标标注，选择。<br/>
-作为一个例子，一个消气部件设置器块的语法定义如下：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择二传手子句消气条款 ­ {­}­  {­}­<br/>
-这个定义表明，一个getter，setter方法块可以由一个getter条款跟着一个可选的二传手条款，括在大括号，中或一个setter条款后跟一个getter条款，括在大括号。上面的文法产生等效于以下两个产生，其中所述替代明确阐明：</p>
-
-<p>一个GETTER，SETTER方法​​块语法</p>
-
-<p>吸气制定者块 → 消气条款二传手子句选择{­}­<br/>
-吸气制定者块 → 二传手子句消气条款 ­{­}­</p>
-
-
-		</div>
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743602774984.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 

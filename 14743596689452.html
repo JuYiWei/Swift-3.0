@@ -1,0 +1,740 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  字符串和字符 - Swift 3.0 自翻译 - 说了是村长
+  
+  </title>
+ <meta name="description" content="说了是村长，Swift 3.0 中文版">
+ <link href="atom.xml" rel="alternate" title="Swift 3.0 自翻译 - 说了是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">Swift 3.0 自翻译 - 说了是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Swift 3.0 自翻译 - 说了是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>欢迎加入 Swift</label></li>
+
+          
+            <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+          
+            <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>开发指南</label></li>
+
+          
+            <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+          
+            <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+          
+            <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+          
+            <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+          
+            <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+          
+            <li><a title="功能" href="14743597582027.html">功能</a></li>
+          
+            <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+          
+            <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+          
+            <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+          
+            <li><a title="属性" href="14743598294467.html">属性</a></li>
+          
+            <li><a title="方法" href="14743598422216.html">方法</a></li>
+          
+            <li><a title="下标" href="14743598556978.html">下标</a></li>
+          
+            <li><a title="继承" href="14743598699234.html">继承</a></li>
+          
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+          
+            <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+          
+            <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+          
+            <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+          
+            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+          
+            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+          
+            <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+          
+            <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+          
+            <li><a title="协议" href="14743600314526.html">协议</a></li>
+          
+            <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+          
+            <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+          
+            <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>语法参考</label></li>
+
+          
+            <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+          
+            <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+          
+            <li><a title="类型" href="14743601607750.html">类型</a></li>
+          
+            <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+          
+            <li><a title="声明" href="14743601868497.html">声明</a></li>
+          
+            <li><a title="声明" href="14743602139425.html">声明</a></li>
+          
+            <li><a title="属性" href="14743602336703.html">属性</a></li>
+          
+            <li><a title="模式" href="14743602627751.html">模式</a></li>
+          
+            <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+          
+            <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>欢迎加入 Swift</span></li>
+                        
+                          <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+                        
+                          <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>开发指南</span></li>
+                        
+                          <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+                        
+                          <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+                        
+                          <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+                        
+                          <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+                        
+                          <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+                        
+                          <li><a title="功能" href="14743597582027.html">功能</a></li>
+                        
+                          <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+                        
+                          <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+                        
+                          <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+                        
+                          <li><a title="属性" href="14743598294467.html">属性</a></li>
+                        
+                          <li><a title="方法" href="14743598422216.html">方法</a></li>
+                        
+                          <li><a title="下标" href="14743598556978.html">下标</a></li>
+                        
+                          <li><a title="继承" href="14743598699234.html">继承</a></li>
+                        
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+                        
+                          <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+                        
+                          <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+                        
+                          <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+                        
+                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                        
+                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                        
+                          <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+                        
+                          <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+                        
+                          <li><a title="协议" href="14743600314526.html">协议</a></li>
+                        
+                          <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+                        
+                          <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+                        
+                          <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>语法参考</span></li>
+                        
+                          <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+                        
+                          <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+                        
+                          <li><a title="类型" href="14743601607750.html">类型</a></li>
+                        
+                          <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+                        
+                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                        
+                          <li><a title="声明" href="14743602139425.html">声明</a></li>
+                        
+                          <li><a title="属性" href="14743602336703.html">属性</a></li>
+                        
+                          <li><a title="模式" href="14743602627751.html">模式</a></li>
+                        
+                          <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+                        
+                          <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>字符串和字符</h1>
+
+<p>一个字符串是一系列字符，如<q>hello, world</q>或<q>albatross</q>。迅速字符串由代表String类型。的内容String可以用各种方式进行访问，包括作为集合Character的值。</p>
+
+<p>斯威夫特String和Character类型提供了一个快速，Unicode的兼容的方式，在你的代码的文字工作。字符串创建和操作的语法是轻量级和可读性，用于字符串的语法类似于C.字符串连接是两个字符串组合一样简单+运算符，字符串可变性是由一个常量或变量之间进行选择管理，就像在夫特任何其他值。您还可以使用字符串插入常量，变量，常量和表达式为长字符串，称为字符串插值法。这便于创建显示，存储和打印自定义字符串值。</p>
+
+<p>尽管这种简单的语法，斯威夫特的String类型是一个快速，现代化的字符串实现。每串是由编码独立的Unicode字符，并提供了各种Unicode表示访问这些字符的支持。</p>
+
+<p>注意</p>
+
+<p>斯威夫特的String类型与桥基金会的NSString类。基金会还延伸String到揭露定义的方法NSString。这意味着，如果导入基金会，您可以访问那些NSString在方法String无需进行转换。</p>
+
+<p>有关使用的详细信息String与基金会和可可，看到与可可数据类型的工作中使用SWIFT与可可和Objective-C（SWIFT 3） 。</p>
+
+<p>字符串字面</p>
+
+<p>您可以包括预定义的String代码作为中值的字符串。字符串文字是一对双引号包围的文本字符固定的顺序（&quot;&quot;）。</p>
+
+<p>使用一个字符串作为一个常数或变量的初始值：</p>
+
+<p>let someString = <q>Some string literal value</q><br/>
+需要注意的是斯威夫特推断的类型String为someString常数，因为它是与一个字符串值初始化。</p>
+
+<p>注意</p>
+
+<p>有关使用字符串文本中的特殊字符的信息，请参阅在字符串中的特殊字符。</p>
+
+<p>初始化一个空字符串</p>
+
+<p>要创建一个空的String价值为出发点，为建设一个更长的字符串，一个空字符串赋值给一个变量，或初始化一个新的String与初始化语法实例：</p>
+
+<p>var emptyString = &quot;&quot;               // empty string literal<br/>
+var anotherEmptyString = String()  // initializer syntax<br/>
+// these two strings are both empty, and are equivalent to each other<br/>
+找出是否String通过检查它的布尔值是空的isEmpty属性：</p>
+
+<p>if emptyString.isEmpty {<br/>
+    print(<q>Nothing to see here</q>)<br/>
+}<br/>
+// Prints <q>Nothing to see here</q><br/>
+字符串可变性</p>
+
+<p>你指示是否一个特定的String可以被修改（或突变）通过将其分配给一个变量（在这种情况下，它可以被修改），或者以恒定的（在这种情况下，它不能被修改）：</p>
+
+<p>var variableString = <q>Horse</q><br/>
+variableString += <q>and carriage</q><br/>
+// variableString is now <q>Horse and carriage</q></p>
+
+<p>let constantString = <q>Highlander</q><br/>
+constantString += <q>and another Highlander</q><br/>
+// this reports a compile-time error - a constant string cannot be modified<br/>
+注意</p>
+
+<p>这种方法是在Objective-C和可可，在那里你两个类之间（字符串选择不同的突变NSString和NSMutableString）来表示字符串是否可以突变。</p>
+
+<p>字符串是值类型</p>
+
+<p>斯威夫特的String类型是值类型。如果创建一个新的String值，即String值被复制时，它被传递给函数或方法，或当它被分配给一个常数或变量。在每一种情况下，现有的新副本String被创建的值，和新的副本被传递或分配，而不是原来的版本。在描述值类型结构和枚举是值类型。</p>
+
+<p>斯威夫特的拷贝由默认String行为可确保当一个函数或方法传递你String的价值，很显然，你自己的确切String价值，不管它来自何处。你可以相信，除非你自己修改你传递的字符串不会被修改。</p>
+
+<p>在幕后，斯威夫特的编译器优化字符串使用情况，以便实际进行复制操作只有在绝对必要。这意味着你用字符串作为值类型时始终获得出色的表现。</p>
+
+<p>使用字符工作</p>
+
+<p>您可以访问个人Character的价值观String通过遍历其characters与属性for- in循环：</p>
+
+<p>for character in <q>Dog!🐶</q>.characters {<br/>
+    print(character)<br/>
+}<br/>
+// D<br/>
+// o<br/>
+// g<br/>
+// !<br/>
+// 🐶<br/>
+本for- in环中描述为，在循环中。</p>
+
+<p>或者，你可以创建一个单独Character提供了一个从单一字符串常量或变量Character类型的注释：</p>
+
+<p>let exclamationMark: Character = <q>!</q><br/>
+String值可以通过传递数组构造Character值作为参数传递给它的初始化：</p>
+
+<p>let catCharacters: [Character] = [<q>C</q>, <q>a</q>, <q>t</q>, <q>!</q>, <q>🐱</q>]<br/>
+let catString = String(catCharacters)<br/>
+print(catString)<br/>
+// Prints <q>Cat!🐱</q><br/>
+连接字符串和字符</p>
+
+<p>String值可以一起加入（或串联与加法运算符（） +）来创建一个新的String值：</p>
+
+<p>let string1 = <q>hello</q><br/>
+let string2 = <q>there</q><br/>
+var welcome = string1 + string2<br/>
+// welcome now equals <q>hello there</q><br/>
+您还可以将附加String价值的现有String的加法赋值运算符（变量+=）：</p>
+
+<p>var instruction = <q>look over</q><br/>
+instruction += string2<br/>
+// instruction now equals <q>look over there</q><br/>
+您可以将附加Character价值的一个String与变量String类型的append()方法：</p>
+
+<p>let exclamationMark: Character = <q>!</q><br/>
+welcome.append(exclamationMark)<br/>
+// welcome now equals <q>hello there!</q><br/>
+注意</p>
+
+<p>你可以不追加String或Character到现有的Character变量，因为一个Character值必须只包含一个字符。</p>
+
+<p>字符串插值</p>
+
+<p>路线插值是构造一个新的方式String通过包括字符串文字内的价值观来自常量，变量，文本和表达式的组合值。你插入字符串被包裹在一对括号，用反斜杠前缀每个项目：</p>
+
+<p>let multiplier = 3<br/>
+let message = <q>(multiplier) times 2.5 is (Double(multiplier) * 2.5)</q><br/>
+// message is <q>3 times 2.5 is 7.5</q><br/>
+在上面的例子中，值multiplier被插入到一个字符串作为(multiplier)。此占位符被替换的实际值multiplier时，该字符串插值进行评估，以创建一个实际的字符串。</p>
+
+<p>的值multiplier也是以后的串在一个更大的表达式的一部分。此表达式计算的值Double(multiplier) * 2.5，并插入的结果（7.5）插入字符串。在这种情况下，表达被写为(Double(multiplier) * 2.5)当它被包含在字符串内。</p>
+
+<p>注意</p>
+
+<p>表达你写的插补字符串中的括号内不能包含在反斜杠（\），回车或换行。然而，它们可以包含其他字符串。</p>
+
+<p>Unicode的</p>
+
+<p>Unicode的是用于编码，代表，和处理文本在不同的书写系统的国际标准。它使您能够在一个标准化的形式任何语言表示几乎任何字符，读取和写入这些字符并从外部源，如文本文件或网页。斯威夫特String和Character类型是完全支持Unicode兼容，如本节所述。</p>
+
+<p>Unicode的标量</p>
+
+<p>在幕后，斯威夫特的原生String类型是从内置Unicode标值。一个Unicode标为字符或改性剂，例如唯一的21位的数U+0061为LATIN SMALL LETTER A（<q>a</q>），或U+1F425为FRONT-FACING BABY CHICK（<q>🐥</q>）。</p>
+
+<p>注意</p>
+
+<p>一个Unicode标是任何Unicode 代码点范围内U+0000，以U+D7FF包容性的或U+E000以U+10FFFF包容性。Unicode的标量不包括Unicode 代理对代码点，这是该范围内的代码点U+D800，以U+DFFF包容性。</p>
+
+<p>注意，并非所有21位Unicode标量被分配给一个字符一些标量被保留用于未来的分配。已分配给一个字符标量通常还具有一个名字，如LATIN SMALL LETTER A与FRONT-FACING BABY CHICK在上面的实施例。</p>
+
+<p>在字符串中的特殊字符</p>
+
+<p>字符串文字可以包含以下特殊字符：</p>
+
+<p>转义特殊字符\0（空字符）， \（反斜杠）， \t（水平制表）， \n（换行）， \r（回车）， &quot;（双引号）和\&#39;（单引号）<br/>
+任意Unicode标，写成Ñ，其中Ñ是用一个值等于一个有效的Unicode代码点的1-8位十六进制数 \u{}<br/>
+下面的代码显示了这些特殊字符的四个例子。该wiseWords常量包含两个转义双引号字符。的dollarSign，blackHeart和sparklingHeart常量展示Unicode标格式：</p>
+
+<p>let wiseWords = <q>&quot;Imagination is more important than knowledge&quot; - Einstein</q><br/>
+// <q>Imagination is more important than knowledge</q> - Einstein<br/>
+let dollarSign = <q>\u{24}</q>        // $,  Unicode scalar U+0024<br/>
+let blackHeart = <q>\u{2665}</q>      // ♥,  Unicode scalar U+2665<br/>
+let sparklingHeart = <q>\u{1F496}</q> // 💖, Unicode scalar U+1F496<br/>
+扩展字形集群</p>
+
+<p>斯威夫特的每个实例Character类型代表一个扩展字形集群。扩展字形群集是（结合时）产生单一的可读字符的一个或多个的Unicode标量的序列。</p>
+
+<p>下面是一个例子。信é可以被表示为单一的Unicode标é（LATIN SMALL LETTER E WITH ACUTE或U+00E9）。然而，同样的信也可以被表示为一对标量-一个标准信e（LATIN SMALL LETTER E或U+0065），接着是COMBINING ACUTE ACCENT标量（U+0301）。所述COMBINING ACUTE ACCENT标量以图形施加到它前面，把一个标量e成é时，它是由一个Unicode的文本呈现系统呈现。</p>
+
+<p>在这两种情况下，信é被表示为单个夫特Character表示一个扩展字形簇的值。在第一种情况下，该群集包含单个标; 在第二种情况下，它是两个标量的簇：</p>
+
+<p>let eAcute: Character = <q>\u{E9}</q>                         // é<br/>
+let combinedEAcute: Character = <q>\u{65}\u{301}</q>          // e followed by ́<br/>
+// eAcute is é, combinedEAcute is é<br/>
+扩展字形集群是代表许多复杂的脚本字符作为一个单一的一种灵活的方式Character值。例如，从朝鲜字母韩文音节可以表示为任一预组合或分解序列。这两种表述有资格作为一个单一的Character斯威夫特值：</p>
+
+<p>let precomposed: Character = <q>\u{D55C}</q>                  // 한<br/>
+let decomposed: Character = <q>\u{1112}\u{1161}\u{11AB}</q>   // ᄒ, ᅡ, ᆫ<br/>
+// precomposed is 한, decomposed is 한<br/>
+扩展字形集群使标量封闭标记（如COMBINING ENCLOSING CIRCLE，或U+20DD）包括其它的Unicode标量作为一个单一的一部分Character价值：</p>
+
+<p>let enclosedEAcute: Character = <q>\u{E9}\u{20DD}</q><br/>
+// enclosedEAcute is é⃝<br/>
+区域指示器符号的Unicode标量可以成对使一个单一的组合Character值，如该组合REGIONAL INDICATOR SYMBOL LETTER U（U+1F1FA）和REGIONAL INDICATOR SYMBOL LETTER S（U+1F1F8）：</p>
+
+<p>let regionalIndicatorForUS: Character = <q>\u{1F1FA}\u{1F1F8}</q><br/>
+// regionalIndicatorForUS is 🇺🇸<br/>
+字符计数</p>
+
+<p>要检索的数量Character在一个字符串值，可以使用count字符串的财产characters属性：</p>
+
+<p>let unusualMenagerie = <q>Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪</q><br/>
+print(<q>unusualMenagerie has (unusualMenagerie.characters.count) characters</q>)<br/>
+// Prints <q>unusualMenagerie has 40 characters</q><br/>
+需要注意的是斯威夫特的使用扩展字形集群的Character价值观意味着字符串连接和修改可能并不总是影响一个字符串的字符数。</p>
+
+<p>例如，如果你初始化与四字词一个新的字符串cafe，然后追加一个COMBINING ACUTE ACCENT（U+0301）的字符串的结尾，得到的字符串仍然有一个字符数4，与第四个字符é，而不是e：</p>
+
+<p>var word = <q>cafe</q><br/>
+print(<q>the number of characters in (word) is (word.characters.count)</q>)<br/>
+// Prints <q>the number of characters in cafe is 4</q></p>
+
+<p>word += <q>\u{301}</q>    // COMBINING ACUTE ACCENT, U+0301</p>
+
+<p>print(<q>the number of characters in (word) is (word.characters.count)</q>)<br/>
+// Prints <q>the number of characters in café is 4</q><br/>
+注意</p>
+
+<p>扩展字形集群可以由一个或多个Unicode标量。这意味着，不同的字符，和相同的不同的表示字符可能需要不同量的存储器来存储。正因为如此，在斯威夫特人物并非每个人都占用一个字符串的表示中相同的内存量。其结果是，如果不通过串进行迭代，以确定它的延伸字形群集边界来计算字符的字符串的数目。如果您正在使用特别长的字符串值的工作，要知道，characters属性必须遍历整个字符串中的Unicode标量，以确定该字符串中的字符。</p>
+
+<p>由返回的字符的计数characters属性并不总是一样length的特性NSString，其中包含相同的字符。的长度NSString是基于16位编码单元的串的UTF-16表示内的数目和不是Unicode的数量扩展的字符串内字形簇。</p>
+
+<p>访问和修改字符串</p>
+
+<p>访问和修改的字符串通过其方法和属性，或通过使用下标语法。</p>
+
+<p>字符串索引</p>
+
+<p>每个String值具有相关联的索引类型，String.Index，其对应于每一个的位置Character的的字符串中。</p>
+
+<p>如上所述，不同的人物可以要求不同量的存储器来存储，所以为了以确定哪些Character是在特定的位置，则必须遍历从该开始或结束各Unicode标String。出于这个原因，夫特字符串不能被整数值索引。</p>
+
+<p>使用startIndex属性来访问第一的位置Character的String。该endIndex物业是在最后一个字符后的位置String。其结果是，该endIndex属性不是一个字符串的下标有效的参数。如果String是空的，startIndex和endIndex是相等的。</p>
+
+<p>您使用的索引之前和之后给定的索引访问index(before:)和index(after:)方法String。要访问远离指定索引的索引，您可以使用index(_:offsetBy:)，而不是调用这些方法多次的方法。</p>
+
+<p>您可以使用标语法来访问Character在一个特定的String索引。</p>
+
+<p>let greeting = <q>Guten Tag!</q><br/>
+greeting[greeting.startIndex]<br/>
+// G<br/>
+greeting[greeting.index(before: greeting.endIndex)]<br/>
+// !<br/>
+greeting[greeting.index(after: greeting.startIndex)]<br/>
+// u<br/>
+let index = greeting.index(greeting.startIndex, offsetBy: 7)<br/>
+greeting[index]<br/>
+// a<br/>
+试图将一个字符串的范围或外部访问索引Character的索引之外的字符串的范围将触发一个运行时错误。</p>
+
+<p>greeting[greeting.endIndex] // error<br/>
+greeting.index(after: endIndex) // error<br/>
+使用indices的财产characters属性来访问字符串中的所有单个字符的指标。</p>
+
+<p>for index in greeting.characters.indices {<br/>
+    print(<q>(greeting[index])</q>, terminator: &quot;<q>)<br/>
+}<br/>
+// Prints</q>G u t e n   T a g ! &quot;<br/>
+注意</p>
+
+<p>您可以使用startIndex与endIndex属性和index(before:)，index(after:)和index(_:offsetBy:)上符合任何类型的方法Collection的协议。这包括String，如这里所示，以及集合类型如Array，Dictionary，和Set。</p>
+
+<p>插入和取出</p>
+
+<p>要在指定索引处插入一个字符转换为字符串，使用insert(_:at:)方法，以及指定索引处插入另一个字符串的内容，使用insert(contentsOf:at:)方法。</p>
+
+<p>var welcome = <q>hello</q><br/>
+welcome.insert(<q>!</q>, at: welcome.endIndex)<br/>
+// welcome now equals <q>hello!</q></p>
+
+<p>welcome.insert(contentsOf:<q>there</q>.characters, at: welcome.index(before: welcome.endIndex))<br/>
+// welcome now equals <q>hello there!</q><br/>
+要在指定索引处移除一个字符串的单个字符，使用remove(at:)方法，并在指定范围内删除子串，使用removeSubrange(_:)方法：</p>
+
+<p>welcome.remove(at: welcome.index(before: welcome.endIndex))<br/>
+// welcome now equals <q>hello there</q></p>
+
+<p>let range = welcome.index(welcome.endIndex, offsetBy: -6)..&lt;welcome.endIndex<br/>
+welcome.removeSubrange(range)<br/>
+// welcome now equals <q>hello</q><br/>
+注意</p>
+
+<p>您可以使用的insert(<u>:at:)，insert(contentsOf:at:)，remove(at:)，和removeSubrange(</u>:)方法上符合任何类型的RangeReplaceableCollection协议。这包括String，如这里所示，以及集合类型如Array，Dictionary，和Set。</p>
+
+<p>比较字符串</p>
+
+<p>雨燕提供了三种方式来比较文本值：字符串和字符平等，平等的前缀和后缀的平等。</p>
+
+<p>字符串和字符平等</p>
+
+<p>字符串和字符的平等与“等于”运算符（检查==）和“不等于”运算符（!=），如描述的比较操作：</p>
+
+<p>let quotation = <q>We&#39;re a lot alike, you and I.</q><br/>
+let sameQuotation = <q>We&#39;re a lot alike, you and I.</q><br/>
+if quotation == sameQuotation {<br/>
+    print(<q>These two strings are considered equal</q>)<br/>
+}<br/>
+// Prints <q>These two strings are considered equal</q><br/>
+两个String值（或两个Character，如果他们的扩展字形集群是值）被视为相等规范等价。如果它们具有相同的语言意义和外观，即使被从幕后不同的Unicode标量组成扩展字形群集规范等价。</p>
+
+<p>例如，LATIN SMALL LETTER E WITH ACUTE（U+00E9）是规范等价于LATIN SMALL LETTER E（U+0065），随后加入COMBINING ACUTE ACCENT（U+0301）。这两个扩展字形簇是有效的方法来表示的字符é，因此它们被认为是规范等价：</p>
+
+<p>// <q>Voulez-vous un café?</q> using LATIN SMALL LETTER E WITH ACUTE<br/>
+let eAcuteQuestion = <q>Voulez-vous un caf\u{E9}?</q></p>
+
+<p>// <q>Voulez-vous un café?</q> using LATIN SMALL LETTER E and COMBINING ACUTE ACCENT<br/>
+let combinedEAcuteQuestion = <q>Voulez-vous un caf\u{65}\u{301}?</q></p>
+
+<p>if eAcuteQuestion == combinedEAcuteQuestion {<br/>
+    print(<q>These two strings are considered equal</q>)<br/>
+}<br/>
+// Prints <q>These two strings are considered equal</q><br/>
+相反地，LATIN CAPITAL LETTER A（U+0041或<q>A</q>），如在英国使用的，是不等同于CYRILLIC CAPITAL LETTER A（U+0410或<q>А</q>），如在俄罗斯使用。字符看上去很相似，但不具有相同的语言意义：</p>
+
+<p>let latinCapitalLetterA: Character = <q>\u{41}</q></p>
+
+<p>let cyrillicCapitalLetterA: Character = <q>\u{0410}</q></p>
+
+<p>if latinCapitalLetterA != cyrillicCapitalLetterA {<br/>
+    print(<q>These two characters are not equivalent.</q>)<br/>
+}<br/>
+// Prints <q>These two characters are not equivalent.</q><br/>
+注意</p>
+
+<p>在斯威夫特字符串，字符比较不区分语言环境。</p>
+
+<p>前缀和后缀平等</p>
+
+<p>要检查一个字符串是否具有特定字符串前缀或后缀，请拨打字符串的hasPrefix(<u>:)和hasSuffix(</u>:)方法，这两种类型采取的一个参数String，并返回一个布尔值。</p>
+
+<p>下面的例子考虑代表来自莎士比亚的第一个两幕场景位置字符串数组罗密欧与朱丽叶：</p>
+
+<p>let romeoAndJuliet = [<br/>
+    <q>Act 1 Scene 1: Verona, A public place</q>,<br/>
+    <q>Act 1 Scene 2: Capulet&#39;s mansion</q>,<br/>
+    <q>Act 1 Scene 3: A room in Capulet&#39;s mansion</q>,<br/>
+    <q>Act 1 Scene 4: A street outside Capulet&#39;s mansion</q>,<br/>
+    <q>Act 1 Scene 5: The Great Hall in Capulet&#39;s mansion</q>,<br/>
+    <q>Act 2 Scene 1: Outside Capulet&#39;s mansion</q>,<br/>
+    <q>Act 2 Scene 2: Capulet&#39;s orchard</q>,<br/>
+    <q>Act 2 Scene 3: Outside Friar Lawrence&#39;s cell</q>,<br/>
+    <q>Act 2 Scene 4: A street in Verona</q>,<br/>
+    <q>Act 2 Scene 5: Capulet&#39;s mansion</q>,<br/>
+    <q>Act 2 Scene 6: Friar Lawrence&#39;s cell</q><br/>
+]<br/>
+您可以使用hasPrefix(_:)方法与romeoAndJuliet数组数在剧中1法案的场景数量：</p>
+
+<p>var act1SceneCount = 0<br/>
+for scene in romeoAndJuliet {<br/>
+    if scene.hasPrefix(<q>Act 1</q>) {<br/>
+        act1SceneCount += 1<br/>
+    }<br/>
+}<br/>
+print(<q>There are (act1SceneCount) scenes in Act 1</q>)<br/>
+// Prints <q>There are 5 scenes in Act 1</q><br/>
+同样，使用hasSuffix(_:)方法计算所发生的或周围凯普莱特的豪宅和弗莱尔劳伦斯的细胞场景的数量：</p>
+
+<p>var mansionCount = 0<br/>
+var cellCount = 0<br/>
+for scene in romeoAndJuliet {<br/>
+    if scene.hasSuffix(<q>Capulet&#39;s mansion</q>) {<br/>
+        mansionCount += 1<br/>
+    } else if scene.hasSuffix(<q>Friar Lawrence&#39;s cell</q>) {<br/>
+        cellCount += 1<br/>
+    }<br/>
+}<br/>
+print(<q>(mansionCount) mansion scenes; (cellCount) cell scenes</q>)<br/>
+// Prints <q>6 mansion scenes; 2 cell scenes</q><br/>
+注意</p>
+
+<p>在hasPrefix(<u>:)和hasSuffix(</u>:)每个字符串的方法执行扩展字形集群之间的字符逐个字符规范等价的比较，如描述字符串和字符平等。</p>
+
+<p>字符串的Unicode交涉</p>
+
+<p>当一个Unicode字符串被写入一个文本文件或其他存储在该字符串中的Unicode标量进行编码，几个Unicode的定义的一个编码形式。每种形式编码在素有小块串代码单元。这些包括UTF-8编码的形式（其编码串为8位码单位），则UTF-16编码形式（其编码串为16位代码单位）和UTF-32的编码形式（其编码串为32位代码单位）。</p>
+
+<p>迅速提供了几种不同的方式来访问字符串的Unicode表示。你可以遍历一个字符串for- in声明，访问其个人Character为Unicode扩展字形集群值。这个过程是在描述与性状工作。</p>
+
+<p>另外，访问String在其他三个兼容Unicode的表示一个值：</p>
+
+<p>的UTF-8编码单元的集合（以字符串的访问utf8属性）<br/>
+的UTF-16编码单元的集合（以字符串的访问utf16属性）<br/>
+21位Unicode标值的集合，相当于字符串的UTF-32编码格式（以字符串的访问unicodeScalars属性）<br/>
+下面各实施例示出了以下的字符串，它是由所述字符的达的一个不同的表示D，o，g，‼（DOUBLE EXCLAMATION MARK或Unicode标U+203C），以及🐶字符（DOG FACE或Unicode标U+1F436）：</p>
+
+<p>let dogString = <q>Dog‼🐶</q><br/>
+UTF-8表示</p>
+
+<p>您可以访问的一个UTF-8表示String通过遍历其utf8属性。此属性是类型String.UTF8View，也就是8位无符号（集合UInt8）值，一个用于字符串的UTF-8表示每个字节：</p>
+
+<p>图片：../Art/UTF8_2x.png<br/>
+for codeUnit in dogString.utf8 {<br/>
+    print(<q>(codeUnit)</q>, terminator: <q>)<br/>
+}<br/>
+print(</q>)<br/>
+// 68 111 103 226 128 188 240 159 144 182<br/>
+在上面的例子中，前三个十进制codeUnit值（68，111，103）所 ​​代表的字符D，o和g，其UTF-8表示的是相同的ASCII表示。接下来的三个十进制codeUnit值（226，128，188）是一个三字节的UTF-8表示DOUBLE EXCLAMATION MARK的字符。最后四个codeUnit值（240，159，144，182）是一个四字节UTF-8表示DOG FACE的字符。</p>
+
+<p>UTF-16表示</p>
+
+<p>您可以访问的一个UTF-16表示String通过遍历其utf16属性。此属性的类型的String.UTF16View，它是16位无符号（集合UInt16）值，一个在字符串的UTF-16表示每个16位编码单元：</p>
+
+<p>图片：../Art/UTF16_2x.png<br/>
+for codeUnit in dogString.utf16 {<br/>
+    print(<q>(codeUnit)</q>, terminator: <q>)<br/>
+}<br/>
+print(</q>)<br/>
+// Prints <q>68 111 103 8252 55357 56374</q><br/>
+同样，前三个codeUnit值（68，111，103）所 ​​表示的字符D，o以及g，其UTF-16代码单元的作为字符串的UTF-8表示相同的值（因为这些Unicode标量代表ASCII字符）。</p>
+
+<p>第四codeUnit值（8252）是十六进制值的十进位等值203C，它代表了Unicode标U+203C为DOUBLE EXCLAMATION MARK字符。该字符可被表示为UTF-16中的单一代码单元。</p>
+
+<p>第五和第六codeUnit的值（55357和56374）是一个UTF-16代理对代表性DOG FACE人物。这些数值的高代理值U+D83D（十进制值55357）和低代理值U+DC36（十进制值56374）。</p>
+
+<p>Unicode标表示</p>
+
+<p>您可以访问的Unicode标表示String通过遍历它的价值unicodeScalars属性。此属性的类型的UnicodeScalarView，这是类型的值的集合UnicodeScalar。</p>
+
+<p>每UnicodeScalar有一个value返回标量的21位值，内表示属性UInt32值：</p>
+
+<p>图片：../Art/UnicodeScalar_2x.png<br/>
+for scalar in dogString.unicodeScalars {<br/>
+    print(<q>(scalar.value)</q>, terminator: <q>)<br/>
+}<br/>
+print(</q>)<br/>
+// Prints <q>68 111 103 8252 128054</q><br/>
+在value前三属性UnicodeScalar值（68，111，103）再次表示字符D，o和g。</p>
+
+<p>第四codeUnit值（8252）再次是十六进制值的十进位等值203C，它代表了Unicode标U+203C为DOUBLE EXCLAMATION MARK字符。</p>
+
+<p>在value第五次也是最后的财产UnicodeScalar，128054是十六进制值的十进制等效1F436，它代表了Unicode标U+1F436为DOG FACE字符。</p>
+
+<p>作为替代查询他们的value属性，每一个UnicodeScalar值也可以被用来构造一个新String值，例如用串插补：</p>
+
+<p>for scalar in dogString.unicodeScalars {<br/>
+    print(<q>(scalar)</q>)<br/>
+}<br/>
+// D<br/>
+// o<br/>
+// g<br/>
+// ‼<br/>
+// 🐶</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743596434163.html"  title="Previous Post: 基础运营商">&laquo; 基础运营商</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743596859367.html" 
+	        title="Next Post: 集合类型">集合类型 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743596689452.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

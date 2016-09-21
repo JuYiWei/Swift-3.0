@@ -1,0 +1,780 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  自动引用计数 - Swift 3.0 自翻译 - 说了是村长
+  
+  </title>
+ <meta name="description" content="说了是村长，Swift 3.0 中文版">
+ <link href="atom.xml" rel="alternate" title="Swift 3.0 自翻译 - 说了是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">Swift 3.0 自翻译 - 说了是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Swift 3.0 自翻译 - 说了是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>欢迎加入 Swift</label></li>
+
+          
+            <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+          
+            <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>开发指南</label></li>
+
+          
+            <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+          
+            <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+          
+            <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+          
+            <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+          
+            <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+          
+            <li><a title="功能" href="14743597582027.html">功能</a></li>
+          
+            <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+          
+            <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+          
+            <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+          
+            <li><a title="属性" href="14743598294467.html">属性</a></li>
+          
+            <li><a title="方法" href="14743598422216.html">方法</a></li>
+          
+            <li><a title="下标" href="14743598556978.html">下标</a></li>
+          
+            <li><a title="继承" href="14743598699234.html">继承</a></li>
+          
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+          
+            <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+          
+            <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+          
+            <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+          
+            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+          
+            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+          
+            <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+          
+            <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+          
+            <li><a title="协议" href="14743600314526.html">协议</a></li>
+          
+            <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+          
+            <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+          
+            <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>语法参考</label></li>
+
+          
+            <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+          
+            <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+          
+            <li><a title="类型" href="14743601607750.html">类型</a></li>
+          
+            <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+          
+            <li><a title="声明" href="14743601868497.html">声明</a></li>
+          
+            <li><a title="声明" href="14743602139425.html">声明</a></li>
+          
+            <li><a title="属性" href="14743602336703.html">属性</a></li>
+          
+            <li><a title="模式" href="14743602627751.html">模式</a></li>
+          
+            <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+          
+            <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>欢迎加入 Swift</span></li>
+                        
+                          <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+                        
+                          <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>开发指南</span></li>
+                        
+                          <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+                        
+                          <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+                        
+                          <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+                        
+                          <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+                        
+                          <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+                        
+                          <li><a title="功能" href="14743597582027.html">功能</a></li>
+                        
+                          <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+                        
+                          <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+                        
+                          <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+                        
+                          <li><a title="属性" href="14743598294467.html">属性</a></li>
+                        
+                          <li><a title="方法" href="14743598422216.html">方法</a></li>
+                        
+                          <li><a title="下标" href="14743598556978.html">下标</a></li>
+                        
+                          <li><a title="继承" href="14743598699234.html">继承</a></li>
+                        
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+                        
+                          <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+                        
+                          <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+                        
+                          <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+                        
+                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                        
+                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                        
+                          <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+                        
+                          <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+                        
+                          <li><a title="协议" href="14743600314526.html">协议</a></li>
+                        
+                          <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+                        
+                          <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+                        
+                          <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>语法参考</span></li>
+                        
+                          <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+                        
+                          <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+                        
+                          <li><a title="类型" href="14743601607750.html">类型</a></li>
+                        
+                          <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+                        
+                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                        
+                          <li><a title="声明" href="14743602139425.html">声明</a></li>
+                        
+                          <li><a title="属性" href="14743602336703.html">属性</a></li>
+                        
+                          <li><a title="模式" href="14743602627751.html">模式</a></li>
+                        
+                          <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+                        
+                          <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>自动引用计数</h1>
+
+<p>雨燕采用自动引用计数（ARC）来跟踪和管理您的应用程序的内存使用情况。在大多数情况下，这意味着内存管理“只是工程”，在斯威夫特，你不需要考虑内存管理自己。ARC会自动将释放类实例使用时不再需要这些实例的内存。</p>
+
+<p>然而，在少数情况下ARC需要大约以便为您管理内存的代码的部分之间的关系的更多信息。本章介绍了这些情况，并说明如何启用ARC管理所有应用的内存。在斯威夫特使用ARC非常类似于描述的方法过渡到ARC发行说明使用ARC与Objective-C的。</p>
+
+<p>注意</p>
+
+<p>引用计数法只适用于类的实例。结构和枚举是值类型，而不是引用类型，而不是存储，并通过引用传递。</p>
+
+<p>如何ARC工作原理</p>
+
+<p>你创建一个类的新实例每次，ARC分配的内存块，以存储有关实例的信息。该存储器保存有关实例类型的信息，而与该实例关联的任何存储属性的值在一起。</p>
+
+<p>另外，当不再需要一个实例，ARC释放使用该实例以使存储器可用于其它目的，而不是存储器。这确保了类实例不占用内存空间不再需要的时候。</p>
+
+<p>但是，如果ARC是要释放，这是仍在使用的情况下，这将不再能够访问该实例的属性，或致电该实例的方法。事实上，如果你试图访问实例，您的应用程序很可能会崩溃。</p>
+
+<p>为了确保虽然仍然需要他们的实例不会消失，ARC追踪许多属性，常量和变量是如何目前指的是每一个类的实例。ARC不会只要至少一种活性参照该实例仍然存在释放的实例。</p>
+
+<p>要做到这一点，只要你指定一个类实例的属性，常量或变量，该属性，常量或变量使得强引用的实例。参考被称为“强”的参考，因为它使该实例上牢牢把握，并没有允许它被释放，只要是强引用保持。</p>
+
+<p>ARC在行动</p>
+
+<p>以下是如何自动引用计数的作品的一个例子。本示例启动了一个名为简单的类Person，它定义了存储不变的性质称为name：</p>
+
+<p>class Person {<br/>
+    let name: String<br/>
+    init(name: String) {<br/>
+        self.name = name<br/>
+        print(<q>(name) is being initialized</q>)<br/>
+    }<br/>
+    deinit {<br/>
+        print(<q>(name) is being deinitialized</q>)<br/>
+    }<br/>
+}<br/>
+本Person类有设置实例的一个初始name属性，并打印消息，指示初始化正在进行中。本Person类也有当类的实例被释放，它打印消息一deinitializer。</p>
+
+<p>下面的代码片段定义类型的三个变量Person?，它们用于多个引用设立一个新的Person在随后的代码片段实例。因为这些变量的可选类型的（Person?不Person），它们会自动与一个值进行初始化nil，并且当前不引用Person实例。</p>
+
+<p>var reference1: Person?<br/>
+var reference2: Person?<br/>
+var reference3: Person?<br/>
+现在，您可以创建一个新的Person实例，并将其分配给这三个变量之一：</p>
+
+<p>reference1 = Person(name: <q>John Appleseed</q>)<br/>
+// Prints <q>John Appleseed is being initialized</q><br/>
+请注意，消息<q>John Appleseed is being initialized</q>将在您调用点印刷Person类的初始化。这证实了初始化已经发生。</p>
+
+<p>因为新的Person实例已被分配给该reference1变量，现在从强引用reference1到新的Person实例。因为至少有一个很强的参考，ARC会确保这Person被保持在存储器中，而不是被释放。</p>
+
+<p>如果您分配相同的Person情况下，以两个变量，两个到该实例的强引用建立：</p>
+
+<p>reference2 = reference1<br/>
+reference3 = reference1<br/>
+现在有3到这个单一的强引用Person实例。</p>
+
+<p>如果您通过分配打破两个这样的强引用（包括原基准）的nil两个变量，一个很强的参考依然存在，且Person实例未释放：</p>
+
+<p>reference1 = nil<br/>
+reference2 = nil<br/>
+ARC不释放的Person，直到第三次也是最后很强的借鉴坏的实例，在这一点很明显，你不再使用的Person实例：</p>
+
+<p>reference3 = nil<br/>
+// Prints <q>John Appleseed is being deinitialized</q><br/>
+类实例之间的强周期参考</p>
+
+<p>在上面的例子中，ARC能够跟踪引用的数量到新Person创建的实例，并释放该Person实例时不再需要它。</p>
+
+<p>然而，这是可以编写代码，其中一个类的实例从未到达一个点，它具有零强引用。如果两个类实例持有的强引用对方，这样每个实例保持其他活着就会发生这种情况。这被称为一个强基准周期。</p>
+
+<p>您可以通过定义一些弱或无主的引用而不是作为强引用类之间的关系，解决很强的参考周期。这个过程是在描述解决类实例之间强参考周期。但是，您将学习如何解决一个有力的参考周期之前，有必要了解如何这样一个循环造成的。</p>
+
+<p>这里有一个如何很强的参考周期可以被意外创建了一个例子。这个例子定义了两个类叫做Person和Apartment，其样板房和小区居民的块：</p>
+
+<p>class Person {<br/>
+    let name: String<br/>
+    init(name: String) { self.name = name }<br/>
+    var apartment: Apartment?<br/>
+    deinit { print(<q>(name) is being deinitialized</q>) }<br/>
+}</p>
+
+<p>class Apartment {<br/>
+    let unit: String<br/>
+    init(unit: String) { self.unit = unit }<br/>
+    var tenant: Person?<br/>
+    deinit { print(<q>Apartment (unit) is being deinitialized</q>) }<br/>
+}<br/>
+每个Person实例都有一个name类型的属性String和一个可选apartment属性，它最初是nil。该apartment属性是可选的，因为一个人可能并不总是有一间公寓。</p>
+
+<p>同样，每个Apartment实例有一个unit类型的财产String，并有一个可选的tenant属性，最初nil。租户属性是可选的，因为一个公寓可能并不总是有一个租户。</p>
+
+<p>这两个类还定义了deinitializer，打印一个事实，即类的一个实例正在deinitialized。这使您可以看看是否实例Person和Apartment预期被释放。</p>
+
+<p>这个下一个代码段定义名为可选类型的两个变量john和unit4A，其中将被设置为一个特定的Apartment和Person实例的下方。这两个变量具有一个初始值nil，由于是可选的：</p>
+
+<p>var john: Person?<br/>
+var unit4A: Apartment?<br/>
+现在，您可以创建一个特定的Person实例，Apartment实例，分配给这些新情况john和unit4A变量：</p>
+
+<p>john = Person(name: <q>John Appleseed</q>)<br/>
+unit4A = Apartment(unit: <q>4A</q>)<br/>
+这里的强引用创建和分配这两个实例后，怎么看。该john变量现在具有很强的参考，以新的Person实例和unit4A变量具有很强的参考，以新的Apartment实例：</p>
+
+<p>图片：../Art/referenceCycle01_2x.png<br/>
+现在，您可以在两个实例链接在一起，这样的人有一个公寓，公寓有一个租户。注意，感叹号（!）用于解开并访问存储在内部的情况下，john和unit4A任选的变量，以便这些实例的属性可设置：</p>
+
+<p>john!.apartment = unit4A<br/>
+unit4A!.tenant = john<br/>
+这里的强引用怎么看你的两个实例链接在一起后：</p>
+
+<p>图片：../Art/referenceCycle02_2x.png<br/>
+不幸的是，连接这两个实例创建它们之间有很强的参考周期。该Person实例现在具有很强的参考Apartment实例和Apartment实例具有很强的参考Person实例。因此，当破坏由保持的强引用john和unit4A变量，所述参考计数不下降到零，并且这些实例不被电弧释放：</p>
+
+<p>john = nil<br/>
+unit4A = nil<br/>
+需要注意的是，当你设置这两个变量既不deinitializer叫nil。强劲的参考周期防止Person和Apartment实例，从不断被释放，导致在你的应用程序内存泄漏。</p>
+
+<p>这里的强引用怎么看你设置后john和unit4A变量nil：</p>
+
+<p>图片：../Art/referenceCycle03_2x.png<br/>
+之间的强引用Person实例和Apartment实例保持与不能被打破。</p>
+
+<p>解决类实例之间的强周期参考</p>
+
+<p>斯威夫特提供了两种方法来解决很强的参考周期，当你用类类型的属性的作用：弱引用和无主引用。</p>
+
+<p>弱和无主的引用在一个基准周期使一个实例来引用其他实例而不保持很强的保持在其上。然后实例可以互相引用，而无需创建一个有力的参考周期。</p>
+
+<p>使用弱引用时，它是有效的，提及成为nil在其一生中的一些点。相反，当你知道引用绝不会使用无主的引用nil一旦初始化期间被设置。</p>
+
+<p>弱引用</p>
+
+<p>一个弱引用是不保持对实例的强抱它指的是，因此不从引用的实例处置停ARC的参考。此行为可防止成为一个有力的参考周期的一部分参考。您指示通过把一个弱引用weak一个属性或变量声明之前的关键字。</p>
+
+<p>使用弱引用，以避免参考周期时，它是可能的，提及具有在其生活中的一些点缺失的值。如果参考总是有一个值，使用无主的引用，而不是按照中的说明无主参考。在Apartment上面的例子中，它是适当的一套公寓能够没有房客在其一生的某个时刻，并如此弱引用是打破基准周期在这种情况下，以适当的方式。</p>
+
+<p>由于弱引用不保留对实例的强抱它指的是，这是可能的，而弱引用还是指它被释放该实例。因此，ARC自动设置的弱引用nil当实例，它是指被释放。而且，由于弱引用需要允许它们的值被改变，以nil在运行时，它们总是声明为变量，而不是常量，可选类型。</p>
+
+<p>您可以为您在弱参考值的存在，就像任何其他可选值，你将永远不会有一个已经不存在的无效实例的引用而告终。</p>
+
+<p>注意</p>
+
+<p>当ARC设置一个弱引用地产观察家们不叫nil。</p>
+
+<p>下面的例子是相同的Person，并Apartment从例如上面，有一个重要的差别。这一次，该Apartment类型的tenant属性被声明为弱引用：</p>
+
+<p>class Person {<br/>
+    let name: String<br/>
+    init(name: String) { self.name = name }<br/>
+    var apartment: Apartment?<br/>
+    deinit { print(<q>(name) is being deinitialized</q>) }<br/>
+}</p>
+
+<p>class Apartment {<br/>
+    let unit: String<br/>
+    init(unit: String) { self.unit = unit }<br/>
+    weak var tenant: Person?<br/>
+    deinit { print(<q>Apartment (unit) is being deinitialized</q>) }<br/>
+}<br/>
+来自两个变量（强引用john和unit4A），并创建为前两个实例之间的联系：</p>
+
+<p>var john: Person?<br/>
+var unit4A: Apartment?</p>
+
+<p>john = Person(name: <q>John Appleseed</q>)<br/>
+unit4A = Apartment(unit: <q>4A</q>)</p>
+
+<p>john!.apartment = unit4A<br/>
+unit4A!.tenant = john<br/>
+下面是引用现在怎么看待你已经连接的两个对象实例：</p>
+
+<p>图片：../Art/weakReference01_2x.png<br/>
+该Person实例仍具有较强的参考Apartment实例，但Apartment实例现在有一个微弱的参考Person实例。这意味着，当你打破了持有的强引用john将其设置为可变的nil，有到没有更多的强引用Person的实例：</p>
+
+<p>john = nil<br/>
+// Prints <q>John Appleseed is being deinitialized</q><br/>
+因为有于没有更多的强引用Person的实例，它被释放，该tenant属性设置为nil：</p>
+
+<p>图片：../Art/weakReference02_2x.png<br/>
+唯一剩下的强烈参考Apartment实例从unit4A变量。如果你打破了有力的参考，还有的没有更多的强引用Apartment的实例：</p>
+
+<p>unit4A = nil<br/>
+// Prints <q>Apartment 4A is being deinitialized</q><br/>
+因为有于没有更多的强引用Apartment的实例，它也被释放：</p>
+
+<p>图片：../Art/weakReference03_2x.png<br/>
+注意</p>
+
+<p>在使用垃圾收集系统，弱电指针有时被用来实现一个简单的缓存机制，因为没有强引用的对象将被释放，只有当内存压力触发垃圾收集。然而，ARC，值只要他们最后的强引用被删除释放，使得弱引用不适合这样一个目的。</p>
+
+<p>无主参考</p>
+
+<p>像弱引用，一个无主的引用不保留强抱在实例它是指。不像弱引用，但是，假定无主引用总是有一个值。由于这个原因，无主参考始终定义为一个非可选类型。您表示通过将无主的参考unowned属性或变量声明之前的关键字。</p>
+
+<p>由于无主引用非可选，你不需要它每次使用时解开了无主参考。无主参考总是可以直接访问。然而，ARC不能设置引用nil时，例如，它指的是被释放，因为一个非可选类型的变量不能设置nil。</p>
+
+<p>注意</p>
+
+<p>如果您尝试访问它引用被释放的实例后无主的引用，将引发一个运行时错误。只有当你确信参考将使用无主引用总是引用实例。</p>
+
+<p>还需要注意的是斯威夫特保证，如果你尝试引用被释放的实例后访问一个无主引用您的应用程序会崩溃。你将永远不会遇到在这种情况下意外的行为。您的应用程序总是会崩溃可靠的，尽管你当然应该，阻止它这样做。</p>
+
+<p>下面的示例定义两个类，Customer以及CreditCard，其中模型银行客户和可能的信用卡客户。每个这两个类存放其他类的实例作为属性。这种关系必须建立一个强大的参考周期的潜力。</p>
+
+<p>之间的关系Customer和CreditCard距离之间的关系略有不同Apartment，并Person在上面的弱引用的例子可见。在该数据模型中，一个顾客可以或可以不具有一个信用卡，但信用卡将总是与一个客户相关联。为了表示这一点，Customer类有一个可选的card特性，但CreditCard类有一个非可选customer属性。</p>
+
+<p>此外，一个新的CreditCard实例可以仅由一个通过创建number值和customer实例来定制CreditCard初始化。这保证了一个CreditCard实例总是有一个customer与它相关实例时CreditCard创建实例。</p>
+
+<p>由于信用卡总会有一个客户，你定义它的customer属性作为无主的参考，避免很强的参考周期：</p>
+
+<p>class Customer {<br/>
+    let name: String<br/>
+    var card: CreditCard?<br/>
+    init(name: String) {<br/>
+        self.name = name<br/>
+    }<br/>
+    deinit { print(<q>(name) is being deinitialized</q>) }<br/>
+}</p>
+
+<p>class CreditCard {<br/>
+    let number: UInt64<br/>
+    unowned let customer: Customer<br/>
+    init(number: UInt64, customer: Customer) {<br/>
+        self.number = number<br/>
+        self.customer = customer<br/>
+    }<br/>
+    deinit { print(<q>Card #(number) is being deinitialized</q>) }<br/>
+}<br/>
+注意</p>
+
+<p>在number该物业CreditCard类与类的定义UInt64，而不是Int，以确保number酒店的容量足够大，可以存储在32位和64位系统的16位卡号。</p>
+
+<p>这个下一个代码段定义了一个可选Customer变量调用john，将被用来存储特定客户的参考。这个变量零的初始值，由于是可选的：</p>
+
+<p>var john: Customer?<br/>
+现在，您可以创建一个Customer实例，并用它来 ​​初始化并分配一个新的CreditCard实例作为客户的card属性：</p>
+
+<p>john = Customer(name: <q>John Appleseed</q>)<br/>
+john!.card = CreditCard(number: 1234<u>5678</u>9012_3456, customer: john!)<br/>
+下面是引用怎么看，现在你已经连接的两个实例：</p>
+
+<p>图片：../Art/unownedReference01_2x.png<br/>
+该Customer实例现在具有很强的参考CreditCard实例和CreditCard实例有一个无主的参考Customer实例。</p>
+
+<p>由于无主的customer参考，当你打破了持有的强引用john变量，不存在对没有更多的强引用Customer的实例：</p>
+
+<p>图片：../Art/unownedReference02_2x.png<br/>
+因为有于没有更多的强引用Customer的实例，它被释放。之后发生这种情况，不存在对没有更多的强引用CreditCard实例，它也被释放：</p>
+
+<p>john = nil<br/>
+// Prints <q>John Appleseed is being deinitialized</q><br/>
+// Prints <q>Card #1234567890123456 is being deinitialized</q><br/>
+上述最后的代码片段显示，对于该deinitializers Customer实例，CreditCard该实例后，都打印自己的“deinitialized”消息john变量设置为nil。</p>
+
+<p>无主参考和无包装隐含属性可选</p>
+
+<p>上面盖两个更常见的情况中，有必要打破很强的参考周期和弱无主引用的例子。</p>
+
+<p>在Person和Apartment实施例表示这样一种情况，其中两个属性，这两者都允许是nil，有可能引起强烈的基准周期的电位。这种情况下最好用弱引用解决。</p>
+
+<p>在Customer和CreditCard实施例示出的情况下被允许是一种性质nil不能为与另一个属性nil有可能造成一个强大的基准周期。这种情况下最好用无主的参考解决。</p>
+
+<p>然而，还有第三个方案中，其中两个属性应该始终有一个值，并且应该永远既不属性nil一旦初始化完成。在这种情况下，它是有用的无主财产在一类与其他类中的隐式展开的可选属性结合起来。</p>
+
+<p>这使得这两个属性直接访问（无可选解包）一旦完成初始化，同时还避免了参考周期。本节介绍如何建立这样的关系。</p>
+
+<p>下面的例子中定义了两个类别，Country并且City，其中每个存储其他类作为属性的一个实例。在此数据模型中，每个国家都必须有一个省会城市，并且每个城市必须始终属于一个国家。为了表示这一点，Country类有一个capitalCity属性和City类有一个country属性：</p>
+
+<p>class Country {<br/>
+    let name: String<br/>
+    var capitalCity: City!<br/>
+    init(name: String, capitalName: String) {<br/>
+        self.name = name<br/>
+        self.capitalCity = City(name: capitalName, country: self)<br/>
+    }<br/>
+}</p>
+
+<p>class City {<br/>
+    let name: String<br/>
+    unowned let country: Country<br/>
+    init(name: String, country: Country) {<br/>
+        self.name = name<br/>
+        self.country = country<br/>
+    }<br/>
+}<br/>
+要设置两个类之间的相互依赖性，对于初始化City需要一个Country实例，并将此实例在其country属性。</p>
+
+<p>对于初始化City是从初始的内调用Country。然而，对于初始化Country不能通过self对City初始直到一个新Country实例被完全初始化，如在所述两阶段初始化。</p>
+
+<p>为了配合此要求，申报capitalCity的财产Country在其类型批注（年底是一个隐含展开可选属性，由感叹号指示City!）。这意味着该capitalCity属性具有默认值nil，像任何其他可选的，但是可以在无需如上述解开它的值被访问隐无包装选配。</p>
+
+<p>因为capitalCity有一个默认nil值时，一个新的Country实例被认为是完全一旦初始化Country实例，设置其name其初始化内财产。这意味着，Country初始可以就引用和周围隐含传递self尽快属性作为name属性设置。该Country因此初始化可以通过self作为一个参数City，当初始化Country初始化是设置了自己的capitalCity财产。</p>
+
+<p>所有这一切都意味着，您可以创建Country和City实例在一个声明中，而无需创建一个很强的参考周期，capitalCity属性可以直接访问，而不需要使用感叹号，以解开其可选值：</p>
+
+<p>var country = Country(name: <q>Canada</q>, capitalName: <q>Ottawa</q>)<br/>
+print(<q>(country.name)&#39;s capital city is called (country.capitalCity.name)</q>)<br/>
+// Prints <q>Canada&#39;s capital city is called Ottawa</q><br/>
+在上面的例子中，使用隐式展开可选意味着所有的两相类初始化的要求得到满足。该capitalCity属性可用于又像非可选值访问一次初始化完成，同时还避免了有力的参考周期。</p>
+
+<p>闭包强大的参考周期</p>
+
+<p>你在上面看到了如何在两个类实例属性持有强引用对方很强的参考周期可以被创建。你也看到了如何使用弱和无主的引用打破这些有力的参考周期。</p>
+
+<p>如果您分配一个封闭的类实例的属性也会发生很强的参考周期，而封闭的体捕获实例。因为封闭的身体访问实例的属性，如可能会发生这种捕捉self.someProperty，或因关闭调用实例上的方法，如self.someMethod()。在这两种情况下，这些访问会导致封闭“捕获” self，营造出强烈的参考周期。</p>
+
+<p>发生这种强烈的参考周期，因为倒闭，像类是引用类型。当你分配一个封闭的属性，你分配一个引用到关闭。从本质上讲，这是同样的问题，因为上面两强引用保持彼此活着。然而，而不是两个类实例，这次是一个类的实例，并正在维持彼此活着关闭。</p>
+
+<p>雨燕提供了一个优雅的解决这个问题，被称为闭合捕捉名单。但是，您将学习如何打破很强的参考周期，封闭捕获列表之前，有必要了解如何这样一个循环，可以引起的。</p>
+
+<p>下面的例子显示了使用闭包引用时如何建立一个强大的参考周期self。这个例子定义了一个名为类HTMLElement，它提供了一个HTML文档中的单个元素一个简单的模型：</p>
+
+<p>class HTMLElement {</p>
+
+<pre><code>let name: String
+let text: String?
+
+lazy var asHTML: () -&gt; String = {
+    if let text = self.text {
+        return &quot;&lt;\(self.name)&gt;\(text)&lt;/\(self.name)&gt;&quot;
+    } else {
+        return &quot;&lt;\(self.name) /&gt;&quot;
+    }
+}
+
+init(name: String, text: String? = nil) {
+    self.name = name
+    self.text = text
+}
+
+deinit {
+    print(&quot;\(name) is being deinitialized&quot;)
+}
+</code></pre>
+
+<p>}<br/>
+在HTMLElement类定义了一个name属性，用于指示该元素的名称，例如<q>h1</q>为一个标题元素，<q>p</q>为一段落元素，或<q>br</q>用于换行符元件。HTMLElement还限定一个可选text属性，它可以设置为表示该文本的字符串要在该HTML元素中呈现。</p>
+
+<p>除了 ​​这两个简单的属性，在HTMLElement类定义了一个懒惰的属性调用asHTML。此属性引用，结合了封闭name，并text为HTML字符串片段。该asHTML属性的类型的() -&gt; String，还是“一个不带参数，并返回一个函数String值”。</p>
+
+<p>默认情况下，asHTML属性分配一个闭包返回一个HTML标签的字符串表示。此标记包含可选的text，如果它存在，或者如果没有文字内容的价值text不存在。为段落元件，闭合将返回<q><p>some text</p></q>或<q><p /></q>，取决于是否text属性等于<q>some text</q>或nil。</p>
+
+<p>该asHTML物业被命名有点像用实例方法。但是，由于asHTML是一个封闭性，而不是一个实例方法，可以取代的默认值asHTML与自定义的封闭性，如果你想改变的HTML渲染特定HTML元素。</p>
+
+<p>例如，该asHTML属性可以被设置为一个封闭该默认为一些文字，如果text属性是nil，为了防止从返回一个空的HTML标记的表示：</p>
+
+<p>let heading = HTMLElement(name: <q>h1</q>)<br/>
+let defaultText = <q>some default text</q><br/>
+heading.asHTML = {<br/>
+    return <q>&lt;(heading.name)&gt;(heading.text ?? defaultText)&lt;/(heading.name)&gt;</q><br/>
+}<br/>
+print(heading.asHTML())<br/>
+// Prints <q><h1>some default text</h1></q><br/>
+注意</p>
+
+<p>该asHTML属性被声明为一个懒惰的属性，因为如果当元素实际上需要被呈现为一段HTML输出对象的字符串值它才需要。这事实上asHTML是一个懒惰的属性意味着，你可以参考self默认封内，因为懒惰属性将直到初始化后已经完成，可以访问self已知存在。</p>
+
+<p>本HTMLElement类提供了一个单一的初始化，需要一个name参数（如需要）一个text参数来初始化一个新的元素。该类还定义了一个deinitializer，打印消息时的显示HTMLElement实例被释放。</p>
+
+<p>这里是你如何使用HTMLElement类来创建和打印一个新的实例：</p>
+
+<p>var paragraph: HTMLElement? = HTMLElement(name: <q>p</q>, text: <q>hello, world</q>)<br/>
+print(paragraph!.asHTML())<br/>
+// Prints <q><p>hello, world</p></q><br/>
+注意</p>
+
+<p>的paragraph变量上面被定义为可选的 HTMLElement，因此，它可以被设置为nil低于向表现出强烈的基准周期的存在。</p>
+
+<p>不幸的是，HTMLElement类，上面写的，创建一个之间有很强的参考周期的HTMLElement实例，并使用其默认的关闭asHTML值。下面是循环的外观：</p>
+
+<p>图片：../Art/closureReferenceCycle01_2x.png<br/>
+该实例的asHTML属性持有的强引用其关闭。然而，因为封闭件是指self它的身体内（作为一种参考self.name和self.text），封闭捕获自，这意味着它持有强引用回HTMLElement实例。两者之间创建一个很强的参考周期。（有关在闭合捕捉值的更多信息，请参阅捕获值）。</p>
+
+<p>注意</p>
+
+<p>即使关闭是指self多次，只捕获1较强的参考HTMLElement实例。</p>
+
+<p>如果您在设置paragraph变量nil，并打破其强大的参考HTMLElement实例，无论是HTMLElementinstance和它的关闭将被释放，因为强引用周期，：</p>
+
+<p>paragraph = nil<br/>
+另外，在该消息HTMLElementdeinitializer不打印，这表明HTMLElement实例未释放。</p>
+
+<p>为解决强闭包参考周期</p>
+
+<p>您可以通过定义一个解决关闭和一个类实例之间有很强的参考周期捕获列表为封闭的定义的一部分。一个捕获列表定义的规则封闭的体内捕获一个或多个引用类型时使用。由于有两个类的实例之间的强参考周期，需要声明每个捕捉引用是弱或无主的参考，而不是很强的借鉴意义。弱或无主的合适选择取决于你的代码的不同部分之间的关系。</p>
+
+<p>注意</p>
+
+<p>斯威夫特需要您编写self.someProperty或self.someMethod()（而不是仅仅someProperty或someMethod()）每当你指的给成员self一个封闭之内。这有助于你记住，它可能捕捉到self意外。</p>
+
+<p>定义捕捉名单</p>
+
+<p>在捕获列表中的每个产品的配对weak或unowned关键字与一个参考一类实例（如self）或一些值（如初始化的变量delegate = self.delegate!）。这些配对的一对中括号，用逗号分隔的内写入。</p>
+
+<p>将捕获列表中的闭包的参数列表前，如果提供他们返回类型：</p>
+
+<p>lazy var someClosure: (Int, String) -&gt; String = {<br/>
+    <a href="index:%20Int,%20stringToProcess:%20String">unowned self, weak delegate = self.delegate!</a> -&gt; String in<br/>
+    // closure body goes here<br/>
+}<br/>
+如果封闭未指定参数列表或返回类型，因为它们可以从上下文中推断，放置在封闭件的一开始捕获列表，随后的in关键字：</p>
+
+<p>lazy var someClosure: () -&gt; String = {<br/>
+    [unowned self, weak delegate = self.delegate!] in<br/>
+    // closure body goes here<br/>
+}<br/>
+弱和无主参考</p>
+
+<p>在定义一个闭包捕获作为无主引用时关闭和它抓住总是会互相引用，而且将永远在同一时间被释放的实例。</p>
+
+<p>相反，定义一个捕获视为弱引用时捕获的基准可能会nil在将来的某个时候。弱引用是总是一个可选的类型，并自动成为nil当它们引用的实例被释放。这使您可以检查封闭的体内他们的存在。</p>
+
+<p>注意</p>
+
+<p>如果捕获的参考永远不会nil，它应该始终捕获为无主的参考，而不是弱引用。</p>
+
+<p>无主参考使用，以解决强引用周期在适当的捕获方法HTMLElement从早期的例子。这里是你如何编写HTMLElement类，以避免循环：</p>
+
+<p>class HTMLElement {</p>
+
+<pre><code>let name: String
+let text: String?
+
+lazy var asHTML: () -&gt; String = {
+    [unowned self] in
+    if let text = self.text {
+        return &quot;&lt;\(self.name)&gt;\(text)&lt;/\(self.name)&gt;&quot;
+    } else {
+        return &quot;&lt;\(self.name) /&gt;&quot;
+    }
+}
+
+init(name: String, text: String? = nil) {
+    self.name = name
+    self.text = text
+}
+
+deinit {
+    print(&quot;\(name) is being deinitialized&quot;)
+}
+</code></pre>
+
+<p>}<br/>
+的此实现HTMLElement等同于前面的实施方式中，除了在加入内捕获列表的asHTML闭合。在这种情况下，捕获列表[unowned self]，这意味着“捕获自身作为无主的参考，而不是一个很强的借鉴意义。”</p>
+
+<p>您可以创建和打印HTMLElement实例作为前：</p>
+
+<p>var paragraph: HTMLElement? = HTMLElement(name: <q>p</q>, text: <q>hello, world</q>)<br/>
+print(paragraph!.asHTML())<br/>
+// Prints <q><p>hello, world</p></q><br/>
+下面是引用如何看待与地方捕捉列表：</p>
+
+<p>图片：../Art/closureReferenceCycle02_2x.png<br/>
+这一次，捕获self的闭包是无主的参考，并不能保持一个强抱上HTMLElement它已捕获实例。如果设置从强参考paragraph变量nil的HTMLElement实例被释放，这可以从下面的例子其deinitializer消息的印刷中可以看出：</p>
+
+<p>paragraph = nil<br/>
+// Prints <q>p is being deinitialized</q><br/>
+有关捕获列表的详细信息，请参阅捕获列表。</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743599349637.html"  title="Previous Post: 反初始化">&laquo; 反初始化</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743599610249.html" 
+	        title="Next Post: 可选链接">可选链接 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743599484388.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

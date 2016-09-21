@@ -1,0 +1,675 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  高级操作员 - Swift 3.0 自翻译 - 说了是村长
+  
+  </title>
+ <meta name="description" content="说了是村长，Swift 3.0 中文版">
+ <link href="atom.xml" rel="alternate" title="Swift 3.0 自翻译 - 说了是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">Swift 3.0 自翻译 - 说了是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Swift 3.0 自翻译 - 说了是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>欢迎加入 Swift</label></li>
+
+          
+            <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+          
+            <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>开发指南</label></li>
+
+          
+            <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+          
+            <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+          
+            <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+          
+            <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+          
+            <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+          
+            <li><a title="功能" href="14743597582027.html">功能</a></li>
+          
+            <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+          
+            <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+          
+            <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+          
+            <li><a title="属性" href="14743598294467.html">属性</a></li>
+          
+            <li><a title="方法" href="14743598422216.html">方法</a></li>
+          
+            <li><a title="下标" href="14743598556978.html">下标</a></li>
+          
+            <li><a title="继承" href="14743598699234.html">继承</a></li>
+          
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+          
+            <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+          
+            <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+          
+            <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+          
+            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+          
+            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+          
+            <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+          
+            <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+          
+            <li><a title="协议" href="14743600314526.html">协议</a></li>
+          
+            <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+          
+            <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+          
+            <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>语法参考</label></li>
+
+          
+            <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+          
+            <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+          
+            <li><a title="类型" href="14743601607750.html">类型</a></li>
+          
+            <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+          
+            <li><a title="声明" href="14743601868497.html">声明</a></li>
+          
+            <li><a title="声明" href="14743602139425.html">声明</a></li>
+          
+            <li><a title="属性" href="14743602336703.html">属性</a></li>
+          
+            <li><a title="模式" href="14743602627751.html">模式</a></li>
+          
+            <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+          
+            <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>欢迎加入 Swift</span></li>
+                        
+                          <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+                        
+                          <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>开发指南</span></li>
+                        
+                          <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+                        
+                          <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+                        
+                          <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+                        
+                          <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+                        
+                          <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+                        
+                          <li><a title="功能" href="14743597582027.html">功能</a></li>
+                        
+                          <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+                        
+                          <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+                        
+                          <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+                        
+                          <li><a title="属性" href="14743598294467.html">属性</a></li>
+                        
+                          <li><a title="方法" href="14743598422216.html">方法</a></li>
+                        
+                          <li><a title="下标" href="14743598556978.html">下标</a></li>
+                        
+                          <li><a title="继承" href="14743598699234.html">继承</a></li>
+                        
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+                        
+                          <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+                        
+                          <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+                        
+                          <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+                        
+                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                        
+                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                        
+                          <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+                        
+                          <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+                        
+                          <li><a title="协议" href="14743600314526.html">协议</a></li>
+                        
+                          <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+                        
+                          <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+                        
+                          <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>语法参考</span></li>
+                        
+                          <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+                        
+                          <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+                        
+                          <li><a title="类型" href="14743601607750.html">类型</a></li>
+                        
+                          <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+                        
+                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                        
+                          <li><a title="声明" href="14743602139425.html">声明</a></li>
+                        
+                          <li><a title="属性" href="14743602336703.html">属性</a></li>
+                        
+                          <li><a title="模式" href="14743602627751.html">模式</a></li>
+                        
+                          <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+                        
+                          <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>高级操作员</h1>
+
+<p>除了 ​​中所描述的运营商基本运算符，雨燕提供了执行更复杂的操作价值多种先进的运营商。这包括所有的按位与位移位算你将熟悉从C和Objective-C。</p>
+
+<p>不像用C算术运算符，斯威夫特算术运算符默认情况下不会溢出。溢出行为被捕获并报告为错误。要选择加入溢出行为，使用斯威夫特的第二组算术运算符溢出在默认情况下，如溢出加法运算符（&amp;+）。所有这些溢出运营商开始符号（&amp;）。</p>
+
+<p>当你定义自己的结构，类和枚举，它可以提供自己的标准斯威夫特运营商为这些定制类型的实现是有用的。斯威夫特可以很容易地提供这些运营商量身定做的实现，并确定他们的行为应该正是为您创建的每个类型。</p>
+
+<p>你不仅限于预定义的运营商。斯威夫特让您自由定义自己的自定义中缀，前缀，后缀，并赋值运算符，自定义优先级和结合的值。这些运营商可以使用，并在你的代码像任何预定义的运营商采用，甚至可以扩展现有类型来支持您定义的运营商定制。</p>
+
+<p>位运算符</p>
+
+<p>位运算符让你的数据结构中操纵单个原始数据位。它们通常在低级编程用于诸如图形编程和设备驱动器创建。当你与外部来源的原始数据，如超过自定义协议的通信数据编码和解码工作位运算符也可以是有用的。</p>
+
+<p>斯威夫特支持所有在C位运算符，如下所述。</p>
+
+<p>按位NOT运算符</p>
+
+<p>在按位NOT运算符（~）反转号码的所有位：</p>
+
+<p>图片：../Art/bitwiseNOT_2x.png<br/>
+按位NOT运算符是前缀运算符，并立即将其运行在值出现之前，没有任何空白：</p>
+
+<p>let initialBits: UInt8 = 0b00001111<br/>
+let invertedBits = ~initialBits  // equals 11110000<br/>
+UInt8整数有8位，可以存储之间的任意值0和255。这个例子初始化一个UInt8与二进制值的整数00001111，其设置为前四位0，其第二四位设置1。这等同于一个十进制值15。</p>
+
+<p>然后，按位NOT运算符是用来创建一个所谓的新常数invertedBits，它等于initialBits，但所有倒位。零成为的人，和个变成零。的值invertedBits就是11110000，它等于一个无符号十进制值240。</p>
+
+<p>按位与运算符</p>
+
+<p>该位AND运算符（&amp;）结合了两个数字的位数。它返回一个新的数字，其位被设置为1仅当位均等于1在两个输入数字：</p>
+
+<p>图片：../Art/bitwiseAND_2x.png<br/>
+在下面的例子中，值firstSixBits和lastSixBits两个具有四个中间位等于1。按位与运算结合他们做出的数量00111100，这等于一个无符号十进制值60：</p>
+
+<p>let firstSixBits: UInt8 = 0b11111100<br/>
+let lastSixBits: UInt8  = 0b00111111<br/>
+let middleFourBits = firstSixBits &amp; lastSixBits  // equals 00111100<br/>
+位OR运算符</p>
+
+<p>该位OR运算符（|）两个数位进行比较。操作者返回一个新的数字，其位被设置为1，如果所述比特等于1在任一输入号码：</p>
+
+<p>图片：../Art/bitwiseOR_2x.png<br/>
+在下面的例子中，的值someBits和moreBits具有不同的位置1。该位OR运算符将它们组合以使号码11111110，相当于一个无符号十进制254：</p>
+
+<p>let someBits: UInt8 = 0b10110010<br/>
+let moreBits: UInt8 = 0b01011110<br/>
+let combinedbits = someBits | moreBits  // equals 11111110<br/>
+位异或运算</p>
+
+<p>的按位XOR运算符，或“异或运算符”（ <sup>），比较两个数的比特。操作者返回一个新的数字，其位被设置为1输入比特是不同的，其中和被设置为0在输入比特是相同的：</sup></p>
+
+<p>图片：../Art/bitwiseXOR_2x.png<br/>
+在下面的例子中，值firstBits和otherBits每一个具有位设定为1在该其他没有一个位置。按位异或操作员设置这两个位来1在其输出值。所有在其它位的firstBits和otherBits匹配而被设定成0在输出值：</p>
+
+<p>let firstBits: UInt8 = 0b00010100<br/>
+let otherBits: UInt8 = 0b00000101<br/>
+let outputBits = firstBits ^ otherBits  // equals 00010001<br/>
+按位左和右移位操作符</p>
+
+<p>在按位左移位运算符（&lt;&lt;），并逐位向右移位运算（&gt;&gt;）是一个数向左或按一定数目的地方的右侧移动的所有位，根据下面定义的规则。</p>
+
+<p>按位左和右移位有乘以或由两个因素除以一个整数的效果。由一个位置移动的整数的比特向左而由一个位置它向右移半部其值加倍其值。</p>
+
+<p>转移行为的无符号整数</p>
+
+<p>对于无符号整数位移行为如下：</p>
+
+<p>现有比特被移动到左侧或右侧通过的地方请求数量。<br/>
+被移动超出所述整数的存储的范围的任何位被丢弃。<br/>
+零插入留下的空间后的原始比特被移动到左侧或右侧。<br/>
+这种方法被称为一个逻辑移位。</p>
+
+<p>下图显示的结果11111111 &lt;&lt; 1（这是11111111转移到由左1位），和11111111 &gt;&gt; 1（这是11111111由向右移动1的地方）。蓝号转移，灰数都将被丢弃，橙零插入：</p>
+
+<p>图片：../Art/bitshiftUnsigned_2x.png<br/>
+下面是位转移的外观斯威夫特代码：</p>
+
+<p>let shiftBits: UInt8 = 4   // 00000100 in binary<br/>
+shiftBits &lt;&lt; 1             // 00001000<br/>
+shiftBits &lt;&lt; 2             // 00010000<br/>
+shiftBits &lt;&lt; 5             // 10000000<br/>
+shiftBits &lt;&lt; 6             // 00000000<br/>
+shiftBits &gt;&gt; 2             // 00000001<br/>
+可以使用位转移到其他数据类型内进行编码和解码的值：</p>
+
+<p>let pink: UInt32 = 0xCC6699<br/>
+let redComponent = (pink &amp; 0xFF0000) &gt;&gt; 16    // redComponent is 0xCC, or 204<br/>
+let greenComponent = (pink &amp; 0x00FF00) &gt;&gt; 8   // greenComponent is 0x66, or 102<br/>
+let blueComponent = pink &amp; 0x0000FF           // blueComponent is 0x99, or 153<br/>
+本例使用一个UInt32叫做常数pink来存储粉色层叠样式表颜色值。CSS的颜色值#CC6699被写入为0xCC6699在夫特的十六进制数表示。然后，该颜色被分解成它的红（CC），绿（66），和蓝（99由位AND运算符（）组件&amp;）和按位向右移位运算（&gt;&gt;）。</p>
+
+<p>红色分量是通过执行按位与数之间得到0xCC6699和0xFF0000。在零0xFF0000有效地“屏蔽”的第二和第三字节0xCC6699，导致6699被忽略和离开0xCC0000作为结果。</p>
+
+<p>然后，该数字被移位16个地方向右（&gt;&gt; 16）。以十六进制数每对字符用8位，这样一招16地将其转换权0xCC0000成0x0000CC。这是一样的0xCC，它具有一个十进制值204。</p>
+
+<p>类似地，绿色成分通过执行按位与数字之间得到0xCC6699和0x00FF00，这给的输出值0x006600。然后，该输出值移位8位到右侧，得到的一个值0x66，其具有一个十进制值102。</p>
+
+<p>最后，蓝色分量是通过执行按位与数字之间得到0xCC6699和0x0000FF，这给的输出值0x000099。有没有必要这个向右移动，因为0x000099已经等于0x99，其中有一个十进制值153。</p>
+
+<p>转移行为符号整数</p>
+
+<p>换挡行为是比无符号整数符号整数更加复杂，因为有符号整数的二进制表示的方式。（该实施例以下是基于为了简单8位带符号整数，但同样的原理也适用于任何尺寸的符号整数。）</p>
+
+<p>符号整数使用他们的第一比特（称为符号位）来指示整数是否是正或负。的符号位0表示正和的符号位1为负。</p>
+
+<p>其余的位（称为值比特）存储的实际值。正数被存储在完全相同的方式，作为无符号整数，从向上计数0。这里有一个里面怎么位Int8看人数为4：</p>
+
+<p>图片：../Art/bitshiftSignedFour_2x.png<br/>
+符号位0（意为“正”），和七个值位是刚好在数目4，写在二进制表示法。</p>
+
+<p>负数，然而，存储方式不一样。它们是由从减去其绝对值存储2到的功率n，其中，n是值的位数。一个八位数有七个值的位，所以这意味着2到的功率7，或128。</p>
+
+<p>这里有一个里面怎么位Int8看人数为-4：</p>
+
+<p>图片：../Art/bitshiftSignedMinusFour_2x.png<br/>
+此时，符号位1（意为“负”），和七个值位具有二进制值124（这是128 - 4）：</p>
+
+<p>图片：../Art/bitshiftSignedMinusFourValue_2x.png<br/>
+这种编码负数被称为一个二的补码表示法。它可能似乎代表负数一个不寻常的方式，但它具有几个优点。</p>
+
+<p>首先，你可以添加-1到-4，只需通过执行一个标准的二进制加法全部8位（包括符号位），并丢弃任何不适合在八位一旦你完成：</p>
+
+<p>图片：../Art/bitshiftSignedAddition_2x.png<br/>
+其次，两者的补码表示也可以让你负数的位转移到左，右像正数，而且还结束了一倍他们每班您向左，或减半他们每班您的权利。当你有符号整数右移，适用相同的规则无符号整数，但在剩下的填充任何空位：为了实现这一点，当符号整数被移动到右侧使用了额外的规则符号位，而比用零。</p>
+
+<p>图片：../Art/bitshiftSigned_2x.png<br/>
+此操作可确保有符号整数具有相同的符号它们移动到右侧后，并且被称为一个算术移位。</p>
+
+<p>由于特殊的方式，正数和负数被存储时，它们中的右移位到移动他们更接近零。保持符号位这一转变过程中同样意味着负整数仍然为负作为它们的值越来越接近零。</p>
+
+<p>溢出运营商</p>
+
+<p>如果您尝试插入一个数字，一个整型常量或不能认为数值变量，默认情况下斯威夫特报告错误，而不是允许创建一个无效值。这种行为给了，当你与那些过大或过小的数字工作额外的安全。</p>
+
+<p>例如，Int16整数类型可以容纳之间任何符号整数-32768和32767。试图在设定Int16常数或变量的这个范围之外的数导致错误：</p>
+
+<p>var potentialOverflow = Int16.max<br/>
+// potentialOverflow equals 32767, which is the maximum value an Int16 can hold<br/>
+potentialOverflow += 1<br/>
+// this causes an error<br/>
+提供了错误处理当值太大或过小编码边值条件时，为您提供了更大的灵活性。</p>
+
+<p>然而，当你特别想溢出条件截断可用位的数量，你可以选择在这个行为，而不是引发一个错误。雨燕提供三个运算溢出运营商，在为整数计算溢出的行为选择。这些运营商都开始用符号（&amp;）：</p>
+
+<p>此外溢（&amp;+）<br/>
+溢出减法（&amp;-）<br/>
+溢出乘（&amp;*）<br/>
+值溢出</p>
+
+<p>号可在正和负方向溢出。</p>
+
+<p>下面是当无符号整数允许在正方向上溢出会发生什么情况，利用溢流加法运算符（一个例子&amp;+）：</p>
+
+<p>var unsignedOverflow = UInt8.max<br/>
+// unsignedOverflow equals 255, which is the maximum value a UInt8 can hold<br/>
+unsignedOverflow = unsignedOverflow &amp;+ 1<br/>
+// unsignedOverflow is now equal to 0<br/>
+变量unsignedOverflow被初始化为最大值的UInt8可容纳（255或11111111二进制）。然后它被递增1使用溢出加法运算符（&amp;+）。这会使刚刚超过一个大小的二进制表示UInt8可以持有，使其溢出超越它的界限，如下面的图所示。剩下的范围内的值UInt8后的溢出加料00000000，或零。</p>
+
+<p>图片：../Art/overflowAddition_2x.png<br/>
+类似的情况时，无符号整数允许在负方向溢出。下面是使用溢出减法运算符（一个例子&amp;-）：</p>
+
+<p>var unsignedOverflow = UInt8.min<br/>
+// unsignedOverflow equals 0, which is the minimum value a UInt8 can hold<br/>
+unsignedOverflow = unsignedOverflow &amp;- 1<br/>
+// unsignedOverflow is now equal to 255<br/>
+一个最小值UInt8可容纳为零，或00000000二进制。如果减去1从00000000使用溢出减法运算符（&amp;-），则数字将溢出并环绕到11111111，或255十进制。</p>
+
+<p>图片：../Art/overflowUnsignedSubtraction_2x.png<br/>
+溢出也会发生符号整数。所有符号整数加法和减法是在逐位方式进行，与包括符号位为被加上或减去的数字部分，如描述的按位左和右移位操作符。</p>
+
+<p>var signedOverflow = Int8.min<br/>
+// signedOverflow equals -128, which is the minimum value an Int8 can hold<br/>
+signedOverflow = signedOverflow &amp;- 1<br/>
+// signedOverflow is now equal to 127<br/>
+，一个最小值Int8可容纳的-128，或10000000二进制。减去1从与溢流操作员这个二进制数给出的二进制值01111111，该切换的符号位，并给出阳性127，一个中，最大的正值Int8可以容纳。</p>
+
+<p>图片：../Art/overflowSignedSubtraction_2x.png<br/>
+对于有符号和无符号整数，溢出的正方向从最大有效的整数值返回到最小环绕，并溢流在负方向从最小值到最大环绕。</p>
+
+<p>优先级和结合</p>
+
+<p>运算符的优先级提供了一些运营商比其他人更高的优先级; 这些运营商首先应用。</p>
+
+<p>操作者的关联性定义如何相同优先级的运算符组合在一起，或者分组从左侧，或从右侧分组。把它看成是意义“，他们与相关联的表达自己的左边，”或“，他们联系起来的表达他们的权利。”</p>
+
+<p>工作了时，其中的化合物表达式将计算的顺序考虑每个操作者的优先级和结合是重要的。例如，运算符优先级解释了为什么下面的表达式等于17。</p>
+
+<p>2 + 3 % 4 * 5<br/>
+// this equals 17<br/>
+如果从左侧严格读吧，你可能期望要计算的表达式如下：</p>
+
+<p>2再加上3等号5<br/>
+5其余4等于1<br/>
+1时间5等于5<br/>
+但是，实际的回答是17，不5。以前低优先级的人更高优先级的运营商进行评估。在斯威夫特，如C，其余的运营商（%）和乘法运算符（*）具有比加法运算符的优先级高（+）。其结果，被认为是在加入之前它们都被评估。</p>
+
+<p>然而，剩下的时间和乘法具有相同的优先级为对方。要制定出准确的评估才能使用，还需要考虑其关联性。其余和乘法都与表达自己的左联营。将这看作围绕增加表达的这些部分隐含的括号内，他们的左边开始：</p>
+
+<p>2 + ((3 % 4) * 5)<br/>
+(3 % 4)是3，因此，这等同于：</p>
+
+<p>2 + (3 * 5)<br/>
+(3 * 5)是15，因此，这等同于：</p>
+
+<p>2 + 15<br/>
+该计算得出的最终答案17。</p>
+
+<p>对于斯威夫特运营商优先级和结合规则的完整列表，请参阅表达式。有关由斯威夫特标准库提供的运算符的信息，请参阅雨燕标准库操作员参考。</p>
+
+<p>注意</p>
+
+<p>斯威夫特的运营商优先级和结合规则更简单，比在C和Objective-C中更容易预测。然而，这意味着它们不是完全一样的基于C的语言。要小心，以确保操作者的互动还表现在移植现有代码斯威夫特，当你想要的方式。</p>
+
+<p>操作方法：</p>
+
+<p>类和结构可以提供自己现有经营的实现。这被称为重载现有运营商。</p>
+
+<p>下面的例子说明如何实现算术加法运算符（+）自定义结构。算术加法运算是一个二进制运算符，因为它运行在两个目标和被认为是中缀，因为它似乎在这两个目标之间。</p>
+
+<p>的例子定义一个Vector2D对于一个二维位置矢量结构(x, y)，接着是一个定义操作者的方法来添加的情况下一起Vector2D结构：</p>
+
+<p>struct Vector2D {<br/>
+    var x = 0.0, y = 0.0<br/>
+}</p>
+
+<p>extension Vector2D {<br/>
+    static func + (left: Vector2D, right: Vector2D) -&gt; Vector2D {<br/>
+        return Vector2D(x: left.x + right.x, y: left.y + right.y)<br/>
+    }<br/>
+}<br/>
+操作方法被定义为在一个类型的方法Vector2D，以匹配运营商要重载的方法名（+）。因为除了不是一个向量的基本行为的部分，该类型的方法是在扩展的定义的Vector2D，而不是在主体结构声明Vector2D。由于算术加法运算符是二元运算符，这个操作方法需要类型的两个输入参数Vector2D，并返回一个单一的产值，也类型Vector2D。</p>
+
+<p>在该实现中，输入参数被命名left并right表示Vector2D，这将是在左侧和右侧的实例+操作者。该方法返回一个新的Vector2D实例，其x和y性能与的总和被初始化x，并y从两个属性Vector2D的加在一起的实例。</p>
+
+<p>该类型的方法可作为现有之间中缀算子Vector2D实例：</p>
+
+<p>let vector = Vector2D(x: 3.0, y: 1.0)<br/>
+let anotherVector = Vector2D(x: 2.0, y: 4.0)<br/>
+let combinedVector = vector + anotherVector<br/>
+// combinedVector is a Vector2D instance with values of (5.0, 5.0)<br/>
+此示例将在一起向量(3.0, 1.0)和(2.0, 4.0)使矢量(5.0, 5.0)，如下图所示。</p>
+
+<p>图片：../Art/vectorAddition_2x.png<br/>
+前缀和后缀运算</p>
+
+<p>上面显示的示例说明了一个二元中缀运算符的自定义实现。类和结构也可以提供标准的实现一元操作符。一元运算符对单一目标进行操作。他们是前缀，如果他们先于自己的目标（如-a）和后缀运营商，如果他们遵循自己的目标（如b!）。</p>
+
+<p>您可以实现一个前缀或通过写后缀一元运算符prefix或postfix在之前修改func申报操作方法时，关键字：</p>
+
+<p>extension Vector2D {<br/>
+    static prefix func - (vector: Vector2D) -&gt; Vector2D {<br/>
+        return Vector2D(x: -vector.x, y: -vector.y)<br/>
+    }<br/>
+}<br/>
+上面的例子实现了元减运算符（-a）的Vector2D实例。一元减运算符是前缀运算符，所以这种方法必须与合格prefix修改。</p>
+
+<p>对于简单的数值，一元减运算符正数转换成其消极等价，反之亦然。为相应的执行Vector2D实例上执行两个这种操作x和y属性：</p>
+
+<p>let positive = Vector2D(x: 3.0, y: 4.0)<br/>
+let negative = -positive<br/>
+// negative is a Vector2D instance with values of (-3.0, -4.0)<br/>
+let alsoPositive = -negative<br/>
+// alsoPositive is a Vector2D instance with values of (3.0, 4.0)<br/>
+复合赋值运算符</p>
+
+<p>复合赋值运算符组合分配（=）与另一个操作。例如，除了赋值运算符（+=）结合加法和分配到一个单一的操作。您标记复合赋值操作符的左输入参数类型inout，因为参数的值将直接从操作方法中进行修改。</p>
+
+<p>下面的例子实现了加法赋值运算方法Vector2D的实例：</p>
+
+<p>extension Vector2D {<br/>
+    static func += (left: inout Vector2D, right: Vector2D) {<br/>
+        left = left + right<br/>
+    }<br/>
+}<br/>
+因为加法运算符前面定义的，你不需要在这里重新实现加法过程。相反，除了赋值运算符方法利用现有的加法运算的方法，并用它来设置左手值为左值加上正确的价值：</p>
+
+<p>var original = Vector2D(x: 1.0, y: 2.0)<br/>
+let vectorToAdd = Vector2D(x: 3.0, y: 4.0)<br/>
+original += vectorToAdd<br/>
+// original now has values of (4.0, 6.0)<br/>
+注意</p>
+
+<p>这是不可能超载默认的赋值运算符（=）。只有复合赋值运算符可以被重载。同样，三元条件运算符（a ? b : c）不能超载。</p>
+
+<p>等价运算符</p>
+
+<p>自定义类和结构没有收到默认实现的等效操作（被称为“等于”运算符==）和“不等于”运算符（!=）。这是不可能的斯威夫特猜测将有资格作为“平等”为您自定义的类型，因为“平等”的含义取决于角色，这些类型在代码中玩耍。</p>
+
+<p>使用等价运算来检查自己的自定义类型的等价，提供以同样的方式作为其他缀运算符的操作符的一个实现：</p>
+
+<p>extension Vector2D {<br/>
+    static func == (left: Vector2D, right: Vector2D) -&gt; Bool {<br/>
+        return (left.x == right.x) &amp;&amp; (left.y == right.y)<br/>
+    }<br/>
+    static func != (left: Vector2D, right: Vector2D) -&gt; Bool {<br/>
+        return !(left == right)<br/>
+    }<br/>
+}<br/>
+上面的例子实现了一个“等于”运算符（==）检查两个Vector2D实例具有相当的价值。的背景下Vector2D，这是有道理的考虑“平等”作为意“两个实例有相同的x价值观和y价值”，所以这是由运营商实现使用的逻辑。该示例还实现了“不等于”运算符（!=），它简单地返回“等于”运算的结果的倒数。</p>
+
+<p>现在，您可以使用这些运算符来检查两者是否Vector2D实例是等价的：</p>
+
+<p>let twoThree = Vector2D(x: 2.0, y: 3.0)<br/>
+let anotherTwoThree = Vector2D(x: 2.0, y: 3.0)<br/>
+if twoThree == anotherTwoThree {<br/>
+    print(<q>These two vectors are equivalent.</q>)<br/>
+}<br/>
+// Prints <q>These two vectors are equivalent.</q><br/>
+运营商定制</p>
+
+<p>你可以声明和实现自己的运营商定制，除了雨燕提供的标准的运营商。对于可以用于定义自定义操作符的字符的列表，请参见算。</p>
+
+<p>新的运 ​​营商使用的是在全球范围内声明的operator关键字，并且都标有prefix，infix或postfix修饰符：</p>
+
+<p>prefix operator +++<br/>
+上面的例子定义了一个新的前缀操作符+++。该运营商不具有斯威夫特现有的意义，因此它是与工作的具体情况下面给出了自己的自定义的含义Vector2D实例。对于这个例子的目的，+++将被视为一个新的“前缀倍增”操作符。它双打x和y值的Vector2D情况下，通过与前面定义的除了赋值运算符添加载体本身。为了实现+++运营商，你添加一个名为类型的方法+++，以Vector2D如下：</p>
+
+<p>extension Vector2D {<br/>
+    static prefix func +++ (vector: inout Vector2D) -&gt; Vector2D {<br/>
+        vector += vector<br/>
+        return vector<br/>
+    }<br/>
+}</p>
+
+<p>var toBeDoubled = Vector2D(x: 1.0, y: 4.0)<br/>
+let afterDoubling = +++toBeDoubled<br/>
+// toBeDoubled now has values of (2.0, 8.0)<br/>
+// afterDoubling also has values of (2.0, 8.0)<br/>
+优先级自定义中缀运算符</p>
+
+<p>自缀运营商每属于一个优先级组。一个优先级组指定操作者的优先级相对于其他中缀运算符，以及操作者的关联性。见优先级和结合了这些特点如何影响缀运营商与其他运营商中缀互动的解释。</p>
+
+<p>未明确放入优先级A组自定义的中缀操作符都有一个默认的优先级组一个优先级比立即三元条件运算符的优先级越高。</p>
+
+<p>下面的例子定义了一个新的自定义缀运算符+-，属于优先组AdditionPrecedence：</p>
+
+<p>infix operator +-: AdditionPrecedence<br/>
+extension Vector2D {<br/>
+    static func +- (left: Vector2D, right: Vector2D) -&gt; Vector2D {<br/>
+        return Vector2D(x: left.x + right.x, y: left.y - right.y)<br/>
+    }<br/>
+}<br/>
+let firstVector = Vector2D(x: 1.0, y: 2.0)<br/>
+let secondVector = Vector2D(x: 3.0, y: 4.0)<br/>
+let plusMinusVector = firstVector +- secondVector<br/>
+// plusMinusVector is a Vector2D instance with values of (4.0, -2.0)<br/>
+这个操作者加在一起的x两个向量的值，减去y从所述第一第二矢量的值。因为它在本质上是一种“添加剂”算子，它被赋予了相同的优先级组作为添加剂中缀运算符，如+和-。对于运算符优先级组和关联性设置的完整列表，由雨燕标准库提供的运营商，看到雨燕标准库操作员参考。有关优先级组和详细信息，看语法定义自己的运营商和优先级组，请参阅运算符声明。</p>
+
+<p>注意</p>
+
+<p>定义一个前缀或后缀运算符时，您不指定优先级。但是，如果同时应用前缀和后缀运算符相同的操作，后缀运算符首先应用。</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743600592705.html"  title="Previous Post: 访问控制">&laquo; 访问控制</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743413991106.html" 
+	        title="Next Post: 关于 Swift">关于 Swift &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743600739128.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

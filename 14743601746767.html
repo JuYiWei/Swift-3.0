@@ -1,0 +1,1029 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  表达式 - Swift 3.0 自翻译 - 说了是村长
+  
+  </title>
+ <meta name="description" content="说了是村长，Swift 3.0 中文版">
+ <link href="atom.xml" rel="alternate" title="Swift 3.0 自翻译 - 说了是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">Swift 3.0 自翻译 - 说了是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; Swift 3.0 自翻译 - 说了是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>欢迎加入 Swift</label></li>
+
+          
+            <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+          
+            <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>开发指南</label></li>
+
+          
+            <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+          
+            <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+          
+            <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+          
+            <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+          
+            <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+          
+            <li><a title="功能" href="14743597582027.html">功能</a></li>
+          
+            <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+          
+            <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+          
+            <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+          
+            <li><a title="属性" href="14743598294467.html">属性</a></li>
+          
+            <li><a title="方法" href="14743598422216.html">方法</a></li>
+          
+            <li><a title="下标" href="14743598556978.html">下标</a></li>
+          
+            <li><a title="继承" href="14743598699234.html">继承</a></li>
+          
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+          
+            <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+          
+            <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+          
+            <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+          
+            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+          
+            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+          
+            <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+          
+            <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+          
+            <li><a title="协议" href="14743600314526.html">协议</a></li>
+          
+            <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+          
+            <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+          
+            <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>语法参考</label></li>
+
+          
+            <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+          
+            <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+          
+            <li><a title="类型" href="14743601607750.html">类型</a></li>
+          
+            <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+          
+            <li><a title="声明" href="14743601868497.html">声明</a></li>
+          
+            <li><a title="声明" href="14743602139425.html">声明</a></li>
+          
+            <li><a title="属性" href="14743602336703.html">属性</a></li>
+          
+            <li><a title="模式" href="14743602627751.html">模式</a></li>
+          
+            <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+          
+            <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>欢迎加入 Swift</span></li>
+                        
+                          <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
+                        
+                          <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>开发指南</span></li>
+                        
+                          <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+                        
+                          <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+                        
+                          <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+                        
+                          <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
+                        
+                          <li><a title="控制流" href="14743597355186.html">控制流</a></li>
+                        
+                          <li><a title="功能" href="14743597582027.html">功能</a></li>
+                        
+                          <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+                        
+                          <li><a title="枚举" href="14743597933965.html">枚举</a></li>
+                        
+                          <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+                        
+                          <li><a title="属性" href="14743598294467.html">属性</a></li>
+                        
+                          <li><a title="方法" href="14743598422216.html">方法</a></li>
+                        
+                          <li><a title="下标" href="14743598556978.html">下标</a></li>
+                        
+                          <li><a title="继承" href="14743598699234.html">继承</a></li>
+                        
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+                        
+                          <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
+                        
+                          <li><a title="自动引用计数" href="14743599484388.html">自动引用计数</a></li>
+                        
+                          <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
+                        
+                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                        
+                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                        
+                          <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
+                        
+                          <li><a title="扩展" href="14743600183280.html">扩展</a></li>
+                        
+                          <li><a title="协议" href="14743600314526.html">协议</a></li>
+                        
+                          <li><a title="泛型" href="14743600461552.html">泛型</a></li>
+                        
+                          <li><a title="访问控制" href="14743600592705.html">访问控制</a></li>
+                        
+                          <li><a title="高级操作员" href="14743600739128.html">高级操作员</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>语法参考</span></li>
+                        
+                          <li><a title="关于语言参考" href="14743601362358.html">关于语言参考</a></li>
+                        
+                          <li><a title="词法结构" href="14743601580892.html">词法结构</a></li>
+                        
+                          <li><a title="类型" href="14743601607750.html">类型</a></li>
+                        
+                          <li><a title="表达式" href="14743601746767.html">表达式</a></li>
+                        
+                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                        
+                          <li><a title="声明" href="14743602139425.html">声明</a></li>
+                        
+                          <li><a title="属性" href="14743602336703.html">属性</a></li>
+                        
+                          <li><a title="模式" href="14743602627751.html">模式</a></li>
+                        
+                          <li><a title="泛型参数和参数" href="14743602774984.html">泛型参数和参数</a></li>
+                        
+                          <li><a title="语法摘要" href="14743602864403.html">语法摘要</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>表达式</h1>
+
+<p>在夫特，有四种表达式：前缀表达式二进制表达式，主表达式和后缀表达式。计算表达式返回一个值，导致副作用，或两者。</p>
+
+<p>前缀和二进制表达式可以应用于运营商更小的表达式。主要表现在概念上是最简单的一种表达方式，他们提供了一种方法来访问值。后缀表达式，如前缀和二元表达式，让你建立使用后缀，如函数调用和成员访问更复杂的表达式。每一种表达中详细在下面的章节中描述。</p>
+
+<p>表达式语法</p>
+
+<p>表达 → 试运营商选择前缀表达二进制表达选择<br/>
+表达式列表 → 表达表达 表达列表 ­  ,­<br/>
+前缀表达式</p>
+
+<p>前缀表达式结合可选的前缀运算符与表达。前缀运营商需要一个参数，即跟随他们的表达。</p>
+
+<p>有关这些运算符的行为信息，请参阅基本操作员和高级操作员。</p>
+
+<p>有关由斯威夫特标准库提供的运算符的信息，请参阅雨燕标准库操作员参考。</p>
+
+<p>除了 ​​标准库的运营商，您使用&amp;的是被作为一个IN-OUT参数传递给一个函数调用表达式传递一个变量的名字立即出现。欲了解更多信息，并看到一个例子，见输入-输出参数。</p>
+
+<p>前缀表达式语法</p>
+
+<p>前缀表达 → 前缀运营商选择后缀表达式 ­<br/>
+前缀表达 → 在输出表达式 ­<br/>
+IN-OUT表达 → 标识符 ­&amp;­<br/>
+试运营</p>
+
+<p>一个尝试表达包含的try运营商之后，可以抛出一个错误的表达式。它有以下形式：</p>
+
+<p>尝试 表达<br/>
+一个可选的尝试表达包含的try?运营商之后，可以抛出一个错误的表达式。它有以下形式：</p>
+
+<p>试试？表达<br/>
+如果表达式不会引发错误，可选尝试表达式的值是一个可选包含的价值表达。否则，可选尝试表达式的值nil。</p>
+
+<p>一个强制尝试表达包含的try!运营商之后，可以抛出一个错误的表达式。它有以下形式：</p>
+
+<p>试试！表达<br/>
+如果表达式引发错误，产生运行时错误。</p>
+
+<p>当在二元运算的左手侧的表达式标有try，try?或try!，即操作者适用于整个二进制表达式。这就是说，你可以使用括号更明确一些运营商的应用范围。</p>
+
+<p>sum = try someThrowingFunction() + anotherThrowingFunction()   // try applies to both function calls<br/>
+sum = try (someThrowingFunction() + anotherThrowingFunction()) // try applies to both function calls<br/>
+sum = (try someThrowingFunction()) + anotherThrowingFunction() // Error: try applies only to the first function call<br/>
+一个try表达式不能出现在二元运算的右侧，除非二元运算符是赋值运算符或try表达式用括号括起来。</p>
+
+<p>欲了解更多信息，并了解如何使用的例子try，try?和try!见错误处理。</p>
+
+<p>一试的表达语法</p>
+
+<p>试算子 → try­  try­?­  try­!­<br/>
+二进制表达式</p>
+
+<p>二进制表达式结合中缀的二进制运算符，它作为其左侧和右侧的参数的表达。它有以下形式：</p>
+
+<p>左侧参数 操作者 右手的说法<br/>
+有关这些运算符的行为信息，请参阅基本操作员和高级操作员。</p>
+
+<p>有关由斯威夫特标准库提供的运算符的信息，请参阅雨燕标准库操作员参考。</p>
+
+<p>注意</p>
+
+<p>在分析时，二进制运算符组成的表达式被表示为平面列表。这个清单被变换成通过施加操作者的优先级的树。例如，该表达2 + 3 * 5最初理解为五个项目的平面列表，2，+，3，*，和5。该方法将其转换成树（2 +（3 * 5））。</p>
+
+<p>一个二进制表达式语法</p>
+
+<p>二进制表达 → 二进制运算符前缀表达 ­<br/>
+二进制表达 → 赋值操作符试运营商选择前缀表达 ­<br/>
+二进制表达 → 有条件的运营商试运营商选择前缀表达 ­<br/>
+二进制表达 → 类型转换操作符 ­<br/>
+二进制表达式 → 二进制表达的二进制表达式选择<br/>
+赋值运算符</p>
+
+<p>的赋值运算符设定为给定表达式的新值。它有以下形式：</p>
+
+<p>表达式 = 价值<br/>
+所述的值表达被设置为通过评估所获得的值的值。如果表达式是一个元组，该值必须与相同数量的元素的元组。（嵌套元组是允许的。）分配从各部分执行值到相应的部分表达。例如：</p>
+
+<p>(a, _, (b, c)) = (<q>test</q>, 9.45, (12, 3))<br/>
+// a is <q>test</q>, b is 12, c is 3, and 9.45 is ignored<br/>
+赋值运算符不返回任何值。</p>
+
+<p>赋值运算符的语法</p>
+
+<p>赋值操作符 → =­<br/>
+三元条件运算符</p>
+
+<p>在三元条件运算符的计算结果为根据条件的值两个给定值之一。它有以下形式：</p>
+
+<p>调理？使用表达式，如果真：用如有虚假表达<br/>
+如果条件的计算结果为true，条件运算符计算第一个表达式，并返回其值。否则，计算第二个表达式，并返回其值。未使用的表达式求值。</p>
+
+<p>对于使用三元条件运算符的例子，请参阅三元条件运算。</p>
+
+<p>有条件的经营者的语法</p>
+
+<p>有条件的运营商 → 试运营商选择的表达?­:­<br/>
+类型转换操作符</p>
+
+<p>有四个类型铸造操作符：在is操作者的as操作者，所述as?操作者和as!操作者。</p>
+
+<p>它们有以下形式：</p>
+
+<p>表达式 是 类型<br/>
+表达 的 类型<br/>
+表达式 为？型<br/>
+表达 的！类型<br/>
+在is运行时操作员检查是否表达式可以转换为指定的类型。它返回true如果表达式可以转换为指定的类型 ; 否则，返回false。</p>
+
+<p>在as当在，中投始终成功，如向上转型或桥接编译时已知运营商进行铸造。上溯造型让您使用表达式作为其类型的超类型的实例，而无需使用一个中间变量。下面的方法是等价的：</p>
+
+<p>func f(_ any: Any) { print(<q>Function for Any</q>) }<br/>
+func f(_ int: Int) { print(<q>Function for Int</q>) }<br/>
+let x = 10<br/>
+f(x)<br/>
+// Prints <q>Function for Int</q></p>
+
+<p>let y: Any = x<br/>
+f(y)<br/>
+// Prints <q>Function for Any</q></p>
+
+<p>f(x as Any)<br/>
+// Prints <q>Function for Any</q><br/>
+桥接让您使用雨燕标准库类型的表达式，如String及其相应的基金类型，例如NSString，而不需要创建一个新的实例。有关桥接的详细信息，请参阅与可可数据类型的工作中使用SWIFT与可可和Objective-C（SWIFT 3） 。</p>
+
+<p>该as?运营商执行的有条件投表达式为指定的类型。该as?运算符返回指定的可选类型。在运行时，如果转换成功，价值表达被包裹在一个可选的返回; 否则，返回的值nil。如果转换为指定的类型注定要失败，或者是保证成功，编译时错误信息。</p>
+
+<p>该as!运营商执行的强制投表达式为指定的类型。该as!运算符返回指定的值类型，而不是一个可选类型。如果转换失败，运行时出现错误。的行为x as! T是相同的行为(x as? T)!。</p>
+
+<p>有关类型转换，并查看使用的类型转换操作示例的详细信息，请参阅类型转换。</p>
+
+<p>一个类型转换操作符的语法</p>
+
+<p>类型转换操作符 → 型 ­is­<br/>
+类型转换操作符 → 型 ­as­<br/>
+类型转换操作符 → 型 ­as­?­<br/>
+类型转换操作符 → 型 ­as­!­<br/>
+基本表达式</p>
+
+<p>主要表现是最基本的一种表达方式。它们可被用作对自己的表情，并且它们可以与其它标记组合以使前缀表达式二进制表达式和后缀表达式。</p>
+
+<p>主要表达语法</p>
+
+<p>主表达式 → 标识通用参数的子句选择<br/>
+主表达式 → 文字表达 ­<br/>
+主表达式 → 自我表达 ­<br/>
+主表达式 → 超表达 ­<br/>
+主表达式 → 封表达 ­<br/>
+主表达式 → 括号的表达式 ­<br/>
+主表达式 → 隐名成员组成的表达 ­<br/>
+主表达式 → 通配符表达式 ­<br/>
+主表达式 → 选择表达 ­<br/>
+主表达式 → 键路径表达式 ­<br/>
+文字表达式</p>
+
+<p>一个文字表达式是由用普通的文字（如字符串或数字），数组或字典文字，游乐场文字或以下特殊文字之一：</p>
+
+<p>文字<br/>
+类型<br/>
+值</p>
+
+<h1 id="toc_0">file</h1>
+
+<p>String<br/>
+它所在的文件的名称。</p>
+
+<h1 id="toc_1">line</h1>
+
+<p>Int<br/>
+它出现的行号上。</p>
+
+<h1 id="toc_2">column</h1>
+
+<p>Int<br/>
+列号，其中它开始。</p>
+
+<h1 id="toc_3">function</h1>
+
+<p>String<br/>
+在它所在的声明的名称。<br/>
+内的功能，的值#function是该函数的名称，在一个方法中它是方法的名称，属性吸气内部或setter它是该属性的名称，特别会员像内init或subscript它是该名称关键字，并在一个文件的顶部水平它是当前模块的名称。</p>
+
+<p>当作为一个函数或方法的默认值时，当默认值表达式在调用现场评估确定特殊的文本价值。</p>
+
+<p>func logFunctionName(string: String = #function) {<br/>
+    print(string)<br/>
+}<br/>
+func myFunction() {<br/>
+    logFunctionName() // Prints <q>myFunction()</q>.<br/>
+}<br/>
+一个字面上的数组是值的有序集合。它有以下形式：</p>
+
+<p>[ 值1，值2，... ]<br/>
+数组中的最后一个表达式可以后跟一个可选的逗号。一个数组的值字面量的类型[T]，在这里T是它里面的表达式的类型。如果有多个类型的表达式，T是他们最亲密的共同的超类型。空数组文本使用的是空的组方括号的写入，并且可以用于创建一个指定类型的空数组。</p>
+
+<p>var emptyArray: [Double] = []<br/>
+一个字典文字是键值对的无序集合。它有以下形式：</p>
+
+<p>[ 键1：值1，关键2：值2，... ]<br/>
+在字典中的最后一个表达式可以后跟一个可选的逗号。字典字面的值具有类型[Key: Value]，其中，Key是其主要表现的类型和Value是其值表达式的类型。如果有多种类型的表达，Key并且Value对于它们各自的值最接近的共同超类型。一个空的字典文字写成一对括号内的冒号（[:]）从空数组文本区分开来。您可以使用一个空的字典字面来创建一个空的字典文字指定键和值类型。</p>
+
+<p>var emptyDictionary: [String: Double] = [:]<br/>
+一个操场文字所使用Xcode中创建一个颜色，文件或图像程序编辑器中的交互式表示。在Xcode的纯文本之外的游乐场文字使用的是特殊的文本语法来表示。</p>
+
+<p>有关在Xcode使用操场上的文字信息，请参阅Xcode的帮助 &gt;使用操场&gt;添加文字。</p>
+
+<p>文字表达语法</p>
+
+<p>文字表达 → 字面 ­<br/>
+文字表达 → 阵列字面解释字面操场字面 ­<br/><br/>
+文字表达 → #file­  #line­  #column­  #function­<br/>
+数组字面 → 阵列字面项选择[­]­<br/>
+数组字面项 → 数组字面项选择 阵列字面项数组字面项 ­ ,­  ,­<br/>
+数组字面项 → 表达 ­<br/>
+字典文字 → 字典字面项 ­ [­]­  [­:­]­<br/>
+字典字面项 → 字典字面项选择 字典字面项字典字面项 ­ ,­  ,­<br/>
+字典字面项 → 表达的表达:­<br/>
+操场上，文字 → 表达表达 表达 表达#colorLiteral­(­red­:­,­green­:­,­blue­:­,­alpha­:­)­<br/>
+操场上，文字 → 表达 ­#fileLiteral­(­resourceName­:­)­<br/>
+操场上，文字 → 表达 ­#imageLiteral­(­resourceName­:­)­<br/>
+自我表达</p>
+
+<p>的self表达是明确提及在其发生的类型的当前类型或实例。它有以下几种形式：</p>
+
+<p>自<br/>
+自我。成员名称<br/>
+自 [ 标索引 ]<br/>
+自我（初始化参数）<br/>
+自我。初始化（初始化参数）<br/>
+在初始化，下标，或实例方法，self指的是它发生的类型的当前实例。在一种类型的方法，self是指在其发生的电流的类型。</p>
+
+<p>的self表达式用来访问成员时，提供消歧当在范围相同名称的另一变量，诸如函数的参数来指定范围。例如：</p>
+
+<p>class SomeClass {<br/>
+    var greeting: String<br/>
+    init(greeting: String) {<br/>
+        self.greeting = greeting<br/>
+    }<br/>
+}<br/>
+在值类型的变异方法，您可以指定该值类型的新实例self。例如：</p>
+
+<p>struct Point {<br/>
+    var x = 0.0, y = 0.0<br/>
+    mutating func moveBy(x deltaX: Double, y deltaY: Double) {<br/>
+        self = Point(x: x + deltaX, y: y + deltaY)<br/>
+    }<br/>
+}<br/>
+一个自我表达的语法</p>
+
+<p>自我表达 → 自我的方法表达自我标表达自我初始化表达式 ­ self­<br/><br/>
+自方法表达 → 标识符 ­self­.­<br/>
+自标表达 → 表达式列表 ­self­[­]­<br/>
+自初始表达 → self­.­init­<br/>
+超表达</p>
+
+<p>一个超表达可以用其超一类交互。它具有下列形式之一：</p>
+
+<p>超。成员名称<br/>
+超级 [ 标索引 ]<br/>
+超。INIT（初始化参数）<br/>
+第一种形式是用于访问超类的一个成员。第二种形式是用于访问超类的标执行。第三种形式是用于访问超类的初始化。</p>
+
+<p>子类可以使用超表达在其实施的成员，下标，和初始化的利用他们的超类中的实现。</p>
+
+<p>超类表达式语法</p>
+
+<p>超表达 → 超类方法表达式超 -标表达超类的初始化表达式 ­<br/><br/>
+超方法表达式 → 标识符 ­super­.­<br/>
+超-标表达 → 表达式列表 ­super­[­]­<br/>
+超类的初始化表达式 → super­.­init­<br/>
+表达闭幕</p>
+
+<p>一个封闭表达式创建一个倒闭，也称为拉姆达或匿名函数在其他编程语言。就像一个函数声明，封闭包含它执行的语句，它捕获从封闭范围的常量和变量。它有以下形式：</p>
+
+<p>{（参数） - &gt; 返回类型 的<br/>
+    声明<br/>
+}<br/>
+该参数具有相同的形式在函数声明的参数，如描述函数声明。</p>
+
+<p>有几种特殊形式，允许封锁被更简明地写：</p>
+
+<p>的封闭件可以省略类型的参数，其返回类型，或两者兼而有之。如果省略该参数名称和两种类型，省略in的语句之前的关键字。如果省略类型不能被推断，编译时错误信息。<br/>
+闭包可用于其参数省略名称。它的参数，然后隐式命名\(其次是自己的立场：\)0，\(1，\)2，等。<br/>
+只包含一个表达式的封闭被理解为返回表达式的值。这种表达的内容是对周围进行表达的类型推断的时候也考虑。<br/>
+以下封表达式是等效的：</p>
+
+<p>myFunction {<br/>
+    (x: Int, y: Int) -&gt; Int in<br/>
+    return x + y<br/>
+}</p>
+
+<p>myFunction {<br/>
+    (x, y) in<br/>
+    return x + y<br/>
+}</p>
+
+<p>myFunction { return \(0 + \)1 }</p>
+
+<p>myFunction { \(0 + \)1 }<br/>
+有关传递闭包作为参数传递给函数的信息，请参阅函数调用表达式。</p>
+
+<p>捕获列表</p>
+
+<p>默认情况下，封闭的表达与捕捉到这些价值观强引用其周边范围的常量和变量。您可以使用捕捉清单明确地控制值是如何在封闭抓获。</p>
+
+<p>作为一个逗号分隔的用方括号包围表达式的列表，参数列表之前捕获列表被写入。如果使用捕捉列表中，也必须使用in关键字，即使你省略参数名称，参数类型和返回类型。</p>
+
+<p>在创建闭合时在捕获列表中的条目被初始化。在捕获列表中的每个条目，常数被初始化为具有在周边范围相同名称的恒定或可变的值。例如在下面的代码，a包括在捕获列表中，但b不是，这使他们不同的行为。</p>
+
+<p>var a = 0<br/>
+var b = 0<br/>
+let closure = { [a] in<br/>
+    print(a, b)<br/>
+}</p>
+
+<p>a = 10<br/>
+b = 10<br/>
+closure()<br/>
+// Prints <q>0 10</q><br/>
+有一个名为两回事a，在周边范围内的变量，并在封闭的范围不变，但只有一个变量命名b。该a在内部范围初始化的值a在创建时关闭外部范围，但它们的值不会以任何特殊的方式连接起来。这意味着一个变化，它的值a在外部范围不影响的值a在内的范围，也不会发生变化，以a封闭内影响的值a的闭合之外。与此相反，仅存在一个名为变量b-the b在从内侧或封闭件外侧的外部范围-如此变化在这两个地方可见。</p>
+
+<p>当所捕捉的变量的类型有引用语义这种区别是不可见的。例如，有一个名为两件事情x在下面的代码，在外部范围的变量，并在内部范围恒定的，但它们都引用因为引用语义相同的对象。</p>
+
+<p>class SimpleClass {<br/>
+    var value: Int = 0<br/>
+}<br/>
+var x = SimpleClass()<br/>
+var y = SimpleClass()<br/>
+let closure = { [x] in<br/>
+    print(x.value, y.value)<br/>
+}</p>
+
+<p>x.value = 10<br/>
+y.value = 10<br/>
+closure()<br/>
+// Prints <q>10 10</q><br/>
+如果表达式的值的类型是一个类，你可以标记在捕获列表中的表达式weak或unowned捕捉微弱或无主参考表达式的值。</p>
+
+<p>myFunction { print(self.title) }                    // strong capture<br/>
+myFunction { [weak self] in print(self!.title) }    // weak capture<br/>
+myFunction { [unowned self] in print(self.title) }  // unowned capture<br/>
+您也可以任意表达式绑定到捕获列表中的指定值。在创建闭合时表达式进行求值，并且该值与指定的强度捕获。例如：</p>
+
+<p>// Weak capture of <q>self.parent</q> as <q>parent</q><br/>
+myFunction { [weak parent = self.parent] in print(parent!.title) }<br/>
+欲了解更多信息和封闭表达式的示例，请参阅封闭表达式。欲了解更多信息和捕捉列表的示例，请参阅解决闭包强大的参考周期。</p>
+
+<p>封闭的表达语法</p>
+
+<p>封闭表达 → 封签名选择 语句 选择{­}­<br/>
+关闭签名 → 捕捉列表选择关闭参数子句选择 功能 ，因此选择throws­in­<br/>
+关闭签名 → 捕捉名单 ­in­<br/>
+关闭参数子句 → 封参数列表标识符表 ­ (­)­  (­)­<br/><br/>
+关闭参数列表 → 封参数封参数封参数列表 ­  ,­<br/>
+关闭参数 → 封参数名称类型注释选择<br/>
+关闭参数 → 封参数名称类型注释 ­...­<br/>
+关闭参数名 → 标识 ­<br/>
+捕捉列表 → 捕捉列表项 ­[­]­<br/>
+捕捉列表项 → 捕获列表项捕获列表项捕获列表项 ­  ,­<br/>
+捕获列表项 → 捕捉符选择表达<br/>
+捕获说明 → weak­  unowned­  unowned(safe)­  unowned(unsafe)­<br/>
+隐成员表达式</p>
+
+<p>一个隐含的成员表达式是访问类型，成员如枚举情况或类型的方法，在上下文中，其中类型推断可以确定隐含类型的缩写方式。它有以下形式：</p>
+
+<p>。成员名称<br/>
+例如：</p>
+
+<p>var x = MyEnumeration.someValue<br/>
+x = .anotherValue<br/>
+一个隐含的成员表达式语法</p>
+
+<p>隐名成员表达 → 标识符 ­.­<br/>
+括号表达式</p>
+
+<p>一个括号表达式由逗号分隔的用括号括起表达式的列表中。每个表达式可以收到（可选的标识符，由冒号分隔:）。它有以下形式：</p>
+
+<p>（标识符1：表达式1，标识符2：表达式2，...）<br/>
+使用括号表达式创建的元组和参数传递给函数调用。如果只有一个括号表达内在价值，括号表达式的类型是值的类型。例如，括号表达式的类型(1)是Int，不(Int)。</p>
+
+<p>一个括号表达式语法</p>
+
+<p>括号内的表达 → 表达元素列表选择(­)­<br/>
+表达元素列表 → 表达元素的表达元素的表达元素列表 ­  ,­<br/>
+表达元素 → 表情识别 表情  :­<br/>
+表达元素 → 运营商标识符 运营商  :­<br/>
+通配符表达式</p>
+
+<p>一个通配符表达式用来明确忽略分配过程中的值。例如，在下面的分配10被分配给x和20被忽略：</p>
+
+<p>(x, _) = (10, 20)<br/>
+// x is 10, and 20 is ignored<br/>
+通配符表达式语法</p>
+
+<p>通配符表达 → _­<br/>
+选择表达</p>
+
+<p>选择器表达式可以访问用来指一种方法或属性的getter或setter在Objective-C选择。</p>
+
+<h1 id="toc_4">selector（方法名）</h1>
+
+<h1 id="toc_5">selector（吸气：属性名）</h1>
+
+<h1 id="toc_6">selector（setter方法：属性名）</h1>
+
+<p>该方法名和属性名必须是一个方法，或者说是在Objective-C运行提供一个属性的引用。选择器表达式的值是所述的一个实例Selector类型。例如：</p>
+
+<p>class SomeClass: NSObject {<br/>
+    let property: String<br/>
+    @objc(doSomethingWithInt:)<br/>
+    func doSomething(_ x: Int) {}</p>
+
+<pre><code>init(property: String) {
+    self.property = property
+}
+</code></pre>
+
+<p>}<br/>
+let selectorForMethod = #selector(SomeClass.doSomething(_:))<br/>
+let selectorForPropertyGetter = #selector(getter: SomeClass.property)<br/>
+当创建一个属性的getter一个选择器，属性名可以是一个变量或常量属性的引用。相比之下，创造了一个属性的setter一个选择时，在属性名必须是唯一的变量属性的参考。</p>
+
+<p>该方法的名称可以包含括号进行分组，以及对as运营商共享一个名称，但具有不同类型签名的方法之间的歧义。例如：</p>
+
+<p>extension SomeClass {<br/>
+    @objc(doSomethingWithString:)<br/>
+    func doSomething(_ x: String) { }<br/>
+}<br/>
+let anotherSelector = #selector(SomeClass.doSomething(_:) as (SomeClass) -&gt; (String) -&gt; Void)<br/>
+因为选择是在编译时创建的，而不是在运行时，编译器可以检查方法或属性是否存在，以及他们接触到Objective-C运行。</p>
+
+<p>注意</p>
+
+<p>虽然方法名和属性名是表达式，他们从来没有评估。</p>
+
+<p>有关使用在与Objective-C的API的交互雨燕代码选择器的详细信息，请参阅Objective-C的选择器在使用SWIFT与可可和Objective-C（SWIFT 3） 。</p>
+
+<p>一个选择器表达式语法</p>
+
+<p>选择表达 → 表达 ­#selector­(­)­<br/>
+选择表达 → 表达 ­#selector­(­getter:­)­<br/>
+选择表达 → 表达 ­#selector­(­setter:­)­<br/>
+关键路径表达式</p>
+
+<p>关键路径表达式可以访问用来指一个属性在Objective-C在键 - 值编码和键 - 值观察的API使用的字符串。</p>
+
+<h1 id="toc_7">keyPath（属性名）</h1>
+
+<p>该属性名称必须是是在Objective-C运行提供一个属性的引用。在编译时，关键路径表达式是由一个字符串替换。例如：</p>
+
+<p>@objc class SomeClass: NSObject {<br/>
+    var someProperty: Int<br/>
+    init(someProperty: Int) {<br/>
+        self.someProperty = someProperty<br/>
+    }<br/>
+    func keyPathTest() -&gt; String {<br/>
+        return #keyPath(someProperty)<br/>
+    }<br/>
+}</p>
+
+<p>let c = SomeClass(someProperty: 12)<br/>
+let keyPath = #keyPath(SomeClass.someProperty)<br/>
+print(c.value(forKey: keyPath))<br/>
+// Prints <q>Optional(12)</q></p>
+
+<p>print(keyPath == c.keyPathTest())<br/>
+// Prints <q>true</q><br/>
+由于关键路径是在编译时创建的，而不是在运行时，编译器可以检查该属性存在并且该财产暴露在Objective-C运行。</p>
+
+<p>有关在与Objective-C的API的交互斯威夫特代码中使用选择器的详细信息，请参阅键和关键路径中使用SWIFT与可可和Objective-C（SWIFT 3） 。有关键值编码和键-值观察的信息，请参阅键-值编码编程指南和键-值观察编程指南。</p>
+
+<p>注意</p>
+
+<p>虽然属性名称是一个表达式，它永远不会评估。</p>
+
+<p>一个关键路径表达式语法</p>
+
+<p>关键路径表达式 → 表达 ­#keyPath­(­)­<br/>
+后缀表达式</p>
+
+<p>后缀表达式通过施加后缀操作员或其他后缀语法表达式形成。在语法上，每一次的表现也是一个后缀表达式。</p>
+
+<p>有关这些运算符的行为信息，请参阅基本操作员和高级操作员。</p>
+
+<p>有关由斯威夫特标准库提供的运算符的信息，请参阅雨燕标准库操作员参考。</p>
+
+<p>后缀表达式语法</p>
+
+<p>后缀表达式 → 主表达式 ­<br/>
+后缀表达式 → 后缀表达式后缀运营商 ­<br/>
+后缀表达式 → 函数调用表达式 ­<br/>
+后缀表达式 → 初始化表达式 ­<br/>
+后缀表达式 → 明确成员的表达 ­<br/>
+后缀表达式 → 后缀，自我表达 ­<br/>
+后缀表达式 → 动态式表达 ­<br/>
+后缀表达式 → 下标表达式 ­<br/>
+后缀表达式 → 强制值表达式 ­<br/>
+后缀表达式 → 可选链表达 ­<br/>
+函数调用表达式</p>
+
+<p>一个函数调用表达式包含一个函数名后的函数的参数在括号中以逗号分隔的列表。函数调用表达式有以下形式：</p>
+
+<p>函数名（参数值1，参数值2）<br/>
+该函数名称可以是任意表达式的值是一个函数类型。</p>
+
+<p>如果函数定义包括它的参数名称，函数的调用必须包括其名称参数值由冒号分隔前（:）。这种函数调用表达式有以下形式：</p>
+
+<p>函数名（参数名1：参数值1，参数名2：参数值为2）<br/>
+函数调用表达式中可以包含右括号后立即封闭的形式表达尾随关闭。尾部的封闭被理解为一个函数参数，最后括号参数后添加。下面的函数调用是等效的：</p>
+
+<p>// someFunction takes an integer and a closure as its arguments<br/>
+someFunction(x: x, f: {\(0 == 13})<br/>
+someFunction(x: x) {\)0 == 13}<br/>
+如果尾随闭包是函数的唯一参数，括号可以省略。</p>
+
+<p>// someFunction takes a closure as its only argument<br/>
+myData.someMethod() {\(0 == 13}<br/>
+myData.someMethod {\)0 == 13}<br/>
+一个函数调用表达式的语法</p>
+
+<p>函数调用表达 → 后缀表达式括号的表达式 ­<br/>
+函数调用表达 → 后缀表达式括号的表达式选择尾随封 ­<br/>
+尾随闭合 → 封表达 ­<br/>
+初始化表达式</p>
+
+<p>一个初始化表达式提供访问类型的初始化。它有以下形式：</p>
+
+<p>表达。INIT（初始化参数）<br/>
+您可以使用初始化表达式在函数调用表达式来初始化类型的新实例。您还可以使用一个初始化表达式来委托给超类的初始化。</p>
+
+<p>class SomeSubClass: SomeSuperClass {<br/>
+    override init() {<br/>
+        // subclass initialization goes here<br/>
+        super.init()<br/>
+    }<br/>
+}<br/>
+像的功能，一个初始化可被用作一个值。例如：</p>
+
+<p>// Type annotation is required because String has multiple initializers.<br/>
+let initializer: (Int) -&gt; String = String.init<br/>
+let oneTwoThree = [1, 2, 3].map(initializer).reduce(&quot;<q>, +)<br/>
+print(oneTwoThree)<br/>
+// Prints</q>123&quot;<br/>
+如果指定一个类型的名字，你可以不使用初始化表达式访问类型的初始化。在其他情况下，你必须使用一个初始化表达式。</p>
+
+<p>let s1 = SomeType.init(data: 3)  // Valid<br/>
+let s2 = SomeType(data: 1)       // Also valid</p>
+
+<p>let s3 = type(of: someValue).init(data: 7)  // Valid<br/>
+let s4 = type(of: someValue)(data: 5)       // Error<br/>
+一个初始化表达式语法</p>
+
+<p>初始化表达式 → 后缀表达式 ­.­init­<br/>
+初始化表达式 → 后缀表达式参数 -名 ­.­init­(­)­<br/>
+明确表达会员</p>
+
+<p>一个明确的成员表达式允许访问一个名为类型，一个元组，或模块的成员。它由一期（.项目及其成员的标识符之间）。</p>
+
+<p>表达。成员名称<br/>
+命名类型的成员被命名为类型的声明或扩展的一部分。例如：</p>
+
+<p>class SomeClass {<br/>
+    var someProperty = 42<br/>
+}<br/>
+let c = SomeClass()<br/>
+let y = c.someProperty  // Member access<br/>
+一个元组的成员在他们出现，从0开始的顺序使用整数隐式命名。例如：</p>
+
+<p>var t = (10, 20, 30)<br/>
+t.0 = t.1<br/>
+// Now t is (20, 20, 30)<br/>
+一个模块的成员访问该模块的顶层声明。</p>
+
+<p>要方法或初始化的名字只通过它们的参数的名称不同，包括括号中的参数名称区分，用（每个参数名后跟一个冒号:）。写一个下划线（_对于没有名称的参数）。要重载方法区分，使用类型注释。例如：</p>
+
+<p>class SomeClass {<br/>
+    func someMethod(x: Int, y: Int) {}<br/>
+    func someMethod(x: Int, z: Int) {}<br/>
+    func overloadedMethod(x: Int, y: Int) {}<br/>
+    func overloadedMethod(x: Int, y: Bool) {}<br/>
+}<br/>
+let instance = SomeClass()</p>
+
+<p>let a = instance.someMethod              // Ambiguous<br/>
+let b = instance.someMethod(x:y:)        // Unambiguous</p>
+
+<p>let d = instance.overloadedMethod        // Ambiguous<br/>
+let d = instance.overloadedMethod(x:y:)  // Still ambiguous<br/>
+let d: (Int, Bool) -&gt; Void  = instance.overloadedMethod(x:y:)  // Unambiguous<br/>
+如果一个周期出现在一行的开头，它被理解为一个显式构件表达式的一部分，而不是作为一个隐式构件表达。例如，下面的列表显示链接的方法，在多个线路的呼叫拆分：</p>
+
+<p>let x = [10, 3, 20, 15, 4]<br/>
+    .sorted()<br/>
+    .filter { \(0 &gt; 5 }<br/>
+    .map { \)0 * 100 }<br/>
+一个明确的成员表达语法</p>
+
+<p>显式成员表达 → 后缀表达式的小数位数 ­.­<br/>
+显式成员表达 → 后缀表达式识别 仿制参数子句选择.­<br/>
+显式成员表达 → 后缀表达式识别 参数 ，名称 ­.­(­)­<br/>
+参数-名称 → 参数名称参数 ，名称选择<br/>
+参数名 → 标识 ­:­<br/>
+Postfix的自我表达</p>
+
+<p>符后缀self表达式包含一个表达式或类型的名称，后面紧跟.self。它有以下几种形式：</p>
+
+<p>表达。自<br/>
+类型。自<br/>
+第一种形式计算的价值表达。例如，x.self计算结果为x。</p>
+
+<p>第二种形式评估的价值类型。使用这种形式的访问类型的值。例如，由于SomeClass.self计算结果为SomeClass类型本身，你可以把它传递给接受一个类型级参数的函数或方法。</p>
+
+<p>一个自我表达的语法</p>
+
+<p>后缀-自我表达 → 后缀表达式 ­.­self­<br/>
+动态类型的表达式</p>
+
+<p>一个动态类型表达式包含类似于一种特殊的语法中的表达式的函数调用表达式。它有以下形式：</p>
+
+<p>类型（的：表达）<br/>
+的表达不能是类型的名称。整个type(of:)表达式计算到运行时类型的价值表达，如下例所示：</p>
+
+<p>class SomeBaseClass {<br/>
+    class func printClassName() {<br/>
+        print(<q>SomeBaseClass</q>)<br/>
+    }<br/>
+}<br/>
+class SomeSubClass: SomeBaseClass {<br/>
+    override class func printClassName() {<br/>
+        print(<q>SomeSubClass</q>)<br/>
+    }<br/>
+}<br/>
+let someInstance: SomeBaseClass = SomeSubClass()<br/>
+// someInstance has a static type of SomeBaseClass at compile time, and<br/>
+// it has a dynamic type of SomeSubClass at runtime<br/>
+type(of: someInstance).printClassName()<br/>
+// Prints <q>SomeSubClass</q><br/>
+动态类型的表达式语法</p>
+
+<p>动态型表达 → 表达 ­type­(­of­:­)­<br/>
+标表达式</p>
+
+<p>一个标表达式提供了使用getter和相应的标声明的二传手标访问。它有以下形式：</p>
+
+<p>表情 [ 索引表达式 ]<br/>
+为了评估一个下标表达式的值，为下标吸气表达的类型被称为与索引表达式为下标参数传递。将其值，下标设定器被称为以相同的方式。</p>
+
+<p>有关标申报信息，请参阅协议标宣言。</p>
+
+<p>一个标表达式语法</p>
+
+<p>标表达 → 后缀表达式表达式列表 ­[­]­<br/>
+强制值表达式</p>
+
+<p>一个强制值表达式解开一个可选的值，你一定不是nil。它有以下形式：</p>
+
+<p>表情！<br/>
+如果价值表现是不是nil，可选的值被解开，并与相应的非可选类型返回。否则，运行时引发错误。</p>
+
+<p>强制值表达式的展开值可以修改，无论是通过突变的值本身，或通过分配到的值的成员之一。例如：</p>
+
+<p>var x: Int? = 0<br/>
+x! += 1<br/>
+// x is now 1</p>
+
+<p>var someDictionary = [<q>a</q>: [1, 2, 3], <q>b</q>: [10, 20]]<br/>
+someDictionary[<q>a</q>]![0] = 100<br/>
+// someDictionary is now [<q>b</q>: [10, 20], <q>a</q>: [100, 2, 3]]<br/>
+强制值表达式语法</p>
+
+<p>强制值表达式 → 后缀表达式 ­!­<br/>
+可选的链式表达</p>
+
+<p>一个可选的链式表达提供了后缀表达式中使用可选值简单的语法。它有以下形式：</p>
+
+<p>表达？<br/>
+后缀?操作符从表达式可选的链式表达不改变表达式的值。</p>
+
+<p>可选链接表达式必须后缀表达式中出现，它们所造成的后缀表达式以一种特殊的方式进行评估。如果可选链式表达式的值nil，都在后缀表达式的其他操作都将被忽略，整个后缀表达式的计算结果为nil。如果可选链式表达式的值不是nil，可选的链式表达式的值是打开并用于评估后缀表达式的其余部分。在两种情况下，后缀表达式的值是可选的类型的静止。</p>
+
+<p>如果包含一个可选链表达后缀表达式嵌套其他后缀表达式里面，只有最外层的表达式返回一个可选类型。在下面的例子中，当c不是nil，则其值被解开并用于评估.property，其值用于评价.performAction()。整个表达式c?.property.performAction()有一个可选类型的值。</p>
+
+<p>var c: SomeClass?<br/>
+var result: Bool? = c?.property.performAction()<br/>
+下面的例子显示了上面，而无需使用可选的链接的例子的行为。</p>
+
+<p>var result: Bool? = nil<br/>
+if let unwrappedC = c {<br/>
+    result = unwrappedC.property.performAction()<br/>
+}<br/>
+可选的链式表达的展开值可以修改，无论是通过突变的值本身，或通过分配到的值的成员之一。如果可选链接表达式的值nil，在赋值运算符的右侧表达式求值。例如：</p>
+
+<p>func someFunctionWithSideEffects() -&gt; Int {<br/>
+    return 42  // No actual side effects.<br/>
+}<br/>
+var someDictionary = [<q>a</q>: [1, 2, 3], <q>b</q>: [10, 20]]</p>
+
+<p>someDictionary[<q>not here</q>]?[0] = someFunctionWithSideEffects()<br/>
+// someFunctionWithSideEffects is not evaluated<br/>
+// someDictionary is still [<q>b</q>: [10, 20], <q>a</q>: [1, 2, 3]]</p>
+
+<p>someDictionary[<q>a</q>]?[0] = someFunctionWithSideEffects()<br/>
+// someFunctionWithSideEffects is evaluated and returns 42<br/>
+// someDictionary is now [<q>b</q>: [10, 20], <q>a</q>: [42, 2, 3]]<br/>
+可选的链式表达语法</p>
+
+<p>可选链表达 → 后缀表达式 ­?­</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14743601607750.html"  title="Previous Post: 类型">&laquo; 类型</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14743601868497.html" 
+	        title="Next Post: 声明">声明 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14743601746767.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>
