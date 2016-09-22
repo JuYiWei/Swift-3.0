@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  基础-此篇一下未整理仅谷歌翻译 - Swift 3.0 自翻译 - 说了是村长
+  基础知识 - Swift 3.0 自翻译 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -57,9 +57,9 @@
         <li><label>开发指南</label></li>
 
           
-            <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+            <li><a title="基础知识" href="14743596331025.html">基础知识</a></li>
           
-            <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+            <li><a title="基础运营商 此篇一下未整理仅谷歌翻译" href="14743596434163.html">基础运营商 此篇一下未整理仅谷歌翻译</a></li>
           
             <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
           
@@ -160,9 +160,9 @@
                     
                       <li class="side-title"><span>开发指南</span></li>
                         
-                          <li><a title="基础-此篇一下未整理仅谷歌翻译" href="14743596331025.html">基础-此篇一下未整理仅谷歌翻译</a></li>
+                          <li><a title="基础知识" href="14743596331025.html">基础知识</a></li>
                         
-                          <li><a title="基础运营商" href="14743596434163.html">基础运营商</a></li>
+                          <li><a title="基础运营商 此篇一下未整理仅谷歌翻译" href="14743596434163.html">基础运营商 此篇一下未整理仅谷歌翻译</a></li>
                         
                           <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
                         
@@ -244,596 +244,721 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1>基础-此篇一下未整理仅谷歌翻译</h1>
+<h1>基础知识</h1>
+
+<ul>
+<li>
+<a href="#toc_0">再吹个牛先</a>
+</li>
+<li>
+<a href="#toc_1">常量和变量</a>
+<ul>
+<li>
+<a href="#toc_2">声明常量和变量</a>
+</li>
+<li>
+<a href="#toc_3">类型标识</a>
+</li>
+<li>
+<a href="#toc_4">命名常量和变量</a>
+</li>
+<li>
+<a href="#toc_5">印刷常量和变量</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_6">注释</a>
+</li>
+<li>
+<a href="#toc_7">分号</a>
+</li>
+<li>
+<a href="#toc_8">整数</a>
+<ul>
+<li>
+<a href="#toc_9">整数边界</a>
+</li>
+<li>
+<a href="#toc_10">INT</a>
+</li>
+<li>
+<a href="#toc_11">UINT</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_12">浮点数</a>
+</li>
+<li>
+<a href="#toc_13">类型安全和类型推断</a>
+</li>
+<li>
+<a href="#toc_14">数值表示</a>
+</li>
+<li>
+<a href="#toc_15">数值类型转换</a>
+<ul>
+<li>
+<a href="#toc_16">整型转换</a>
+</li>
+<li>
+<a href="#toc_17">整数和浮点转换</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_18">类型别名</a>
+</li>
+<li>
+<a href="#toc_19">布尔值</a>
+</li>
+<li>
+<a href="#toc_20">元组</a>
+</li>
+<li>
+<a href="#toc_21">可选类型</a>
+<ul>
+<li>
+<a href="#toc_22">nil</a>
+</li>
+<li>
+<a href="#toc_23">if语句，强制解析</a>
+</li>
+<li>
+<a href="#toc_24">可选绑定</a>
+</li>
+<li>
+<a href="#toc_25">可选类型隐式解析</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_26">错误处理</a>
+</li>
+<li>
+<a href="#toc_27">断言</a>
+<ul>
+<li>
+<a href="#toc_28">调试使用断言</a>
+</li>
+<li>
+<a href="#toc_29">何时使用断言</a>
+</li>
+</ul>
+</li>
+</ul>
 
-<p>斯威夫特是一个新的编程语言适用于iOS，MacOS的，watchOS和tvOS应用开发。尽管如此，雨燕的许多地方会从你的C和Objective-C开发的经验，熟悉。</p>
 
-<p>雨燕提供了自己的所有基本C和Objective-C类型的版本，包括Int整数，Double而Float对于浮点值，Bool布尔值，String为文本数据。迅速还提供了三个主要集合类型的有力的版本，Array，Set，和Dictionary，如在所述集合类型。</p>
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID309">The Basics 官方文档</a></p>
 
-<p>像C，斯威夫特使用变量来存储和通过一个标识名称参考值。斯威夫特也使得大量使用的变量，其值不能改变。这些被称为常量和功能更加强大比C.常量常量整个斯威夫特用来使代码更安全和更清晰的意图中，当你用不需要更改值工作。</p>
+<h1 id="toc_0">再吹个牛先</h1>
 
-<p>除了熟悉的类型，斯威夫特介绍了Objective-C中无法实现的高级类型，如元组。元组可以创建并通过各地值分组。您可以使用一个元组从功能单一的化合物值返回多个值。</p>
+<ul>
+<li><p>Swift是一个新的编程语言，适用于iOS，macOS，watchOS和tvOS应用开发。尽管如此，基于你的C和Objective-C开发的经验，Swift的许多地方将会非常熟悉。</p></li>
+<li><p>Swift提供了所有C和Objective-C基本类型，包括整数Int，浮点数Double和Float，布尔值Bool，字符串String。Swift还提供了三个主要集合类型，Array，Set，和Dictionary。</p></li>
+<li><p>像C，Swift使用标识符存储和引用变量。Swift也使得大量使用的常量，其值不能改变，功能比C更加强大。常量在整个Swift中，使代码更安全，意图更清晰。</p></li>
+<li><p>除了熟悉的类型，Swift介绍了Objective-C中无法实现的高级类型，如元组，可以使用元组从一个函数返回多个值。</p></li>
+<li><p>Swift还引入了可选类型，处理缺省值。可选类型不是有值就是nil，对任何类型有效。可选类型更安全，也是Swift的核心。</p></li>
+<li><p>Swift是一个类型安全的语言，实时的检测代码中的类型。如果代码的需要一个String，类型安全会防止传递一个Int的错误。同样，类型安全防止意外传递一个可选的String，必须是非可选String。类型安全可以尽可能尽早的捕捉到开发过程中的错误。</p></li>
+</ul>
 
-<p>斯威夫特还引入了可选类型，处理缺乏价值。选配说不是“有是一个值，它等于点¯x ”或“有没有一个价值可言”。使用自选类似于使用nil与Objective-C的三分球，但他们对任何类型的，不只是类工作。不仅是自选更安全，比表现nil在Objective-C的指针，它们在许多斯威夫特的最强大的功能的心脏。</p>
+<h1 id="toc_1">常量和变量</h1>
 
-<p>斯威夫特是一个类型安全的语言，这意味着该语言可以帮助你清楚的类型的代码可以工作的值。如果你的代码的一部分需要一个String，类型安全防止您传递一个Int错误。同样，类型安全防止意外传递一个可选的String一块代码，需要一个非可选String。类型安全可以帮助您捕捉并尽可能早地在开发过程中修正错误。</p>
+<p>常量和变量：常量的值恒定一旦设置不能被改变，变量可以被多册设置不同的值。</p>
 
-<p>常量和变量</p>
+<h2 id="toc_2">声明常量和变量</h2>
 
-<p>常量和变量（例如名称关联maximumNumberOfLoginAttempts或welcomeMessage）与特定类型的（如数字的一个值10或字符串<q>Hello</q>）。a的值恒定一旦设置不能被改变，而变量可以被设置为在未来不同的值。</p>
+<ul>
+<li>在使用之前，常量和变量必须声明。声明常量<code>let</code>关键字和变量<code>var</code>关键字。</li>
+</ul>
 
-<p>声明常量和变量</p>
+<pre><code>let maximumNumberOfLoginAttempts = 10
+var currentLoginAttempt = 0
+</code></pre>
 
-<p>在使用之前，常量和变量必须声明。您声明的常量let关键字和变量的var关键字。下面是常量和变量如何被使用的登录尝试的用户已作出跟踪数的例子：</p>
+<ul>
+<li>可以在一行声明多个常量或多个变量，用逗号分隔：</li>
+</ul>
 
-<p>let maximumNumberOfLoginAttempts = 10<br/>
-var currentLoginAttempt = 0<br/>
-此代码可以被解读为：</p>
+<pre><code>var x = 0.0, y = 0.0, z = 0.0
+</code></pre>
 
-<p>“声明一个所谓的新常数maximumNumberOfLoginAttempts，并给它的值10。然后，声明了一个名为新变量currentLoginAttempt，并给它的初始值0。“</p>
+<h2 id="toc_3">类型标识</h2>
 
-<p>在这个例子中，允许的登录尝试的最大数目被声明为恒定，因为最大值从不改变。当前的登录尝试计数器被声明为一个变量，因为该值必须递增之后的每个失败的登录尝试。</p>
+<ul>
+<li>当你声明一个常量或变量，可以提供一个类型标识，也就是指定类型。</li>
+</ul>
 
-<p>你可以声明在一行多个常量或多个变量，用逗号分隔：</p>
+<pre><code>var welcomeMessage: String
+</code></pre>
 
-<p>var x = 0.0, y = 0.0, z = 0.0<br/>
-注意</p>
+<ul>
+<li>welcomeMessage变量现在可以设置为任何字符串值：</li>
+</ul>
 
-<p>如果你的代码存储的值不会改变，永远声明为具有恒定 ​​的let关键字。使用变量仅用于存储需要能够改变值。</p>
+<pre><code>welcomeMessage = &quot;Hello&quot;
+</code></pre>
 
-<p>类型注释</p>
+<ul>
+<li>可以定义在一行相同的类型，用逗号隔开，最后的变量名后指定类型</li>
+</ul>
 
-<p>您可以提供一个类型注释，当你声明一个常量或变量，要清楚的那种价值观的常量或变量可以存储。通过将常量或变量名后一个冒号，后面加一个空格，然后使用该类型的名称写类型注释。</p>
+<pre><code>var red, green, blue: Double
+</code></pre>
 
-<p>本实施例提供了一种称为变量类型注释welcomeMessage，以指示该变量可以存储String值：</p>
+<ul>
+<li>指定类型不是必须的，Switf可以直接对初始化的变量或常数进行类型推断，从而直接确定了类型。</li>
+</ul>
 
-<p>var welcomeMessage: String<br/>
-在声明的冒号表示“...类型......”，所以上面的代码可以读作：</p>
+<h2 id="toc_4">命名常量和变量</h2>
 
-<p>“声明一个名为的变量welcomeMessage是类型String。”</p>
+<ul>
+<li>常量和变量名几乎可以包含任何字符，包括Unicode字符，但还是推荐正常命名规范</li>
+</ul>
 
-<p>短语“型String”是指“可以存储任何String价值。”把它看成是意为“型的事”可以存储（或“之类的话”）。</p>
+<pre><code>let π = 3.14159
+let 你好 = &quot;你好世界&quot;
+let 🐶🐮 = &quot;dogcow&quot;
+</code></pre>
 
-<p>的welcomeMessage变量现在可以设置为任何字符串值没有错误：</p>
+<ul>
+<li>不允许重名</li>
+<li>尽量不使用Swift保留关键字</li>
+</ul>
 
-<p>welcomeMessage = <q>Hello</q><br/>
-您可以定义在一行相同的类型，用逗号隔开，最后的变量名后一种类型标注的多个相关变量：</p>
+<h2 id="toc_5">印刷常量和变量</h2>
 
-<p>var red, green, blue: Double<br/>
-注意</p>
+<ul>
+<li><code>print</code>打印常量或变量的当前值，支持多值，分割字符，追加字符。</li>
+</ul>
 
-<p>这是罕见的，你需要写类型标注在实践中。如果在它被定义的点提供了一个常数或变量的初始值，夫特几乎总是推断要用于该恒定或可变的，如在所描述的类型类型安全和类型推断。在welcomeMessage上面的例子中，没有初始值设置，所以的类型welcomeMessage，而不是从初始值被推断变量与一类注解指定。</p>
+<pre><code>print(friendlyWelcome)
+print(1,2,3,4 ,separator: &quot;??&quot;, terminator: &quot;000&quot;)
+</code></pre>
 
-<p>命名常量和变量</p>
+<ul>
+<li>打印格式字符，<code>\()</code>包含常量或者变量</li>
+</ul>
 
-<p>常量和变量名几乎可以包含任何字符，包括Unicode字符：</p>
+<pre><code>print(&quot;The current value of friendlyWelcome is \(friendlyWelcome)&quot;)
+</code></pre>
 
-<p>let π = 3.14159<br/>
-let 你好 = <q>你好世界</q><br/>
-let 🐶🐮 = <q>dogcow</q><br/>
-常量和变量名不能包含空格字符，数学符号，箭头，私用（或无效）Unicode代码点或线路和框绘制字符。他们也可以以数字开始，但数字可以在名称中的其它地方。</p>
+<h1 id="toc_6">注释</h1>
 
-<p>一旦你已经声明某种类型的固定或可变，无法再次使用相同的名称重新声明，或改变它来存储不同类型的值。你也可以改变一个常量到一个变量或变量为一个常数。</p>
+<ul>
+<li>类似C单行注释，以两个正斜杠<code>//</code>开始：</li>
+</ul>
 
-<p>注意</p>
+<pre><code>// This is a comment.
+</code></pre>
 
-<p>如果你需要给一个常量或变量相同的名称为保留斯威夫特关键字，请用反引号中的关键字（`用它作为名字的时候）。但是，避免使用关键字作为名称，除非你有绝对别无选择。</p>
+<ul>
+<li>多行注释以<code>/*</code>开始，并<code>*/</code>结束</li>
+</ul>
 
-<p>您可以将现有变量的值更改为兼容类型的另一个值。在这个例子中，该值friendlyWelcome是从改变<q>Hello!</q>到<q>Bonjour!</q>：</p>
+<pre><code>/* This is also a comment
+ but is written over multiple lines. */
+</code></pre>
 
-<p>var friendlyWelcome = <q>Hello!</q><br/>
-friendlyWelcome = <q>Bonjour!</q><br/>
-// friendlyWelcome is now <q>Bonjour!</q><br/>
-不像一个变量，一旦设置不能被改变的恒定的值。尝试这样做的报告为错误时，你的代码被编译：</p>
+<ul>
+<li>多行注释可以嵌套在其他多行注释。</li>
+</ul>
 
-<p>let languageName = <q>Swift</q><br/>
-languageName = <q>Swift++</q><br/>
-// This is a compile-time error: languageName cannot be changed.<br/>
-印刷常量和变量</p>
+<pre><code>/* This is the start of the first multiline comment.
+ /* This is the second, nested multiline comment. */
+ This is the end of the first multiline comment. */
+</code></pre>
 
-<p>您可以打印一个常量或变量的当前值print(_:separator:terminator:)功能：</p>
+<h1 id="toc_7">分号</h1>
 
-<p>print(friendlyWelcome)<br/>
-// Prints <q>Bonjour!</q><br/>
-所述print(<u>:separator:terminator:)功能是一个全球性的函数，打印一个或多个值，以适当的输出。在Xcode中，例如，print(</u>:separator:terminator:)函数打印它在Xcode的“控制台”窗格中的输出。该separator和terminator参数有默认值，所以当你调用这个函数，你可以忽略它们。默认情况下，该功能将终止其打印通过添加一个换行符就行了。要打印无后换行的值，传递一个空字符串作为终结-例如，print(someValue, terminator: &quot;&quot;)。有关使用默认值参数的信息，请参阅默认参数值。</p>
+<p>语句不要求分号结尾。但是，如果一行上多个独立的语句需要分号分割。</p>
 
-<p>迅速使用串内插，以包括一个常数或变量作为一个较长串的占位符的名称，并提示迅速与该常量或变量的当前值来代替它。在小括号括起的名字，并与开括号前加上反斜杠转义：</p>
+<pre><code>let cat = &quot;🐱&quot;; print(cat)
+</code></pre>
 
-<p>print(<q>The current value of friendlyWelcome is (friendlyWelcome)</q>)<br/>
-// Prints <q>The current value of friendlyWelcome is Bonjour!</q><br/>
-注意</p>
+<h1 id="toc_8">整数</h1>
 
-<p>你可以用串插使用所有选项中描述字符串插值。</p>
+<p>整数全是数字，没有小数部分，如42和-23。整数分为有符号（正，零或负的）或无符号（正或零）。<br/>
+Swift在8，16，32位和64位的形式提供符号和无符号整数。<br/>
+这些整数遵循类似于C的命名约定，8位的无符号整数的类型的UInt8，32位带符号整数的类型的Int32。</p>
 
-<p>注释</p>
+<h2 id="toc_9">整数边界</h2>
 
-<p>使用注释，包括在你的代码不可执行的文本，作为一个注释，或对自己的提醒。注释由雨燕编译器忽略当你的代码被编译。</p>
+<ul>
+<li>可以获取每个整数类型的最小值和最大值<code>min</code>与<code>max</code>属性：</li>
+</ul>
 
-<p>在斯威夫特评论非常类似于C意见单行注释以两个正斜杠（开始//）：</p>
+<pre><code>let minValue = UInt8.min  // minValue is equal to 0, and is of type UInt8
+let maxValue = UInt8.max  // maxValue is equal to 255, and is of type UInt8
+</code></pre>
 
-<p>// This is a comment.<br/>
-多行注释以一个正斜杠后跟星号（开始/<em>），并以星号后跟正斜杠（完</em>/）</p>
+<h2 id="toc_10">INT</h2>
 
-<p>/* This is also a comment<br/>
- but is written over multiple lines. */<br/>
-不像用C多行注释，在斯威夫特多行注释可以嵌套在其他多行注释。你通过启动多行注释块，然后开始第一个块内的第二多行注释嵌套评论。然后，第二块是封闭的，其次是第一嵌段：</p>
+<ul>
+<li>在大多数情况下，不需要选择整数的特定大小。Swift提供额外的整数类型<code>Int</code>，数据大小与当前系统有关：</li>
+</ul>
 
-<p>/* This is the start of the first multiline comment.<br/>
- /* This is the second, nested multiline comment. */<br/>
- This is the end of the first multiline comment. */<br/>
-嵌套多行注释使您能够快速，轻松地注释掉大块的代码，即使代码已经包含多行注释。</p>
+<pre><code>在32位的平台上，Int其大小与相同Int32。
+在64位的平台上，Int其大小与相同Int64。
+</code></pre>
 
-<p>分号</p>
+<ul>
+<li>默认类型推断为Int，除非你需要特定大小的整数。</li>
+</ul>
 
-<p>不像许多其他语言，斯威夫特并不要求你写一个分号（;代码中的每个语句后），虽然可以这样做，如果你的愿望。然而，分号是，如果你想要写在一行上多个独立的语句需要：</p>
+<h2 id="toc_11">UINT</h2>
 
-<p>let cat = <q>🐱</q>; print(cat)<br/>
-// Prints <q>🐱</q><br/>
-整数</p>
+<ul>
+<li>Swift提供额外的整数类型<code>UInt</code>，数据大小与当前系统有关：</li>
+</ul>
 
-<p>整数全是数字，没有小数部分，如42和-23。整数要么签名（正，零或负的）或无符号（正或零）。</p>
+<pre><code>在32位的平台上，UInt其大小与相同UInt32。
+在64位的平台上，UInt其大小与相同UInt64。
+</code></pre>
 
-<p>Swift在8，16，32位和64位的形式提供符号和无符号整数。这些整数遵循类似于C的命名约定，在一个8位的无符号整数的类型的UInt8，和一个32位带符号整数的类型的Int32。像雨燕的所有类型，这些整数类型有大写的名字。</p>
+<ul>
+<li>默认类型推断为Int，除非你需要特定范围与大小的整数。</li>
+</ul>
 
-<p>整数边界</p>
+<h1 id="toc_12">浮点数</h1>
 
-<p>可以与它的访问每个整数类型的最小值和最大值min与max属性：</p>
+<ul>
+<li>浮点数是具有小数部分的数字，例如3.14159，0.1，和-273.15。</li>
+<li>Double 代表一个64位浮点数。</li>
+<li>Float 表示32位浮点数。</li>
+<li>Double具有15位的精度，Float具有6位。默认推断为Double，或者按需要选择使用。</li>
+</ul>
 
-<p>let minValue = UInt8.min  // minValue is equal to 0, and is of type UInt8<br/>
-let maxValue = UInt8.max  // maxValue is equal to 255, and is of type UInt8<br/>
-这些属性的值是适当的大小的号码类型（如UInt8在上面的例子中），并因此可在沿着相同类型的其他值表达式中使用。</p>
+<h1 id="toc_13">类型安全和类型推断</h1>
 
-<p>INT</p>
+<ul>
+<li>类型推断：定义常量或者变量，初始化赋值时，可以自动推断类型。</li>
+</ul>
 
-<p>在大多数情况下，你不需要挑整数的特定大小在代码中使用。迅速提供额外的整数类型，Int，其具有的尺寸与当前平台的本地字大小相同：</p>
+<pre><code>let meaningOfLife = 42 // Int
+let pi = 3.14159 // Double
+let anotherPi = 3 + 0.14159 // Double
+</code></pre>
 
-<p>在32位的平台上，Int其大小与相同Int32。<br/>
-在64位的平台上，Int其大小与相同Int64。<br/>
-除非你需要整数特定大小的工作，总是用Int在你的代码的整数值。这有助于代码的一致性和互操作性。即使在32位平台上，Int可以存储任何值之间-2,147,483,648和2,147,483,647，是许多整数范围足够大。</p>
+<ul>
+<li>类型安全：检查代码赋值时前后类型是否匹配。</li>
+</ul>
 
-<p>UINT</p>
+<pre><code>let anotherPi2 = meaningOfLife + pi // error 因为meaningOfLife是Int，而pi是Double，不能直接计算
+</code></pre>
 
-<p>迅速还提供了一个无符号整型，UInt，其具有的尺寸与当前平台的本地字大小相同：</p>
+<h1 id="toc_14">数值表示</h1>
 
-<p>在32位的平台上，UInt其大小与相同UInt32。<br/>
-在64位的平台上，UInt其大小与相同UInt64。<br/>
-注意</p>
+<ul>
+<li>整数可以写为：</li>
+</ul>
 
-<p>使用UInt只有当你特别需要具有相同的大小为平台的本地字大小的无符号整型。如果不是这种情况下，Int是优选的，即使当要被存储的值是已知的非负。一致的使用Int整数值辅助代码的互操作性，避免了需要不同数量的类型之间的转换，以及相匹配的整数类型推断，如描述的类型安全和类型推断。</p>
+<pre><code>一个十进制数，无前缀
+一个二进制数字，用0b前缀
+一个八进制数，有0o前缀
+一个十六进制数字，用0x前缀
+</code></pre>
 
-<p>浮点数字</p>
+<ul>
+<li>以下整数都表示 17</li>
+</ul>
 
-<p>浮点数是具有小数部分的数字，例如3.14159，0.1，和-273.15。</p>
+<pre><code>let decimalInteger = 17
+let binaryInteger = 0b10001       
+let octalInteger = 0o21           
+let hexadecimalInteger = 0x11     
+</code></pre>
 
-<p>浮点类型可以表示宽得多的范围比整数类型的值，并且可以存储要大得多或小于能够存储在一个数字Int。斯威夫特提供了两个签浮点数类型：</p>
+<ul>
+<li>浮点数值可以是十进制（不带前缀），或十六进制（带有0x前缀）表示。十进制可以有一个可选的指数<code>e</code>，十六进制必须有一个指数<code>p</code>。</li>
+</ul>
 
-<p>Double 代表一个64位浮点数。<br/>
-Float 表示32位浮点数。<br/>
-注意</p>
+<pre><code>1.25e2 // 1.25×10^2 = 125.0
+1.25e-2 // 1.25×10^-2 = 0.0125
+</code></pre>
 
-<p>Double具有至少15个十进制数字的精度，而精度Float可以小如6位十进制数。使用相应的浮点类型取决于你需要在你的代码的工作价值观的性质和范围。在任一类型的将是适当的情况下，Double是优选的。</p>
+<pre><code>0xFp2 // 15×2^2 = 60.0
+0xFp-2 // 15×2^-2 = 3.75
+</code></pre>
 
-<p>类型安全和类型推断</p>
+<pre><code>let decimalDouble = 12.1875
+let exponentDouble = 1.21875e1
+let hexadecimalDouble = 0xC.3p0
+</code></pre>
 
-<p>斯威夫特是一个类型安全的语言。A型安全的语言鼓励你清楚的类型代码可以工作的值。如果你的代码的一部分需要一个String，你不能传递一个Int错误。</p>
+<ul>
+<li>可以用额外的零填充并且可以包含下划线，以提高可读性。</li>
+</ul>
 
-<p>由于雨燕是类型安全的，它执行类型检查编译代码和标志的任何类型不匹配为错误的时候。这使您能够捕获并尽可能早地在开发过程中修正错误。</p>
+<pre><code>let paddedDouble = 000123.456
+let oneMillion = 1_000_000
+let justOverOneMillion = 1_000_000.000_000_1
+</code></pre>
 
-<p>类型检查可以帮助您避免错误当你与不同类型的值工作。但是，这并不意味着你必须指定每个常量和变量所声明的类型。如果没有指定你需要值的类型，雨燕采用类型推断，以制定出相应的类型。类型推断使编译器自动推导出一个特定的表达式的类型，当您的代码编译，只需通过检查你所提供的数值。</p>
+<h1 id="toc_15">数值类型转换</h1>
 
-<p>由于类型推断，斯威夫特需要少得多的类型声明不是语言，如C或Objective-C。常量和变量仍然显式类型，但要指定其类型的工作是为你做。</p>
+<p>默认系统推断类型，整型 Int，浮点型 Double。如果有特殊需求时会指定其他类型的数值，比如UInt8，那么不同类型数值计算时就需要类型转换，注意防止溢出。</p>
 
-<p>当您声明一个常量或变量的初始值类型推断是非常有用的。这通常是通过分配完成的文字值（或文字），在那个声明的地步常量或变量。（A字面值是直接出现在你的源代码，如价值42，并3.14159在下面的例子。）</p>
+<h2 id="toc_16">整型转换</h2>
 
-<p>例如，如果您分配的文本值42到一个新的常数没有说它是什么类型，斯威夫特推断出你想要的常量是一个Int，因为你已经有一个数字，看起来像一个整数初始化它：</p>
+<p>整数常量或变量的数值范围，根据类型不同而不同。一个Int8范围在-128和127之间，而UInt8范围是0和255之间。编译时会检查数值是否溢出，并警告。</p>
 
-<p>let meaningOfLife = 42<br/>
-// meaningOfLife is inferred to be of type Int<br/>
-同样，如果你不指定一个浮点文字类型，斯威夫特推断你想创建一个Double：</p>
+<pre><code>let cannotBeNegative: UInt8 = -1
+let tooBig: Int8 = Int8.max + 1
+</code></pre>
 
-<p>let pi = 3.14159<br/>
-// pi is inferred to be of type Double<br/>
-迅速总是选择Double（而非Float推断浮点数的类型时）。</p>
+<p>下面举例，常数<code>twoThousand</code>是类型的<code>UInt16</code>，而<code>one</code>的类型的<code>UInt8</code>。它们不能直接计算，因为它们是不同。相反，调用UInt16(one)以one创建一个新的UInt16后，类型相同，可以计算了：</p>
 
-<p>如果你在一个表达式结合整数和浮点文字，一类Double会从上下文推断：</p>
+<pre><code>let twoThousand: UInt16 = 2_000
+let one: UInt8 = 1
+let twoThousandAndOne = twoThousand + UInt16(one)
+</code></pre>
 
-<p>let anotherPi = 3 + 0.14159<br/>
-// anotherPi is also inferred to be of type Double<br/>
-的字面意义3有本身并没有明确的类型，所以适当的输出类型Double从浮点文字作为另外的一部分存在的推断。</p>
+<ul>
+<li>SomeType(ofInitialValue)是默认的类型转换方式。在幕后，UInt16有一个接受的初始UInt8值，提供的原始类型必须是目标类型可以初始化的。</li>
+</ul>
 
-<p>数字文字</p>
+<h2 id="toc_17">整数和浮点转换</h2>
 
-<p>整数常量可以写为：</p>
+<ul>
+<li>整数转浮点类型。值<code>three</code>被用来创建Double类型的新值，从而使计算两侧是相同类型的。没有这种转换，是不允许的。</li>
+</ul>
 
-<p>一个十进制数，无前缀<br/>
-一个二进制数字，用0b前缀<br/>
-一个八进制数，有0o前缀<br/>
-一个十六进制数字，用0x前缀<br/>
-所有这些整数文字中有一个十进制值17：</p>
+<pre><code>let three = 3
+let pointOneFourOneFiveNine = 0.14159
+let pi = Double(three) + pointOneFourOneFiveNine
+</code></pre>
 
-<p>let decimalInteger = 17<br/>
-let binaryInteger = 0b10001       // 17 in binary notation<br/>
-let octalInteger = 0o21           // 17 in octal notation<br/>
-let hexadecimalInteger = 0x11     // 17 in hexadecimal notation<br/>
-浮点文本可以是十进制（不带前缀），或十六进制（带有0x前缀）。它们必须总是对小数点的两侧号码（或十六进制数）。十进制花车也可以有一个可选的指数，由一个大写或小写字母表示e; 十六进制花车必须有一个指数，由一个大写或小写字母表示p。</p>
+<ul>
+<li>浮点到整数。转换新的整数值时，浮点值始终截断。例如：4.75变4，-3.9变-3。</li>
+</ul>
 
-<p>对于具有指数十进制数exp，基数乘以10 EXP：</p>
+<pre><code>let integerPi = Int(pi)
+</code></pre>
 
-<p>1.25e2装置1.25×10 2，或125.0。<br/>
-1.25e-2装置1.25×10 -2，或0.0125。<br/>
-对于具有指数十六进制数exp，基数乘以2 EXP：</p>
+<h1 id="toc_18">类型别名</h1>
 
-<p>0xFp2装置15×2 2 ，或60.0。<br/>
-0xFp-2意味着15×2 -2，或3.75。<br/>
-所有这些浮点字面值有一个十进制值12.1875：</p>
+<ul>
+<li>类型别名为现有类型定义的替代名称。使用<code>typealias</code>定义。一旦定义了类型别名，可以在使用别名的任何地方，使用原来的名字。</li>
+</ul>
 
-<p>let decimalDouble = 12.1875<br/>
-let exponentDouble = 1.21875e1<br/>
-let hexadecimalDouble = 0xC.3p0<br/>
-数字文本可以包含额外的格式，使它们更容易阅读。这两个整数和浮点数可以用额外的零填充并且可以包含下划线，以帮助可读性。无论类型的格式会影响文字的基本价值：</p>
+<pre><code>typealias AudioSample = UInt16
+</code></pre>
 
-<p>let paddedDouble = 000123.456<br/>
-let oneMillion = 1<u>000</u>000<br/>
-let justOverOneMillion = 1<u>000</u>000.000<u>000</u>1<br/>
-数字类型转换</p>
+<ul>
+<li>这里，AudioSample定义为UInt16的别名。因为它是一个别名，调用AudioSample.min实际调用UInt16.min。</li>
+</ul>
 
-<p>使用Int类型代码中的所有通用整数常量和变量，即使它们是已知的非负。在日常生活中使用默认的整数类型是指整型常量和变量都在你的代码立即互操作，并会匹配推断类型整数文字值。</p>
+<pre><code>var maxAmplitudeFound = AudioSample.min
+</code></pre>
 
-<p>使用仅当特别需要它们为手头的任务其它整数类型，因为明确大小的数据，从外部源，或用于性能，内存使用，或其他必要的优化。在这些情况下使用明确大小的类型有助于捕捉任何意外数值溢出和隐式记录的数据的性质被使用。</p>
+<h1 id="toc_19">布尔值</h1>
 
-<p>整型转换</p>
+<p>Swift有一个基本的布尔类型<code>Bool</code>。布尔值只有<code>true</code>和<code>false</code>。</p>
 
-<p>可以存储在一个整数常量或变量数的范围为每个数字类型不同。一个Int8常数或变量可之间存储的数字-128和127，而UInt8恒定的或可变可之间存储的数字0和255。，将不适合成为一个常量或大小的整数类型的变量的数字，报告为错误时，你的代码被编译：</p>
+<pre><code>let orangesAreOrange = true
+let turnipsAreDelicious = false
+</code></pre>
 
-<p>let cannotBeNegative: UInt8 = -1<br/>
-// UInt8 cannot store negative numbers, and so this will report an error<br/>
-let tooBig: Int8 = Int8.max + 1<br/>
-// Int8 cannot store a number larger than its maximum value,<br/>
-// and so this will also report an error<br/>
-因为每个数值类型可以存储不同的数值范围，则必须选择加入对案件逐案的基础数值类型转换。这一选择方法可以防止隐藏的转换错误，并有助于使类型转换的意图在代码中明确。</p>
+<ul>
+<li>布尔值基本用在<code>if</code>的语句中。更详细的<code>if</code>，看控制流章节。</li>
+</ul>
 
-<p>于一个特定的数字式转换为另一种，则初始化与现有的数值的所需类型的新号码。在下面的例子中，常数twoThousand是类型的UInt16，而恒定one的类型的UInt8。它们不能被直接加在一起，因为它们是相同类型的不。相反，该示例调用UInt16(one)以创建一个新的UInt16具有的值进行初始化one，并代替原来的使用此值：</p>
+<pre><code>if turnipsAreDelicious {
+    print(&quot;Mmm, tasty turnips!&quot;)
+} else {
+    print(&quot;Eww, turnips are horrible.&quot;)
+}
+</code></pre>
 
-<p>let twoThousand: UInt16 = 2_000<br/>
-let one: UInt8 = 1<br/>
-let twoThousandAndOne = twoThousand + UInt16(one)<br/>
-因为加入的两侧现在型的UInt16，在加入是允许的。输出常数（twoThousandAndOne）被推断为类型UInt16，因为它是两个的总和UInt16值。</p>
+<ul>
+<li>Swift的类型安全防止隐性转换<code>Bool</code>，与OC不同，下面的示例编译时会报错</li>
+</ul>
 
-<p>SomeType(ofInitialValue)是默认的方式来调用夫特型的初始化，并通过在一个初始值。在幕后，UInt16有一个接受的初始UInt8值，所以这个初始化是用来制造一种新的UInt16从现有UInt8。你不能传递任何类型的这里，但是，它必须是需要类型UInt16提供的初始化。扩展现有类型来提供接受新的类型（包括你自己的类型定义）是覆盖在初始化扩展。</p>
+<pre><code>let i = 1
+if i {
+    // this example will not compile, and will report an error
+}
+</code></pre>
 
-<p>整数和浮点转换</p>
+<ul>
+<li>必须使用返回<code>Bool</code>类型的表达式</li>
+</ul>
 
-<p>整数和浮点数字类型之间的转换必须作出明确的：</p>
+<pre><code>let i = 1
+if i == 1 {
+    // this example will compile successfully
+}
+</code></pre>
 
-<p>let three = 3<br/>
-let pointOneFourOneFiveNine = 0.14159<br/>
-let pi = Double(three) + pointOneFourOneFiveNine<br/>
-// pi equals 3.14159, and is inferred to be of type Double<br/>
-这里，恒定的值three被用来创建类型的新值Double，从而使在加入的两侧是相同类型的。没有这种转换到位，另外将不被允许。</p>
+<h1 id="toc_20">元组</h1>
 
-<p>浮点到整数的转换也必须作出了明确。整数类型可以用初始化Double或Float价值：</p>
+<ul>
+<li>元组是多个值组成的复合值。元组中的值可以是任何类型，并且允许不同类型的组合。下面的例子，描述为“元组类型(Int, String)”</li>
+</ul>
 
-<p>let integerPi = Int(pi)<br/>
-// integerPi equals 3, and is inferred to be of type Int<br/>
-用于初始化在这样一个新的整数值时浮点值始终截断。这意味着4.75变4和-3.9变-3。</p>
+<pre><code>let http404Error = (404, &quot;Not Found&quot;)
+</code></pre>
 
-<p>注意</p>
+<ul>
+<li>分解一个元组内容到单独的常量或变量，像往常一样访问，类似字典</li>
+</ul>
 
-<p>为结合数字常量和变量的规则从数字文本的规则不同。文字值3可以直接加入到文字值0.14159，因为一些文字没有本身的和明确的类型。它们的类型仅在它们被编译器评价点是推断。</p>
+<pre><code>let (statusCode, statusMessage) = http404Error
+print(&quot;The status code is \(statusCode)&quot;)
+print(&quot;The status message is \(statusMessage)&quot;)
+</code></pre>
 
-<p>类型别名</p>
+<ul>
+<li>如果只需要一些元组的值，忽略元组的部分用下划线<code>_</code>表示</li>
+</ul>
 
-<p>类型别名为现有类型定义的替代名称。您可以定义类型别名的typealias关键字。</p>
+<pre><code>let (justTheStatusCode, _) = http404Error
+print(&quot;The status code is \(justTheStatusCode)&quot;)
+</code></pre>
 
-<p>当希望由是内容相关更为合适，例如与来自外部源的特定大小的数据时，作为一个名字来指代一个现有类型类型别名是有用的：</p>
+<ul>
+<li>另外，从零开始索引访问元组的各个元素值，类似数组</li>
+</ul>
 
-<p>typealias AudioSample = UInt16<br/>
-一旦定义了类型别名，你可以使用别名的任何地方，你可以使用原来的名字：</p>
+<pre><code>print(&quot;The status code is \(http404Error.0)&quot;)
+print(&quot;The status message is \(http404Error.1)&quot;)
+</code></pre>
 
-<p>var maxAmplitudeFound = AudioSample.min<br/>
-// maxAmplitudeFound is now 0<br/>
-这里，AudioSample定义为一个别名UInt16。因为它是一个别名，调用AudioSample.min实际调用UInt16.min，它提供的初始值0的maxAmplitudeFound变量。</p>
+<ul>
+<li>定义元组时，可以给元组的各个元素命名</li>
+</ul>
 
-<p>布尔值</p>
+<pre><code>let http200Status = (statusCode: 200, description: &quot;OK&quot;)
+</code></pre>
 
-<p>斯威夫特有一个基本的布尔类型，叫做Bool。布尔值被称为逻辑的，因为他们永远只能是真还是假。斯威夫特提供了两个布尔常量的值，true并且false：</p>
+<ul>
+<li>如果元组元素有命名，可以使用元素名称来访问这些元素的值</li>
+</ul>
 
-<p>let orangesAreOrange = true<br/>
-let turnipsAreDelicious = false<br/>
-该类型的orangesAreOrange和turnipsAreDelicious已经推断为Bool一个事实，即他们与布尔文字值初始化。正如Int和Double上面，你并不需要声明常量或变量，Bool如果它们设置true或者false在创建他们尽快。类型推断有助于使雨燕代码更简洁和可读性进行初始化时，常量或变量具有其类型是已知的其他值。</p>
+<pre><code>print(&quot;The status code is \(http200Status.statusCode)&quot;)
+print(&quot;The status message is \(http200Status.description)&quot;)
+</code></pre>
 
-<p>当您使用条件语句，如工作，布尔值是特别有用if的语句：</p>
+<ul>
+<li>元组是作为函数的返回值特别有用，更多信息，请参阅多返回函数。</li>
+<li>元组不适合于创建复杂的数据结构。更多信息，请参见类和结构。</li>
+</ul>
 
-<p>if turnipsAreDelicious {<br/>
-    print(<q>Mmm, tasty turnips!</q>)<br/>
-} else {<br/>
-    print(<q>Eww, turnips are horrible.</q>)<br/>
-}<br/>
-// Prints <q>Eww, turnips are horrible.</q><br/>
-条件语句如if语句覆盖在更详细的控制流。</p>
+<h1 id="toc_21">可选类型</h1>
 
-<p>斯威夫特的类型安全防止被取代非布尔值Bool。下面的示例报告编译时错误：</p>
+<ul>
+<li><p>可选类型代表两种可能：要么是一个值可以解析，要么没有值为<code>nil</code>。</p></li>
+<li><p>OC不存在可选类型，只能判断对象是否存在，对于基本数据类型使用特殊值来判断，例如<code>NSNotFound</code>。Swift的可选类型，支持所以数据类型的判断。</p></li>
+<li><p>下面举例可选类型，如何用来对付不存在的值。Swift的String类型的值尝试转换为Int数值。然而，不是每个字符串都可以转换成一个整数。字符串<q>123</q>可以被转换成数值123，但该字符串<q>hello, world</q>不具有明显的数字值转换行为。</p></li>
+</ul>
 
-<p>let i = 1<br/>
-if i {<br/>
-    // this example will not compile, and will report an error<br/>
-}<br/>
-然而，替代实施例以下是有效的：</p>
+<pre><code>let possibleNumber = &quot;123&quot;
+let convertedNumber = Int(possibleNumber)
+</code></pre>
 
-<p>let i = 1<br/>
-if i == 1 {<br/>
-    // this example will compile successfully<br/>
-}<br/>
-的结果i == 1比较型的Bool，因此该第二示例传递的类型检查。喜欢攀比i == 1中讨论的基本运营。</p>
+<ul>
+<li>由于初始化<code>convertedNumber</code>可能会失败，它返回可选的<code>Int</code>，而不是<code>Int</code>。可选<code>Int</code>被写为<code>Int?</code>，不是<code>Int</code>。问号表明它包含的值是可选的，这意味着它可能包含<code>Int</code>值，或者是<code>nil</code>。可以通过<code>if</code>语句来判断。</li>
+</ul>
 
-<p>与斯威夫特类型安全的其他例子，这种方法避免了意外的错误，并确保一个特定的代码段的意图始终清零。</p>
+<h2 id="toc_22">nil</h2>
 
-<p>元组</p>
+<ul>
+<li>可选变量可以设置成<code>nil</code>,表示不存在任何值。非可选变量不能使用<code>nil</code>。</li>
+</ul>
 
-<p>元组组多个值成一个复合值。元组中的值可以是任何类型的，并且不必须是相同的类型彼此的。</p>
+<pre><code>var serverResponseCode: Int? = 404
+serverResponseCode = nil
+</code></pre>
 
-<p>在这个例子中，(404, <q>Not Found</q>)是一个描述一个元组HTTP状态代码。HTTP状态代码是当你请求一个网页，由Web服务器返回的特殊值。一个状态代码404 Not Found，如果你要求不存在的网页被返回。</p>
+<ul>
+<li>如果可选的变量没有提供初始化值，该变量将自动设置为nil。</li>
+</ul>
 
-<p>let http404Error = (404, <q>Not Found</q>)<br/>
-// http404Error is of type (Int, String), and equals (404, <q>Not Found</q>)<br/>
-的(404, <q>Not Found</q>)元组组合在一起的Int和String给HTTP状态代码两个独立的价值观：一个号码和一个人类可读的描述。它可以被描述为“类型的元组(Int, String)”。</p>
+<pre><code>var surveyAnswer: String?
+</code></pre>
 
-<p>您可以从任何类型的排列创建的元组，并且只要你喜欢，他们最多可以包含不同的类型。没有什么阻止你有型的元组(Int, Int, Int)，或者(String, Bool)，或者你确实需要的任何其他排列。</p>
+<h2 id="toc_23">if语句，强制解析</h2>
 
-<p>你可以分解一个元组中的内容到单独的常量或变量，你再像往常一样访问：</p>
+<ul>
+<li>使用if语句直接与<code>nil</code>比较。如果有值，那么<code>!=nil</code>为真。</li>
+</ul>
 
-<p>let (statusCode, statusMessage) = http404Error<br/>
-print(<q>The status code is (statusCode)</q>)<br/>
-// Prints <q>The status code is 404</q><br/>
-print(<q>The status message is (statusMessage)</q>)<br/>
-// Prints <q>The status message is Not Found</q><br/>
-如果你只需要一些元组的值，忽略元组的部分用下划线（_）时，你分解元组：</p>
+<pre><code>if convertedNumber != nil {
+    print(&quot;convertedNumber contains some integer value.&quot;)
+}
+</code></pre>
 
-<p>let (justTheStatusCode, _) = http404Error<br/>
-print(<q>The status code is (justTheStatusCode)</q>)<br/>
-// Prints <q>The status code is 404</q><br/>
-另一方面，使用从零开始索引号访问元组的各个元素值：</p>
+<ul>
+<li>确定可选确实包含一个值，可以通过<code>!</code>，强制解析其值。</li>
+</ul>
 
-<p>print(<q>The status code is (http404Error.0)</q>)<br/>
-// Prints <q>The status code is 404</q><br/>
-print(<q>The status message is (http404Error.1)</q>)<br/>
-// Prints <q>The status message is Not Found</q><br/>
-定义元组时，您可以命名一个元组的各个元素：</p>
+<pre><code>if convertedNumber != nil {
+    print(&quot;convertedNumber has an integer value of \(convertedNumber!).&quot;)
+}
+</code></pre>
 
-<p>let http200Status = (statusCode: 200, description: <q>OK</q>)<br/>
-如果你命名一个元组的元素，可以使用元素名称来访问这些元素的值：</p>
+<ul>
+<li>更多有关if语句，请参阅控制流。</li>
+<li>试图用<code>!</code>访问不存在的可选值时会触发运行时错误。需要确保可选类型包含非nil值才使用<code>!</code>解开它的值。</li>
+</ul>
 
-<p>print(<q>The status code is (http200Status.statusCode)</q>)<br/>
-// Prints <q>The status code is 200</q><br/>
-print(<q>The status message is (http200Status.description)</q>)<br/>
-// Prints <q>The status message is OK</q><br/>
-元组是作为函数的返回值特别有用。试图检索的网页的函数可能返回(Int, String)元组类型来描述页面取得的成功或失败。通过用两个不同的值返回的元组中，每个不同类型的，该函数提供了有关其结果比如果它只能返回单个类型的单个值更多的有用信息。欲了解更多信息，请参阅使用多个返回值的函数。</p>
+<h2 id="toc_24">可选绑定</h2>
 
-<p>注意</p>
+<p>使用可选类型值初始化其他变量或常量是，该表达式语句可以看做是Bool类型(但不真的是Bool类型)，因此可以使用<code>if</code>语句判断。也就是可选类型为nil时，初始化就失败，反之成功，并且该值可以在内部使用。</p>
 
-<p>元组相关值的临时组非常有用。它们不适合于创建复杂的数据结构。如果你的数据结构可能会持续超过一个临时的范围，它的模型作为一类或结构，而不是作为一个元组。欲了解更多信息，请参见类和结构。</p>
+<pre><code>if let constantName = someOptional {
+    statements
+}
+</code></pre>
 
-<p>选配</p>
+<ul>
+<li>可以使用上面<code>possibleNumber</code>可选类型的例子，继续使用可选绑定，而不是强制解析。</li>
+</ul>
 
-<p>您可以使用自选在一个价值可能缺席的情况。可选代表两种可能性：要么有是一个值，你可以解开可选访问的价值，或者有没有价值可言。</p>
+<pre><code>if let actualNumber = Int(possibleNumber) {
+    print(&quot;\&quot;\(possibleNumber)\&quot; has an integer value of \(actualNumber)&quot;)
+} else {
+    print(&quot;\&quot;\(possibleNumber)\&quot; could not be converted to an integer&quot;)
+}
+</code></pre>
 
-<p>注意</p>
+<ul>
+<li>如果可选Int(possibleNumber)包含一个值，那么设置一个新常数actualNumber包含可选类型的值。</li>
+<li>如果转换成功，则actualNumber常数，可在if语句第一分支中使用。它已经被初始化为可选类型的值，因此没有必要使用!来解析。</li>
+<li><p>常量和变量都可以用作可选的绑定。</p></li>
+<li><p>可以在一个if中，混合使用多个可寻绑定，以及Bool条件，但是需要逗号分隔，作用与<code>&amp;&amp;</code>一致。</p></li>
+</ul>
 
-<p>自选的概念并没有在C或Objective-C的存在。在Objective-C最近的事情就是返回的能力nil从否则将返回一个对象，一个方法nil，意思是“没有有效的对象。”然而，这仅适用于对象-它并不适用于结构和基本工作C型或枚举值。对于这些类型的，目标C的方法通常返回一个特殊值（例如NSNotFound）以指示不存在的值。这种方法假设方法的调用者知道有一个特殊的值来测试反对，记得要检查它。斯威夫特的自选让你指示缺少值用于任何类型的所有，而不需要特殊的常量。</p>
+<pre><code>if let firstNumber = Int(&quot;4&quot;), let secondNumber = Int(&quot;42&quot;), firstNumber &lt; secondNumber &amp;&amp; secondNumber &lt; 100 {
+    print(&quot;\(firstNumber) &lt; \(secondNumber) &lt; 100&quot;)
+}
+ 
+// 与上面的效果一致
+if let firstNumber = Int(&quot;4&quot;) {
+    if let secondNumber = Int(&quot;42&quot;) {
+        if firstNumber &lt; secondNumber &amp;&amp; secondNumber &lt; 100 {
+            print(&quot;\(firstNumber) &lt; \(secondNumber) &lt; 100&quot;)
+        }
+    }
+}
+</code></pre>
 
-<p>下面是自选如何可以用来对付不存在的值的一个例子。斯威夫特的Int类型有哪些尝试将转换成一个初始String值转换为Int数值。然而，不是每个串可以转换成一个整数。字符串<q>123</q>可以被转换成数字值123，但该字符串<q>hello, world</q>不具有明显的数字值转换为。</p>
+<h2 id="toc_25">可选类型隐式解析</h2>
 
-<p>下面的示例使用初始化来尝试将转换String成Int：</p>
+<ul>
+<li>有时程序的结构清楚，可选类型明确是一个值，可以假定为有值来处理，隐式解析可选类型，直接使用其值。</li>
+<li>使用<code>!</code>对可选类型，隐式解析。</li>
+</ul>
 
-<p>let possibleNumber = <q>123</q><br/>
-let convertedNumber = Int(possibleNumber)<br/>
-// convertedNumber is inferred to be of type <q>Int?</q>, or <q>optional Int</q><br/>
-由于初始化可能会失败，它返回一个可选的 Int，而不是一个Int。任选Int被写为Int?，不Int。问号表明它包含的值是可选的，这意味着它可能包含一些 Int值，或者它可能包含任何值在所有。（它不能包含任何东西，如一个Bool值或String值，它是要么是Int，或者它什么都没有。）</p>
+<pre><code>let possibleString: String? = &quot;An optional string.&quot;
+let forcedString: String = possibleString! 
+</code></pre>
 
-<p>零</p>
+<ul>
+<li>也可以直接指定类型为隐式解析类</li>
+</ul>
 
-<p>您可以通过分配给它的特殊价值设置可选的变量，一个毫无价值的状态nil：</p>
+<pre><code>let assumedString: String! = &quot;An implicitly unwrapped optional string.&quot;
+let implicitString: String = assumedString
+</code></pre>
 
-<p>var serverResponseCode: Int? = 404<br/>
-// serverResponseCode contains an actual Int value of 404<br/>
-serverResponseCode = nil<br/>
-// serverResponseCode now contains no value<br/>
-注意</p>
+<ul>
+<li><p>如果一个隐式解析可选的是nil，直接使用其值时，会触发运行时错误。注意要明确有值时，才隐式解析，不然还是用可选绑定吧。</p></li>
+<li><p>隐式解析可选类型本质还是可选类型，任然可以使用<code>!=nil</code>去强制解析，以及可选绑定。</p></li>
+</ul>
 
-<p>nil不能与非可选的常量和变量使用。如果在你的代码不变或可变需要与缺乏在一定条件下的值来工作，始终把它声明为合适类型的可选值。</p>
+<pre><code>if assumedString != nil {
+    print(assumedString)
+}
+</code></pre>
 
-<p>如果没有提供缺省值来定义一个可选的变量，该变量将自动设置为nil为您提供：</p>
+<pre><code>if let definiteString = assumedString {
+    print(definiteString)
+}
+</code></pre>
 
-<p>var surveyAnswer: String?<br/>
-// surveyAnswer is automatically set to nil<br/>
-注意</p>
+<h1 id="toc_26">错误处理</h1>
 
-<p>斯威夫特的nil是不一样的nilObjective-C中。在Objective-C，nil是一个指向一个不存在的对象。在夫特，nil不是指针-它是由于没有某种类型的一个值。的自选任何类型可以设置为nil，不只是对象类型。</p>
+<ul>
+<li>当函数遇执行时到错误，抛出一个错误。然后，调用该函数者可以抓取的错误，并作出适当的处理。</li>
+</ul>
 
-<p>if语句和强制解缠</p>
+<pre><code>func canThrowAnError() throws {
+    // this function may or may not throw an error
+}
+</code></pre>
 
-<p>您可以使用if语句找出是否可选包含通过比较可选的值nil。在执行与“等于”算子（该比较==）或“不等于”运算符（!=）。</p>
+<ul>
+<li>函数通过<code>throws</code>表明它可以抛出错误，函数前面加上<code>try</code>关键字，表示该函数可以抛出错误，并使用<code>catch</code>捕获错误。</li>
+</ul>
 
-<p>如果任选的有一个值，它被认为是“不等于” nil：</p>
+<pre><code>do {
+    try canThrowAnError()
+    // no error was thrown
+} catch {
+    // an error was thrown
+}
+</code></pre>
 
-<p>if convertedNumber != nil {<br/>
-    print(<q>convertedNumber contains some integer value.</q>)<br/>
-}<br/>
-// Prints <q>convertedNumber contains some integer value.</q><br/>
-一旦你确定了可选确实包含一个值，你可以通过添加一个感叹号（访问其基础值!）到可选的名称的末尾。感叹号有效地说道，“我知道这个可选肯定有一个值; 请使用“这就是所谓的，被迫去包裹可选的值：</p>
+<ul>
+<li><code>do</code>语句创建范围，允许误差传播到一个或多个<code>catch</code>。</li>
+</ul>
 
-<p>if convertedNumber != nil {<br/>
-    print(<q>convertedNumber has an integer value of (convertedNumber!).</q>)<br/>
-}<br/>
-// Prints <q>convertedNumber has an integer value of 123.</q><br/>
-欲知更多有关if声明，请参阅控制流。</p>
+<pre><code>func makeASandwich() throws {
+    // ...
+}
+ 
+do {
+    try makeASandwich()
+    eatASandwich()
+} catch SandwichError.outOfCleanDishes {
+    washDishes()
+} catch SandwichError.missingIngredients(let ingredients) {
+    buyGroceries(ingredients)
+}
+</code></pre>
 
-<p>注意</p>
+<ul>
+<li>在这个例子中，<code>makeASandwich()</code>如果没有干净的碗可用，或者丢失将抛出异常。由于<code>makeASandwich()</code>可以抛出异常，函数调用使用<code>try</code>，并包装在<code>do</code>语句中，任何被抛出的异常都会被<code>catch</code>捕获。</li>
+<li><p>如果没有抛出异常，<code>eatASandwich()</code>被调用。如果抛出异常，与之的匹配<code>SandwichError.outOfCleanDishes</code>情况，则<code>washDishes()</code>被调用。匹配<code>SandwichError.missingIngredients</code>情况，则<code>buyGroceries(_:)</code>被调用。</p></li>
+<li><p>更多有关错误处理，请参阅错误处理。</p></li>
+</ul>
 
-<p>试图用!访问不存在的可选值触发运行时错误。始终确保一个可选包含非nil使用前值!给力，解开它的价值。</p>
+<h1 id="toc_27">断言</h1>
 
-<p>可选绑定</p>
+<p>在某些情况下，根本不可能或者不允许的，可以触发一个断言，并结束代码执行，提供调试信息以修改。</p>
 
-<p>使用任选结合以找出是否任意包含一个值，如果是这样，以使可以作为一个临时常量或变量值。可选结合可以与用于if和while语句以检查内部的可选的值，并提取该值为恒定的或可变的，作为一个单一的动作的一部分。if和while语句中更详细地描述控制流。</p>
+<h2 id="toc_28">调试使用断言</h2>
 
-<p>写一个可选的用于绑定if声明如下：</p>
+<ul>
+<li>断言是一种运行时检查，布尔为true。也就是说条件不符合，那么就中断执行，如果符合条件，则继续执行。</li>
+<li>在调试环境，触发了一次断言，可以看到异常的确切位置，相当于进入了断电调试状态。</li>
+</ul>
 
-<p>如果 让 constantName = someOptional {<br/>
-    声明<br/>
-}<br/>
-你可以重写possibleNumber从实例选配部分使用可选的结合，而不是被迫去包裹：</p>
+<pre><code>let age = -3
+assert(age &gt;= 0, &quot;A person&#39;s age cannot be less than zero&quot;)
+</code></pre>
 
-<p>if let actualNumber = Int(possibleNumber) {<br/>
-    print(<q>&quot;(possibleNumber)&quot; has an integer value of (actualNumber)</q>)<br/>
-} else {<br/>
-    print(<q>&quot;(possibleNumber)&quot; could not be converted to an integer</q>)<br/>
-}<br/>
-// Prints &quot;<q>123</q> has an integer value of 123&quot;<br/>
-此代码可以被解读为：</p>
+<ul>
+<li><p>age &gt;=0 时，代码正常运行，反之此处断点。</p></li>
+<li><p>如果需要，可以省略断言消息。</p></li>
+</ul>
 
-<p>“如果可选Int由归国Int(possibleNumber)包含一个值，设置一个所谓的新常数actualNumber包含在可选的价值。”</p>
+<pre><code>assert(age &gt;= 0)
+</code></pre>
 
-<p>如果转换成功，则actualNumber常数变得可用于所述的第一分支中使用if的语句。它已经被初始化与包含在值内的可选的，并且因此没有必要使用!后缀来访问其值。在这个例子中，actualNumber被简单地用于打印的转换的结果。</p>
+<ul>
+<li>代码会被编译优化，发布配置是默认断言无效。</li>
+</ul>
 
-<p>您可以使用常量和变量具有可选的绑定。如果你想操作的值actualNumber的第一分支内if的语句，你可以写if var actualNumber，而是和将提供作为一个变量而不是一个常数包含在可选的值。</p>
+<h2 id="toc_29">何时使用断言</h2>
 
-<p>您可以在一个单一的许多可选的绑定和布尔条件if，因为你需要用逗号分隔声明。如果任何可选绑定值都nil或任何布尔条件的计算结果为false，整个if语句的条件被认为是false。下面的if语句是等价的：</p>
-
-<p>if let firstNumber = Int(<q>4</q>), let secondNumber = Int(<q>42</q>), firstNumber &lt; secondNumber &amp;&amp; secondNumber &lt; 100 {<br/>
-    print(<q>(firstNumber) &lt; (secondNumber) &lt; 100</q>)<br/>
-}<br/>
-// Prints <q>4 &lt; 42 &lt; 100</q></p>
-
-<p>if let firstNumber = Int(<q>4</q>) {<br/>
-    if let secondNumber = Int(<q>42</q>) {<br/>
-        if firstNumber &lt; secondNumber &amp;&amp; secondNumber &lt; 100 {<br/>
-            print(<q>(firstNumber) &lt; (secondNumber) &lt; 100</q>)<br/>
-        }<br/>
-    }<br/>
-}<br/>
-// Prints <q>4 &lt; 42 &lt; 100</q><br/>
-注意</p>
-
-<p>常数和在一个可选的结合创建的变量if声明仅在体内可if声明。与此相反，具有所创建的常量和变量guard声明是在代码后面的线可用guard语句，如在所描述的早期退出。</p>
-
-<p>含蓄无包装选配</p>
-
-<p>如上所述，自选指示一个常数或变量被允许具有“无值”。选配可与被检查if语句，看是否存在一个值，并且可以选配装订有条件地解开，如果它存在访问可选的值。</p>
-
-<p>有时它是从程序的结构清楚，可选将总是有一个值，在这之后的值首先被设置。在这些情况下，它是去除需要检查和unwrap可选的值每次被访问时是有用的，因为它可以安全地假定为具有值的所有的时间。</p>
-
-<p>这些种类的自选的被定义为隐式展开自选。您可以通过放置一个惊叹号（写一个隐含展开可选String!），而不是一个问号（String?那你想选的类型后）。</p>
-
-<p>当隐含一个可选的值被确认可选先定义后立即存在，绝对可以假定在每一点此后存在解开自选是有用的。在斯威夫特的主要用途隐含展开自选的是类初始化过程中，如描述的无主引用和隐式无包装可选属性。</p>
-
-<p>隐式展开可选是幕后正常可选的，但是也可以使用像非可选值，而不需要在每次访问时解开的可选值。下面的示例显示访问他们的包裹价值的明确当一个可选的字符串和一个隐含解开可选字符串之间的行为差异String：</p>
-
-<p>let possibleString: String? = <q>An optional string.</q><br/>
-let forcedString: String = possibleString! // requires an exclamation mark</p>
-
-<p>let assumedString: String! = <q>An implicitly unwrapped optional string.</q><br/>
-let implicitString: String = assumedString // no need for an exclamation mark<br/>
-你可以认为是一个隐含展开可选的，因为给予许可可选的，只要它是用来进行自动解包。而不是每次使用它时放置一个惊叹号可选的名称后，当您将它声明放置一个惊叹号可选的类型之后。</p>
-
-<p>注意</p>
-
-<p>如果一个隐含解开可选的是nil与您试图访问其包裹的价值，你会触发一个运行时错误。其结果是完全一样的，如果你把一个感叹号一个正常的可选不包含值后作为。</p>
-
-<p>你还可以把一个隐含展开可选像一个正常的可选，检查它是否包含一个值：</p>
-
-<p>if assumedString != nil {<br/>
-    print(assumedString)<br/>
-}<br/>
-// Prints <q>An implicitly unwrapped optional string.</q><br/>
-您还可以使用隐式展开的可选可选配装订，检查并在一条语句解开它的价值：</p>
-
-<p>if let definiteString = assumedString {<br/>
-    print(definiteString)<br/>
-}<br/>
-// Prints <q>An implicitly unwrapped optional string.</q><br/>
-注意</p>
-
-<p>当有一个变量成为可能，不要使用隐式展开可选nil在稍后一点。如果您需要检查一个始终使用正常的可选类型nil变量的生命周期中值。</p>
-
-<p>错误处理</p>
-
-<p>您可以使用错误处理响应错误条件的程序执行过程中可能会遇到的。</p>
-
-<p>在对比自选，可同时使用一个值的存在或不存在进行通信的成功或函数的失败，错误处理允许确定故障的根本原因，并且，如果需要的话，传播错误的程序的其他部分。</p>
-
-<p>当函数遇到错误情况下，它抛出一个错误。然后，该函数的调用者可以赶上的错误，并作出适当的反应。</p>
-
-<p>func canThrowAnError() throws {<br/>
-    // this function may or may not throw an error<br/>
-}<br/>
-函数表明它可以通过在抛出一个错误throws在其声明中的关键字。当你调用可以抛出一个错误的函数，你前面加上try关键字来表达。</p>
-
-<p>直到它们被一个处理雨燕自动传播错误了他们目前的范围catch条款。</p>
-
-<p>do {<br/>
-    try canThrowAnError()<br/>
-    // no error was thrown<br/>
-} catch {<br/>
-    // an error was thrown<br/>
-}<br/>
-一个do语句创建一个新的包含范围，允许误差传播到一个或多个catch条款。</p>
-
-<p>这里有一个如何错误处理可以用来为不同的错误情况做出反应的例子：</p>
-
-<p>func makeASandwich() throws {<br/>
-    // ...<br/>
-}</p>
-
-<p>do {<br/>
-    try makeASandwich()<br/>
-    eatASandwich()<br/>
-} catch SandwichError.outOfCleanDishes {<br/>
-    washDishes()<br/>
-} catch SandwichError.missingIngredients(let ingredients) {<br/>
-    buyGroceries(ingredients)<br/>
-}<br/>
-在这个例子中，makeASandwich()如果没有干净的碗碟可用，或者如果任何成分丢失函数将抛出异常。由于makeASandwich()可以抛出一个错误，函数调用被包裹在一个try表达式。通过包装在函数调用do语句中，被抛出的任何错误都会被传播到所提供的catch条款。</p>
-
-<p>如果没有错误被抛出，eatASandwich()函数被调用。如果错误被抛出，它的匹配SandwichError.outOfCleanDishes情况，那么该washDishes()功能将被调用。如果错误被抛出，它的匹配SandwichError.missingIngredients情况，则buyGroceries(_:)函数调用相关[String]的捕捉值catch的模式。</p>
-
-<p>投掷，接球，并传播错误是覆盖在更详细的错误处理。</p>
-
-<p>断言</p>
-
-<p>在某些情况下，这是根本不可能的，如果一个特定的条件不满足你的代码继续执行。在这些情况下，您可以触发一个断言在代码结束代码执行，并提供了一个机会来调试不存在或无效值的原因。</p>
-
-<p>调试使用断言</p>
-
-<p>一个断言是一种运行时检查一个布尔条件肯定的计算结果为true。从字面上说，断言“断言”，一个条件是真实的。您可以使用一个断言，以确保一个必要条件正在执行任何进一步的代码之前满足。如果条件的计算结果为true，代码执行仍然照常使用; 如果条件的计算结果为false，代码执行结束，您的应用程序被终止。</p>
-
-<p>如果您的代码在调试环境中运行时，当你建立并运行在Xcode的应用程序，如触发了一次断言，你可以看到无效状态发生的确切位置，并在此断言被触发时查询您的应用程序的状态。断言，您还可以提供合适的调试消息，以断言的性质。</p>
-
-<p>您可以通过调用雨燕标准库全局写断言assert(<u>:</u>:file:line:)功能。你通过这个函数中的一个表达式true或者false，如果该条件的结果是应该显示一条消息false：</p>
-
-<p>let age = -3<br/>
-assert(age &gt;= 0, <q>A person&#39;s age cannot be less than zero</q>)<br/>
-// this causes the assertion to trigger, because age is not &gt;= 0<br/>
-在这个例子中，代码执行将继续只如果age &gt;= 0计算结果为true，也就是，如果该值age是非负的。如果值是负的，如在上面的代码，然后计算结果为，并且断言被触发时，终止该应用程序。 age age &gt;= 0false</p>
-
-<p>如果需要，可以省略断言消息，如在下面的例子：</p>
-
-<p>assert(age &gt;= 0)<br/>
-注意</p>
-
-<p>当你的代码被编译优化，如用在Xcode应用程序目标的默认发布配置的大楼将断言被禁用。</p>
-
-<p>当使用断言</p>
-
-<p>只要使用一个条件必须是假的潜力断言，但必须明确，以便您的代码以继续执行是真实的。一个断言检查合适的方案包括：</p>
-
-<p>的整数下标索引被传递到自定义标实现，但是下标索引值可以是太低或太高。<br/>
-一个值传递给函数，但是无效值意味着函数不能完成其任务。<br/>
-可选的值是当前nil的，但非nil价值是必不可少的后续代码才能成功执行。<br/>
-参见下标和函数。</p>
-
-<p>注意</p>
-
-<p>断言导致您的应用程序终止，并且不为这样一种方式，无效的情况不太可能出现的设计代码的替代品。然而，在无效的情况是可能出现的情况，一个断言，以确保这些条件都在开发过程中突出显示，并注意到，您的应用程序发布前的有效途径。</p>
+<ul>
+<li><p>断言检查合适的方案包括：1）索引越界。2）无效值传递函数。3）等</p></li>
+<li><p>断言导致应用程序终止，提供比较不错的调试环境。断言，确保这些必要条件在开发过程中突出显示。</p></li>
+</ul>
 
 
 </div>
@@ -853,7 +978,7 @@ assert(age &gt;= 0, <q>A person&#39;s age cannot be less than zero</q>)<br/>
 	<div class="text-right" style="padding:15px 0px;">
 		
 	        <a href="14743596434163.html" 
-	        title="Next Post: 基础运营商">基础运营商 &raquo;</a>
+	        title="Next Post: 基础运营商 此篇一下未整理仅谷歌翻译">基础运营商 此篇一下未整理仅谷歌翻译 &raquo;</a>
 	    
 	</div>
   </div>
