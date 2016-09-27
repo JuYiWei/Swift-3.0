@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  基础运营商 此篇一下未整理仅谷歌翻译 - Swift 3.0 自翻译 - 说了是村长
+  基础运算操作 - Swift 3.0 自翻译 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -59,9 +59,9 @@
           
             <li><a title="基础知识" href="14743596331025.html">基础知识</a></li>
           
-            <li><a title="基础运营商 此篇一下未整理仅谷歌翻译" href="14743596434163.html">基础运营商 此篇一下未整理仅谷歌翻译</a></li>
+            <li><a title="基础运算操作" href="14743596434163.html">基础运算操作</a></li>
           
-            <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+            <li><a title="此篇以下未整理仅谷歌翻译" href="14743596689452.html">此篇以下未整理仅谷歌翻译</a></li>
           
             <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
           
@@ -162,9 +162,9 @@
                         
                           <li><a title="基础知识" href="14743596331025.html">基础知识</a></li>
                         
-                          <li><a title="基础运营商 此篇一下未整理仅谷歌翻译" href="14743596434163.html">基础运营商 此篇一下未整理仅谷歌翻译</a></li>
+                          <li><a title="基础运算操作" href="14743596434163.html">基础运算操作</a></li>
                         
-                          <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
+                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743596689452.html">此篇以下未整理仅谷歌翻译</a></li>
                         
                           <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
                         
@@ -244,355 +244,378 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1>基础运营商 此篇一下未整理仅谷歌翻译</h1>
-
-<p>一个运营商是一个特殊的符号，或者你使用来检查，更改或合并值短语。例如，加法运算符（+）增加了两个数字，如在let i = 1 + 2和逻辑AND运算符（&amp;&amp;）结合两个布尔值，如if enteredDoorCode &amp;&amp; passedRetinaScan。</p>
-
-<p>斯威夫特支持大多数标准C运营商，并提高多种能力，以消除常见的编码错误。赋值运算符（=）没有返回值，以防止它的时候等于运算符（被误用==）旨在。算术运算符（+，-，*，/，%等等）检测并禁止值溢出，与成为比它们存储的类型的允许值范围较大或较小的数字时，以避免意外的结果。您可以通过使用雨燕的溢出运营商选择在值溢出行为，如描述溢出运营商。</p>
-
-<p>迅速还提供了两个范围符（a..&lt;b和a...b）用C没有发现，作为用于表达的范围内的值的快捷方式。</p>
-
-<p>本章介绍了斯威夫特，共同运营高级操作员涵盖雨燕先进的运营商，并介绍了如何定义自己的运营商定制和实施标准的运营商为自己的自定义类型。</p>
-
-<p>术语</p>
-
-<p>运算符是一元，二元或三元：</p>
-
-<p>一元运营商对一个目标（如操作-a）。一元前缀经营者立即出现自己的目标（如前!b），和一元后缀运营商自己的目标（如后立即出现c!）。<br/>
-二元运算符的两个目标（如操作2 + 3），并缀，因为他们在两个目标之间出现英寸<br/>
-三元运营商对三个目标进行操作。像C，斯威夫特只有一个三元运算符，三元条件操作符（a ? b : c）。<br/>
-操作员影响的值是操作数。在表达式1 + 2中，+符号是一个二元运算符和它的两个操作数的值1和2。</p>
-
-<p>赋值运算符</p>
-
-<p>该赋值运算符（a = b）初始化或更新的价值a与价值b：</p>
-
-<p>let b = 10<br/>
-var a = 5<br/>
-a = b<br/>
-// a is now equal to 10<br/>
-如果分配的右边是具有多个值的元组，其元件可以在一次分解成多个常量或变量：</p>
-
-<p>let (x, y) = (1, 2)<br/>
-// x is equal to 1, and y is equal to 2<br/>
-不像在C中的赋值操作符和Objective-C，斯威夫特赋值操作符本身不返回值。下面的语句是无效的：</p>
-
-<p>if x = y {<br/>
-    // This is not valid, because x = y does not return a value.<br/>
-}<br/>
-此功能可以防止赋值运算符（=）被用来意外时，等于运算符（==）实际上意。通过使if x = y无效，斯威夫特可以帮助你避免这些类型的错误在你的代码。</p>
-
-<p>算术运算符</p>
-
-<p>斯威夫特支持四个标准的算术运算符的所有数字类型：</p>
-
-<p>除了 ​​（+）<br/>
-减法（-）<br/>
-乘法（*）<br/>
-司（/）<br/>
-1 + 2       // equals 3<br/>
-5 - 3       // equals 2<br/>
-2 * 3       // equals 6<br/>
-10.0 / 2.5  // equals 4.0<br/>
-不像C和Objective-C的算术运算符，雨燕算术运算符不允许值默认溢出。您可以通过使用斯威夫特的溢出运营商（如选择在值溢出的行为a &amp;+ b）。见溢出运营商。</p>
-
-<p>加法运算符还支持String级联：</p>
-
-<p><q>hello,</q> + <q>world</q>  // equals <q>hello, world</q><br/>
-余运算符</p>
-
-<p>的余数运算符（a % b）的工作原理怎样的许多倍b将适合内部a并返 ​​回剩下的值（称为剩余）。</p>
-
-<p>注意</p>
-
-<p>其余的操作符（%）也被称为一个模运算符在其他语言。然而，它在夫特行为负数意味着它是，严格地说，一个剩余而非模运算。</p>
-
-<p>这里的余数运算符是如何工作的。要计算9 % 4，首先制定出多少4旨意装进9：</p>
-
-<p>图片：../Art/remainderInteger_2x.png<br/>
-可以调整两个4的内线9，并且余数1（以橙色显示）。</p>
-
-<p>在斯威夫特，这将被写成：</p>
-
-<p>9 % 4    // equals 1<br/>
-以确定的答案a % b时，%操作者计算下面的等式，并返回remainder作为输出：</p>
-
-<p>a=（b点¯x some multiplier）+remainder</p>
-
-<p>哪里some multiplier是倍数的数量最多b，将适合里面a。</p>
-
-<p>插入9和4这个公式得到：</p>
-
-<p>9=（4点¯x 2）+1</p>
-
-<p>计算为负值余当施加相同的方法a：</p>
-
-<p>-9 % 4   // equals -1<br/>
-插入-9并4入方程得到：</p>
-
-<p>-9=（4点¯x -2）+-1</p>
-
-<p>给人的剩余价值-1。</p>
-
-<p>的符号b为负值将被忽略b。这意味着，a % b和a % -b总是给出相同的答案。</p>
-
-<p>元减运算符</p>
-
-<p>一个数值的符号可以使用前缀被切换-，被称为元减运算符：</p>
-
-<p>let three = 3<br/>
-let minusThree = -three       // minusThree equals -3<br/>
-let plusThree = -minusThree   // plusThree equals 3, or <q>minus minus three</q><br/>
-一元减运算符（-），它是在工作前值直接前置，没有任何空白。</p>
-
-<p>一元加运算符</p>
-
-<p>在一元加运算（+）只返回其所操作的价值，没有任何变化：</p>
-
-<p>let minusSix = -6<br/>
-let alsoMinusSix = +minusSix  // alsoMinusSix equals -6<br/>
-虽然一元加运算实际上并没有做任何事情，你可以用它来的时候也使用元减运算符负数为正数提供对称性在你的代码。</p>
-
-<p>复合赋值运算符</p>
-
-<p>像C，雨燕提供复合赋值运算符相结合的分配（=与其他操作）。一个例子是加法赋值运算符（+=）：</p>
-
-<p>var a = 1<br/>
-a += 2<br/>
-// a is now equal to 3<br/>
-表达a += 2是简写a = a + 2。有效地，在加入和分配组合成执行同时这两个任务一个操作员。</p>
-
-<p>注意</p>
-
-<p>复合赋值运算符不返回值。例如，你可以不写let b = a += 2。</p>
-
-<p>对于由雨燕标准库提供的复合赋值运算符的完整列表，请参阅雨燕标准库操作员参考。</p>
-
-<p>比较运算符</p>
-
-<p>斯威夫特支持所有标准的C 比较运算符：</p>
-
-<p>等于（a == b）<br/>
-不等于（a != b）<br/>
-大于（a &gt; b）<br/>
-小于（a &lt; b）<br/>
-大于或等于（a &gt;= b）<br/>
-小于或等于（a &lt;= b）<br/>
-注意</p>
-
-<p>迅速还提供了两个身份运营商（=<mark>和!</mark>），其使用来测试两个对象引用是否指的是同一个对象实例。欲了解更多信息，请参见类和结构。</p>
-
-<p>每个比较操作符返回一个Bool值来表示语句是否为真：</p>
-
-<p>1 == 1   // true because 1 is equal to 1<br/>
-2 != 1   // true because 2 is not equal to 1<br/>
-2 &gt; 1    // true because 2 is greater than 1<br/>
-1 &lt; 2    // true because 1 is less than 2<br/>
-1 &gt;= 1   // true because 1 is greater than or equal to 1<br/>
-2 &lt;= 1   // false because 2 is not less than or equal to 1<br/>
-比较运营商经常使用的条件语句，如if语句：</p>
-
-<p>let name = <q>world</q><br/>
-if name == <q>world</q> {<br/>
-    print(<q>hello, world</q>)<br/>
-} else {<br/>
-    print(<q>I&#39;m sorry (name), but I don&#39;t recognize you</q>)<br/>
-}<br/>
-// Prints <q>hello, world</q>, because name is indeed equal to <q>world</q>.<br/>
-欲知更多有关if声明，请参阅控制流。</p>
-
-<p>你还可以比较具有相同数量的值的元组，只要每个元组中的值的可比拟。例如，既Int和String可以比较，这意味着该类型的元组(Int, String)可以比拟的。相比之下，Bool无法比拟的，这意味着其中包含一个布尔值无法比拟的元组。</p>
-
-<p>元组进行比较，从左至右，一个值的时间，直至该比较发现两个值不相等。如果所有的元素都相等，则元组本身是相等的。例如：</p>
-
-<p>(1, <q>zebra</q>) &lt; (2, <q>apple</q>)   // true because 1 is less than 2<br/>
-(3, <q>apple</q>) &lt; (3, <q>bird</q>)    // true because 3 is equal to 3, and <q>apple</q> is less than <q>bird</q><br/>
-(4, <q>dog</q>) == (4, <q>dog</q>)      // true because 4 is equal to 4, and <q>dog</q> is equal to <q>dog</q><br/>
-注意</p>
-
-<p>雨燕标准库，包括元组比较运营商少于七个要素元组。与七个或更多元素的元组进行比较，则必须实现比较运算符自己。</p>
-
-<p>三元条件运算符</p>
-
-<p>在三元条件运算符是由三部分组成，其采用的形式是一个特殊的运营商question ? answer1 : answer2。它是衡量是否基于两个表达式中的一个快捷方式question是真还是假。如果question是真的，它计算answer1并返回其价值; 否则，计算answer2并返回其值。</p>
-
-<p>三元条件运算符是下面的代码缩写：</p>
-
-<p>if question {<br/>
-    answer1<br/>
-} else {<br/>
-    answer2<br/>
-}<br/>
-下面是一个例子，它计算表行的高度。行高度应该比如果行具有标题的内容高度高50点，和更高的20个点，如果行不具有标题：</p>
-
-<p>let contentHeight = 40<br/>
-let hasHeader = true<br/>
-let rowHeight = contentHeight + (hasHeader ? 50 : 20)<br/>
-// rowHeight is equal to 90<br/>
-前面的例子是下面的代码缩写：</p>
-
-<p>let contentHeight = 40<br/>
-let hasHeader = true<br/>
-let rowHeight: Int<br/>
-if hasHeader {<br/>
-    rowHeight = contentHeight + 50<br/>
-} else {<br/>
-    rowHeight = contentHeight + 20<br/>
-}<br/>
-// rowHeight is equal to 90<br/>
-第一实施例的使用了三元条件运算装置rowHeight可以被设置为正确的值上的一行代码。这比第二实施例更简洁，并且消除了需要对rowHeight是变量，因为其值并不需要一个内进行修改if声明。</p>
-
-<p>三元条件运算符提供了一种高效的速记决定哪两个表达式的考虑。小心使用三元条件运算符，但是。如果过度使用它的简洁性可能会导致难以读取的代码。避免三元条件运算符的多个实例结合成一个复合语句。</p>
-
-<p>未缴合并运算符</p>
-
-<p>在未缴股合并运算符（a ?? b）进行解包一个可选的a，如果它包含一个值，或返回默认值b，如果a是nil。表达式a是一个可选类型始终。表达式b必须在内部存储的类型相匹配a。</p>
-
-<p>未缴合并运算符是下面的代码缩写：</p>
-
-<p>a != nil ? a! : b<br/>
-上面的代码使用三元条件运算符和强制解包（a!）来访问内部包裹的价值a时，a是不是nil，并返回b，否则。未缴合并运算符提供了一个更优雅的方式来封装这个条件检查，并以简洁可读的形式展开。</p>
-
-<p>注意</p>
-
-<p>如果值a是非nil，的值b不评估。这被称为短路评价。</p>
-
-<p>下面的示例使用未缴合并运算符默认颜色名称及可选的用户定义的颜色名称之间进行选择：</p>
-
-<p>let defaultColorName = <q>red</q><br/>
-var userDefinedColorName: String?   // defaults to nil</p>
-
-<p>var colorNameToUse = userDefinedColorName ?? defaultColorName<br/>
-// userDefinedColorName is nil, so colorNameToUse is set to the default of <q>red</q><br/>
-该userDefinedColorName变量被定义为可选的String，使用默认值nil。因为userDefinedColorName是一个可选类型，可以使用零-结合运营商要考虑它的价值。在上面的例子中，操作员被用于确定一个初始值String称为变量colorNameToUse。由于userDefinedColorName是nil，表达式userDefinedColorName ?? defaultColorName返回的值defaultColorName，或<q>red</q>。</p>
-
-<p>如果指定一个非nil的价值userDefinedColorName，并再次执行未缴合并运算符检查，包裹内的值userDefinedColorName是用来代替默认：</p>
-
-<p>userDefinedColorName = <q>green</q><br/>
-colorNameToUse = userDefinedColorName ?? defaultColorName<br/>
-// userDefinedColorName is not nil, so colorNameToUse is set to <q>green</q><br/>
-运营商范围内</p>
-
-<p>迅速包括两个范围运营商，这是用于表达值的范围的快捷方式。</p>
-
-<p>封闭范围操作</p>
-
-<p>在封闭的范围操作符（a...b）定义从运行范围a为b，包括价值观a和b。值a不得大于b。</p>
-
-<p>封闭范围操作符遍历要在其中所有的值的范围时使用，如用一个非常有用for- in循环：</p>
-
-<p>for index in 1...5 {<br/>
-    print(<q>(index) times 5 is (index * 5)</q>)<br/>
-}<br/>
-// 1 times 5 is 5<br/>
-// 2 times 5 is 10<br/>
-// 3 times 5 is 15<br/>
-// 4 times 5 is 20<br/>
-// 5 times 5 is 25<br/>
-欲了解更多关于for- in循环，看到控制流。</p>
-
-<p>半开区间操作</p>
-
-<p>在半开区间算子（a..&lt;b）定义了从运行范围a到b，但不包括b。它被认为是半开，因为它包含其第一值，而不是它的最终值。作为与密闭范围运算符，值a必须不大于b。如果值a等于b，然后将所得的范围将是空的。</p>
-
-<p>半开放范围是，当你与基于零列表，如数组，它是有益的工作，数到（但不包括）列表的长度特别有用：</p>
-
-<p>let names = [<q>Anna</q>, <q>Alex</q>, <q>Brian</q>, <q>Jack</q>]<br/>
-let count = names.count<br/>
-for i in 0..&lt;count {<br/>
-    print(<q>Person (i + 1) is called (names[i])</q>)<br/>
-}<br/>
-// Person 1 is called Anna<br/>
-// Person 2 is called Alex<br/>
-// Person 3 is called Brian<br/>
-// Person 4 is called Jack<br/>
-需要注意的是阵列包含四个项目，但0..&lt;count只计算尽可能3（数组中的最后一个项目的索引），因为它是一个半开区间。更多关于阵列，请参阅阵列。</p>
-
-<p>逻辑运算符</p>
-
-<p>逻辑运算符修改或合并布尔逻辑值true和false。斯威夫特支持基于C语言中的三个标准逻辑运算符：</p>
-
-<p>逻辑NOT（ !a）<br/>
-逻辑与（a &amp;&amp; b）<br/>
-逻辑或（a || b）<br/>
-逻辑非运算符</p>
-
-<p>该逻辑NOT运算符（!a）反转一个布尔值，这样true就false和false变true。</p>
-
-<p>逻辑NOT运算符是前缀运算符，并立即将其运行在值出现之前，没有任何空白。它可以被读作“没有a”，如在下面的例子所示：</p>
-
-<p>let allowedEntry = false<br/>
-if !allowedEntry {<br/>
-    print(<q>ACCESS DENIED</q>)<br/>
-}<br/>
-// Prints <q>ACCESS DENIED</q><br/>
-这句话if !allowedEntry可以理解为，如果“不准入境”为真，才能执行后续行，“如果不准入境。” 也就是说，如果allowedEntry是false。</p>
-
-<p>如在本实施例中，布尔常量和变量名的仔细选择可以帮助保持代码可读和简明，同时避免双底片或混乱逻辑语句。</p>
-
-<p>逻辑AND运算符</p>
-
-<p>该逻辑AND运算符（a &amp;&amp; b）创建逻辑表达式其中两个值必须true为整体表达也true。</p>
-
-<p>如果任一值false，整体表现也将是false。事实上，如果第一值false，第二值甚至不会被评估，因为它不可能使整体表达等同于true。这被称为短路评价。</p>
-
-<p>这个例子考虑两个Bool值，并只允许访问如果价值观true：</p>
-
-<p>let enteredDoorCode = true<br/>
-let passedRetinaScan = false<br/>
-if enteredDoorCode &amp;&amp; passedRetinaScan {<br/>
-    print(<q>Welcome!</q>)<br/>
-} else {<br/>
-    print(<q>ACCESS DENIED</q>)<br/>
-}<br/>
-// Prints <q>ACCESS DENIED</q><br/>
-逻辑OR运算符</p>
-
-<p>该逻辑OR运算符（a || b）是两个相邻的管 ​​道符做了缀操作符。您使用它来 ​​创建逻辑表达式，其中只1的两个值必须true为整体表达要true。</p>
-
-<p>像逻辑与上述运营商，逻辑或操作员使用短路评估，以考虑其表达式。如果一个逻辑或表达式的左侧是true，右侧不评估，因为它不能改变它的整体表达的结果。</p>
-
-<p>在下面的例子中，第一Bool值（hasDoorKey）是false，但第二个值（knowsOverridePassword）是true。因为一个值true，整体表现也计算结果为true，并允许访问：</p>
-
-<p>let hasDoorKey = false<br/>
-let knowsOverridePassword = true<br/>
-if hasDoorKey || knowsOverridePassword {<br/>
-    print(<q>Welcome!</q>)<br/>
-} else {<br/>
-    print(<q>ACCESS DENIED</q>)<br/>
-}<br/>
-// Prints <q>Welcome!</q><br/>
-结合逻辑运算符</p>
-
-<p>您可以将多个逻辑运算符来创建更长的复合表达式：</p>
-
-<p>if enteredDoorCode &amp;&amp; passedRetinaScan || hasDoorKey || knowsOverridePassword {<br/>
-    print(<q>Welcome!</q>)<br/>
-} else {<br/>
-    print(<q>ACCESS DENIED</q>)<br/>
-}<br/>
-// Prints <q>Welcome!</q><br/>
-本例中使用多&amp;&amp;和||经营者创造一个较长的复合表达式。然而，&amp;&amp;和||运营商仍然在操作只有两个值，所以这实际上是链接在一起，三个小表情。该例 ​​子可以理解为：</p>
-
-<p>如果我们输入了正确的门代码，并通过视网膜扫描，或者如果我们有一个有效的门钥匙，或者如果我们知道紧急替代密码，然后允许访问。</p>
-
-<p>基于所述值enteredDoorCode，passedRetinaScan以及hasDoorKey，前两个子表达式是false。但是，紧急替代密码是已知的，所以整体复合式仍计算为true。</p>
-
-<p>注意</p>
-
-<p>雨燕的逻辑运算符&amp;&amp;和||是左关联的，这意味着具有多个逻辑运算符复合表达式先评估最左边的子表达式。</p>
-
-<p>这些括号</p>
-
-<p>它有时是有益的包括括号的时候都没有严格的需要，使一个复杂的表达式的意图更容易阅读。在上面的门禁为例，它周围添加了复合式的第一部分括号做出明确的意图是非常有用的：</p>
-
-<p>if (enteredDoorCode &amp;&amp; passedRetinaScan) || hasDoorKey || knowsOverridePassword {<br/>
-    print(<q>Welcome!</q>)<br/>
-} else {<br/>
-    print(<q>ACCESS DENIED</q>)<br/>
-}<br/>
-// Prints <q>Welcome!</q><br/>
-括号清楚地表明，前两个值被认为是在整个逻辑独立的可能状态的一部分。化合物表达式的输出不改变，但总体目的是更清楚给读者。可读性总是优先于简洁; 使用括号，他们帮助，让您的意图明显。</p>
+<h1>基础运算操作</h1>
+
+<ul>
+<li>
+<a href="#toc_0">简介</a>
+</li>
+<li>
+<a href="#toc_1">术语</a>
+</li>
+<li>
+<a href="#toc_2">赋值运算符</a>
+</li>
+<li>
+<a href="#toc_3">算术运算符</a>
+<ul>
+<li>
+<a href="#toc_4">四则运算符</a>
+</li>
+<li>
+<a href="#toc_5">求余运算符</a>
+</li>
+<li>
+<a href="#toc_6">一元减运算符、一元加运算符（负正）</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">复合赋值运算符</a>
+</li>
+<li>
+<a href="#toc_8">比较运算符</a>
+</li>
+<li>
+<a href="#toc_9">三元条件运算符</a>
+</li>
+<li>
+<a href="#toc_10">nil合并运算符</a>
+</li>
+<li>
+<a href="#toc_11">范围运算符</a>
+</li>
+<li>
+<a href="#toc_12">逻辑运算符</a>
+</li>
+</ul>
+
+
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID60">The Basics Operators 官方文档</a></p>
+
+<h1 id="toc_0">简介</h1>
+
+<ul>
+<li><p>运算符是一个特殊的符号，用来检查、更改、合并等。</p></li>
+<li><p>Swift支持大多数标准C运算符，并新增了一些检查功能，以消除常见的编码错误。赋值运算符<code>=</code>没有返回值，以防止误用<code>==</code>。算术运算符<code>（+，-，*，/，%等等）</code>检测并禁止值溢出，以避免意外的结果。可以通过使用Swift自定义溢出处理。</p></li>
+<li><p>迅速还提供了两个新的范围表达方式<code>（a..&lt;b和a...b）</code>，方便快捷。</p></li>
+<li><p>本章介绍了Swift常用的操作符，以及特有高级操作符。</p></li>
+</ul>
+
+<h1 id="toc_1">术语</h1>
+
+<p>运算符分为：一元，二元或三元。</p>
+
+<ul>
+<li>一元运算符：一个目标进行操作，如<code>-a</code>（负a）。</li>
+<li>二元运算符：两个目标进行操作，如<code>2 + 3</code>。</li>
+<li>三元运算符：三个目标进行操作，C，Swift只有一个三元运算符<code>（a ? b : c）</code>。</li>
+</ul>
+
+<h1 id="toc_2">赋值运算符</h1>
+
+<ul>
+<li>赋值运算符<code>a = b</code>，用于初始化或更新值。</li>
+</ul>
+
+<pre><code>let b = 10
+var a = 5
+a = b
+</code></pre>
+
+<ul>
+<li>如果赋值的是元组，前后对多个变量或者常量。</li>
+</ul>
+
+<pre><code>let (x, y) = (1, 2)
+</code></pre>
+
+<ul>
+<li>不像在C和Objective-C中的赋值操作符，Swift赋值操作符本身不返回值。可以防止<code>=</code>误用<code>==</code>二产生错误。</li>
+</ul>
+
+<pre><code>if x = y {
+    // This is not valid, because x = y does not return a value.
+}
+</code></pre>
+
+<h1 id="toc_3">算术运算符</h1>
+
+<h2 id="toc_4">四则运算符</h2>
+
+<p>Swift所有数字类型支持四个标准的算术运算符。</p>
+
+<pre><code>加​（+）
+减（-）
+乘（*）
+除（/）
+</code></pre>
+
+<ul>
+<li><p>不像C和Objective-C的算术运算符，Swift算术运算符不允许值溢出。可以通过使用Swift的溢出运算符处理溢出。（详情看溢出运算）</p></li>
+<li><p>加法运算符还支持String类型。</p></li>
+</ul>
+
+<pre><code>&quot;hello, &quot; + &quot;world&quot;  // equals &quot;hello, world&quot;
+</code></pre>
+
+<h2 id="toc_5">求余运算符</h2>
+
+<ul>
+<li>求余数运算符<code>a % b</code>，工作原理<code>a = b * x + n</code>，n即为余数。特殊的是，Swift中，负数也支持求余。</li>
+</ul>
+
+<pre><code>9 % 4    // 9 = 4 * 2 + 1
+-9 % 4   // -9 = 4 * -2 + -1
+           // -9 == 4 * -3 + 3
+负数求余时，这里选择了第一种方式！
+</code></pre>
+
+<h2 id="toc_6">一元减运算符、一元加运算符（负正）</h2>
+
+<ul>
+<li>数值可以使用前缀<code>-</code>，为一元减运算符。类似的有<code>+</code>，为一元加运算符。</li>
+</ul>
+
+<pre><code>let three = 3
+let minusThree = -three       // minusThree equals -3
+let plusThree = -minusThree   // plusThree equals 3, or &quot;minus minus three&quot;
+</code></pre>
+
+<pre><code>let minusSix = -6
+let alsoMinusSix = +minusSix  // alsoMinusSix equals -6
+</code></pre>
+
+<ul>
+<li>虽然一元加运算实际上并没有做任何事情，可以用它与元减运算符作为对称代码。</li>
+</ul>
+
+<h1 id="toc_7">复合赋值运算符</h1>
+
+<ul>
+<li>像C，Swift提供复合赋值运算符，例如加法赋值运算符<code>+=</code>。</li>
+</ul>
+
+<pre><code>var a = 1
+a += 2
+</code></pre>
+
+<ul>
+<li>复合赋值运算符不返回值。例如，你可以不写<code>let b = a += 2</code>。</li>
+<li>不支持 <code>++</code>，<code>--</code>。</li>
+</ul>
+
+<h1 id="toc_8">比较运算符</h1>
+
+<ul>
+<li>Swift支持所有标准的C比较运算符。</li>
+</ul>
+
+<pre><code>等于（a == b）
+不等于（a != b）
+大于（a &gt; b）
+小于（a &lt; b）
+大于或等于（a &gt;= b）
+小于或等于（a &lt;= b）
+</code></pre>
+
+<ul>
+<li><p>Swift还提供了两个类型比较运算符<code>===</code>和<code>!==</code>，用来测试两个对象引用是否指向同一个对象实例。欲了解更多信息，请参见类和结构。</p></li>
+<li><p>每个比较操作符返回一个Bool值来表示语句是否为真。</p></li>
+</ul>
+
+<pre><code>1 == 1   // true because 1 is equal to 1
+2 != 1   // true because 2 is not equal to 1
+2 &gt; 1    // true because 2 is greater than 1
+1 &lt; 2    // true because 1 is less than 2
+1 &gt;= 1   // true because 1 is greater than or equal to 1
+2 &lt;= 1   // false because 2 is not less than or equal to 1
+</code></pre>
+
+<ul>
+<li>比较运算符经常使用的条件语句，如if语句。</li>
+</ul>
+
+<pre><code>let name = &quot;world&quot;
+if name == &quot;world&quot; {
+    print(&quot;hello, world&quot;)
+} else {
+    print(&quot;I&#39;m sorry \(name), but I don&#39;t recognize you&quot;)
+}
+</code></pre>
+
+<ul>
+<li><p>欲知更多有关if声明，请参阅控制流。</p></li>
+<li><p>还可以比较具有相同数量的值的元组，需要确保对应的每个元组中的值可比。例如，Int和String可以比较，Bool无法比较。</p></li>
+<li><p>元组进行比较，从左至右，一个一个对应的比较，直至两个值不相等。如果所有的元素都相等，则元组相等的。例如：</p></li>
+</ul>
+
+<pre><code>(1, &quot;zebra&quot;) &lt; (2, &quot;apple&quot;)   // true because 1 is less than 2
+(3, &quot;apple&quot;) &lt; (3, &quot;bird&quot;)    // true because 3 is equal to 3, and &quot;apple&quot; is less than &quot;bird&quot;
+(4, &quot;dog&quot;) == (4, &quot;dog&quot;)      // true because 4 is equal to 4, and &quot;dog&quot; is equal to &quot;dog&quot;
+</code></pre>
+
+<ul>
+<li>Swift标准库，表示元组比较需要少于七个元素。</li>
+</ul>
+
+<h1 id="toc_9">三元条件运算符</h1>
+
+<ul>
+<li><code>question?answer1:answer2</code> 比较常规。作用如下：</li>
+</ul>
+
+<pre><code>if question {
+    answer1
+} else {
+    answer2
+}
+</code></pre>
+
+<ul>
+<li>举例。</li>
+</ul>
+
+<pre><code>let contentHeight = 40
+let hasHeader = true
+let rowHeight = contentHeight + (hasHeader ? 50 : 20)
+</code></pre>
+
+<ul>
+<li>上面例子的原版。</li>
+</ul>
+
+<pre><code>let contentHeight = 40
+let hasHeader = true
+let rowHeight: Int
+if hasHeader {
+    rowHeight = contentHeight + 50
+} else {
+    rowHeight = contentHeight + 20
+}
+</code></pre>
+
+<ul>
+<li>合理使用三元运算符，避免过于复杂。</li>
+</ul>
+
+<h1 id="toc_10">nil合并运算符</h1>
+
+<ul>
+<li>强制解析可选类型的简写版本，<code>a ?? b</code>，如果a包含一个值，那么解析a的值，忽略b的值，反之返回默认b的值。下面是同理的三元运算。</li>
+</ul>
+
+<pre><code>a != nil ? a! : b
+</code></pre>
+
+<ul>
+<li>举个例子，可选类型a为nil时</li>
+</ul>
+
+<pre><code>let defaultColorName = &quot;red&quot;
+var userDefinedColorName: String?   // defaults to nil 
+var colorNameToUse = userDefinedColorName ?? defaultColorName
+</code></pre>
+
+<ul>
+<li>可选类型，不为nil时</li>
+</ul>
+
+<pre><code>userDefinedColorName = &quot;green&quot;
+colorNameToUse = userDefinedColorName ?? defaultColorName
+</code></pre>
+
+<h1 id="toc_11">范围运算符</h1>
+
+<ul>
+<li><p>Swift包括两个范围运算符<code>a...b</code>和<code>a..&lt;b</code>。</p></li>
+<li><p>封闭范围操作符<code>a...b</code>，定义范围[a,b]，包括a和b，且a不大于b。经常使用在<code>for-in</code>中</p></li>
+</ul>
+
+<pre><code>for index in 1...5 {
+    print(&quot;\(index) times 5 is \(index * 5)&quot;)
+}
+</code></pre>
+
+<ul>
+<li>半封闭范围操作符<code>a..&lt;b</code>，定义范围[a,b)，不包括b，a不大于b。经常使用在数组索引中</li>
+</ul>
+
+<pre><code>let names = [&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;]
+let count = names.count
+for i in 0..&lt;count {
+    print(&quot;Person \(i + 1) is called \(names[i])&quot;)
+}
+</code></pre>
+
+<h1 id="toc_12">逻辑运算符</h1>
+
+<ul>
+<li>逻辑运算符修改或合并布尔值true和false。Swift支持基于C语言中的三个标准逻辑运算符：</li>
+</ul>
+
+<pre><code>逻辑NOT（ !a）
+逻辑与（a &amp;&amp; b）
+逻辑或（a || b）
+</code></pre>
+
+<ul>
+<li>逻辑NOT运算符<code>!a</code>，反转一个布尔值，true变false和false变true。</li>
+</ul>
+
+<pre><code>let allowedEntry = false
+if !allowedEntry {
+    print(&quot;ACCESS DENIED&quot;)
+}
+</code></pre>
+
+<ul>
+<li>逻辑AND运算符<code>a &amp;&amp; b</code>，两个值都为true，则整体为true，反之false。如果第一值false，第二值不会判断。</li>
+</ul>
+
+<pre><code>let enteredDoorCode = true
+let passedRetinaScan = false
+if enteredDoorCode &amp;&amp; passedRetinaScan {
+    print(&quot;Welcome!&quot;)
+} else {
+    print(&quot;ACCESS DENIED&quot;)
+}
+</code></pre>
+
+<ul>
+<li>逻辑OR运算符<code>a || b</code>，两个值只要有一个为true，则整体为true，反之false。如果第一个为true，第二个同样不会判断。</li>
+</ul>
+
+<pre><code>let hasDoorKey = false
+let knowsOverridePassword = true
+if hasDoorKey || knowsOverridePassword {
+    print(&quot;Welcome!&quot;)
+} else {
+    print(&quot;ACCESS DENIED&quot;)
+}
+</code></pre>
+
+<ul>
+<li>结合逻辑运算符，可以将多个逻辑运算符来创建更长的复合表达式。</li>
+</ul>
+
+<pre><code>if enteredDoorCode &amp;&amp; passedRetinaScan || hasDoorKey || knowsOverridePassword {
+    print(&quot;Welcome!&quot;)
+} else {
+    print(&quot;ACCESS DENIED&quot;)
+}
+</code></pre>
+
+<ul>
+<li>Swift的逻辑运算符&amp;&amp;和||是左关联的，具有多个逻辑运算符复合表达式先评估最左边的子表达式。添加括号，使一个复杂的表达式更容易阅读。</li>
+</ul>
+
+<pre><code>if (enteredDoorCode &amp;&amp; passedRetinaScan) || hasDoorKey || knowsOverridePassword {
+    print(&quot;Welcome!&quot;)
+} else {
+    print(&quot;ACCESS DENIED&quot;)
+}
+</code></pre>
 
 
 </div>
@@ -612,7 +635,7 @@ if hasDoorKey || knowsOverridePassword {<br/>
 	<div class="text-right" style="padding:15px 0px;">
 		
 	        <a href="14743596689452.html" 
-	        title="Next Post: 字符串和字符">字符串和字符 &raquo;</a>
+	        title="Next Post: 此篇以下未整理仅谷歌翻译">此篇以下未整理仅谷歌翻译 &raquo;</a>
 	    
 	</div>
   </div>
