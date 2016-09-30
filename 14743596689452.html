@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  字符串和字符 - Swift 3.0 自翻译 - 说了是村长
+  字符串和字符 - Swift 3.0 官方文档 自整理 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
- <link href="atom.xml" rel="alternate" title="Swift 3.0 自翻译 - 说了是村长" type="application/atom+xml">
+ <link href="atom.xml" rel="alternate" title="Swift 3.0 官方文档 自整理 - 说了是村长" type="application/atom+xml">
     <link rel="stylesheet" href="asset/css/foundation.min.css" />
     <link rel="stylesheet" href="asset/css/docs.css" />
 
@@ -29,13 +29,13 @@
 <nav class="top-bar docs-bar hide-for-small" data-topbar>
 
 <div id="header">
-    <h1><a href="index.html">Swift 3.0 自翻译 - 说了是村长</a></h1>
+    <h1><a href="index.html">Swift 3.0 官方文档 自整理 - 说了是村长</a></h1>
 </div>
 
 </nav>
         <nav class="tab-bar show-for-small">
   <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
-    <span> &nbsp; Swift 3.0 自翻译 - 说了是村长</span>
+    <span> &nbsp; Swift 3.0 官方文档 自整理 - 说了是村长</span>
   </a>
 </nav>
 
@@ -248,101 +248,122 @@
 
 <ul>
 <li>
-<a href="#toc_0">字符串字面量</a>
+<a href="#toc_0">简介</a>
 </li>
 <li>
-<a href="#toc_1">初始化一个空字符串</a>
-</li>
-<li>
-<a href="#toc_2">字符串可变性</a>
-</li>
-<li>
-<a href="#toc_3">字符串是值类型</a>
-</li>
-<li>
-<a href="#toc_4">使用字符</a>
-</li>
-<li>
-<a href="#toc_5">连接字符串和字符</a>
-</li>
-<li>
-<a href="#toc_6">字符串插值</a>
-</li>
-<li>
-<a href="#toc_7">Unicode</a>
-</li>
-<li>
-<a href="#toc_8">字符计数</a>
-</li>
-<li>
-<a href="#toc_9">访问和修改字符串</a>
+<a href="#toc_1">字符，字符串初始化</a>
 <ul>
 <li>
-<a href="#toc_10">字符串索引</a>
+<a href="#toc_2">字符串字面量</a>
 </li>
 <li>
-<a href="#toc_11">插入和取出</a>
+<a href="#toc_3">初始化一个空字符串</a>
+</li>
+<li>
+<a href="#toc_4">字符串可变性</a>
+</li>
+<li>
+<a href="#toc_5">字符串是值类型</a>
+</li>
+<li>
+<a href="#toc_6">字符串字符集</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="#toc_12">比较字符串</a>
+<a href="#toc_7">字符串基本操作</a>
 <ul>
 <li>
-<a href="#toc_13">字符串和字符比较</a>
+<a href="#toc_8">连接字符串和字符</a>
 </li>
 <li>
-<a href="#toc_14">前缀和后缀比较</a>
+<a href="#toc_9">字符串插值</a>
+</li>
+<li>
+<a href="#toc_10">Unicode</a>
+</li>
+<li>
+<a href="#toc_11">字符计数</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="#toc_15">字符串编码</a>
+<a href="#toc_12">访问和修改字符串字符集</a>
 <ul>
 <li>
-<a href="#toc_16">UTF-8表示</a>
+<a href="#toc_13">字符串索引</a>
 </li>
 <li>
-<a href="#toc_17">UTF-16表示</a>
+<a href="#toc_14">插入和删除</a>
+</li>
+</ul>
 </li>
 <li>
-<a href="#toc_18">Unicode标表示</a>
+<a href="#toc_15">字符串比较</a>
+<ul>
+<li>
+<a href="#toc_16">直接比较</a>
+</li>
+<li>
+<a href="#toc_17">前缀比较</a>
+</li>
+<li>
+<a href="#toc_18">后缀比较</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_19">字符串编码</a>
+<ul>
+<li>
+<a href="#toc_20">UTF-8表示</a>
+</li>
+<li>
+<a href="#toc_21">UTF-16表示</a>
+</li>
+<li>
+<a href="#toc_22">Unicode标表示</a>
 </li>
 </ul>
 </li>
 </ul>
 
+
+<h1 id="toc_0">简介</h1>
 
 <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID295">Strings and Characters 官方文档</a></p>
 
 <ul>
-<li><p>字符串是一系列字符，如<q>hello, world</q>或<q>albatross</q>。Swift字符串类似是<code>String</code>，可以用各种方式进行访问，包括<code>Character</code>值。</p></li>
-<li><p>Swift的<code>String</code>和<code>Character</code>类型，快速高效，现代化，兼容Unicode。字符串创建和操作的语法类似C语言，具有轻量级和可读性的特点。字符串连接使用<code>+</code>运算符即可。字符串可变性使用常量和变量区分即可。还可以使用字符串插入常量，变量，表达式，称为字符串插值法。</p></li>
-<li><p>Swift的<code>String</code>类型与<code>NSString</code>类无缝桥接。可以访问NSString方法，并无需进行转换。</p></li>
-<li><p>有关使用的详细信息String与Foundation和Cocoa，参考<a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/index.html#//apple_ref/doc/uid/TP40014216-CH2-ID0">Using Swift with Cocoa and Objective-C (Swift 3)</a></p></li>
+<li>字符串<code>String</code>，字符<code>Character</code>，统一使用<code>&quot;&quot;</code>即可。</li>
+<li>兼容Unicode，使用时会有一点不同。</li>
+<li>字符串拼接，支持<code>+</code>运算符，注意不能<code>-</code>。</li>
+<li>格式化字符串也不同，Swift使用字符串插值法，不过大体差不多。</li>
+<li>Swift的<code>String</code>类型与<code>NSString</code>类无缝桥接。</li>
 </ul>
 
-<h1 id="toc_0">字符串字面量</h1>
+<blockquote>
+<p>有关<code>String</code>与<code>Foundation</code>和<code>Cocoa</code>，参考<a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/index.html#//apple_ref/doc/uid/TP40014216-CH2-ID0">Using Swift with Cocoa and Objective-C (Swift 3)</a></p>
+</blockquote>
 
-<ul>
-<li>字符串是一对双引号包围的文本<code>&quot;&quot;</code>。Swift默认类型推断为<code>String</code>类型的常数。</li>
-</ul>
+<h1 id="toc_1">字符，字符串初始化</h1>
+
+<h2 id="toc_2">字符串字面量</h2>
 
 <pre><code>let someString = &quot;Some string literal value&quot;
 </code></pre>
 
-<h1 id="toc_1">初始化一个空字符串</h1>
+<h2 id="toc_3">初始化一个空字符串</h2>
 
 <ul>
-<li>初始化一个空的字符串。</li>
+<li>初始化空字符串，空即为<code>&quot;&quot;</code>。</li>
 </ul>
 
-<pre><code>var emptyString = &quot;&quot;               // empty string literal
-var anotherEmptyString = String()  // initializer syntax
+<pre><code>var emptyString = &quot;&quot;               // 空字面量 初始化
+var anotherEmptyString = String()  // 初始化方法 初始化
 </code></pre>
 
 <ul>
-<li>判断String是否为空。</li>
+<li>判断字符串是否为空。</li>
 </ul>
 
 <pre><code>if emptyString.isEmpty {
@@ -350,10 +371,10 @@ var anotherEmptyString = String()  // initializer syntax
 }
 </code></pre>
 
-<h1 id="toc_2">字符串可变性</h1>
+<h2 id="toc_4">字符串可变性</h2>
 
 <ul>
-<li>字符串的可变性，现在统一由常量与变量控制。与OC不一样，不再区分为<code>NSString</code>与<code>NSMutableString</code>。</li>
+<li>字符串的可变性，Swift统一由常量<code>let</code>与变量<code>var</code>控制。不再区分为<code>NSString</code>与<code>NSMutableString</code>。</li>
 </ul>
 
 <pre><code>let constantString = &quot;Highlander&quot;
@@ -362,16 +383,16 @@ var variableString = &quot;Horse&quot;
 variableString += &quot; and carriage&quot; 
 </code></pre>
 
-<h1 id="toc_3">字符串是值类型</h1>
+<h2 id="toc_5">字符串是值类型</h2>
 
 <ul>
-<li>Swift的<code>String</code>类型是值类型。简单的说就是传递值时，是拷贝一份新值再用于传递。原字符串并不改变。Swift编译器也对字符串进行了优化，实际复制只在必要时才处理，得以出色表现。</li>
+<li>值类型，简单的说就是传值时，传的是新拷贝的值，也就是默认copy属性。</li>
 </ul>
 
-<h1 id="toc_4">使用字符</h1>
+<h2 id="toc_6">字符串字符集</h2>
 
 <ul>
-<li><code>String</code>通过遍历其<code>characters</code>属性，可以访问<code>Character</code>的值。</li>
+<li><code>characters</code>属性，可以获取字符串本身的所有字符数组。</li>
 </ul>
 
 <pre><code>for character in &quot;Dog!🐶&quot;.characters {
@@ -380,7 +401,7 @@ variableString += &quot; and carriage&quot;
 </code></pre>
 
 <ul>
-<li>可以创建一个单独<code>Character</code>，并可以转换<code>String</code>类型。</li>
+<li>创建字符，字符也可以转换成字符串。</li>
 </ul>
 
 <pre><code>let exclamationMark: Character = &quot;!&quot;
@@ -390,10 +411,12 @@ let catString = String(catCharacters)
 print(catString)
 </code></pre>
 
-<h1 id="toc_5">连接字符串和字符</h1>
+<h1 id="toc_7">字符串基本操作</h1>
+
+<h2 id="toc_8">连接字符串和字符</h2>
 
 <ul>
-<li><code>String</code>使用<code>+</code>来按顺序拼接字符串。</li>
+<li>使用<code>+</code>按顺序拼接字符串。</li>
 </ul>
 
 <pre><code>let string1 = &quot;hello&quot;
@@ -402,7 +425,7 @@ var welcome = string1 + string2
 </code></pre>
 
 <ul>
-<li><code>String</code>在现有<code>String</code>值的基础上拼接<code>+=</code>。</li>
+<li>在现有字符串值的基础上拼接<code>+=</code>。</li>
 </ul>
 
 <pre><code>var instruction = &quot;look over&quot;
@@ -410,36 +433,30 @@ instruction += string2
 </code></pre>
 
 <ul>
-<li><code>String</code>类型提供<code>append()</code>方法</li>
+<li>字符串类型提供<code>append()</code>方法，拼接字符串。</li>
 </ul>
 
 <pre><code>let exclamationMark: Character = &quot;!&quot;
 welcome.append(exclamationMark)
 </code></pre>
 
-<h1 id="toc_6">字符串插值</h1>
+<h2 id="toc_9">字符串插值</h2>
 
 <ul>
-<li>也就是曾经的格式化字符串，使用<code>\(some)</code>来插入字符串，可以插入各种类型各种表达式。</li>
+<li>也就是曾经的格式化字符串，使用<code>\(some)</code>来插入，可以插入各种类型，各种表达式。注意，括号内不能包含反斜杠<code>\</code>，回车，换行。</li>
 </ul>
 
 <pre><code>let multiplier = 3
 let message = &quot;\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)&quot;
 </code></pre>
 
-<ul>
-<li>括号内不能包含反斜杠<code>\</code>，回车，换行。</li>
-</ul>
-
-<h1 id="toc_7">Unicode</h1>
+<h2 id="toc_10">Unicode</h2>
 
 <ul>
-<li><p>Swift的<code>String</code>和<code>Character</code>类型完全支持Unicode兼容。</p></li>
-<li><p>字符串中的特殊字符</p></li>
+<li>转义特殊字符</li>
 </ul>
 
-<pre><code>转义特殊字符
-\0（空字符） 
+<pre><code>\0（空字符） 
 \\（反斜杠） 
 \t（水平制表） 
 \n（换行） 
@@ -452,25 +469,22 @@ let message = &quot;\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)&quot;
 <li>任意Unicode标量，写成<code>\u{}</code>，其中值为1-8位十六进制数。</li>
 </ul>
 
-<pre><code>let wiseWords = &quot;\&quot;Imagination is more important than knowledge\&quot; - Einstein&quot;
-
-let dollarSign = &quot;\u{24}&quot;        // $,  Unicode scalar U+0024
+<pre><code>let dollarSign = &quot;\u{24}&quot;        // $,  Unicode scalar U+0024
 let blackHeart = &quot;\u{2665}&quot;      // ♥,  Unicode scalar U+2665
 let sparklingHeart = &quot;\u{1F496}&quot; // 💖, Unicode scalar U+1F496
 </code></pre>
 
 <ul>
-<li><p>扩展字元簇</p></li>
-<li><p>Swift的每个Character类型代表一个扩展字元簇。由一个或多个的Unicode标量结合组成单一可读字符。</p></li>
-<li><p><code>é</code>可以被表示为单一的Unicode<code>（LATIN SMALL LETTER E WITH ACUTE或U+00E9）</code>。可以被表示为一对标量-一个标准信<code>e（LATIN SMALL LETTER E或U+0065）</code>，接着是<code>COMBINING ACUTE ACCENT标量（U+0301）</code>。</p></li>
+<li>由一个或多个的Unicode标量，结合组成单一可读字符。</li>
 </ul>
 
 <pre><code>let eAcute: Character = &quot;\u{E9}&quot;                         // é
-let combinedEAcute: Character = &quot;\u{65}\u{301}&quot;          // e followed by ́
+let combinedEAcute: Character = &quot;\u{65}\u{301}&quot;          // e +  ́ = é 
+// 上面两个是相同的字符。
 </code></pre>
 
 <ul>
-<li>朝鲜字母韩文音节可以表示为任一预组合或分解序列。</li>
+<li>再比如。</li>
 </ul>
 
 <pre><code>let precomposed: Character = &quot;\u{D55C}&quot;                  // 한
@@ -478,8 +492,7 @@ let decomposed: Character = &quot;\u{1112}\u{1161}\u{11AB}&quot;   // ᄒ, ᅡ, 
 </code></pre>
 
 <ul>
-<li>封闭标记（如COMBINING ENCLOSING CIRCLE，或U+20DD）包括其它的Unicode标量作为一个单一的
-一部分Character价值：</li>
+<li>三比如。</li>
 </ul>
 
 <pre><code>let enclosedEAcute: Character = &quot;\u{E9}\u{20DD}&quot;
@@ -487,292 +500,213 @@ let decomposed: Character = &quot;\u{1112}\u{1161}\u{11AB}&quot;   // ᄒ, ᅡ, 
 </code></pre>
 
 <ul>
-<li>区域指示器符号的Unicode标量可以成对使一个单一的组合Character值，如该组合REGIONAL INDICATOR SYMBOL LETTER U（U+1F1FA）和REGIONAL INDICATOR SYMBOL LETTER S（U+1F1F8）：</li>
+<li>四比如。</li>
 </ul>
 
 <pre><code>let regionalIndicatorForUS: Character = &quot;\u{1F1FA}\u{1F1F8}&quot;
 // regionalIndicatorForUS is 🇺🇸
 </code></pre>
 
-<h1 id="toc_8">字符计数</h1>
+<h2 id="toc_11">字符计数</h2>
 
 <ul>
-<li>检索字符串中<code>Character</code>的数量，可以使用<code>characterss</code>属性的<code>count</code>属性。</li>
-</ul>
-
-<pre><code>let unusualMenagerie = &quot;Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪&quot;
-print(&quot;unusualMenagerie has \(unusualMenagerie.characters.count) characters&quot;)
-</code></pre>
-
-<ul>
-<li>Swift的扩展字形集群的<code>Character</code>值，字符串连接和修改可能并不影响一个字符串的字符数。例如，如果你初始化字符串cafe，然后追加一个COMBINING ACUTE ACCENT（U+0301）的字符串，第四个字符é，而不是e，得到的字符串字符数仍然是4，</li>
+<li>获取字符串的字符集，也就是字符数组，那么就可以获取字数了。注意，由于字符是可以由Unicode标量组合成而成的，所以组合的字符计数为1。</li>
 </ul>
 
 <pre><code>var word = &quot;cafe&quot;
-print(&quot;the number of characters in \(word) is \(word.characters.count)&quot;)
-// Prints &quot;the number of characters in cafe is 4&quot;
+// cafe == 4
  
-word += &quot;\u{301}&quot;    // COMBINING ACUTE ACCENT, U+0301
- 
-print(&quot;the number of characters in \(word) is \(word.characters.count)&quot;)
-// Prints &quot;the number of characters in café is 4&quot;
+word += &quot;\u{301}&quot;
+// café == 4
+
+// 拼接了 \u{301} 相当于组合标量，把最后的e，加了一个声调，但视为一个字符。
+</code></pre>
+
+<h1 id="toc_12">访问和修改字符串字符集</h1>
+
+<ul>
+<li>使用下标语法。</li>
+<li>使用其方法和属性。</li>
+</ul>
+
+<h2 id="toc_13">字符串索引</h2>
+
+<ul>
+<li>位置属性，startIndex和endIndex，获取字符串字符的起始和结束位置。注意，是索引类型而不是整形。</li>
+</ul>
+
+<pre><code>var startIndex = name.startIndex
+var endIndex = name.endIndex
 </code></pre>
 
 <ul>
-<li>与<code>NSString</code>的<code>length</code>的长度计算方式不同。</li>
+<li>索引类型位置偏移，注意结合字符串，避免越界。</li>
 </ul>
 
-<h1 id="toc_9">访问和修改字符串</h1>
-
-<ul>
-<li>访问和修改的字符串，使用其方法和属性，或使用下标语法。</li>
-</ul>
-
-<h2 id="toc_10">字符串索引</h2>
-
-<ul>
-<li><p>每个<code>String</code>值具有相关联的索引类型<code>String.Index</code>，对应字符串中每一个的位置<code>Character</code>。由于Swift的字符串计数所讲的情况，所以不能直接使用整数索引。</p></li>
-<li><p>使用<code>startIndex</code>属性来访问第一的位置<code>Character</code>。<code>endIndex</code>是最后一个<code>Character</code>。<code>endIndex</code>属性不是一个字符串的下标有效的参数。如果<code>String</code>是空的，<code>startIndex</code>和<code>endIndex</code>是相等的。</p></li>
-<li><p>使用索引之前和之后的方法访问<code>index(before:)</code>和<code>index(after:)</code>截取部分字符串。可以使用<code>index(_:offsetBy:)</code>截取偏移后的字符串。</p></li>
-<li><p>使用标语法来访问<code>Character</code>在一个特定的<code>String</code>索引。</p></li>
-</ul>
-
-<pre><code>let greeting = &quot;Guten Tag!&quot;
-greeting[greeting.startIndex]
-// G
-greeting[greeting.index(before: greeting.endIndex)]
-// !
-greeting[greeting.index(after: greeting.startIndex)]
-// u
-let index = greeting.index(greeting.startIndex, offsetBy: 7)
-greeting[index]
-// a
+<pre><code>var afterIndex = name.index(after: startIndex)
+var beforeIndex = name.index(before: endIndex)
+var offsetIndex = name.index(startIndex, offsetBy: 3)
 </code></pre>
 
 <ul>
-<li>索引越界，将触发运行时错误。</li>
+<li>下标语法，获取指定位置的字符。</li>
 </ul>
 
-<pre><code>greeting[greeting.endIndex] // error
-greeting.index(after: endIndex) // error
-使用indices的财产characters属性来访问字符串中的所有单个字符的指标。
+<pre><code>var name = &quot;Li Lei&quot;
+var ch = name[startIndex];
+</code></pre>
 
-for index in greeting.characters.indices {
-    print(&quot;\(greeting[index]) &quot;, terminator: &quot;&quot;)
-}
-// Prints &quot;G u t e n   T a g ! &quot;
+<h2 id="toc_14">插入和删除</h2>
+
+<ul>
+<li>插入字符<code>insert(_:at:)</code>，插入字符串<code>insert(contentsOf:at:)</code>。注意，插入字符串，即字符集合。</li>
+</ul>
+
+<pre><code>var name = &quot;Li Lei&quot;
+name.insert(&quot;!&quot;, at: name.endIndex)
+name.insert(contentsOf: &quot;hello &quot;.characters, at: name.startIndex)
 </code></pre>
 
 <ul>
-<li><code>startIndex</code>与<code>endIndex</code>属性和<code>index(before:)</code>，<code>index(after:)</code>和<code>index(_:offsetBy:)</code>，符合任何遵守<code>Collection</code>协议的类型。包括<code>String</code>，以及集合类型如<code>Array</code>，<code>Dictionary</code>，和<code>Set</code>。</li>
+<li>删除字符<code>remove(at:)</code>，删除字符串<code>removeSubrange(_:)</code>。</li>
 </ul>
 
-<h2 id="toc_11">插入和取出</h2>
-
-<ul>
-<li>要在指定索引处插入一个字符，使用<code>insert(_:at:)</code>，插入另一个字符串，使用<code>insert(contentsOf:at:)</code>。</li>
-</ul>
-
-<pre><code>var welcome = &quot;hello&quot;
-welcome.insert(&quot;!&quot;, at: welcome.endIndex)
-// welcome now equals &quot;hello!&quot;
- 
-welcome.insert(contentsOf:&quot; there&quot;.characters, at: welcome.index(before: welcome.endIndex))
-// welcome now equals &quot;hello there!&quot;
-</code></pre>
-
-<ul>
-<li>要在指定索引处移除一个字符，使用<code>remove(at:)</code>，指定范围内删除字符串，使用<code>removeSubrange(_:)</code>。</li>
-</ul>
-
-<pre><code>welcome.remove(at: welcome.index(before: welcome.endIndex))
-// welcome now equals &quot;hello there&quot;
- 
-let range = welcome.index(welcome.endIndex, offsetBy: -6)..&lt;welcome.endIndex
+<pre><code>var welcome = &quot;hello Li Lei !&quot;
+welcome.remove(at: welcome.index(before: welcome.endIndex))
+let range = welcome.startIndex..&lt;welcome.index(welcome.startIndex, offsetBy: 5)
 welcome.removeSubrange(range)
-// welcome now equals &quot;hello&quot;
+print(welcome)
 </code></pre>
 
-<ul>
-<li>使用的<code>insert(_:at:)</code>，<code>insert(contentsOf:at:)</code>，<code>remove(at:)</code>，和<code>removeSubrange(_:)</code>，符合任何遵守<code>RangeReplaceableCollection</code>协议的类型。包括<code>String</code>，以及集合类型如<code>Array</code>，<code>Dictionary</code>，和<code>Set</code>。</li>
-</ul>
-
-<h1 id="toc_12">比较字符串</h1>
+<h1 id="toc_15">字符串比较</h1>
 
 <ul>
-<li>Swift提供了三种方式来比较文本值：字符串和字符相等，前缀和后缀的相等。</li>
+<li>直接比较。</li>
+<li>前缀比较。</li>
+<li>后缀比较。</li>
 </ul>
 
-<h2 id="toc_13">字符串和字符比较</h2>
+<h2 id="toc_16">直接比较</h2>
 
 <ul>
-<li>字符串和字符的比较使用<code>==</code>和<code>!=</code>。</li>
+<li>比较使用<code>==</code>和<code>!=</code>.字符串比较时，逐个字符单一比较。</li>
 </ul>
 
-<pre><code>let quotation = &quot;We&#39;re a lot alike, you and I.&quot;
-let sameQuotation = &quot;We&#39;re a lot alike, you and I.&quot;
-if quotation == sameQuotation {
-    print(&quot;These two strings are considered equal&quot;)
+<pre><code>let name = &quot;Li Lei&quot;
+let name2 = &quot;LiLei&quot;
+
+if name != name2 {
+    print(&quot;not equal&quot;)
 }
-// Prints &quot;These two strings are considered equal&quot;
 </code></pre>
 
 <ul>
-<li>比较时，具有相同的语意和外观，使用字元簇组成的与某个标量的语意和外观相同，则被视为相同。</li>
+<li>Unicode标量组合成的字符与单一标量的字符可能视为一致。 </li>
 </ul>
 
-<pre><code>例如，LATIN SMALL LETTER E WITH ACUTE（U+00E9）是规范等价于LATIN SMALL LETTER E（U+0065），随后加入COMBINING ACUTE ACCENT（U+0301）。这两个扩展字形簇是有效的方法来表示的字符é，因此它们被认为是规范等价：
+<pre><code>let cafe1 = &quot;caf\u{E9}&quot;
+let cafe2 = &quot;caf\u{65}\u{301}&quot;
 
-// &quot;Voulez-vous un café?&quot; using LATIN SMALL LETTER E WITH ACUTE
-let eAcuteQuestion = &quot;Voulez-vous un caf\u{E9}?&quot;
- 
-// &quot;Voulez-vous un café?&quot; using LATIN SMALL LETTER E and COMBINING ACUTE ACCENT
-let combinedEAcuteQuestion = &quot;Voulez-vous un caf\u{65}\u{301}?&quot;
- 
-if eAcuteQuestion == combinedEAcuteQuestion {
-    print(&quot;These two strings are considered equal&quot;)
+if cafe1 == cafe2 {
+    print(&quot;café&quot;)
 }
-// Prints &quot;These two strings are considered equal&quot;
 </code></pre>
 
 <ul>
-<li>不同的标量则都视为不同。</li>
+<li>不同单一标量的字符，视为不一致，尽管看起来一样。</li>
 </ul>
 
-<pre><code>LATIN CAPITAL LETTER A（U+0041或&quot;A&quot;），如在英国使用的，是不等同于CYRILLIC CAPITAL LETTER A（U+0410或&quot;А&quot;），如在俄罗斯使用。字符看上去很相似，但不具有相同的语言意义：
-
-let latinCapitalLetterA: Character = &quot;\u{41}&quot;
- 
+<pre><code>let latinCapitalLetterA: Character = &quot;\u{41}&quot;
 let cyrillicCapitalLetterA: Character = &quot;\u{0410}&quot;
  
 if latinCapitalLetterA != cyrillicCapitalLetterA {
-    print(&quot;These two characters are not equivalent.&quot;)
+    print(&quot;not equal&quot;)
 }
-// Prints &quot;These two characters are not equivalent.&quot;
 </code></pre>
 
-<ul>
-<li>Swift字符串比较不区分语言环境。</li>
-</ul>
-
-<h2 id="toc_14">前缀和后缀比较</h2>
+<h2 id="toc_17">前缀比较</h2>
 
 <ul>
-<li>检查一个字符串是否具有特定字符串前缀或后缀，使用字符串的<code>hasPrefix(_:)</code>和<code>hasSuffix(_:)</code>。</li>
+<li><code>hasPrefix(_:)</code>。</li>
 </ul>
 
-<pre><code>let romeoAndJuliet = [
-    &quot;Act 1 Scene 1: Verona, A public place&quot;,
-    &quot;Act 1 Scene 2: Capulet&#39;s mansion&quot;,
-    &quot;Act 1 Scene 3: A room in Capulet&#39;s mansion&quot;,
-    &quot;Act 1 Scene 4: A street outside Capulet&#39;s mansion&quot;,
-    &quot;Act 1 Scene 5: The Great Hall in Capulet&#39;s mansion&quot;,
-    &quot;Act 2 Scene 1: Outside Capulet&#39;s mansion&quot;,
-    &quot;Act 2 Scene 2: Capulet&#39;s orchard&quot;,
-    &quot;Act 2 Scene 3: Outside Friar Lawrence&#39;s cell&quot;,
-    &quot;Act 2 Scene 4: A street in Verona&quot;,
-    &quot;Act 2 Scene 5: Capulet&#39;s mansion&quot;,
-    &quot;Act 2 Scene 6: Friar Lawrence&#39;s cell&quot;
-]
-</code></pre>
-
-<ul>
-<li>可以使用<code>hasPrefix(_:)</code>方法与<code>romeoAndJuliet</code>数组，计算剧中场景1的数量。</li>
-</ul>
-
-<pre><code>var act1SceneCount = 0
-for scene in romeoAndJuliet {
-    if scene.hasPrefix(&quot;Act 1 &quot;) {
-        act1SceneCount += 1
-    }
+<pre><code>let info = &quot;Li Lei，male&quot;
+if info.hasPrefix(&quot;Li&quot;) {
+    print(&quot;我是Li家的&quot;)
 }
-print(&quot;There are \(act1SceneCount) scenes in Act 1&quot;)
-// Prints &quot;There are 5 scenes in Act 1&quot;
 </code></pre>
 
+<h2 id="toc_18">后缀比较</h2>
+
 <ul>
-<li>使用<code>hasSuffix(_:)</code>方法，计算表演地点<code>Capulet&#39;s mansion</code>的数量。</li>
+<li><code>hasSuffix(_:)</code>。</li>
 </ul>
 
-<pre><code>var mansionCount = 0
-var cellCount = 0
-for scene in romeoAndJuliet {
-    if scene.hasSuffix(&quot;Capulet&#39;s mansion&quot;) {
-        mansionCount += 1
-    } else if scene.hasSuffix(&quot;Friar Lawrence&#39;s cell&quot;) {
-        cellCount += 1
-    }
+<pre><code>let info = &quot;Li Lei，male&quot;
+if info.hasPrefix(&quot;male&quot;) {
+    print(&quot;我是男的&quot;)
 }
-print(&quot;\(mansionCount) mansion scenes; \(cellCount) cell scenes&quot;)
-// Prints &quot;6 mansion scenes; 2 cell scenes&quot;
 </code></pre>
 
-<ul>
-<li><code>hasPrefix(_:)</code>和<code>hasSuffix(_:)</code>，逐个字符进行比较。</li>
-</ul>
-
-<h1 id="toc_15">字符串编码</h1>
+<h1 id="toc_19">字符串编码</h1>
 
 <p>准备字符串，下面开始操作。</p>
 
 <pre><code>let dogString = &quot;Dog‼🐶&quot;
 </code></pre>
 
-<h2 id="toc_16">UTF-8表示</h2>
+<h2 id="toc_20">UTF-8表示</h2>
 
 <ul>
-<li>通过遍历其<code>utf8</code>属性访问<code>String</code>的<code>UTF-8</code>值。此属性是类型<code>String.UTF8View</code>，也就是<code>UInt8</code>值。</li>
+<li><code>utf8</code>属性访问<code>String</code>的<code>UTF-8</code>值。此属性是<code>String.UTF8View</code>类型，也就是<code>UInt8</code>类型。</li>
 </ul>
 
 <pre><code>for codeUnit in dogString.utf8 {
     print(&quot;\(codeUnit) &quot;, terminator: &quot;&quot;)
 }
-print(&quot;&quot;)
 // 68 111 103 226 128 188 240 159 144 182
 </code></pre>
 
 <ul>
-<li>[0，3)位十进制codeUnit值（68，111，103）代表的字符D，o和g，其UTF-8表示的是相同的ASCII表示。</li>
-<li>[3，6)位十进制codeUnit值（226，128，188）是一个三字节的UTF-8表示DOUBLE EXCLAMATION MARK的字符。</li>
-<li>[6,10)位十进制codeUnit值（240，159，144，182）是一个四字节UTF-8表示DOG FACE的字符。</li>
+<li>[0，3)位十进制codeUnit值（68，111，103）代表D，o，g。</li>
+<li>[3，6)位十进制codeUnit值（226，128，188）代表!!。</li>
+<li>[6,10)位十进制codeUnit值（240，159，144，182）代表🐶。</li>
 </ul>
 
-<h2 id="toc_17">UTF-16表示</h2>
+<h2 id="toc_21">UTF-16表示</h2>
 
 <ul>
-<li>通过遍历其<code>utf16</code>属性访问<code>String</code>的<code>UTF-16</code>值。此属性是类型<code>String.UTF16View</code>，也就是<code>UInt16</code>值。</li>
+<li><code>utf16</code>属性访问<code>String</code>的<code>UTF-16</code>值。此属性是<code>String.UTF16View</code>类型，也就是<code>UInt16</code>类型。</li>
 </ul>
 
 <pre><code>for codeUnit in dogString.utf16 {
     print(&quot;\(codeUnit) &quot;, terminator: &quot;&quot;)
 }
-print(&quot;&quot;)
 // Prints &quot;68 111 103 8252 55357 56374 &quot;
 </code></pre>
 
 <ul>
-<li>[0，3)位十进制codeUnit值（68，111，103）所 ​​表示的字符D，o以及g，其UTF-16代码单元的作为字符串的UTF-8表示相同的值（因为这些Unicode标量代表ASCII字符）。</li>
-<li>[3，4)位十进制codeUnit值（8252）是十六进制值的十进位等值203C，它代表了Unicode标U+203C为DOUBLE EXCLAMATION MARK字符。该字符可被表示为UTF-16中的单一代码单元。</li>
-<li>[4，6)位十进制codeUnit值（55357和56374）是一个UTF-16代理对代表性DOG FACE人物。这些数值的高代理值U+D83D（十进制值55357）和低代理值U+DC36（十进制值56374）。</li>
+<li>[0，3)位十进制codeUnit值（68，111，103）代表D，o,g）。</li>
+<li>[3，4)位十进制codeUnit值（8252）代表!!。</li>
+<li>[4，6)位十进制codeUnit值（55357和56374）代表🐶。</li>
 </ul>
 
-<h2 id="toc_18">Unicode标表示</h2>
+<h2 id="toc_22">Unicode标表示</h2>
 
 <ul>
-<li>通过遍历其<code>unicodeScalars</code>属性访问<code>String</code>的<code>Unicode</code>值。此属性是类型<code>UnicodeScalarView</code>，也就是<code>UnicodeScalar</code>值。每<code>UnicodeScalar</code>有一个<code>value</code>返回21位标量，也就是<code>UInt32</code>值。</li>
+<li><code>unicodeScalars</code>属性访问<code>String</code>的<code>Unicode</code>值。此属性是<code>UnicodeScalarView</code>类型，也就是<code>UnicodeScalar</code>类型。每<code>UnicodeScalar</code>有一个<code>value</code>返回21位标量，也就是<code>UInt32</code>类型。</li>
 </ul>
 
 <pre><code>for scalar in dogString.unicodeScalars {
     print(&quot;\(scalar.value) &quot;, terminator: &quot;&quot;)
 }
-print(&quot;&quot;)
 // Prints &quot;68 111 103 8252 128054 &quot;
 </code></pre>
 
 <ul>
-<li>[0，3)位UnicodeScalar（68，111，103）再次表示字符D，o和g。</li>
-<li>[3，4)位十进制codeUnit值（8252）再次是十六进制值的十进位等值203C，它代表了Unicode标U+203C为DOUBLE EXCLAMATION MARK字符。</li>
-<li><p>[4，5)位十进制codeUnit值（128054）是十六进制值的十进制等效1F436，它代表了Unicode标U+1F436为DOG FACE字符。</p></li>
+<li>[0，3)位UnicodeScalar（68，111，103）代表D，o，g。</li>
+<li>[3，4)位十进制codeUnit值（8252）代表!!。</li>
+<li><p>[4，5)位十进制codeUnit值（128054）代表🐶。</p></li>
 <li><p>作为替代查询他们的<code>value</code>属性，每一个<code>UnicodeScalar</code>值也可以被用来构造一个新String值。</p></li>
 </ul>
 

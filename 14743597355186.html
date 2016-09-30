@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  此篇以下未整理仅谷歌翻译 - Swift 3.0 自翻译 - 说了是村长
+  此篇以下未整理仅谷歌翻译 - Swift 3.0 官方文档 自整理 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
- <link href="atom.xml" rel="alternate" title="Swift 3.0 自翻译 - 说了是村长" type="application/atom+xml">
+ <link href="atom.xml" rel="alternate" title="Swift 3.0 官方文档 自整理 - 说了是村长" type="application/atom+xml">
     <link rel="stylesheet" href="asset/css/foundation.min.css" />
     <link rel="stylesheet" href="asset/css/docs.css" />
 
@@ -29,13 +29,13 @@
 <nav class="top-bar docs-bar hide-for-small" data-topbar>
 
 <div id="header">
-    <h1><a href="index.html">Swift 3.0 自翻译 - 说了是村长</a></h1>
+    <h1><a href="index.html">Swift 3.0 官方文档 自整理 - 说了是村长</a></h1>
 </div>
 
 </nav>
         <nav class="tab-bar show-for-small">
   <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
-    <span> &nbsp; Swift 3.0 自翻译 - 说了是村长</span>
+    <span> &nbsp; Swift 3.0 官方文档 自整理 - 说了是村长</span>
   </a>
 </nav>
 
@@ -246,218 +246,175 @@
  <div class="markdown-body">
 <h1>此篇以下未整理仅谷歌翻译</h1>
 
+<ul>
+<li>
+<a href="#toc_0">for-in循环</a>
+</li>
+<li>
+<a href="#toc_1">While循环</a>
+<ul>
+<li>
+<a href="#toc_2">while</a>
+</li>
+<li>
+<a href="#toc_3">Repeat-While</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_4">条件语句</a>
+<ul>
+<li>
+<a href="#toc_5">if</a>
+</li>
+<li>
+<a href="#toc_6">Switch</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">控制转移语句</a>
+<ul>
+<li>
+<a href="#toc_8">continue</a>
+</li>
+<li>
+<a href="#toc_9">break</a>
+</li>
+<li>
+<a href="#toc_10">Fallthrough</a>
+</li>
+<li>
+<a href="#toc_11">标签的语句</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_12">提前退场</a>
+</li>
+<li>
+<a href="#toc_13">检查API可用性</a>
+</li>
+</ul>
 
 
-<p>雨燕提供了多种控制流语句。这些包括while循环执行任务多次; if，guard和switch要执行的语句根据一定的条件码不同分支; 和语句，例如break和continue来执行流在你的代码转移到另一点。</p>
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120">Control Flow 官方文档</a></p>
 
-<p>雨燕还提供了for- in循环，可以很容易地遍历数组，字典，范围，字符串和其他序列。</p>
+<ul>
+<li><code>switch</code>比较特殊。</li>
+<li><code>for-in</code>略有不太。</li>
+<li><code>guard</code>貌似是新产品。</li>
+</ul>
 
-<p>斯威夫特的switch说法也比其在许多类似C语言的对应相当强大。由于病例switch声明不会通过落到斯威夫特接下来的情况下，它避免了引起缺少常见的C错误break陈述。案例可以搭配多种不同的模式，包括间隔比赛，元组和强制转换为特定类型。在一个匹配的值switch情况下，可以结合于临时常量或变量的情况下的身体内使用，和复杂的匹配条件可以与被表达where为每一种情况下子句。</p>
+<h1 id="toc_0">for-in循环</h1>
 
-<p>对于-在循环</p>
+<ul>
+<li><code>for-in</code>循环遍历序列，如范围，数组，字符串。</li>
+</ul>
 
-<p>您可以使用for- in循环遍历序列，如数字范围，在数组中的项目，或字符串中的字符。</p>
+<pre><code>for index in 1...5 {
+    print(&quot;\(index) times 5 is \(index * 5)&quot;)
+}
+// 1 times 5 is 5
+// 2 times 5 is 10
+// 3 times 5 is 15
+// 4 times 5 is 20
+// 5 times 5 is 25
+</code></pre>
 
-<p>这个例子打印了五倍表中的前几个项目：</p>
+<ul>
+<li><p>在上面的例子中，index是一个常数，其值被自动设置。index不必在使用前进行声明。与遍历数组类似。</p></li>
+<li><p>使用下划线忽略遍历时获取值。</p></li>
+</ul>
 
-<p>for index in 1...5 {<br/>
-    print(<q>(index) times 5 is (index * 5)</q>)<br/>
-}<br/>
-// 1 times 5 is 5<br/>
-// 2 times 5 is 10<br/>
-// 3 times 5 is 15<br/>
-// 4 times 5 is 20<br/>
-// 5 times 5 is 25<br/>
-被遍历序列是从一系列的数字1来5，包容，通过使用封闭范围操作的指示（...）。的值index设定为在范围（第一个数字1），并在循环内的语句。在这种情况下，在循环仅包含一个语句，打印从五次表的当前值的条目index。执行语句之后，值index被更新为包含在该范围内（第二值2），并且print(_:separator:terminator:)功能被再次调用。此过程继续，直到达到范围的端部。</p>
+<pre><code>let base = 3
+let power = 10
+var answer = 1
+for _ in 1...power {
+    answer *= base
+}
+print(&quot;\(base) to the power of \(power) is \(answer)&quot;)
+// Prints &quot;3 to the power of 10 is 59049&quot;
+</code></pre>
 
-<p>在上面的例子中，index是一个常数，其值被自动设置在循环的每次迭代的开始。因此，index不必在使用前进行声明。它是通过将其列入循环声明隐式声明的简单，而不需要一个let声明关键字。</p>
+<ul>
+<li>数组遍历。</li>
+</ul>
 
-<p>如果不从一个序列需要每个值，可以代替变量名中使用下划线忽略值。</p>
+<pre><code>let names = [&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;]
+for name in names {
+    print(&quot;Hello, \(name)!&quot;)
+}
+// Hello, Anna!
+// Hello, Alex!
+// Hello, Brian!
+// Hello, Jack!
+</code></pre>
 
-<p>let base = 3<br/>
-let power = 10<br/>
-var answer = 1<br/>
-for _ in 1...power {<br/>
-    answer *= base<br/>
-}<br/>
-print(<q>(base) to the power of (power) is (answer)</q>)<br/>
-// Prints <q>3 to the power of 10 is 59049</q><br/>
-上面的例子中一个数字的值计算到的另一个的功率（在这种情况下，3以的功率10）。它相乘的起始值1（即，3至功率0）通过3，十次，使用开头的封闭范围1和结尾10。对于该计算，每次个别计数器值通过循环是不必要的，该代码简单地执行循环的正确的次数。下划线字符（_）代替循环变量的使用会导致忽略的单独的值和该循环的每次迭代期间不提供访问的当前值。</p>
+<ul>
+<li>字典遍历</li>
+</ul>
 
-<p>使用for- in循环使用数组来遍历其项目。</p>
+<pre><code>let numberOfLegs = [&quot;spider&quot;: 8, &quot;ant&quot;: 6, &quot;cat&quot;: 4]
+for (animalName, legCount) in numberOfLegs {
+    print(&quot;\(animalName)s have \(legCount) legs&quot;)
+}
+// ants have 6 legs
+// spiders have 8 legs
+// cats have 4 legs
+</code></pre>
 
-<p>let names = [<q>Anna</q>, <q>Alex</q>, <q>Brian</q>, <q>Jack</q>]<br/>
-for name in names {<br/>
-    print(<q>Hello, (name)!</q>)<br/>
-}<br/>
-// Hello, Anna!<br/>
-// Hello, Alex!<br/>
-// Hello, Brian!<br/>
-// Hello, Jack!<br/>
-您也可以遍历字典来访问它的键-值对。字典中的每个项目返回一个(key, value)元组时，字典迭代，并且可以分解(key, value)元组的成员作为主体内使用明确的命名常数for- in循环。这里，字典的键被分解成称为恒定animalName，和字典的值被分解成称为恒定legCount。</p>
-
-<p>let numberOfLegs = [<q>spider</q>: 8, <q>ant</q>: 6, <q>cat</q>: 4]<br/>
-for (animalName, legCount) in numberOfLegs {<br/>
-    print(<q>(animalName)s have (legCount) legs</q>)<br/>
-}<br/>
-// ants have 6 legs<br/>
-// spiders have 8 legs<br/>
-// cats have 4 legs<br/>
-在一个项目Dictionary不一定在它们被插入的相同的顺序来重复。的一个内容Dictionary是固有无序的，并遍历它们不能保证它们将被检索的顺序。欲了解更多有关数组和字典，看集合类型。</p>
-
-<p>While循环</p>
+<h1 id="toc_1">While循环</h1>
 
 <p>一个while循环执行一组语句，直到条件变为false。这些种类的循环，最好使用时在第一次迭代开始之前是未知的迭代次数。斯威夫特提供两种while循环：</p>
 
 <p>while 在每一次循环的开始评估其状态。<br/>
-repeat- while在每一次通过循环结束评估其状态。<br/>
-而</p>
+repeat- while在每一次通过循环结束评估其状态。</p>
 
-<p>一个while循环开始通过评估一个条件。如果条件为true，重复一组语句，直到条件变为false。</p>
+<h2 id="toc_2">while</h2>
 
-<p>这里有一个的一般形式while循环：</p>
+<ul>
+<li>while循环，先判断条件，如果为true，执行循环，直到条件变为false。</li>
+</ul>
 
-<p>而 条件 {<br/>
-    声明<br/>
-}<br/>
-这个例子中扮演着一个简单的游戏蛇和梯子（也称为滑槽和梯子）：</p>
+<pre><code>var index = 0
+while index &lt; 10 {
+    index += 1
+    print(index)
+}
+</code></pre>
 
-<p>图片：../Art/snakesAndLadders_2x.png<br/>
-是游戏规则如下：</p>
+<h2 id="toc_3">Repeat-While</h2>
 
-<p>该板有25个广场，目标是登陆或超过25平方米。<br/>
-每一轮，你被这个数字平方推出一个六面的骰子和移动，继上述虚线箭头指示的水平路径。<br/>
-如果轮到你在梯子的底端，你动起来的阶梯。<br/>
-如果轮到你在一条蛇的头端，你向下移动的蛇。<br/>
-游戏板是由一组代表Int值。它的大小是基于一个所谓的恒定finalSquare，这是用于初始化数组，也稍后在例如检查一个双赢的条件。该板被初始化为26零Int值，而不是25（其中一个为指标0通过25）。</p>
+<ul>
+<li>Repeat-While循环，先执行循环，再判断条件，直到条件变为false。</li>
+</ul>
 
-<p>let finalSquare = 25<br/>
-var board = <a href="repeating:%200,%20count:%20finalSquare%20+%201">Int</a><br/>
-有些广场都将恢复对蛇和​​梯子更具体的值。用梯子基地广场有一个正数，你动起来的板，而与蛇头广场有负号给你搬回在案板上。</p>
+<pre><code>var index = 0
+repeat {
+    index+=1
+    print(index)
+} while index &lt; 10
+</code></pre>
 
-<p>board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02<br/>
-board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08<br/>
-广场3包含了移动你到广场11代表该梯子的底部，board[03]等于+08，这相当于一个整数值8（之间的差异3和11）。一元加运算（+i与元减运算符）余额（-i），且低于号10补零，使所有主板的定义保持一致。（无论是风格TWEAK绝对必要的，但它们会导致更整洁的代码。）</p>
+<h1 id="toc_4">条件语句</h1>
 
-<p>玩家的起点广场“方零”，这是就在板的左下角。第一个骰子总是玩家移动到电路板上。</p>
+<ul>
+<li>if用于少数可能结果的简单条件。</li>
+<li>switch更适合有多个可能复杂的条件。</li>
+</ul>
 
-<p>var square = 0<br/>
-var diceRoll = 0<br/>
-while square &lt; finalSquare {<br/>
-    // roll the dice<br/>
-    diceRoll += 1<br/>
-    if diceRoll == 7 { diceRoll = 1 }<br/>
-    // move by the rolled amount<br/>
-    square += diceRoll<br/>
-    if square &lt; board.count {<br/>
-        // if we&#39;re still on the board, move up or down for a snake or a ladder<br/>
-        square += board[square]<br/>
-    }<br/>
-}<br/>
-print(<q>Game over!</q>)<br/>
-上面的例子使用了一个非常简单的方法，以掷骰。而不产生一个随机数，它开始于一个diceRoll的值0。通过每次while循环，diceRoll被递增，然后检查，看它是否已变得太大。每当这个返回值等于7，掷骰子已经变得过于庞大而被重置为值1。结果是一个序列diceRoll即总是值1，2，3，4，5，6，1，2等。</p>
+<h2 id="toc_5">if</h2>
 
-<p>滚动的骰子后，游戏者通过向前移动diceRoll正方形。这有可能是掷骰子可能已经移动玩家超过25平方，在这种情况下，游戏就结束了。为了应付这种情况，该代码将检查square小于board阵列的count属性将存储在所述值之前board[square]到当前square值来移动玩家上下任何梯子或蛇。</p>
+<ul>
+<li>条件为true，执行分支。可以多个分支。</li>
+</ul>
 
-<p>注意</p>
+<pre><code>
 
-<p>有这个检查未执行，board[square]可能会尝试在边界之外访问值board数组，这将引发一个错误。如果square是等于26，代码尝试检查的值board[26]，这是比阵列的大小。</p>
+</code></pre>
 
-<p>电流while然后循环执行结束，并且循环的条件进行检查，看是否该循环应该被再次执行。如果玩家已经或超越平方数移动25，循环的条件计算结果为false，游戏结束。</p>
-
-<p>一个while循环是在这种情况下合适的，因为游戏的长度不是在开始明确while循环。相反，在执行该循环，直到一个特定的条件被满足。</p>
-
-<p>重复，虽然</p>
-
-<p>所述的其它变while环，被称为repeat- while环，执行通过循环块单程第一，前考虑循环的条件。然后，继续重复循环，直至条件false。</p>
-
-<p>注意</p>
-
-<p>本repeat- while环斯威夫特类似于一个do- while循环其他语言。</p>
-
-<p>这里有一个的一般形式repeat- while循环：</p>
-
-<p>重复 {<br/>
-    声明<br/>
-} 虽然 条件<br/>
-这里的蛇和梯子的例子再次，写成repeat- while循环而不是一个while循环。的值finalSquare，board，square，和diceRoll在完全相同的方式初始化为一个while循环。</p>
-
-<p>let finalSquare = 25<br/>
-var board = <a href="repeating:%200,%20count:%20finalSquare%20+%201">Int</a><br/>
-board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02<br/>
-board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08<br/>
-var square = 0<br/>
-var diceRoll = 0<br/>
-在这个版本的游戏，在第一循环中的动作是检查梯子或蛇。在董事会没有梯子需要玩家直奔广场25，因此它是不可能通过移动梯子架到赢得比赛。因此，它的安全检查蛇和梯子在循环中的第一个动作。</p>
-
-<p>在比赛开始时，播放器上的“正方形零”。board[0]总是等于0和没有任何影响。</p>
-
-<p>repeat {<br/>
-    // move up or down for a snake or ladder<br/>
-    square += board[square]<br/>
-    // roll the dice<br/>
-    diceRoll += 1<br/>
-    if diceRoll == 7 { diceRoll = 1 }<br/>
-    // move by the rolled amount<br/>
-    square += diceRoll<br/>
-} while square &lt; finalSquare<br/>
-print(<q>Game over!</q>)<br/>
-该代码检查蛇和梯子后，骰子滚动和玩家被前移diceRoll广场。那么当前循环终止。</p>
-
-<p>该循环的条件（while square &lt; finalSquare）是和以前一样，但这次它没有得到评估，直到最终通过循环第一次运行的。所述的结构repeat- while环更适合于这个游戏比while前面的例子中循环。在repeat- while上述循环，square += board[square]始终执行后立即循环的while情况证实，square仍然是在黑板上。这种行为消除了在游戏的早期版本看到的数组边界检查的需要。</p>
-
-<p>条件语句</p>
-
-<p>它是执行根据一定的条件不同的代码片段通常是有用的。当一个值变得太高或太低则可能需要在发生错误时运行一个额外的一段代码，或显示消息。要做到这一点，你让你的代码的部分条件。</p>
-
-<p>斯威夫特提供了两种条件分支添加到您的代码：该if语句和switch声明。通常情况下，你可以使用if语句来计算，只有少数可能的结果简单的条件。该switch声明是更适合有多个可能的排列更复杂的条件，并在情况下模式匹配可以帮助选择适当的代码分支以执行有用的。</p>
-
-<p>如果</p>
-
-<p>在其最简单的形式中，if声明有一个单一的if条件。它执行一组语句只有当条件true。</p>
-
-<p>var temperatureInFahrenheit = 30<br/>
-if temperatureInFahrenheit &lt;= 32 {<br/>
-    print(<q>It&#39;s very cold. Consider wearing a scarf.</q>)<br/>
-}<br/>
-// Prints <q>It&#39;s very cold. Consider wearing a scarf.</q><br/>
-上述检查的例子中是否温度是小于或等于32华氏度（水的凝固点）。如果它是，被打印的消息。否则，不打印消息，并且代码后继续执行if语句的右括号。</p>
-
-<p>该if声明可以提供另一套报表，被称为的else子句时，对于情况if的条件是false。这些声明是由指定的else关键字。</p>
-
-<p>temperatureInFahrenheit = 40<br/>
-if temperatureInFahrenheit &lt;= 32 {<br/>
-    print(<q>It&#39;s very cold. Consider wearing a scarf.</q>)<br/>
-} else {<br/>
-    print(<q>It&#39;s not that cold. Wear a t-shirt.</q>)<br/>
-}<br/>
-// Prints <q>It&#39;s not that cold. Wear a t-shirt.</q><br/>
-其中这两个分支的始终执行。因为温度上升到40华氏摄氏度，它不再是够冷劝戴围巾等等else分支被触发来代替。</p>
-
-<p>您可以链接多个if报表一并考虑附加条款。</p>
-
-<p>temperatureInFahrenheit = 90<br/>
-if temperatureInFahrenheit &lt;= 32 {<br/>
-    print(<q>It&#39;s very cold. Consider wearing a scarf.</q>)<br/>
-} else if temperatureInFahrenheit &gt;= 86 {<br/>
-    print(<q>It&#39;s really warm. Don&#39;t forget to wear sunscreen.</q>)<br/>
-} else {<br/>
-    print(<q>It&#39;s not that cold. Wear a t-shirt.</q>)<br/>
-}<br/>
-// Prints <q>It&#39;s really warm. Don&#39;t forget to wear sunscreen.</q><br/>
-在这里，一个额外的if加语句到特别温暖的气候响应。最后else条款保留，并且它打印的既不太热也不太冷任何温度的响应。</p>
-
-<p>最后else子句是可选的，但是，如果该组的条件并不需要是完整的可以被排除。</p>
-
-<p>temperatureInFahrenheit = 72<br/>
-if temperatureInFahrenheit &lt;= 32 {<br/>
-    print(<q>It&#39;s very cold. Consider wearing a scarf.</q>)<br/>
-} else if temperatureInFahrenheit &gt;= 86 {<br/>
-    print(<q>It&#39;s really warm. Don&#39;t forget to wear sunscreen.</q>)<br/>
-}<br/>
-因为气温不太冷也不太热触发if或else if条件，打印任何消息。</p>
-
-<p>开关</p>
+<h2 id="toc_6">Switch</h2>
 
 <p>一个switch声明认为值，并确定它几个可能的匹配模式。然后，它执行代码适当的块，基于成功匹配的第一个模式。一个switch语句提供的另一种if为应对多种潜在状态的声明。</p>
 
@@ -492,7 +449,9 @@ default:<br/>
 // Prints <q>The last letter of the alphabet</q><br/>
 该switch语句的第一种情况相匹配的英文字母的第一个字母，a和它的第二种情况下，最后一个字母匹配，z。因为switch必须为每一个可能的字符的情况下，不只是每一个字母，这个switch语句使用default情况来匹配以外所有的字符a和z。这一规定确保了switch声明无遗。</p>
 
-<p>没有隐Fallthrough</p>
+<ul>
+<li>没有隐Fallthrough</li>
+</ul>
 
 <p>在与此相反switchC和Objective-C的语句，switch斯威夫特语句不通过每个案件的底部，并进入默认情况下，下一个倒下。取而代之的是，整个switch语句只要第一匹配完成它的执行switch的情况下完成，而不需要明确的break陈述。这使得switch语句更安全和更容易比在C至使用，并避免在执行一个以上的switch情况下，由错误的。</p>
 
@@ -529,7 +488,9 @@ default:<br/>
 
 <p>要明确砸锅在特定的结束switch情况下，使用fallthrough关键字，如中所述Fallthrough。</p>
 
-<p>间隔匹配</p>
+<ul>
+<li>间隔匹配</li>
+</ul>
 
 <p>在值switch情况下可以检查其纳入的间隔。本例使用数字间隔为各种规模的数字提供了自然语言计数：</p>
 
@@ -554,7 +515,9 @@ print(<q>There are (naturalCount) (countedThings).</q>)<br/>
 // Prints <q>There are dozens of moons orbiting Saturn.</q><br/>
 在上述例子中，approximateCount是在评价switch语句。每个case比较该值为数字或间隔。因为值approximateCount12和100之间的跌倒，naturalCount被分配的值<q>dozens of</q>，并且执行被转移出的switch语句。</p>
 
-<p>元组</p>
+<ul>
+<li>元组</li>
+</ul>
 
 <p>您可以使用元组在相同的测试多个值switch声明。元组中的每个元素可以针对值的不同的值或间隔进行测试。可替代地，使用下划线字符（_），也被称为通配符模式，以匹配任何可能的值。</p>
 
@@ -579,7 +542,9 @@ default:<br/>
 
 <p>不像C，斯威夫特允许多个switch的情况下考虑同一个或多个值。实际上，该点（0,0）可以匹配所有4的在本实施例的情况。但是，如果多个匹配是可能的，第一个匹配的情况下，总是使用。点（0,0）将匹配case (0, 0)的第一，所以所有其它的匹配情况会被忽略。</p>
 
-<p>值绑定</p>
+<ul>
+<li>值绑定</li>
+</ul>
 
 <p>一个switch情况下，可以将其绑定到临时常量或变量，对于案件的身体使用相匹配的一个或多个值。这种行为被称为值绑定，因为该值的情况下的身体内势必临时常量或变量。</p>
 
@@ -604,7 +569,9 @@ case let (x, y):<br/>
 
 <p>这种switch说法没有一个default案例。最后的情况下，case let (x, y)，宣称可以匹配任何值的两个占位符常量的元组。因为anotherPoint通常是两个值的元组，这种情况下，匹配的所有可能的剩余值，并且default不需要壳体，使switch发言无遗。</p>
 
-<p>哪里</p>
+<ul>
+<li>where</li>
+</ul>
 
 <p>一个switch情况下可以使用where子句来检查附加条件。</p>
 
@@ -627,7 +594,9 @@ case let (x, y):<br/>
 
 <p>如前面的例子中，最后的情况下，匹配的所有可能的剩余值，并因此default无需情况使switch发言无遗。</p>
 
-<p>复合案例</p>
+<ul>
+<li>复合案例</li>
+</ul>
 
 <p>共享同一个全身多处开关的情况下可以通过后面写几种模式相结合case，与每个图案之间的逗号。如果任何的模式匹配，则该情况下被认为是匹配。如果列表很长的图案可以写多行。例如：</p>
 
@@ -656,7 +625,7 @@ default:<br/>
 // Prints <q>On an axis, 9 from the origin</q><br/>
 在case上面有两个模式：(let distance, 0)在x轴的匹配点和(0, let distance)在y轴相一致点。两个模式包括用于结合distance和distance在这两个图案-这意味着在的主体中的代码的整数case总是可以访问一个值distance。</p>
 
-<p>控制转移语句</p>
+<h1 id="toc_7">控制转移语句</h1>
 
 <p>控制转移语句改变你的代码被执行，由一个代码片段转移到另一个控制顺序。雨燕有五个控制转移语句：</p>
 
@@ -667,7 +636,7 @@ return<br/>
 throw<br/>
 的continue，break和fallthrough陈述如下所述。该return声明中描述的功能，并且throw声明中描述的传播错误使用投掷功能。</p>
 
-<p>继续</p>
+<h2 id="toc_8">continue</h2>
 
 <p>该continue语句告诉循环停止它在做什么，并在通过循环下一次循环的重新开始。它说：“我与当前循环迭代完成的”不完全离开循环。</p>
 
@@ -687,7 +656,7 @@ print(puzzleOutput)<br/>
 // Prints</q>grtmndsthnklk&quot;<br/>
 上面的代码调用continue每当一个元音或一个空间相匹配，从而导致循环的当前迭代，立即停止，并直接跳转到下一迭代开始关键字。此行为使开关组来匹配（和忽略）仅元音和空格字符，而不需要该块的每一个应该得到打印的字符相匹配。</p>
 
-<p>打破</p>
+<h2 id="toc_9">break</h2>
 
 <p>该break声明立即结束整个控制流语句的执行。该break声明可以在内部使用switch语句或循环语句时，你要终止的执行switch早于否则会出现这种情况或循环语句。</p>
 
@@ -733,7 +702,7 @@ if let integerValue = possibleIntegerValue {<br/>
 
 <p>因为它是不实际的，列出每一个可能Character在上面的示例值，一个default壳体处理在不匹配的任何字符。这种default情况下，不需要执行任何操作，因此它是写一个break语句作为其身。一旦default情况匹配，break语句结束switch语句的执行，并执行代码从继续if let发言。</p>
 
-<p>Fallthrough</p>
+<h2 id="toc_10">Fallthrough</h2>
 
 <p>在快速切换语句不通过每个案件的底部，并进入下一个倒下。取而代之的是，整个switch语句只要第一匹配情况下完成执行完成。相比之下，C要求你插入一个明确的break在每个月底声明switch的情况下，防止fallthrough。避免默认fallthrough意味着斯威夫特switch声明比它们在C语言的相似更加简洁和可预测的，因此，他们避免执行多个switch错误的情况。</p>
 
@@ -760,7 +729,7 @@ print(description)<br/>
 
 <p>该fallthrough关键字不检查的情况下条件，switch它使执行陷入如此。该fallthrough关键字只是导致代码执行直接移动到下一个case（或内部语句default的情况下）的块，在C的标准switch陈述行为。</p>
 
-<p>标签的语句</p>
+<h2 id="toc_11">标签的语句</h2>
 
 <p>在斯威夫特，你可以窝循环和其它循环和条件语句里面的条件语句来创建复杂的控制流结构。然而，循环和条件语句既可以使用break语句来提前结束其执行。因此，有时是有益的是明确你想要哪一个循环或条件语句break声明终止。同样，如果你有多个嵌套循环，它可以是有用的是明确哪些循环continue语句应该影响。</p>
 
@@ -819,7 +788,7 @@ print(<q>Game over!</q>)<br/>
 
 <p>它不是严格必要使用gameLoop呼叫时标签continue gameLoop跳转到循环的下一次迭代。只有一个游戏中的循环，因此没有歧义，其中循环的continue声明将影响。然而，在使用没有危害gameLoop标签的continue声明。这样做是有标签的使用旁边的一致break声明，并有助于使游戏的逻辑更清晰的阅读和理解。</p>
 
-<p>提前退场</p>
+<h1 id="toc_12">提前退场</h1>
 
 <p>一个guard说法，就像一个if声明中，执行根据表达式的布尔值的语句。您可以使用一个guard语句来要求一个条件必须在之后的代码，以真guard要执行的语句。不像if语句，一个guard语句总是有一个else子句的内部代码else，如果条件是不正确的执行条款。</p>
 
@@ -852,7 +821,7 @@ greet(person: [<q>name</q>: <q>Jane</q>, <q>location</q>: <q>Cupertino</q>])<br/
 
 <p>使用guard语句要求提高代码的可读性，比起做用相同的检查if声明。它可以让你写的没有在它包装通常执行的代码else块，它可以让你保持处理旁边需求的违反规定的代码。</p>
 
-<p>检查API可用性</p>
+<h1 id="toc_13">检查API可用性</h1>
 
 <p>斯威夫特已经内置了用于检查API的可用性，从而确保您不会意外使用的是一个给定的部署目标无法使用API​​的支持。</p>
 
