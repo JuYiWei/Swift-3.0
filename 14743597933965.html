@@ -49,7 +49,7 @@
           
             <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
           
-            <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+            <li><a title="Swift 之旅 待" href="14743413996803.html">Swift 之旅 待</a></li>
           
 
       
@@ -57,23 +57,23 @@
         <li><label>开发指南</label></li>
 
           
-            <li><a title="基础知识" href="14743596331025.html">基础知识</a></li>
+            <li><a title="基础知识 待" href="14743596331025.html">基础知识 待</a></li>
           
-            <li><a title="基础运算操作" href="14743596434163.html">基础运算操作</a></li>
+            <li><a title="基础运算操作 待" href="14743596434163.html">基础运算操作 待</a></li>
           
             <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
           
             <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743597355186.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="控制流" href="14743597355186.html">控制流</a></li>
           
-            <li><a title="功能" href="14743597582027.html">功能</a></li>
+            <li><a title="函数" href="14743597582027.html">函数</a></li>
           
-            <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+            <li><a title="闭包" href="14743597798199.html">闭包</a></li>
           
             <li><a title="枚举" href="14743597933965.html">枚举</a></li>
           
-            <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+            <li><a title="此篇以下未整理仅谷歌翻译" href="14743598083496.html">此篇以下未整理仅谷歌翻译</a></li>
           
             <li><a title="属性" href="14743598294467.html">属性</a></li>
           
@@ -154,29 +154,29 @@
                         
                           <li><a title="关于 Swift" href="14743413991106.html">关于 Swift</a></li>
                         
-                          <li><a title="Swift 之旅" href="14743413996803.html">Swift 之旅</a></li>
+                          <li><a title="Swift 之旅 待" href="14743413996803.html">Swift 之旅 待</a></li>
                         
 
                     
                       <li class="side-title"><span>开发指南</span></li>
                         
-                          <li><a title="基础知识" href="14743596331025.html">基础知识</a></li>
+                          <li><a title="基础知识 待" href="14743596331025.html">基础知识 待</a></li>
                         
-                          <li><a title="基础运算操作" href="14743596434163.html">基础运算操作</a></li>
+                          <li><a title="基础运算操作 待" href="14743596434163.html">基础运算操作 待</a></li>
                         
                           <li><a title="字符串和字符" href="14743596689452.html">字符串和字符</a></li>
                         
                           <li><a title="集合类型" href="14743596859367.html">集合类型</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743597355186.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="控制流" href="14743597355186.html">控制流</a></li>
                         
-                          <li><a title="功能" href="14743597582027.html">功能</a></li>
+                          <li><a title="函数" href="14743597582027.html">函数</a></li>
                         
-                          <li><a title="关闭" href="14743597798199.html">关闭</a></li>
+                          <li><a title="闭包" href="14743597798199.html">闭包</a></li>
                         
                           <li><a title="枚举" href="14743597933965.html">枚举</a></li>
                         
-                          <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
+                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743598083496.html">此篇以下未整理仅谷歌翻译</a></li>
                         
                           <li><a title="属性" href="14743598294467.html">属性</a></li>
                         
@@ -246,256 +246,217 @@
  <div class="markdown-body">
 <h1>枚举</h1>
 
-<p>一个枚举定义了一个常见的类型为一组相关的值，使你在你的代码中的一个类型安全的方式这些值来工作。</p>
+<ul>
+<li>
+<a href="#toc_0">简介</a>
+</li>
+<li>
+<a href="#toc_1">枚举语法</a>
+</li>
+<li>
+<a href="#toc_2">匹配枚举值与switch语句</a>
+</li>
+<li>
+<a href="#toc_3">关联值</a>
+</li>
+<li>
+<a href="#toc_4">原始值</a>
+<ul>
+<li>
+<a href="#toc_5">隐式分配原始值</a>
+</li>
+<li>
+<a href="#toc_6">原始值初始化</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">递归枚举</a>
+</li>
+</ul>
 
-<p>如果你熟悉C，你就会知道，Ç枚举分配相关的名字为一组的整数值。在夫特枚举更为灵活，并且不必提供用于枚举的每一种情况下的值。如果一个值（被称为“原始”的值）被提供给每个枚举的情况下，该值可以是一个字符串，字符，或任何整数的值或者浮点型。</p>
 
-<p>此外，枚举的情况下可以指定相关值的任何一个与每个不同的案例值一起存储类型，多为工会或变体在其他语言做。可以定义一组共同的相关案件为一体枚举，每一个都具有一组不同的与之相关联的适当的类型的值的一部分。</p>
+<h1 id="toc_0">简介</h1>
 
-<p>在斯威夫特枚举是在自己的权利一流的类型。他们采用了许多功能传统上只支持类，如计算性能提供有关枚举的当前值和实例方法，以提供相关的枚举表示值功能的其他信息。枚举也可以定义初始化提供前期案值; 可以扩展到扩大其功能超越其原始执行; 并且可符合协议来提供标准功能性。</p>
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Enumerations.html#//apple_ref/doc/uid/TP40014097-CH12-ID145">Enumerations 官方文档</a></p>
 
+<p>Swift的枚举类型，比原先的更加多样化。区别比较大。</p>
+
+<blockquote>
 <p>欲知更多有关这些功能，请参见属性，方法，初始化，扩展和协议。</p>
-
-<p>枚举语法</p>
-
-<p>你与引进枚举enum关键字和一对大括号内将他们全部的定义：</p>
-
-<p>enum SomeEnumeration {<br/>
-    // enumeration definition goes here<br/>
-}<br/>
-下面是指南针的四个要点的例子：</p>
-
-<p>enum CompassPoint {<br/>
-    case north<br/>
-    case south<br/>
-    case east<br/>
-    case west<br/>
-}<br/>
-在一个枚举定义的值（如north，south，east，和west）是其列举的情况下。您可以使用case关键字来引入新的枚举案件。</p>
-
-<p>注意</p>
-
-<p>不像C和Objective-C，在创建时，斯威夫特列举的情况下并不分配默认整数值。在CompassPoint上面的例子，north，south，east和west不等于含蓄0，1，2和3。相反，不同的枚举案件是他们自己的权利完全成熟的价值观，具有明确的定义类型CompassPoint。</p>
-
-<p>多个案例可以出现在一行上，用逗号分隔：</p>
-
-<p>enum Planet {<br/>
-    case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune<br/>
-}<br/>
-每个枚举定义定义一个全新的类型。像其他类型的斯威夫特，他 ​​们的名字（如CompassPoint和Planet）应以大写字母开头。给枚举类型单数而不是复数的名字，让他们读不言而喻：</p>
-
-<p>var directionToHead = CompassPoint.west<br/>
-的类型directionToHead时，它与可能的值中的一个初始化是推断CompassPoint。一旦directionToHead被声明为CompassPoint，可以将其设置为不同的CompassPoint使用较短点语法值：</p>
-
-<p>directionToHead = .east<br/>
-该类型directionToHead是已知的，所以你可以设置它的值时删除该类型。用显式类型的枚举值时，这使得高度可读的代码。</p>
-
-<p>匹配枚举值与switch语句</p>
-
-<p>你可以搭配一个单独的枚举值switch声明：</p>
-
-<p>directionToHead = .south<br/>
-switch directionToHead {<br/>
-case .north:<br/>
-    print(<q>Lots of planets have a north</q>)<br/>
-case .south:<br/>
-    print(<q>Watch out for penguins</q>)<br/>
-case .east:<br/>
-    print(<q>Where the sun rises</q>)<br/>
-case .west:<br/>
-    print(<q>Where the skies are blue</q>)<br/>
-}<br/>
-// Prints <q>Watch out for penguins</q><br/>
-你可以阅读这个代码：</p>
-
-<p>“考虑的价值directionToHead。在它等于情况下.north，打印<q>Lots of planets have a north</q>。在它等于的情况下.south，打印<q>Watch out for penguins</q>“。</p>
-
-<p>…等等。</p>
-
-<p>正如描述的控制流，一个switch考虑枚举的情况下，当语句必须详尽。如果case对于.west被省略了，这段代码不能编译，因为它不考虑的完整列表CompassPoint案件。需要全面性确保枚举案件不小心忽略。</p>
-
-<p>当它是不恰当的提供case为每个枚举情况下，您可以提供default的情况下，以支付未明确解决的情况下：</p>
-
-<p>let somePlanet = Planet.earth<br/>
-switch somePlanet {<br/>
-case .earth:<br/>
-    print(<q>Mostly harmless</q>)<br/>
-default:<br/>
-    print(<q>Not a safe place for humans</q>)<br/>
-}<br/>
-// Prints <q>Mostly harmless</q><br/>
-关联的值</p>
-
-<p>在上一节中的示例说明如何枚举的病例定义（和类型）在自己的权利的价值。您可以设置一个常量或变量Planet.earth，并检查该值更高版本。然而，它是能够存储有时有用关联值其他类型的沿着这些情况下的值。这使您能够存储更多的自定义信息的情况下值一起，并允许这些信息在每次使用情况下，在你的代码时间变化。</p>
-
-<p>可以定义夫特枚举来存储任何给定类型的相关值，并且该值的类型可以根据需要为枚举的每一种情况下是不同的。类似这些枚举被称为歧视工会，标签联合，或变体在其他编程语言。</p>
-
-<p>例如，假设一个库存跟踪系统需要由两种不同类型的条形码来跟踪产品。有些产品标注与UPC格式，它采用数字一维条码0来9。每个条码具有“数字系统”的数字，后面五“制造商代码”数字五“商品代码”的数字。这些后跟一“检查”的数字，以验证该代码已被正确扫描：</p>
-
-<p>图片：../Art/barcode<u>UPC</u>2x.png<br/>
-其他产品都贴有以QR码格式的二维条码，可以使用任何ISO 8859-1的字符，可编码字符串，最多2,953个字符：</p>
-
-<p>图片：../Art/barcode<u>QR</u>2x.png<br/>
-这将是方便的库存跟踪系统能够UPC条形码存储为四个整数的元组，和QR代码的条形码的任何长度的字符串。</p>
-
-<p>在斯威夫特，一个枚举来定义任何类型的可能是这样的产品条形码：</p>
-
-<p>enum Barcode {<br/>
-    case upc(Int, Int, Int, Int)<br/>
-    case qrCode(String)<br/>
-}<br/>
-这可以理解为：</p>
-
-<p>“所谓的定义枚举类型Barcode，可以采取任何的值upc类型（的相关值Int，Int，Int，Int），或值qrCode与类型的关联值String。”</p>
-
-<p>此定义不提供任何实际的Int或String值，它只是定义了类型该相关值的Barcode时候都等于常量和变量可以存储Barcode.upc或Barcode.qrCode。</p>
-
-<p>新的条形码然后可以使用任一类型的创建：</p>
-
-<p>var productBarcode = Barcode.upc(8, 85909, 51226, 3)<br/>
-这个例子创建了一个名为新变量productBarcode，并为其分配的值Barcode.upc与相关的元组值(8, 85909, 51226, 3)。</p>
-
-<p>相同的产品可以被分配一个不同类型的条形码：</p>
-
-<p>productBarcode = .qrCode(<q>ABCDEFGHIJKLMNOP</q>)<br/>
-此时，原Barcode.upc和它的整数值被新替换Barcode.qrCode及其字符串值。类型的常量和变量Barcode可以存储任何一个.upc或一个.qrCode（与他们的相关联的值一起），但它们只能存储其中的一个在任何给定的时间。</p>
-
-<p>不同的条码类型可以使用switch语句来检查，如前。这个时间，但是，相关的值可以被提取作为switch语句的一部分。您提取每个关联值作为一个常量（用let前缀）或一个变量（与var为中使用前缀）switch情况下的身体：</p>
-
-<p>switch productBarcode {<br/>
-case .upc(let numberSystem, let manufacturer, let product, let check):<br/>
-    print(<q>UPC: (numberSystem), (manufacturer), (product), (check).</q>)<br/>
-case .qrCode(let productCode):<br/>
-    print(<q>QR code: (productCode).</q>)<br/>
-}<br/>
-// Prints <q>QR code: ABCDEFGHIJKLMNOP.</q><br/>
-如果所有枚举情况下，关联的值被提取为常数，或者如果所有被抽取为变量，你可以将一个var或let案件名称前标注，为了简洁：</p>
-
-<p>switch productBarcode {<br/>
-case let .upc(numberSystem, manufacturer, product, check):<br/>
-    print(<q>UPC : (numberSystem), (manufacturer), (product), (check).</q>)<br/>
-case let .qrCode(productCode):<br/>
-    print(<q>QR code: (productCode).</q>)<br/>
-}<br/>
-// Prints <q>QR code: ABCDEFGHIJKLMNOP.</q><br/>
-原始值</p>
-
-<p>在条形码的例子关联值显示枚举的情况下，怎么能宣称自己存储不同类型的关联值。作为替代关联的值，枚举的情况下可以来预填充默认值（称为原始值），这是所有相同类型的。</p>
-
-<p>下面是存储原始的ASCII值命名为一起案件枚举的例子：</p>
-
-<p>enum ASCIIControlCharacter: Character {<br/>
-    case tab = <q>\t</q><br/>
-    case lineFeed = <q>\n</q><br/>
-    case carriageReturn = <q>\r</q><br/>
-}<br/>
-这里，被称为枚举的原始值ASCIIControlCharacter被定义为类型Character，并设置一些常用的ASCII控制字符的。Character值描述字符串和字符。</p>
-
-<p>原始值可以是字符串，字符，或任何整数或浮点数类型。每个原始值必须在其枚举声明中是唯一的。</p>
-
-<p>注意</p>
-
-<p>生的值是不相同的关联的值。原始值被设置为预填充值时，首先定义枚举在你的代码中，像上面的3个ASCII码。对于特定的枚举的情况下的原始值始终是相同的。当你创建一个基于枚举的情况下，一个新的常量或变量相关的值设置，并在每次这样做的时候可以是不同的。</p>
-
-<p>隐式分配原始值</p>
-
-<p>当你与存储整数或字符串原始值枚举工作，你没有明确指定每个案例的原始值。如果你不这样做，SWIFT将自动分配给你的价值观。</p>
-
-<p>例如，当整数被用于原始值，对于每一种情况下的隐式的值大于前面的情况下，一个以上。如果第一种情况下不具有值集合，其值0。</p>
-
-<p>下面列举的是较早的细化Planet枚举，整数原始值来表示从太阳每个行星的命令：</p>
-
-<p>enum Planet: Int {<br/>
-    case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune<br/>
-}<br/>
-在上面的例子中，Planet.mercury有一个明确的原始值1，Planet.venus有一个隐含的原始值2，并依此类推。</p>
-
-<p>当字符串用于原始值，每种情况下，内含价值是这种情况下，名称的文本。</p>
-
-<p>下面列举的是较早的细化CompassPoint枚举，用绳子原始值来代表每个方向的名字：</p>
-
-<p>enum CompassPoint: String {<br/>
-    case north, south, east, west<br/>
-}<br/>
-在上面的例子中，CompassPoint.south有一个隐含的原始值<q>south</q>，并依此类推。</p>
-
-<p>您访问的枚举的情况下以其原始值rawValue属性：</p>
-
-<p>let earthsOrder = Planet.earth.rawValue<br/>
-// earthsOrder is 3</p>
-
-<p>let sunsetDirection = CompassPoint.west.rawValue<br/>
-// sunsetDirection is <q>west</q><br/>
-从原始值初始化</p>
-
-<p>如果你定义一个原始值类型的枚举，枚举自动接收一个初始化，是以原始值的类型的值（一个名为参数rawValue），再返回一个枚举案件或nil。您可以使用此初始化尝试创建枚举的新实例。</p>
-
-<p>这个例子从它的原始值标识天王星7：</p>
-
-<p>let possiblePlanet = Planet(rawValue: 7)<br/>
-// possiblePlanet is of type Planet? and equals Planet.uranus<br/>
-不是所有可能的Int值会找到一个匹配的星球，但是。正因为如此，原始值初始化总是返回一个可选枚举的情况下。在上面的例子中，possiblePlanet是式的Planet?，或“任选的Planet”。</p>
-
-<p>注意</p>
-
-<p>该原始值初始化是failable初始化，因为不是每个原始值将返回一个枚举情况。欲了解更多信息，请参阅Failable初始化器。</p>
-
-<p>如果你试图找到的位置的星球11，可选Planet的原始值初始化返回值将是nil：</p>
-
-<p>let positionToFind = 11<br/>
-if let somePlanet = Planet(rawValue: positionToFind) {<br/>
-    switch somePlanet {<br/>
-    case .earth:<br/>
-        print(<q>Mostly harmless</q>)<br/>
-    default:<br/>
-        print(<q>Not a safe place for humans</q>)<br/>
-    }<br/>
-} else {<br/>
-    print(<q>There isn&#39;t a planet at position (positionToFind)</q>)<br/>
-}<br/>
-// Prints <q>There isn&#39;t a planet at position 11</q><br/>
-本例使用可选的结合尝试访问行星的原始值11。该语句if let somePlanet = Planet(rawValue: 11)创建一个可选Planet，并设置somePlanet到该可选的值Planet，如果它可以被检索。在这种情况下，这是不可能检索行星的位置11，因此else而执行分支。</p>
-
-<p>递归枚举</p>
-
-<p>一个递归枚举是具有枚举作为一个或一个以上的枚举例中的相关值的另一个实例的枚举。您指示枚举情况下是通过编写递归indirect在它之前，它告诉编译器插入间接的必要层。</p>
-
-<p>例如，下面是一个存储简单的算术表达式的枚举：</p>
-
-<p>enum ArithmeticExpression {<br/>
-    case number(Int)<br/>
-    indirect case addition(ArithmeticExpression, ArithmeticExpression)<br/>
-    indirect case multiplication(ArithmeticExpression, ArithmeticExpression)<br/>
-}<br/>
-你也可以写indirect枚举开始之前，使间接为所有需要它的枚举的情况：</p>
-
-<p>indirect enum ArithmeticExpression {<br/>
-    case number(Int)<br/>
-    case addition(ArithmeticExpression, ArithmeticExpression)<br/>
-    case multiplication(ArithmeticExpression, ArithmeticExpression)<br/>
-}<br/>
-此枚举可储存3种算术表达式：一个普通的数目，增加了两个表达式，和两个表达式的乘法。在addition与multiplication案件相关联的是也算术表达式-这些关联值使得能够巢表达式值。例如，表达(5 + 4) * 2对乘法的右手侧的数字和乘法的左手侧的另一表达。因为数据是嵌套的，用于存储数据枚举还需要支持嵌套-这意味着枚举需要是递归的。下面的代码显示了ArithmeticExpression正在创建递归枚举(5 + 4) * 2：</p>
-
-<p>let five = ArithmeticExpression.number(5)<br/>
-let four = ArithmeticExpression.number(4)<br/>
-let sum = ArithmeticExpression.addition(five, four)<br/>
-let product = ArithmeticExpression.multiplication(sum, ArithmeticExpression.number(2))<br/>
-递归函数是与具有递归结构数据进行工作的简单方法。例如，下面是计算一个算术表达式的函数：</p>
-
-<p>func evaluate(_ expression: ArithmeticExpression) -&gt; Int {<br/>
-    switch expression {<br/>
-    case let .number(value):<br/>
-        return value<br/>
-    case let .addition(left, right):<br/>
-        return evaluate(left) + evaluate(right)<br/>
-    case let .multiplication(left, right):<br/>
-        return evaluate(left) * evaluate(right)<br/>
-    }<br/>
-}</p>
-
-<p>print(evaluate(product))<br/>
-// Prints <q>18</q><br/>
-此功能通过简单地返回相关值计算一个普通的数字。它评估通过评价在左手侧上的表达，评价在右手侧的表达式，然后将其添加或相乘的加法或乘法。</p>
+</blockquote>
+
+<h1 id="toc_1">枚举语法</h1>
+
+<ul>
+<li>基础枚举，不同于OC默认指向0，1，2，3。命名推荐与类相同。</li>
+</ul>
+
+<pre><code>enum CompassPoint {
+    case north
+    case south
+    case east
+    case west
+}
+</code></pre>
+
+<ul>
+<li>可以定义在同一行。</li>
+</ul>
+
+<pre><code>enum Planet {
+    case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
+}
+</code></pre>
+
+<ul>
+<li>当枚举类型已知时，可以直接使用<code>.</code>语法，忽略枚举类型。</li>
+</ul>
+
+<pre><code>var directionToHead = CompassPoint.west
+directionToHead = .east
+</code></pre>
+
+<h1 id="toc_2">匹配枚举值与switch语句</h1>
+
+<ul>
+<li>匹配枚举值正常，系统会检查枚举值。</li>
+</ul>
+
+<pre><code>directionToHead = .south
+switch directionToHead {
+case .north:
+    print(&quot;Lots of planets have a north&quot;)
+case .south:
+    print(&quot;Watch out for penguins&quot;)
+case .east:
+    print(&quot;Where the sun rises&quot;)
+case .west:
+    print(&quot;Where the skies are blue&quot;)
+}
+</code></pre>
+
+<ul>
+<li>可以提供default的情况，以支持未明确的情况。</li>
+</ul>
+
+<pre><code>let somePlanet = Planet.earth
+switch somePlanet {
+case .earth:
+    print(&quot;Mostly harmless&quot;)
+default:
+    print(&quot;Not a safe place for humans&quot;)
+}
+</code></pre>
+
+<h1 id="toc_3">关联值</h1>
+
+<ul>
+<li>对枚举额外提供了相关的值，而不是默认012。</li>
+</ul>
+
+<pre><code>enum Barcode {
+    case upc(Int, Int, Int, Int)
+    case qrCode(String)
+}
+</code></pre>
+
+<ul>
+<li>设置枚举</li>
+</ul>
+
+<pre><code>var productBarcode = Barcode.upc(8, 85909, 51226, 3)
+productBarcode = .qrCode(&quot;ABCDEFGHIJKLMNOP&quot;)
+</code></pre>
+
+<ul>
+<li>获取枚举关联值</li>
+</ul>
+
+<pre><code>switch productBarcode {
+case .upc(let a,let b,let c,let d):
+    print(&quot;\(a)\(b)\(c)\(d)&quot;)
+    
+case .qrCode(let str):
+    print(str)
+}
+</code></pre>
+
+<h1 id="toc_4">原始值</h1>
+
+<ul>
+<li>区别于关联值，原始值代表了枚举的对应值。有点类似OC的枚举，可以指定0123。</li>
+</ul>
+
+<pre><code>enum ASCIIControlCharacter: Character {
+    case tab = &quot;\t&quot;
+    case lineFeed = &quot;\n&quot;
+    case carriageReturn = &quot;\r&quot;
+}
+</code></pre>
+
+<ul>
+<li>获取原始值</li>
+</ul>
+
+<pre><code>ASCIIControlCharacter.tab.rawValue
+</code></pre>
+
+<h2 id="toc_5">隐式分配原始值</h2>
+
+<ul>
+<li>默认分配原始值，与OC类似的0123。</li>
+</ul>
+
+<pre><code>enum Planet: Int {
+    case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune
+}
+</code></pre>
+
+<h2 id="toc_6">原始值初始化</h2>
+
+<ul>
+<li>使用原始值初始化时，初始化的为可选类型，因为可能不存在嘛。</li>
+</ul>
+
+<pre><code>var a = Planet(rawValue: 13)
+</code></pre>
+
+<h1 id="toc_7">递归枚举</h1>
+
+<ul>
+<li><code>indirect</code>关键词，也可以直接放在<code>enum</code>前面，也可以放在枚举内部<code>case</code>前面。相对以上枚举，更深入点，暂时想不到实际例子。</li>
+</ul>
+
+<pre><code>enum ArithmeticExpression {
+    case number(Int)
+    indirect case addition(ArithmeticExpression, ArithmeticExpression)
+    indirect case multiplication(ArithmeticExpression, ArithmeticExpression)
+}
+
+let five = ArithmeticExpression.number(5)
+let four = ArithmeticExpression.number(4)
+let sum = ArithmeticExpression.addition(five, four)
+let product = ArithmeticExpression.multiplication(sum, ArithmeticExpression.number(2))
+
+func evaluate(_ expression: ArithmeticExpression) -&gt; Int {
+    
+    switch expression {
+    
+    case let .number(value):
+        return value
+    
+    case let .addition(left, right):
+        return evaluate(left) + evaluate(right)
+        
+    case let .multiplication(left, right):
+        return evaluate(left) * evaluate(right)
+    }
+}
+
+print(evaluate(product))
+// （ 4 + 5 ) * 2
+</code></pre>
 
 
 </div>
@@ -507,7 +468,7 @@ let product = ArithmeticExpression.multiplication(sum, ArithmeticExpression.numb
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
-	        <a href="14743597798199.html"  title="Previous Post: 关闭">&laquo; 关闭</a>
+	        <a href="14743597798199.html"  title="Previous Post: 闭包">&laquo; 闭包</a>
 	    
 	</div>
   </div>
@@ -515,7 +476,7 @@ let product = ArithmeticExpression.multiplication(sum, ArithmeticExpression.numb
 	<div class="text-right" style="padding:15px 0px;">
 		
 	        <a href="14743598083496.html" 
-	        title="Next Post: 类和结构">类和结构 &raquo;</a>
+	        title="Next Post: 此篇以下未整理仅谷歌翻译">此篇以下未整理仅谷歌翻译 &raquo;</a>
 	    
 	</div>
   </div>
