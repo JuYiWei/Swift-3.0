@@ -73,17 +73,17 @@
           
             <li><a title="枚举" href="14743597933965.html">枚举</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743598083496.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
           
             <li><a title="属性" href="14743598294467.html">属性</a></li>
           
             <li><a title="方法" href="14743598422216.html">方法</a></li>
           
-            <li><a title="下标" href="14743598556978.html">下标</a></li>
+            <li><a title="下标语法" href="14743598556978.html">下标语法</a></li>
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -176,17 +176,17 @@
                         
                           <li><a title="枚举" href="14743597933965.html">枚举</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743598083496.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
                         
                           <li><a title="属性" href="14743598294467.html">属性</a></li>
                         
                           <li><a title="方法" href="14743598422216.html">方法</a></li>
                         
-                          <li><a title="下标" href="14743598556978.html">下标</a></li>
+                          <li><a title="下标语法" href="14743598556978.html">下标语法</a></li>
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -246,366 +246,246 @@
  <div class="markdown-body">
 <h1>属性</h1>
 
-<p>属性值与特定的类，结构，或枚举相关联。存储性能存储常量和变量值作为实例的一部分，而计算性能计算（而不是存储）的值。计算性能由类，结构和枚举提供。存储的属性只能通过类和结构提供。</p>
-
-<p>存储和计算的性能通常与一个特定类型的实例相关联。然而，属性也可以与类型本身相关联。这样的特性是公知的类型的属性。</p>
-
-<p>此外，你可以定义属性观察员监督属性的值发生变化，您可以用自定义操作响应。地产观察者可以添加到你自己定义，同时也为一个子类从其超类继承属性存储性能。</p>
-
-<p>存储性能</p>
-
-<p>在其最简单的形式中，所存储的属性是存储作为一个特定类或结构的一个实例的一部分的恒定或可变的。存储属性既可以是可变的储存特性（由引入的var关键字）或恒定存储属性（由引入的let关键字）。</p>
-
-<p>您可以为存储属性的默认值作为其定义的一部分，如描述的默认属性值。您还可以设置和初始化过程中修改初始值的存储性能。即使对于常量存储性能是真实的，如描述的分配属性常数初始化过程中。</p>
-
-<p>下面的例子中定义了一个称为结构FixedLengthRange，它描述一个范围，其范围长度一旦创建不能改变整数的：</p>
-
-<p>struct FixedLengthRange {<br/>
-    var firstValue: Int<br/>
-    let length: Int<br/>
-}<br/>
-var rangeOfThreeItems = FixedLengthRange(firstValue: 0, length: 3)<br/>
-// the range represents integer values 0, 1, and 2<br/>
-rangeOfThreeItems.firstValue = 6<br/>
-// the range now represents integer values 6, 7, and 8<br/>
-的实例FixedLengthRange有一个变量存储属性调用firstValue，并呼吁恒定存储的属性length。在上面的例子中，length创建新的范围，并且不能在此后改变时被初始化时，因为它是一个恒定属性。</p>
-
-<p>固定结构的实例存储性能</p>
-
-<p>如果您创建结构的实例，该实例分配到一个常数，你不能修改实例的属性，即使它们被声明为变量属性：</p>
-
-<p>let rangeOfFourItems = FixedLengthRange(firstValue: 0, length: 4)<br/>
-// this range represents integer values 0, 1, 2, and 3<br/>
-rangeOfFourItems.firstValue = 6<br/>
-// this will report an error, even though firstValue is a variable property<br/>
-因为rangeOfFourItems被声明为一个常数（与let关键字），因此不可能改变其firstValue属性，即使firstValue是一个变量属性。</p>
-
-<p>这种现象是由于结构是值类型。当值类型的实例被标记为一个常数，所以都是它的属性。</p>
-
-<p>同样不是阶级，这是真正的引用类型。如果您分配一个引用类型的实例，为一个常数，你仍然可以更改该实例的变量属性。</p>
-
-<p>懒惰的存储性能</p>
-
-<p>一个懒惰的存储的属性是一个属性的初始值不计算使用它直到第一次。您指示通过编写一个懒惰存储的属性lazy的声明之前修改。</p>
-
-<p>注意</p>
-
-<p>你必须始终声明一个懒惰的财产（以可变var关键字），因为它的初始值可能直到实例的初始化完成后进行检索。恒属性必须始终有一个值之前，初始化完成，因此不能被声明为懒惰。</p>
-
-<p>当为一个属性的初始值是依赖于外部因素，其值是未知的，直到经过一个实例的初始化完成延迟属性是有用的。延迟属性也是有用当一个属性的初始值要求不应该除非或直到需要进行复杂的或计算昂贵设置。</p>
-
-<p>下面的示例使用一个懒惰的存储特性，避免了复杂的类的初始化不必要的。这个例子定义了两个类叫做DataImporter和DataManager，这两者都不能够完整显示：</p>
-
-<p>class DataImporter {<br/>
-    /*<br/>
-     DataImporter is a class to import data from an external file.<br/>
-     The class is assumed to take a non-trivial amount of time to initialize.<br/>
-     */<br/>
-    var fileName = <q>data.txt</q><br/>
-    // the DataImporter class would provide data importing functionality here<br/>
-}</p>
-
-<p>class DataManager {<br/>
-    lazy var importer = DataImporter()<br/>
-    var data = <a href="">String</a><br/>
-    // the DataManager class would provide data management functionality here<br/>
-}</p>
-
-<p>let manager = DataManager()<br/>
-manager.data.append(<q>Some data</q>)<br/>
-manager.data.append(<q>Some more data</q>)<br/>
-// the DataImporter instance for the importer property has not yet been created<br/>
-该DataManager班 ​​有一个存储的属性称为data，这是与一个新的，空数组初始化String值。虽然没有显示其功能休息，这个目的DataManager类是管理和提供访问该阵列的String数据。</p>
-
-<p>的部分功能DataManager类是从文件导入数据的能力。这个功能是由提供DataImporter类，它被假定为需要大量的时间来初始化一个非平凡量。这可能是因为一个DataImporter实例需要打开一个文件，并当读取其内容到内存DataImporter实例被初始化。</p>
-
-<p>这是可能的一个DataManager实例而没有从文件导入数据管理其数据，所以没有必要建立一个新DataImporter的时实例DataManager被创建本身。相反，它更有意义创建DataImporter实例，如果当第一次使用它。</p>
-
-<p>因为它是标有lazy修改时，DataImporter该实例importer属性仅创建当importer物业首次访问，当其如fileName属性进行查询：</p>
-
-<p>print(manager.importer.fileName)<br/>
-// the DataImporter instance for the importer property has now been created<br/>
-// Prints <q>data.txt</q><br/>
-注意</p>
-
-<p>如果标有一个属性lazy改性剂是由多个线程同时访问和属性尚未初始化，但不保证该属性将仅一次初始化。</p>
-
-<p>存储性能和实例变量</p>
-
-<p>如果您在使用Objective-C的经验，你可能知道，它提供了2价值观和引用存储为一个类实例的一部分的方式。除了 ​​属性，你可以使用实例变量作为后备存储存储在一个属性的值。</p>
-
-<p>斯威夫特结合这些概念成一个单一的财产申报。迅速财产不具有相应的实例变量，以及后备存储的属性不是直接访问。这种方法避免了混淆的价值是如何在不同的情况下访问和简化了财产的申报成一个单一的，明确的声明。有关的所有信息的属性，包括其名称，类型和存储器管理特性-是在一个单一的位置定义为类型的定义的一部分。</p>
-
-<p>计算属性</p>
-
-<p>除了 ​​存储的属性，类，结构和枚举可以定义计算的属性，这实际上并不存储值。相反，它们提供的吸气剂和可选的设定器来检索和间接设置其他属性和值。</p>
-
-<p>struct Point {<br/>
-    var x = 0.0, y = 0.0<br/>
-}<br/>
-struct Size {<br/>
-    var width = 0.0, height = 0.0<br/>
-}<br/>
-struct Rect {<br/>
-    var origin = Point()<br/>
-    var size = Size()<br/>
-    var center: Point {<br/>
-        get {<br/>
-            let centerX = origin.x + (size.width / 2)<br/>
-            let centerY = origin.y + (size.height / 2)<br/>
-            return Point(x: centerX, y: centerY)<br/>
-        }<br/>
-        set(newCenter) {<br/>
-            origin.x = newCenter.x - (size.width / 2)<br/>
-            origin.y = newCenter.y - (size.height / 2)<br/>
-        }<br/>
-    }<br/>
-}<br/>
-var square = Rect(origin: Point(x: 0.0, y: 0.0),<br/>
-                  size: Size(width: 10.0, height: 10.0))<br/>
-let initialSquareCenter = square.center<br/>
-square.center = Point(x: 15.0, y: 15.0)<br/>
-print(<q>square.origin is now at ((square.origin.x), (square.origin.y))</q>)<br/>
-// Prints <q>square.origin is now at (10.0, 10.0)</q><br/>
-这个例子定义为几何形状工作三个结构：</p>
-
-<p>Point封装了一个(x, y)坐标。<br/>
-Size封装width和一个height。<br/>
-Rect 通过原点和大小定义的矩形。<br/>
-该Rect结构还提供了一种称为计算的财产center。的当前的中心位置Rect总是可以从它的确定origin和size，所以你不需要中心点存储为一个明确的Point价值。相反，Rect定义了一个名为变量计算一个自定义的getter和setter center，使您与矩形的工作center就好像它是一个真正的存储性能。</p>
-
-<p>上面的例子创建了一个新的Rect名为变量square。的square变量被初始化为原点(0, 0)，和的宽度和高度10。这个广场是由下图中的蓝色方块表示。</p>
-
-<p>该square变量的center属性然后通过点语法（访问square.center），这会导致需要getter center被调用，获取当前的属性值。而不是返回现有值，吸气实际计算并返回一个新的Point代表在广场的中心。正如从上面可以看出，吸气正确返回的中心点(5, 5)。</p>
-
-<p>该center属性然后设置为一个新值(15, 15)，其中移动方向上和向右，由下图中的橙色方块显示的新位置。设置center属性要求设置器center，其修改x和y所存储的值origin属性，并移动方到其新的位置。</p>
-
-<p>图片：../Art/computedProperties_2x.png<br/>
-速记二传手宣言</p>
-
-<p>如果一个计算属性的setter新值没有定义名称的情况下设置的默认名称newValue使用。这里的的替代版本，Rect结构，借此简化符号的优势：</p>
-
-<p>struct AlternativeRect {<br/>
-    var origin = Point()<br/>
-    var size = Size()<br/>
-    var center: Point {<br/>
-        get {<br/>
-            let centerX = origin.x + (size.width / 2)<br/>
-            let centerY = origin.y + (size.height / 2)<br/>
-            return Point(x: centerX, y: centerY)<br/>
-        }<br/>
-        set {<br/>
-            origin.x = newValue.x - (size.width / 2)<br/>
-            origin.y = newValue.y - (size.height / 2)<br/>
-        }<br/>
-    }<br/>
-}<br/>
-只读属性计算</p>
-
-<p>与获取方法的计算财产，但没有setter被称为一个只读属性计算。只读计算属性总是返回一个值，并且可以通过点语法来访问，但不能被设置为不同的值。</p>
-
-<p>注意</p>
-
-<p>您必须声明性质的计算，包括只读计算性能，为变量的特性var关键字，因为它们的价值是不固定的。的let关键字仅用于恒定的属性，以指示一旦它们被设定为实例初始化的一部分不能改变它们的值。</p>
-
-<p>您可以通过删除简化 ​​只读计算属性的声明get关键词和括号：</p>
-
-<p>struct Cuboid {<br/>
-    var width = 0.0, height = 0.0, depth = 0.0<br/>
-    var volume: Double {<br/>
-        return width * height * depth<br/>
-    }<br/>
-}<br/>
-let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)<br/>
-print(<q>the volume of fourByFiveByTwo is (fourByFiveByTwo.volume)</q>)<br/>
-// Prints <q>the volume of fourByFiveByTwo is 40.0</q><br/>
-这个例子定义了一个新的结构，称为Cuboid，它代表了3D矩形框width，height和depth属性。这种结构也有一个只读计算属性调用volume，其计算和返回长方体的当前音量。它没有意义为volume是硬性的，因为这将是不明确的，以哪些值的width，height以及depth应该用于一个特定volume的值。然而，对于一个是有用Cuboid提供一种只读计算属性，以使外部用户发现其当前计算出的体积。</p>
-
-<p>物业观察员</p>
-
-<p>地产观察者观察到一个属性值的变化。地产观察家称为每个属性的值设置时间，即使新的值相同属性的当前值。</p>
-
-<p>您可以添加属性观察员定义，除了懒存储性能的任何存储的性能。您也可以通过一个子类中重写属性添加属性观察员任何继承财产（无论是存储或计算）。你并不需要定义属性观察员非重载计算性能，因为你可以观察并改变他们在计算财产的setter价值做出回应。压倒一切的财产中描述重写。</p>
-
-<p>必须定义一个属性这些观察员的任一个或两者的选项：</p>
-
-<p>willSet 叫的值被存储之前。<br/>
-didSet 新的值保存后立即调用。<br/>
-如果您实现一个willSet观察者，它通过了新的属性值作为恒定参数。你可以为这个参数为你的一部分指定一个名称willSet的实现。如果你没有在实现中写入参数名称和括号，参数提供与默认的参数名称newValue。</p>
-
-<p>同样，如果您实现一个didSet观察者，它通过包含旧属性值的恒定参数。您可以命名参数或使用默认参数名称oldValue。如果将值分配给自己的中的一处didSet观察，所分配的新值取代了刚刚成立的那个。</p>
-
-<p>注意</p>
-
-<p>在willSet与didSet当属性在子类中初始化设置超属性观察家称为，超类的初始化调用后。而类是设置自己的属性，超类的初始化已调用之前他们不叫。</p>
-
-<p>有关初始化委派的详细信息，请参阅初始化函数代表团值类型和初始值设定代表团类的类型。</p>
-
-<p>下面是一个例子willSet，并didSet在行动。下面的例子中定义了一个名为新类StepCounter，追踪的，一个人在行走时采取步骤的总数。这个类可能与来自计步器或其它步骤计数器的输入数据被用于跟踪一个人的运动的日常工作中。</p>
-
-<p>class StepCounter {<br/>
-    var totalSteps: Int = 0 {<br/>
-        willSet(newTotalSteps) {<br/>
-            print(<q>About to set totalSteps to (newTotalSteps)</q>)<br/>
-        }<br/>
-        didSet {<br/>
-            if totalSteps &gt; oldValue  {<br/>
-                print(<q>Added (totalSteps - oldValue) steps</q>)<br/>
-            }<br/>
-        }<br/>
-    }<br/>
-}<br/>
-let stepCounter = StepCounter()<br/>
-stepCounter.totalSteps = 200<br/>
-// About to set totalSteps to 200<br/>
-// Added 200 steps<br/>
-stepCounter.totalSteps = 360<br/>
-// About to set totalSteps to 360<br/>
-// Added 160 steps<br/>
-stepCounter.totalSteps = 896<br/>
-// About to set totalSteps to 896<br/>
-// Added 536 steps<br/>
-在StepCounter类声明一个totalSteps属性的类型Int。这是一个存储的财产willSet和didSet观察员。</p>
-
-<p>在willSet和didSet观察员totalSteps每当属性分配一个新的值被调用。这是真实的，即使新的值是相同的电流值。</p>
-
-<p>这个例子的willSet观测用的自定义参数名称newTotalSteps为即将到来的新的价值。在这个例子中，只是简单地打印出将要被设置的值。</p>
-
-<p>该didSet观测器的值后调用totalSteps被更新。它比较的新值totalSteps对旧值。如果步骤的总数增加了，打印的消息以指示有多少新已采取步骤。该didSet观察者不提供旧值自定义参数的名称，默认名称oldValue代替。</p>
-
-<p>注意</p>
-
-<p>如果您通过具有观察员属性功能作为在输出参数中，willSet和didSet观察员始终调用。这是因为在-out参数拷贝在复制出内存模型：值始终写回酒店在函数的结束。对于IN-OUT参数的行为的详细讨论，请参阅输入-输出参数。</p>
-
-<p>全局和局部变量</p>
-
-<p>上述用于计算和观察它的性质所描述的功能也可提供给全局变量和局部变量。全局变量是任何函数，方法，关闭，或类型的上下文之外定义的变量。局部变量是一个函数，方法，或闭合上下文中定义的变量。</p>
-
-<p>你已经在前面的章节中遇到的全局和局部变量都被存储的变量。存储的变量，如保存特性，对于某些类型的值提供存储，并允许该值被设置和检索。</p>
-
-<p>但是，您也可以定义计算的变量，并确定观察员存储的变量，无论是在全球或局部范围内。计算变量计算其值，而不是将其存储，并且它们被写入相同的方式计算的属性。</p>
-
-<p>注意</p>
-
-<p>全局常量和变量总是懒洋洋地计算，以类似的方式来懒存储性能。不像懒惰存储属性，全局的常量和变量不需要标有lazy改性剂。</p>
-
-<p>本地常量和变量从未延迟方式计算的。</p>
-
-<p>类型属性</p>
-
-<p>实例属性是属于特定类型的实例的属性。您创建该类型的新实例时，它都会有自己的一套属性值，从任何其他实例分开。</p>
-
-<p>还可以定义属于类型本身，而不是该类型中的任一项实例属性。有只会永远是这些属性的一个副本，不管你如何创建该类型的多个实例。这些类型的属性称为类型属性。</p>
-
-<p>类型属性是用于定义是普遍的，以价值观有用的所有特定类型的实例，例如，所有的实例可以使用（类似于C静态常量）存储的值是全局所有恒定 ​​属性或变量属性该类型（类似于C的静态变量）的实例。</p>
-
-<p>存储类型的属性可以是变量或常量。计算类型属性始终声明为可变的属性，在相同的方式计算的实例属性。</p>
-
-<p>注意</p>
-
-<p>不同于存储实例属性，必须始终给存储类型属性的默认值。这是因为该类型本身并不具有可在初始化时指定的值给存储类型属性的初始化。</p>
-
-<p>存储类属性初始化懒洋洋地在他们的第一次访问。它们被保证只有一次初始化，即使当同时被多个线程访问，并且它们不需要标有lazy改性剂。</p>
-
-<p>Type属性语法</p>
-
-<p>在C和Objective-C，你定义一个类型相关的静态常量和变量全局静态变量。在斯威夫特，但是，类型属性被写入作为类型定义的一部分，该类型的外部大括号中，每种类型属性明确范围，以支持的类型。</p>
-
-<p>您定义一个与类型属性static关键字。有关类类型计算类型的属性，你可以使用class关键字，而不是让子类覆盖超类的实现。下面的例子显示了存储和计算的类型属性的语法：</p>
-
-<p>struct SomeStructure {<br/>
-    static var storedTypeProperty = <q>Some value.</q><br/>
-    static var computedTypeProperty: Int {<br/>
-        return 1<br/>
-    }<br/>
-}<br/>
-enum SomeEnumeration {<br/>
-    static var storedTypeProperty = <q>Some value.</q><br/>
-    static var computedTypeProperty: Int {<br/>
-        return 6<br/>
-    }<br/>
-}<br/>
-class SomeClass {<br/>
-    static var storedTypeProperty = <q>Some value.</q><br/>
-    static var computedTypeProperty: Int {<br/>
-        return 27<br/>
-    }<br/>
-    class var overrideableComputedTypeProperty: Int {<br/>
-        return 107<br/>
-    }<br/>
-}<br/>
-注意</p>
-
-<p>以上计算出的type属性的例子是只读型计算性能，但你也可以定义读写具有相同的语法为计算实例属性计算类型属性。</p>
-
-<p>查询和设置类型属性</p>
-
-<p>类型属性查询，并与点语法设置，就像实例属性。然而，类型属性的查询，并设置在类型上，而不是类型的实例。例如：</p>
-
-<p>print(SomeStructure.storedTypeProperty)<br/>
-// Prints <q>Some value.</q><br/>
-SomeStructure.storedTypeProperty = <q>Another value.</q><br/>
-print(SomeStructure.storedTypeProperty)<br/>
-// Prints <q>Another value.</q><br/>
-print(SomeEnumeration.computedTypeProperty)<br/>
-// Prints <q>6</q><br/>
-print(SomeClass.computedTypeProperty)<br/>
-// Prints <q>27</q><br/>
-下面的实施例使用两个存储类型属性作为这样的结构，模型多个音频信道的音频电平表的一部分。每个通道都有之间的整数音量0和10包容性。</p>
-
-<p>下面的图说明了其中的两个音频信道如何可以被组合到一个立体声音频电平表建模。当一个通道的音频电平0，没有灯的通道被点亮。当音频电平10，所有的灯该通道的点亮。在该图中，左通道具有一个电流电平9，和右声道具有一个电流电平7：</p>
-
-<p>图片：../Art/staticPropertiesVUMeter_2x.png<br/>
-上述的音频信道是由实例所代表AudioChannel的结构：</p>
-
-<p>struct AudioChannel {<br/>
-    static let thresholdLevel = 10<br/>
-    static var maxInputLevelForAllChannels = 0<br/>
-    var currentLevel: Int = 0 {<br/>
-        didSet {<br/>
-            if currentLevel &gt; AudioChannel.thresholdLevel {<br/>
-                // cap the new audio level to the threshold level<br/>
-                currentLevel = AudioChannel.thresholdLevel<br/>
-            }<br/>
-            if currentLevel &gt; AudioChannel.maxInputLevelForAllChannels {<br/>
-                // store this as the new overall maximum input level<br/>
-                AudioChannel.maxInputLevelForAllChannels = currentLevel<br/>
-            }<br/>
-        }<br/>
-    }<br/>
-}<br/>
-所述AudioChannel结构定义了两种存储类型属性，以支持其功能。第一，thresholdLevel定义了最大阈值的音频电平可以采取。这是一个恒定值10的所有AudioChannel实例。如果音频信号进入与比更高的值10，它将被封到该阈值（如下所述）。</p>
-
-<p>第二种类型的属性称为变量存储的属性maxInputLevelForAllChannels。这个跟踪已经由接收的最大输入值的任何 AudioChannel实例。它开始时的初始值0。</p>
-
-<p>该AudioChannel结构还定义调用的存储实例属性currentLevel，它代表了一个规模通道当前音频电平0来10。</p>
-
-<p>该currentLevel酒店有didSet属性的观察者检查的值currentLevel时，它被设置。这名观察员执行两项检查：</p>
-
-<p>如果新值currentLevel大于允许的thresholdLevel，物业观察者帽currentLevel来thresholdLevel。<br/>
-如果新值currentLevel（任何封盖后）比以前收到的任何值高的 AudioChannel情况下，物业观察者存储新currentLevel的值maxInputLevelForAllChannels类型属性。<br/>
-注意</p>
-
-<p>在第一这两检查时，didSet观察者设置currentLevel为不同的值。这不，但是，导致观察者再次调用。</p>
-
-<p>您可以使用AudioChannel结构来创建两个新的音频通道叫做leftChannel和rightChannel，代表立体声音响系统的音频电平：</p>
-
-<p>var leftChannel = AudioChannel()<br/>
-var rightChannel = AudioChannel()<br/>
-如果设置currentLevel了的左通道7，你可以看到maxInputLevelForAllChannels类型属性被更新为等于7：</p>
-
-<p>leftChannel.currentLevel = 7<br/>
-print(leftChannel.currentLevel)<br/>
-// Prints <q>7</q><br/>
-print(AudioChannel.maxInputLevelForAllChannels)<br/>
-// Prints <q>7</q><br/>
-如果您尝试设置currentLevel了的正确渠道11，你可以看到，右声道的currentLevel属性上限到的最大值10，而maxInputLevelForAllChannelstype属性被更新为等于10：</p>
-
-<p>rightChannel.currentLevel = 11<br/>
-print(rightChannel.currentLevel)<br/>
-// Prints <q>10</q><br/>
-print(AudioChannel.maxInputLevelForAllChannels)<br/>
-// Prints <q>10</q></p>
+<ul>
+<li>
+<a href="#toc_0">简介</a>
+</li>
+<li>
+<a href="#toc_1">存储属性</a>
+<ul>
+<li>
+<a href="#toc_2">常量结构的属性</a>
+</li>
+<li>
+<a href="#toc_3">属性懒加载</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_4">计算属性</a>
+<ul>
+<li>
+<a href="#toc_5">简写</a>
+</li>
+<li>
+<a href="#toc_6">只读属性</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">属性观察</a>
+</li>
+<li>
+<a href="#toc_8">全局和局部变量</a>
+</li>
+<li>
+<a href="#toc_9">类型属性</a>
+<ul>
+<li>
+<a href="#toc_10">类型属性语法</a>
+</li>
+<li>
+<a href="#toc_11">查询和设置类型属性</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h1 id="toc_0">简介</h1>
+
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Properties.html#//apple_ref/doc/uid/TP40014097-CH14-ID254">Properties 官方文档</a></p>
+
+<ul>
+<li>存储属性，直接作为实例的一部分，支持结构和类。</li>
+<li>计算属性，类似重写get和set，额外支持了枚举类型。</li>
+<li>类本身也可以添加属性，为类属性。</li>
+<li>属性同样支持属性监听。</li>
+</ul>
+
+<h1 id="toc_1">存储属性</h1>
+
+<pre><code>struct FixedLengthRange {
+    var firstValue: Int
+    let length: Int
+}
+
+var rangeOfThreeItems = FixedLengthRange(firstValue: 0, length: 3)
+rangeOfThreeItems.firstValue = 6
+</code></pre>
+
+<h2 id="toc_2">常量结构的属性</h2>
+
+<p>如果初始化结构为常量，那么其属性都视为常量，不可变。</p>
+
+<pre><code>let rangeOfFourItems = FixedLengthRange(firstValue: 0, length: 4)
+rangeOfFourItems.firstValue = 6
+// error
+</code></pre>
+
+<h2 id="toc_3">属性懒加载</h2>
+
+<ul>
+<li><code>lazy</code>关键字，表示懒加载，在第一次调用属性时，进行初始化。多线程时，不保证。</li>
+</ul>
+
+<pre><code>class DataImporter {
+    var fileName = &quot;data.txt&quot;
+}
+ 
+class DataManager {
+    lazy var importer = DataImporter()
+    var data = [String]()
+}
+ 
+let manager = DataManager()
+manager.data.append(&quot;Some data&quot;)
+manager.data.append(&quot;Some more data&quot;)
+</code></pre>
+
+<h1 id="toc_4">计算属性</h1>
+
+<ul>
+<li>相当于给属性添加了，set和get方法，不仅仅直接存储值，而是一种计算方式。</li>
+</ul>
+
+<pre><code>struct Point {
+    var x = 0.0, y = 0.0
+}
+struct Size {
+    var width = 0.0, height = 0.0
+}
+
+struct Rect {
+    var origin = Point()
+    var size = Size()
+    
+    var center: Point {
+        get {
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
+        }
+        set(newCenter) {
+            origin.x = newCenter.x - (size.width / 2)
+            origin.y = newCenter.y - (size.height / 2)
+        }
+    }
+}
+
+var square = Rect(origin: Point(x: 0.0, y: 0.0), size: Size(width: 10.0, height: 10.0))
+let initialSquareCenter = square.center
+square.center = Point(x: 15.0, y: 15.0)
+print(&quot;square.origin is now at (\(square.origin.x), \(square.origin.y))&quot;)
+</code></pre>
+
+<h2 id="toc_5">简写</h2>
+
+<ul>
+<li>set方法中，可以使用默认值<code>newValue</code>，从而更简洁。</li>
+</ul>
+
+<pre><code>struct AlternativeRect {
+    var origin = Point()
+    var size = Size()
+    var center: Point {
+        get {
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
+        }
+        set {
+            origin.x = newValue.x - (size.width / 2)
+            origin.y = newValue.y - (size.height / 2)
+        }
+    }
+}
+</code></pre>
+
+<h2 id="toc_6">只读属性</h2>
+
+<ul>
+<li>不写get方法，即为只读属性。也可以省略set关键字。</li>
+</ul>
+
+<pre><code>struct Cuboid {
+    var width = 0.0, height = 0.0, depth = 0.0
+    var volume: Double {
+        return width * height * depth
+    }
+}
+let fourByFiveByTwo = Cuboid(width: 4.0, height: 5.0, depth: 2.0)
+print(&quot;the volume of fourByFiveByTwo is \(fourByFiveByTwo.volume)&quot;)
+</code></pre>
+
+<h1 id="toc_7">属性观察</h1>
+
+<ul>
+<li><code>willSet</code>和<code>didSet</code>，非常清楚。</li>
+</ul>
+
+<pre><code>class StepCounter {
+    var totalSteps: Int = 0 {
+        willSet(newTotalSteps) {
+            print(&quot;About to set totalSteps to \(newTotalSteps)&quot;)
+        }
+        didSet {
+            if totalSteps &gt; oldValue  {
+                print(&quot;Added \(totalSteps - oldValue) steps&quot;)
+            }
+        }
+    }
+}
+let stepCounter = StepCounter()
+stepCounter.totalSteps = 200
+stepCounter.totalSteps = 360
+stepCounter.totalSteps = 896
+</code></pre>
+
+<h1 id="toc_8">全局和局部变量</h1>
+
+<p>全局变量，默认懒加载。其他略。</p>
+
+<h1 id="toc_9">类型属性</h1>
+
+<p>对类添加属性，类似静态常量。注意是类的属性，不是实例的。</p>
+
+<h2 id="toc_10">类型属性语法</h2>
+
+<ul>
+<li>使用<code>static</code>关键字。</li>
+</ul>
+
+<pre><code>struct SomeStructure {
+    static var storedTypeProperty = &quot;Some value.&quot;
+    static var computedTypeProperty: Int {
+        return 1
+    }
+}
+enum SomeEnumeration {
+    static var storedTypeProperty = &quot;Some value.&quot;
+    static var computedTypeProperty: Int {
+        return 6
+    }
+}
+class SomeClass {
+    static var storedTypeProperty = &quot;Some value.&quot;
+    static var computedTypeProperty: Int {
+        return 27
+    }
+    class var overrideableComputedTypeProperty: Int {
+        return 107
+    }
+}
+</code></pre>
+
+<h2 id="toc_11">查询和设置类型属性</h2>
+
+<p>与实例属性一样。</p>
+
+<pre><code>print(SomeStructure.storedTypeProperty)
+SomeStructure.storedTypeProperty = &quot;Another value.&quot;
+</code></pre>
 
 
 </div>
@@ -617,7 +497,7 @@ print(AudioChannel.maxInputLevelForAllChannels)<br/>
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
-	        <a href="14743598083496.html"  title="Previous Post: 此篇以下未整理仅谷歌翻译">&laquo; 此篇以下未整理仅谷歌翻译</a>
+	        <a href="14743598083496.html"  title="Previous Post: 类和结构">&laquo; 类和结构</a>
 	    
 	</div>
   </div>

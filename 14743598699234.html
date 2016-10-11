@@ -73,17 +73,17 @@
           
             <li><a title="枚举" href="14743597933965.html">枚举</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743598083496.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
           
             <li><a title="属性" href="14743598294467.html">属性</a></li>
           
             <li><a title="方法" href="14743598422216.html">方法</a></li>
           
-            <li><a title="下标" href="14743598556978.html">下标</a></li>
+            <li><a title="下标语法" href="14743598556978.html">下标语法</a></li>
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -176,17 +176,17 @@
                         
                           <li><a title="枚举" href="14743597933965.html">枚举</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743598083496.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="类和结构" href="14743598083496.html">类和结构</a></li>
                         
                           <li><a title="属性" href="14743598294467.html">属性</a></li>
                         
                           <li><a title="方法" href="14743598422216.html">方法</a></li>
                         
-                          <li><a title="下标" href="14743598556978.html">下标</a></li>
+                          <li><a title="下标语法" href="14743598556978.html">下标语法</a></li>
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
+                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -246,180 +246,154 @@
  <div class="markdown-body">
 <h1>继承</h1>
 
-<p>一个类可以继承来自另一个类的方法，属性等特点。当一个类从另一个继承，继承类被称为子类，类它从被称为其继承的超类。继承是从其他类型的区分雨燕班基本行为。</p>
+<ul>
+<li>
+<a href="#toc_0">定义一个基类</a>
+</li>
+<li>
+<a href="#toc_1">子类化</a>
+</li>
+<li>
+<a href="#toc_2">重写</a>
+<ul>
+<li>
+<a href="#toc_3">重载方法</a>
+</li>
+<li>
+<a href="#toc_4">重写属性getter和setter</a>
+</li>
+<li>
+<a href="#toc_5">重写属性观察</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_6">防止覆盖</a>
+</li>
+</ul>
 
-<p>在斯威夫特类可以调用和访问方法，属性和属于自己的超标，并能提供这些方法，属性和标自己的首要版本的完善或修改其行为。斯威夫特有助于确保您的覆盖是通过检查覆盖定义有一个匹配的超清晰正确的。</p>
 
-<p>类可以以财产观察员也加入到继承属性时得到通知的属性的值更改。属性观察者可以添加到任何属性，无论它最初被定义为一个存储或计算属性。</p>
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Inheritance.html#//apple_ref/doc/uid/TP40014097-CH17-ID193">Inheritance 官方文档</a></p>
 
-<p>定义一个基类</p>
+<ul>
+<li>继承父类的各种属性与方法。</li>
+<li>可以选择性的重写。</li>
+<li>也可以强制防止子类重写。</li>
+</ul>
 
-<p>不从其它类继承任何类被称为一个基类。</p>
+<h1 id="toc_0">定义一个基类</h1>
 
-<p>注意</p>
+<ul>
+<li>与OC不同，Swift新建的类不指定继承，那么它就是基类。</li>
+</ul>
 
-<p>斯威夫特类不从通用基类继承。你定义类，而不指定超自动成为基类，为您建立在。</p>
+<pre><code>class Vehicle {
+    var currentSpeed = 0.0
+    var description: String {
+        return &quot;traveling at \(currentSpeed) miles per hour&quot;
+    }
+    func makeNoise() {
+        // do nothing - an arbitrary vehicle doesn&#39;t necessarily make a noise
+    }
+}
+</code></pre>
 
-<p>下面的例子定义了一个基类Vehicle。这个基类定义了存储的属性称为currentSpeed，用默认值0.0（推断的属性类型Double）。该currentSpeed属性的值是由一个只读的计算使用String称为属性description创建车辆的描述。</p>
+<h1 id="toc_1">子类化</h1>
 
-<p>该Vehicle基类还定义了一个名为方法makeNoise。这个方法实际上并不为碱做任何事Vehicle实例，但将通过子类进行定制Vehicle稍后：</p>
+<ul>
+<li>子类继承现有类，拓展更多功能，新增属性与方法。</li>
+</ul>
 
-<p>class Vehicle {<br/>
-    var currentSpeed = 0.0<br/>
-    var description: String {<br/>
-        return <q>traveling at (currentSpeed) miles per hour</q><br/>
-    }<br/>
-    func makeNoise() {<br/>
-        // do nothing - an arbitrary vehicle doesn&#39;t necessarily make a noise<br/>
-    }<br/>
-}<br/>
-您创建的新实例Vehicle与初始化语法，写一个TypeName后跟空括号：</p>
+<pre><code>class Bicycle: Vehicle {
+    var hasBasket = false
+}
+</code></pre>
 
-<p>let someVehicle = Vehicle()<br/>
-已经创建了一个新Vehicle的实例，您可以访问它的description属性输出车辆的当前速度的可读描述：</p>
+<h1 id="toc_2">重写</h1>
 
-<p>print(<q>Vehicle: (someVehicle.description)</q>)<br/>
-// Vehicle: traveling at 0.0 miles per hour<br/>
-在Vehicle类定义的共同特点对于任意车辆，但没有太大用处本身。为了使它更实用，你需要改进它来形容更具体的各种车辆。</p>
+<ul>
+<li>子类可以提供一个实例方法，类型的方法，实例属性，类型属性，或下标，覆盖原本从父继承的属性或方法。<code>override</code>关键字，系统也会检查是否可以重写。</li>
+</ul>
 
-<p>子类化</p>
+<h2 id="toc_3">重载方法</h2>
 
-<p>子类化是在现有基础类一个新的类的行为。子类继承了现有类，然后你可以细化的特点。您还可以添加新特性的子类。</p>
+<ul>
+<li>可以完全覆盖父类方法，也可以选择使用super调用父类方法，再添加新实现。</li>
+</ul>
 
-<p>为了表明一个子类有一个超类，超类的名称，用冒号分隔之前写的子类名：</p>
+<pre><code>class Train: Vehicle {
+    override func makeNoise() {
+        super.makeNoise()
+        print(&quot;Choo Choo&quot;)
+    }
+}
+let train = Train()
+train.makeNoise()
+</code></pre>
 
-<p>class SomeSubclass: SomeSuperclass {<br/>
-    // subclass definition goes here<br/>
-}<br/>
-下面的例子定义了一个名为子类Bicycle，用的超类Vehicle：</p>
+<h2 id="toc_4">重写属性getter和setter</h2>
 
-<p>class Bicycle: Vehicle {<br/>
-    var hasBasket = false<br/>
-}<br/>
-新的Bicycle类自动获得所有的特性Vehicle，例如它的currentSpeed和description特性及其makeNoise()方法。</p>
+<ul>
+<li>具体set和get看属性章节，重写属性与重写方法基本一致。</li>
+</ul>
 
-<p>除了 ​​它继承的特点，Bicycle类定义了一个新的存储属性hasBasket，用默认值false（推断类型Bool的属性）。</p>
+<pre><code>class Car: Vehicle {
+    var gear = 1
+    override var description: String {
+        return super.description + &quot; in gear \(gear)&quot;
+    }
+}
 
-<p>默认情况下，所有新Bicycle创建的实例将不会有一个篮子里。可以将设置hasBasket属性来true为特定的Bicycle被创建实例之后的实例：</p>
+let car = Car()
+car.currentSpeed = 25.0
+car.gear = 3
+print(&quot;Car: \(car.description)&quot;)
+</code></pre>
 
-<p>let bicycle = Bicycle()<br/>
-bicycle.hasBasket = true<br/>
-您还可以修改继承的currentSpeed一个财产Bicycle实例，查询实例的继承description财产：</p>
+<h2 id="toc_5">重写属性观察</h2>
 
-<p>bicycle.currentSpeed = 15.0<br/>
-print(<q>Bicycle: (bicycle.description)</q>)<br/>
-// Bicycle: traveling at 15.0 miles per hour<br/>
-子类可以自己来继承。下一个示例创建的子类Bicycle的被称为“串联”双座自行车：</p>
+<ul>
+<li>具体看属性章节，重写属性观察与重写方法基本一致。</li>
+</ul>
 
-<p>class Tandem: Bicycle {<br/>
-    var currentNumberOfPassengers = 0<br/>
-}<br/>
-Tandem继承所有属性和方法的Bicycle，这反过来又继承所有从属性和方法Vehicle。该Tandem子类还增 ​​加了一个新的存储属性调用currentNumberOfPassengers，用默认值0。</p>
+<pre><code>class AutomaticCar: Car {
+    override var currentSpeed: Double {
+        didSet {
+            gear = Int(currentSpeed / 10.0) + 1
+        }
+    }
+}
 
-<p>如果创建的一个实例Tandem，你可以用任何新的继承属性的工作，查询只读description它继承财产Vehicle：</p>
+let automatic = AutomaticCar()
+automatic.currentSpeed = 35.0
+print(&quot;AutomaticCar: \(automatic.description)&quot;)
+</code></pre>
 
-<p>let tandem = Tandem()<br/>
-tandem.hasBasket = true<br/>
-tandem.currentNumberOfPassengers = 2<br/>
-tandem.currentSpeed = 22.0<br/>
-print(<q>Tandem: (tandem.description)</q>)<br/>
-// Tandem: traveling at 22.0 miles per hour<br/>
-覆盖</p>
+<h1 id="toc_6">防止覆盖</h1>
 
-<p>子类可以提供一个实例方法，类型的方法，实例属性，type属性，或下标，它原本从父继承自己的自定义实现。这被称为覆盖。</p>
+<ul>
+<li>使用<code>final</code>，表示子类不能重写。重写会导致报错。</li>
+</ul>
 
-<p>要覆盖，否则将继承一个特点，你前缀与您的压倒一切的定义override关键字。这样做澄清，你打算提供一个覆盖，也没有提供错误匹配的定义。意外覆盖可能会导致意外的行为，没有任何的替代override关键字被诊断为错误，当你的代码被编译。</p>
+<pre><code>class Vehicle {
+    var currentSpeed = 0.0
+    var description: String {
+        return &quot;traveling at \(currentSpeed) miles per hour&quot;
+    }
+    
+    final func makeNoise() {
+         print(&quot;super&quot;)
+    }
+}
 
-<p>该override关键字还提示斯威夫特编译器检查你的首要类的父类（或父母中的一方）有符合您的覆盖提供的一个声明。此检查可确保您的首要定义是正确的。</p>
-
-<p>访问超类方法，属性和下标</p>
-
-<p>当您提供了一个方法，属性，或者一个子类覆盖标，它有时是有益的利用现有的超类实现作为覆盖的一部分。例如，您可以改进目前的实施的行为，或在现有继承变量保存修改后的值。</p>
-
-<p>如果这是合适的，你通过访问一个方法，属性，或下标的超类版本super的前缀：</p>
-
-<p>一个名为重载方法someMethod()可以调用的超类版本someMethod()通过调用super.someMethod()压倒一切的方法实现中。<br/>
-被称为覆盖的属性someProperty可以访问的超类版本someProperty作为super.someProperty压倒一切的getter或setter实现中。<br/>
-对于一个重写的下标someIndex可以访问相同的标超版本super[someIndex]从上位机实现标内。<br/>
-重载方法</p>
-
-<p>您可以覆盖继承的实例或类型的方法来子类中提供量身定制的或替代实施方法。</p>
-
-<p>下面的例子定义了一个新的子类Vehicle叫Train，这将覆盖makeNoise()该方法Train继承自Vehicle：</p>
-
-<p>class Train: Vehicle {<br/>
-    override func makeNoise() {<br/>
-        print(<q>Choo Choo</q>)<br/>
-    }<br/>
-}<br/>
-如果您创建的新实例Train，并调用它的makeNoise()方法，你可以看到，Train该方法的子类版本被称为：</p>
-
-<p>let train = Train()<br/>
-train.makeNoise()<br/>
-// Prints <q>Choo Choo</q><br/>
-重写属性</p>
-
-<p>您可以覆盖继承的实例或类型属性来提供自定义的getter和setter该属性，或者添加属性的观察员，以使重写属性，观察基础属性值更改时。</p>
-
-<p>重写属性getter和setter</p>
-
-<p>您可以提供自定义的getter（和setter，如果合适的话），以覆盖任何继承的财产，无论继承的财产是否被作为源的存储或计算性能实现的。继承财产的存储或计算的性质不是由已知子类，它只知道该继承的属性有一定的名称和类型。你必须始终注明的名称和要覆盖属性的类型，使编译器检查您的覆盖匹配具有相同名称和类型的超属性。</p>
-
-<p>您可以通过提供既getter和在子类特性替代的setter出示继承只读属性为读写属性。你可以没有，但是提出了一个继承读写属性为只读属性。</p>
-
-<p>注意</p>
-
-<p>如果你提供了一个二传手作为属性覆盖的一部分，你还必须提供为覆盖一个getter。如果你不希望修改覆盖getter中继承属性的值，你可以简单地通过返回通过继承值super.someProperty从吸气，这里someProperty是要覆盖属性的名称。</p>
-
-<p>下面的例子定义了一个名为新类Car，这是的一个子类Vehicle。该Car课程介绍一个新的存储属性调用gear，用默认整数值1。本Car类还覆盖了description从继承财产Vehicle，提供包括当前档位定制描述：</p>
-
-<p>class Car: Vehicle {<br/>
-    var gear = 1<br/>
-    override var description: String {<br/>
-        return super.description + <q>in gear (gear)</q><br/>
-    }<br/>
-}<br/>
-在的覆盖description性能，通过调用开始super.description，它返回Vehicle类的description属性。在Car类的版本description则增加了一些额外的文本到本说明书的末尾提供有关当前档位信息。</p>
-
-<p>如果创建的实例Car类，并设置它gear和currentSpeed属性，你可以看到它的description属性返回中定义的定制描述Car类：</p>
-
-<p>let car = Car()<br/>
-car.currentSpeed = 25.0<br/>
-car.gear = 3<br/>
-print(<q>Car: (car.description)</q>)<br/>
-// Car: traveling at 25.0 miles per hour in gear 3<br/>
-重写属性观察员</p>
-
-<p>您可以使用属性压倒一切的财产观察家添加到继承的财产。这使您能够得到通知时的继承属性的值更改，无论是财产最初是如何实现的。有关物业观察家的更多信息，请参阅属性观察员。</p>
-
-<p>注意</p>
-
-<p>你无法财产观察家添加到继承恒存储属性或继承只读属性计算。这些属性的值不能设定，因此它是不适合于提供一个willSet或didSet执行作为覆盖的一部分。</p>
-
-<p>还要注意的是，你不能同时提供一个压倒一切的setter和同一属性的重写属性观察者。如果你想观察更改属性值，并且您已经为该属性提供定制的setter，你可以简单地从自定义的setter内发现任何价值的变化。</p>
-
-<p>下面的例子定义了一个名为新类AutomaticCar，这是的一个子类Car。在AutomaticCar类代表与自动变速箱，这将自动选择合适的档位，以使用基于当前速度一辆车：</p>
-
-<p>class AutomaticCar: Car {<br/>
-    override var currentSpeed: Double {<br/>
-        didSet {<br/>
-            gear = Int(currentSpeed / 10.0) + 1<br/>
-        }<br/>
-    }<br/>
-}<br/>
-无论何时将currentSpeed一个物业AutomaticCar的实例，该属性的didSet观察者设置实例的gear属性，以齿轮为新的速度一个合适的选择。具体来说，物业观察者选择一个齿轮，它是新currentSpeed除以值10，四舍五入到最接近的整数，再加上1。的速度35.0产生的齿轮4：</p>
-
-<p>let automatic = AutomaticCar()<br/>
-automatic.currentSpeed = 35.0<br/>
-print(<q>AutomaticCar: (automatic.description)</q>)<br/>
-// AutomaticCar: traveling at 35.0 miles per hour in gear 4<br/>
-防止覆盖</p>
-
-<p>您可以防止的方法，属性或标由标记为被覆盖最后。通过写这样做final的方法，属性，或下标的介绍人关键字之前修饰符（如final var，final func，final class func，和final subscript）。</p>
-
-<p>覆盖最终的方法，属性，或在子类标任何企图报告为编译时错误。要添加到一类的扩展方法，属性，或下标，也被标记为扩展的定义范围内的决赛。</p>
-
-<p>您可以通过编写标志着整个类为final final的前修改class它的类定义关键字（final class）。子类final类任何企图报告为编译时错误。</p>
+// error
+class Train: Vehicle {
+    override func makeNoise() {
+        super.makeNoise()
+        print(&quot;Choo Choo&quot;)
+    }
+}
+</code></pre>
 
 
 </div>
@@ -431,7 +405,7 @@ print(<q>AutomaticCar: (automatic.description)</q>)<br/>
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
-	        <a href="14743598556978.html"  title="Previous Post: 下标">&laquo; 下标</a>
+	        <a href="14743598556978.html"  title="Previous Post: 下标语法">&laquo; 下标语法</a>
 	    
 	</div>
   </div>
@@ -439,7 +413,7 @@ print(<q>AutomaticCar: (automatic.description)</q>)<br/>
 	<div class="text-right" style="padding:15px 0px;">
 		
 	        <a href="14743599314901.html" 
-	        title="Next Post: 初始化">初始化 &raquo;</a>
+	        title="Next Post: 此篇以下未整理仅谷歌翻译">此篇以下未整理仅谷歌翻译 &raquo;</a>
 	    
 	</div>
   </div>
