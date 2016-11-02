@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -246,11 +246,28 @@
  <div class="markdown-body">
 <h1>嵌套类型</h1>
 
+<ul>
+<li>
+<a href="#toc_0">简介</a>
+</li>
+<li>
+<a href="#toc_1">在行动嵌套类型</a>
+</li>
+<li>
+<a href="#toc_2">谈到嵌套类型</a>
+</li>
+</ul>
+
+
+<h1 id="toc_0">简介</h1>
+
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/NestedTypes.html#//apple_ref/doc/uid/TP40014097-CH23-ID242">Nested Types 官方文档</a></p>
+
 <p>枚举通常为支持一个特定的类或结构的功能。同样地，它可以方便地定义工具类和结构纯粹是为了更复杂类型的范围内使用。要做到这一点，斯威夫特，可以定义嵌套类型，即嵌套支持他们所支持的类型的定义中枚举，类和结构。</p>
 
 <p>嵌套其他类型中的一个类型，它支持的类型外括号内写它的定义。类型可以嵌套到尽可能多的水平是必需的。</p>
 
-<p>在行动嵌套类型</p>
+<h1 id="toc_1">在行动嵌套类型</h1>
 
 <p>下面的例子定义了一个名为结构BlackjackCard，其型号扑克牌在二十一点游戏中使用。该BlackJack结构包含两个嵌套枚举类型叫Suit和Rank。</p>
 
@@ -314,7 +331,7 @@ print(<q>theAceOfSpades: (theAceOfSpades.description)</q>)<br/>
 // Prints <q>theAceOfSpades: suit is ♠, value is 1 or 11</q><br/>
 即使Rank和Suit被内嵌套BlackjackCard，其类型可以从上下文中推断，所以本实例的初始化能够通过他们的情况名（指枚举例.ace和.spades单独）。在上面的例子中，description属性正确地报告黑桃A具有值1或11。</p>
 
-<p>谈到嵌套类型</p>
+<h1 id="toc_2">谈到嵌套类型</h1>
 
 <p>使用嵌套类型及其定义上下文之外，可以在前面的名称与它嵌套在该类型的名称：</p>
 
@@ -332,7 +349,7 @@ print(<q>theAceOfSpades: (theAceOfSpades.description)</q>)<br/>
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
-	        <a href="14743599908626.html"  title="Previous Post: 类型转换">&laquo; 类型转换</a>
+	        <a href="14743599908626.html"  title="Previous Post: 类型转换 cool">&laquo; 类型转换 cool</a>
 	    
 	</div>
   </div>

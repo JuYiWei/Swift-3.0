@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  错误处理 - Swift 3.0 官方文档 自整理 - 说了是村长
+  错误处理 cool - Swift 3.0 官方文档 自整理 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -244,207 +244,143 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1>错误处理</h1>
+<h1>错误处理 cool</h1>
 
-<p>错误处理是响应并在程序从错误状况中恢复的过程。斯威夫特为投掷，接球，传播，并在运行时操作恢复的错误一流的支持。</p>
+<ul>
+<li>
+<a href="#toc_0">简介</a>
+</li>
+<li>
+<a href="#toc_1">定义异常</a>
+</li>
+<li>
+<a href="#toc_2">处理异常</a>
+<ul>
+<li>
+<a href="#toc_3">抛出异常 throw</a>
+</li>
+<li>
+<a href="#toc_4">异常捕获并处理</a>
+</li>
+<li>
+<a href="#toc_5">异常转化为可选值</a>
+</li>
+<li>
+<a href="#toc_6">异常的隐式解析可选类型</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">指定清理</a>
+</li>
+</ul>
 
-<p>一些操作不保证始终完整执行或产生有用的输出。选配用于表示不存在的价值，但当操作失败，但是这是可以理解什么引起的故障，从而使你的代码可以做出相应的反应。</p>
 
-<p>作为一个例子，考虑读取和处理的数据从磁盘上的文件的任务。有多种方式这项任务可能会失败，包括文件在指定的路径不存在，不具有该文件读取权限，或在一个兼容的格式不被编码的文件。这些不同的情况之间区分允许程序，以解决一些误差和向用户它不能解析的任何错误进行通信。</p>
+<h1 id="toc_0">简介</h1>
 
-<p>注意</p>
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html#//apple_ref/doc/uid/TP40014097-CH42-ID508">Error Handling 官方文档</a></p>
 
-<p>在斯威夫特错误处理与使用错误处理的模式进行互操作NSError可可类和Objective-C。有关此类的详细信息，请参阅错误处理在使用SWIFT与可可和Objective-C（SWIFT 3） 。</p>
+<h1 id="toc_1">定义异常</h1>
 
-<p>代表和引发错误</p>
+<ul>
+<li><code>Error</code>协议，用于错误处理，并抛出错误用于抓取。</li>
+</ul>
 
-<p>在斯威夫特，错误是由符合类型的值表示Error的协议。这个空协议指示类型，可用于错误处理。</p>
-
-<p>迅速枚举特别适合于模拟一组相关的错误条件，在允许约一个错误的性质来传达附加信息关联的值。例如，这里是你怎么可能代表一个游戏里面运行的自动售货机的错误条件：</p>
-
-<p>enum VendingMachineError: Error {<br/>
-    case invalidSelection<br/>
-    case insufficientFunds(coinsNeeded: Int)<br/>
-    case outOfStock<br/>
-}<br/>
-抛出一个错误，您可以指明意想不到的事情发生和执行的正常流程无法继续。您可以使用一个throw语句来抛出一个错误。例如，下面的代码抛出一个错误，表明另外五个硬币通过自动售货机需要：</p>
-
-<p>throw VendingMachineError.insufficientFunds(coinsNeeded: 5)<br/>
-处理错误</p>
-
-<p>当发生错误时，一些代码周围一片必须负责处理错误，例如，纠正问题，尝试另一种方法，或者告知故障的用户。</p>
-
-<p>有四种方式斯威夫特来处理错误。您可以从功能传播错误调用该函数的代码，使用处理错误do- catch声明，处理错误作为可选值，或断言不会发生错误。每一种方法在下面一节中描述。</p>
-
-<p>当一个函数抛出一个错误，它改变你的程序的流程，这样就可以快速识别代码中的地方是可以引发错误是很重要的。要在代码中找出这些地方，写try关键字或try?或try!变化，前一段代码调用一个函数，方法或初始化，可以抛出一个错误。这些关键字在下面的章节中描述。</p>
-
-<p>注意</p>
-
-<p>在斯威夫特的错误处理类似异常处理其他语言，配合使用的try，catch和throw关键字。不像许多语言，包括斯威夫特的Objective-C-错误处理不涉及展开调用堆栈，这个过程可能是计算昂贵的异常处理。这样，一个的性能特点throw语句比得上那些的return语句。</p>
-
-<p>传播错误使用投掷功能</p>
-
-<p>为了表明一个函数，方法或初始化程序可以抛出一个错误，你写throws它的参数后，在函数的声明关键字。函数标有throws被称为投掷功能。如果函数指定了一个返回类型，你写的throws关键字返回箭头前（-&gt;）。</p>
-
-<p>func canThrowErrors() throws -&gt; String</p>
-
-<p>func cannotThrowErrors() -&gt; String<br/>
-投掷功能传播的都扔在它的内部，从它的名字叫范围的误差。</p>
-
-<p>注意</p>
-
-<p>只有扔功能可以传播错误。一个nonthrowing函数内部抛出的任何错误必须在函数内部处理。</p>
-
-<p>在下面的例子中，VendingMachine类有一个vend(itemNamed:)抛出适当的方法VendingMachineError，如果请求的项不可用，缺货，或具有超过当前存款额有代价的：</p>
-
-<p>struct Item {<br/>
-    var price: Int<br/>
-    var count: Int<br/>
-}</p>
-
-<p>class VendingMachine {<br/>
-    var inventory = [<br/>
-        <q>Candy Bar</q>: Item(price: 12, count: 7),<br/>
-        <q>Chips</q>: Item(price: 10, count: 4),<br/>
-        <q>Pretzels</q>: Item(price: 7, count: 11)<br/>
-    ]<br/>
-    var coinsDeposited = 0</p>
-
-<pre><code>func vend(itemNamed name: String) throws {
-    guard let item = inventory[name] else {
-        throw VendingMachineError.invalidSelection
-    }
-
-    guard item.count &gt; 0 else {
-        throw VendingMachineError.outOfStock
-    }
-
-    guard item.price &lt;= coinsDeposited else {
-        throw VendingMachineError.insufficientFunds(coinsNeeded: item.price - coinsDeposited)
-    }
-
-    coinsDeposited -= item.price
-
-    var newItem = item
-    newItem.count -= 1
-    inventory[name] = newItem
-
-    print(&quot;Dispensing \(name)&quot;)
+<pre><code>enum HttpResultError : Error {
+    case NotFount
+    case TimeOut
 }
 </code></pre>
 
-<p>}<br/>
-在实施vend(itemNamed:)方法使用guard语句提前退出方式，如果任何的购买零食的要求没有得到满足抛出相应错误。由于throw声明立即把系统控制，项目将只有当所有这些要求都满足被贩卖的。</p>
+<h1 id="toc_2">处理异常</h1>
 
-<p>由于该vend(itemNamed:)方法传播它引发的任何错误，调用此方法必须要么处理任何代码错误-使用do- catch声明，try?或try!-or继续传播他们。例如，buyFavoriteSnack(person:vendingMachine:)在下面的例子中也是一个投掷功能，并且该任何错误vend(itemNamed:)方法抛出将传播到其中的点buyFavoriteSnack(person:vendingMachine:)的功能将被调用。</p>
+<ul>
+<li>结合<code>throw</code> <code>do</code> <code>try</code> <code>cacth</code>，处理错误。</li>
+</ul>
 
-<p>let favoriteSnacks = [<br/>
-    <q>Alice</q>: <q>Chips</q>,<br/>
-    <q>Bob</q>: <q>Licorice</q>,<br/>
-    <q>Eve</q>: <q>Pretzels</q>,<br/>
-]<br/>
-func buyFavoriteSnack(person: String, vendingMachine: VendingMachine) throws {<br/>
-    let snackName = favoriteSnacks[person] ?? <q>Candy Bar</q><br/>
-    try vendingMachine.vend(itemNamed: snackName)<br/>
-}<br/>
-在这个例子中，该buyFavoriteSnack(person: vendingMachine:)功能查找特定人的最喜欢的零食，并尝试通过调用买给他们vend(itemNamed:)方法。由于该vend(itemNamed:)方法可以抛出一个错误，这就是所谓的try在它前面的关键字。</p>
+<h2 id="toc_3">抛出异常 throw</h2>
 
-<p>投掷初始化所用的相同的方式抛函数传播错误。例如，对于初始化PurchasedSnack在列表结构下方调用一个投掷函数作为初始化过程的一部分，它处理它遇到它们传播到它的调用者的任何错误。</p>
+<ul>
+<li>函数末尾标记<code>throws</code>表示函数支持异常捕获，内部判断异常情况，并抛出异常。</li>
+</ul>
 
-<p>struct PurchasedSnack {<br/>
-    let name: String<br/>
-    init(name: String, vendingMachine: VendingMachine) throws {<br/>
-        try vendingMachine.vend(itemNamed: name)<br/>
-        self.name = name<br/>
-    }<br/>
-}<br/>
-处理错误使用do​​-抓</p>
+<pre><code>func httpHandler(a: Int) throws -&gt; String {
+   
+    if a == 404 {
+        throw HttpResultError.NotFount
+    }
+    else if a == 408 {
+        throw HttpResultError.TimeOut
+    }
+    
+    return &quot;ok&quot;
+}
 
-<p>您可以使用do- catch声明通过运行一个代码块来处理错误。如果错误是由在代码中抛出do条款，它是对匹配的catch条款，以确定哪些人可以处理错误。</p>
+</code></pre>
 
-<p>这里是一个的一般形式do- catch语句：</p>
+<h2 id="toc_4">异常捕获并处理</h2>
 
-<p>做 {<br/>
-    尝试 表达<br/>
-    声明<br/>
-} 捕捉 模式1 {<br/>
-    声明<br/>
-} 捕捉 模式2  ，其中 条件 {<br/>
-    声明<br/>
-}<br/>
-你写后得到的图案catch，表明该条款可以处理哪些错误。如果catch条款没有一个模式，子句匹配任何错误并绑定错误命名的局部常量error。有关模式匹配的更多信息，请参阅模式。</p>
+<ul>
+<li>do { try fun ok handler } catch error1 {error1 handler} catch error2 {error2 handler}。</li>
+</ul>
 
-<p>该catch条款没有处理好每一个可能的错误，它在代码do子句可以抛出。如果没有的catch条款处理错误，错误传播到周围的范围。但是，错误必须处理一些周边范围，无论是封闭do- catch子句处理错误或者是一个投掷函数中。例如，下面的代码处理所有三种情况下的VendingMachineError枚举，但是所有其他错误必须通过其周围的范围进行处理：</p>
+<pre><code>do {
+    try httpHandler(a: 408)
+    print(&quot;ok&quot;)
+} catch HttpResultError.NotFount {
+    print(&quot;not found&quot;)
+} catch HttpResultError.TimeOut {
+    print(&quot;time out&quot;)
+}
+</code></pre>
 
-<p>var vendingMachine = VendingMachine()<br/>
-vendingMachine.coinsDeposited = 8<br/>
-do {<br/>
-    try buyFavoriteSnack(person: <q>Alice</q>, vendingMachine: vendingMachine)<br/>
-} catch VendingMachineError.invalidSelection {<br/>
-    print(<q>Invalid Selection.</q>)<br/>
-} catch VendingMachineError.outOfStock {<br/>
-    print(<q>Out of Stock.</q>)<br/>
-} catch VendingMachineError.insufficientFunds(let coinsNeeded) {<br/>
-    print(<q>Insufficient funds. Please insert an additional (coinsNeeded) coins.</q>)<br/>
-}<br/>
-// Prints <q>Insufficient funds. Please insert an additional 2 coins.</q><br/>
-在上述的例子中，buyFavoriteSnack(person:vendingMachine:)函数被调用在一个try表达，因为它可以引发错误。如果错误被抛出，立即执行转移到catch条款，这决定是否允许传播继续。如果没有错误被抛出，在余下的陈述do语句被执行。</p>
+<h2 id="toc_5">异常转化为可选值</h2>
 
-<p>把错误转化为可选值</p>
+<ul>
+<li>结合可选类型，<code>try？</code>函数无异常返回值，反之为nil。</li>
+</ul>
 
-<p>您可以使用try?通过将其转换为一个可选值来处理错误。如果在评估时抛出一个错误try?表达式，表达式的值nil。例如，在下面的代码x和y具有相同的值和行为：</p>
+<pre><code>if let x = try? httpHandler(a: 409) {
+    print(&quot;\(x)&quot;)
+} else {
+    print(&quot;error&quot;)
+}
+</code></pre>
 
-<p>func someThrowingFunction() throws -&gt; Int {<br/>
-    // ...<br/>
-}</p>
+<h2 id="toc_6">异常的隐式解析可选类型</h2>
 
-<p>let x = try? someThrowingFunction()</p>
+<ul>
+<li>假装函数没有异常，但是真的遇到异常，就会报错了。</li>
+</ul>
 
-<p>let y: Int?<br/>
-do {<br/>
-    y = try someThrowingFunction()<br/>
-} catch {<br/>
-    y = nil<br/>
-}<br/>
-如果someThrowingFunction()抛出一个错误，价值x和y为nil。否则，值x和y是该函数的返回值。需要注意的是x和y是任何类型的可选someThrowingFunction()回报。在这里，函数返回一个整数，所以x和y是可选的整数。</p>
+<pre><code>let x = try! httpHandler(a: 408)
+</code></pre>
 
-<p>使用try?可以让你编写简洁的错误处理代码，当你要处理相同的方式的所有错误。例如，下面的代码使用几种方法来获取数据，或返回nil如果所有方法都失败。</p>
+<h1 id="toc_7">指定清理</h1>
 
-<p>func fetchData() -&gt; Data? {<br/>
-    if let data = try? fetchDataFromDisk() { return data }<br/>
-    if let data = try? fetchDataFromServer() { return data }<br/>
-    return nil<br/>
-}<br/>
-禁用误差传播</p>
+<ul>
+<li>使用<code>defer</code>在函数内部，最后执行，已完成结束操作，常用文件打开后的关闭函数。下面的例子比较随意，大概展示功能。</li>
+</ul>
 
-<p>有时候你知道一个投掷的函数或方法不会，事实上，在运行时抛出一个错误。在这些场合，你可以写try!表达式之前禁用错误传播，敷在运行时断言，没有错误将被抛出呼叫。如果错误实际上被抛出，你会得到一个运行时错误。</p>
+<pre><code>func deferHandler(a: Int) throws -&gt; String {
+    
+    defer {
+        print(&quot;end handler&quot;)
+    }
+    
+    var sum = a
+    for n in 1..&lt;10 {
+        sum = sum+n
+        if sum &gt; 999 {
+            throw HttpResultError.Other
+        }
+    }
+    
+    return &quot;ok&quot;
+}
 
-<p>例如，下面的代码使用一个loadImage(atPath:)函数，该函数在给定的路径将图像加载资源或者如果图像不能被加载引发错误。在这种情况下，因为图像是随应用程序，没有错误将在运行时抛出，所以它是合适的禁用错误传播。</p>
-
-<p>let photo = try! loadImage(atPath: <q>./Resources/John Appleseed.jpg</q>)<br/>
-指定清理行动</p>
-
-<p>您可以使用defer的语句代码执行离开代码当前块之前执行一组语句。这种说法让你做的应该不管执行的任何必要的清理如何执行离开的代码是否当前块离开，因为一个错误被抛出，或因为声明如return或break。例如，你可以使用一个defer语句来确保文件描述符被关闭，手动分配的内存被释放。</p>
-
-<p>一defer直到当前范围退出声明推迟执行。该声明由的defer关键字，并在以后执行的语句。递延陈述可能不包含将控制转移出来的语句，如一个任意代码break或者return，或抛出错误陈述。延迟动作在它们是如何指定，也就是，在第一代码相反的顺序执行defer的语句在第二代码后执行，等等。</p>
-
-<p>func processFile(filename: String) throws {<br/>
-    if exists(filename) {<br/>
-        let file = open(filename)<br/>
-        defer {<br/>
-            close(file)<br/>
-        }<br/>
-        while let line = try file.readline() {<br/>
-            // Work with the file.<br/>
-        }<br/>
-        // close(file) is called here, at the end of the scope.<br/>
-    }<br/>
-}<br/>
-上面的例子中使用defer的语句，以确保open(<u>:)功能具有一个相应的呼叫close(</u>:)。</p>
-
-<p>注意</p>
-
-<p>您可以使用defer，即使没有任何错误处理代码中包含的语句。</p>
+let x = try? deferHandler(a: 998)
+</code></pre>
 
 
 </div>
@@ -464,7 +400,7 @@ do {<br/>
 	<div class="text-right" style="padding:15px 0px;">
 		
 	        <a href="14743599908626.html" 
-	        title="Next Post: 类型转换">类型转换 &raquo;</a>
+	        title="Next Post: 类型转换 cool">类型转换 cool &raquo;</a>
 	    
 	</div>
   </div>

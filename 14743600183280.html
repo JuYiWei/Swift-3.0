@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -246,229 +246,179 @@
  <div class="markdown-body">
 <h1>扩展</h1>
 
-<p>扩展增加新的功能，以现有的类，结构，枚举或协议类型。这包括扩展类型，你没有访问原始源代码（被称为能力追溯模型）。扩展类似于在Objective-C类。（与Objective-C的类别，斯威夫特扩展没有名称。）</p>
+<ul>
+<li>
+<a href="#toc_0">简介</a>
+</li>
+<li>
+<a href="#toc_1">扩展语法</a>
+</li>
+<li>
+<a href="#toc_2">添加计算属性</a>
+</li>
+<li>
+<a href="#toc_3">添加初始化</a>
+</li>
+<li>
+<a href="#toc_4">方法</a>
+<ul>
+<li>
+<a href="#toc_5">拓展本身</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_6">下标</a>
+</li>
+<li>
+<a href="#toc_7">嵌套</a>
+</li>
+</ul>
 
-<p>扩展斯威夫特可以：</p>
 
-<p>添加计算实例属性和计算机类型属性<br/>
-定义实例方法和类型的方法<br/>
-提供新的初始化<br/>
-定义标<br/>
-定义和使用新的嵌套类型<br/>
-使现有的类型遵循的协议<br/>
-在斯威夫特，你甚至可以扩展协议来提供其要求的实现或添加符合类型可以利用的附加 ​​功能。有关详细信息，请参阅协议扩展。</p>
+<h1 id="toc_0">简介</h1>
 
-<p>注意</p>
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html#//apple_ref/doc/uid/TP40014097-CH24-ID151">Extensions 官方文档</a></p>
 
-<p>扩展可以添加新的功能，以一个类型，但它们不能覆盖现有的功能。</p>
+<p>对现有的类，结构，枚举或协议类型拓展新功能。扩展类似于Objective-C，但Swift扩展没有名称。扩展可以添加新的功能，但不能覆盖现有的方法。</p>
 
-<p>扩展语法</p>
+<ul>
+<li>定义实例方法和类型的方法</li>
+<li>提供新的初始化</li>
+<li>定义下标</li>
+<li>定义和使用新的嵌套类型</li>
+<li>使现有的类型遵循协议</li>
+</ul>
 
-<p>声明的扩展extension关键字：</p>
+<h1 id="toc_1">扩展语法</h1>
 
-<p>extension SomeType {<br/>
-    // new functionality to add to SomeType goes here<br/>
-}<br/>
-一个扩展可以扩展现有类型，使其通过一个或多个协议。如果是这种情况下，该协议的名称被写在完全相同的方式，作为一个类或结构：</p>
+<ul>
+<li><code>extension</code>关键字。</li>
+</ul>
 
-<p>extension SomeType: SomeProtocol, AnotherProtocol {<br/>
-    // implementation of protocol requirements goes here<br/>
-}<br/>
-以这种方式加入协议一致性中介绍了与扩展添加协议一致性。</p>
+<pre><code>extension SomeType {
+    // new functionality to add to SomeType goes here
+}
 
-<p>注意</p>
+extension SomeType: SomeProtocol, AnotherProtocol {
+    // implementation of protocol requirements goes here
+}
+</code></pre>
 
-<p>如果定义了扩展新的功能添加到现有的类型，新功能将可在该类型的所有现有实例，即使是定义的扩展才创建的。</p>
+<h1 id="toc_2">添加计算属性</h1>
 
-<p>计算属性</p>
+<pre><code>extension Double {
+    var km: Double { return self * 1_000.0 }
+    var m: Double { return self }
+    var cm: Double { return self / 100.0 }
+    var mm: Double { return self / 1_000.0 }
+}
 
-<p>扩展可以添加计算实例属性和计算的类型属性现有类型。这个例子将五个计算实例属性斯威夫特的内置Double式，为有距离单位工作提供了基本的支持：</p>
+let oneInch = 25.4.mm
+</code></pre>
 
-<p>extension Double {<br/>
-    var km: Double { return self * 1<u>000.0 }<br/>
-    var m: Double { return self }<br/>
-    var cm: Double { return self / 100.0 }<br/>
-    var mm: Double { return self / 1</u>000.0 }<br/>
-    var ft: Double { return self / 3.28084 }<br/>
-}<br/>
-let oneInch = 25.4.mm<br/>
-print(<q>One inch is (oneInch) meters</q>)<br/>
-// Prints <q>One inch is 0.0254 meters</q><br/>
-let threeFeet = 3.ft<br/>
-print(<q>Three feet is (threeFeet) meters</q>)<br/>
-// Prints <q>Three feet is 0.914399970739201 meters</q><br/>
-这些计算特性表示一个Double值应该被视为长度的某一单元。虽然他们的计算性能实现的，这些属性的名称可以附加与点语法浮点字面值，作为一种使用该文本值进行距离的转换。</p>
+<h1 id="toc_3">添加初始化</h1>
 
-<p>在这个例子中，一个Double的值1.0被认为是代表“一计”。这就是为什么m计算属性返回self-the表达1.m被认为是计算Double的值1.0。</p>
+<ul>
+<li>类添加便利初始化</li>
+</ul>
 
-<p>其它单位需要一些转换被表示为以米为单位的值。一公里是一样的1000米，所以km计算属性乘以值1_000.00转换为以米为单位的数字。同样，也有3.28084英尺在一米，所以ft计算出的属性划分的基本Double按值3.28084，将其从英尺转换为米。</p>
+<pre><code>class Lesson {
+    var name: String?;
+    init(name: String) {
+        self.name = name;
+    }
+}
 
-<p>这些属性是只读计算属性，所以它们没有表示get关键字，为简便起见。其返回值的类型的Double，并且只要一个可以数学计算中使用Double被采纳：</p>
+extension Lesson {
+    convenience init(name2: String) {
+        self.init(name: &quot;姓名：\(name2)&quot;)
+    }
+}
+</code></pre>
 
-<p>let aMarathon = 42.km + 195.m<br/>
-print(<q>A marathon is (aMarathon) meters long</q>)<br/>
-// Prints <q>A marathon is 42195.0 meters long</q><br/>
-注意</p>
+<ul>
+<li>结构体添加初始化</li>
+</ul>
 
-<p>扩展可以添加新的计算性能，但不能添加存储性能，或添加属性观察员现有属性。</p>
+<pre><code>struct Size {
+    var width = 0.0, height = 0.0
+}
+struct Point {
+    var x = 0.0, y = 0.0
+}
+struct Rect {
+    var origin = Point()
+    var size = Size()
+}
 
-<p>初始化器</p>
+extension Rect {
+    init(center: Point, size: Size) {
+        let originX = center.x - (size.width / 2)
+        let originY = center.y - (size.height / 2)
+        self.init(origin: Point(x: originX, y: originY), size: size)
+    }
+}
+</code></pre>
 
-<p>扩展可以添加新的初始化到现有的类型。这使您可以扩展其他类型的接受自己的自定义类型作为参数初始化，或提供不包括作为类型的原实施的一部分额外的初始化选项。</p>
+<h1 id="toc_4">方法</h1>
 
-<p>扩展可以添加新的便利初始化的一类，但他们不能添加新的指定初始化或deinitializers一类。指定的初始值和deinitializers必须由原始类的实现来提供。</p>
+<ul>
+<li>添加方法，直接添加即可。</li>
+</ul>
 
-<p>注意</p>
+<pre><code>class Lesson {
+    var name: String = &quot;&quot;;
+    init(name: String) {
+        self.name = name;
+    }
+}
 
-<p>如果您使用的扩展，一个初始化添加到其所有的存储性能提供了默认值，并没有定义任何自定义初始化值类型，你可以从你的扩展的初始化程序中调用该值类型的默认初始值和按成员初始化。</p>
+extension Lesson {
+    func desc() -&gt; String {
+        return &quot;小学二年级 \(self.name)&quot;
+    }
+}
 
-<p>这不会是这种情况，如果你写初始化为值类型的原始实现的一部分，作为描述值类型初始化程序代表团。</p>
+var lesson = Lesson(name: &quot;语文&quot;)
+var desc = lesson.desc()
+</code></pre>
 
-<p>下面的例子定义一个定制的Rect结构来表示几何矩形。该示例还定义了两个称为支撑结构Size和Point，这两者提供的默认值0.0对于所有的属性：</p>
+<h2 id="toc_5">拓展本身</h2>
 
-<p>struct Size {<br/>
-    var width = 0.0, height = 0.0<br/>
-}<br/>
-struct Point {<br/>
-    var x = 0.0, y = 0.0<br/>
-}<br/>
-struct Rect {<br/>
-    var origin = Point()<br/>
-    var size = Size()<br/>
-}<br/>
-由于Rect结构其所有属性提供了默认值，它接受一个默认初始值和成员逐一初始化自动，如描述默认初始化器。这些初始化可用于创建新的Rect实例：</p>
+<ul>
+<li><code>mutating</code>标记，拓展本身。</li>
+</ul>
 
-<p>let defaultRect = Rect()<br/>
-let memberwiseRect = Rect(origin: Point(x: 2.0, y: 2.0),<br/>
-                          size: Size(width: 5.0, height: 5.0))<br/>
-您可以扩展Rect的结构，可提供额外的初始化，需要一个特定的中心点和尺寸：</p>
+<pre><code>extension Int {
+    mutating func square() {
+        self = self * self
+    }
+}
+</code></pre>
 
-<p>extension Rect {<br/>
-    init(center: Point, size: Size) {<br/>
-        let originX = center.x - (size.width / 2)<br/>
-        let originY = center.y - (size.height / 2)<br/>
-        self.init(origin: Point(x: originX, y: originY), size: size)<br/>
-    }<br/>
-}<br/>
-这个新的初始化通过计算基于所提供的适当的原点开始center点和size值。然后调用初始化结构的自动初始化按成员init(origin:size:)，存储在相应的属性中的新的来源和大小值：</p>
+<h1 id="toc_6">下标</h1>
 
-<p>let centerRect = Rect(center: Point(x: 4.0, y: 4.0),<br/>
-                      size: Size(width: 3.0, height: 3.0))<br/>
-// centerRect&#39;s origin is (2.5, 2.5) and its size is (3.0, 3.0)<br/>
-注意</p>
+<ul>
+<li>添加下标，关于下标，查看下标章节。</li>
+</ul>
 
-<p>如果您提供具有扩展新的初始化，你仍然要负责确保一旦初始化完成每个实例完全初始化。</p>
+<pre><code>extension Int {
+    subscript(digitIndex: Int) -&gt; Int {
+        var decimalBase = 1
+        for _ in 0..&lt;digitIndex {
+            decimalBase *= 10
+        }
+        return (self / decimalBase) % 10
+    }
+}
 
-<p>方法</p>
+1234567[0]
+</code></pre>
 
-<p>扩展可以添加新的实例方法和类型的方法，以现有的类型。下面的示例添加一个新的名为实例方法repetitions的Int类型：</p>
+<h1 id="toc_7">嵌套</h1>
 
-<p>extension Int {<br/>
-    func repetitions(task: () -&gt; Void) {<br/>
-        for _ in 0..<self {<br/>
-            task()<br/>
-        }<br/>
-    }<br/>
-}<br/>
-该repetitions(task:)方法采用类型的一个参数() -> Void，这表明没有参数和不返回值的函数。</p>
-
-<p>定义该扩展后，可以调用repetitions(task:)任何整数方法来执行，很多很多次任务：</p>
-
-<p>3.repetitions {<br/>
-    print(<q>Hello!</q>)<br/>
-}<br/>
-// Hello!<br/>
-// Hello!<br/>
-// Hello!<br/>
-不同诱变实例方法</p>
-
-<p>添加了一个扩展也可以修改（或实例方法突变）的实例本身。修改结构和枚举的方法self或者其属性必须标记实例方法mutating，就像从最初的实现方式突变。</p>
-
-<p>下面的例子增加了一个新的名为不同诱变方法square来斯威夫特的Int类型，它的正方形原始值：</p>
-
-<p>extension Int {<br/>
-    mutating func square() {<br/>
-        self = self * self<br/>
-    }<br/>
-}<br/>
-var someInt = 3<br/>
-someInt.square()<br/>
-// someInt is now 9<br/>
-下标</p>
-
-<p>扩展可以添加新的标到现有的类型。此示例将一个整数标斯威夫特的内置Int型。这下标[n]返回十进制数n从数量的正确的地方：</p>
-
-<p>123456789[0] 回报 9<br/>
-123456789[1] 回报 8<br/>
-…等等：</p>
-
-<p>extension Int {<br/>
-    subscript(digitIndex: Int) -&gt; Int {<br/>
-        var decimalBase = 1<br/>
-        for _ in 0..&lt;digitIndex {<br/>
-            decimalBase *= 10<br/>
-        }<br/>
-        return (self / decimalBase) % 10<br/>
-    }<br/>
-}<br/>
-746381295[0]<br/>
-// returns 5<br/>
-746381295[1]<br/>
-// returns 9<br/>
-746381295[2]<br/>
-// returns 2<br/>
-746381295[8]<br/>
-// returns 7<br/>
-如果该Int值没有足够的位数为请求的索引，标实现返回0，因为如果数字已被用零填充到左：</p>
-
-<p>746381295[9]<br/>
-// returns 0, as if you had requested:<br/>
-0746381295[9]<br/>
-嵌套类型</p>
-
-<p>扩展可以添加新的嵌套类型现有的类，结构和枚举：</p>
-
-<p>extension Int {<br/>
-    enum Kind {<br/>
-        case negative, zero, positive<br/>
-    }<br/>
-    var kind: Kind {<br/>
-        switch self {<br/>
-        case 0:<br/>
-            return .zero<br/>
-        case let x where x &gt; 0:<br/>
-            return .positive<br/>
-        default:<br/>
-            return .negative<br/>
-        }<br/>
-    }<br/>
-}<br/>
-这个例子增加了一个新的嵌套枚举Int。此枚举，叫Kind，表达了那种特定的整数代表数量。具体地讲，它表示数是否为负，零或正数。</p>
-
-<p>这个例子还增加了一个新的计算实例属性Int，叫kind，它返回相应Kind于该整数枚举情况。</p>
-
-<p>嵌套枚举现在可以与任何使用Int值：</p>
-
-<p>func printIntegerKinds(_ numbers: [Int]) {<br/>
-    for number in numbers {<br/>
-        switch number.kind {<br/>
-        case .negative:<br/>
-            print(<q>-</q>, terminator: <q>)<br/>
-        case .zero:<br/>
-            print(<q>0</q>, terminator:</q>)<br/>
-        case .positive:<br/>
-            print(<q>+</q>, terminator: <q>)<br/>
-        }<br/>
-    }<br/>
-    print(</q>)<br/>
-}<br/>
-printIntegerKinds([3, 19, -27, 0, -6, 0, 7])<br/>
-// Prints <q>+ + - 0 - 0 +</q><br/>
-此功能，printIntegerKinds(_:)，占用的输入数组Int的价值观和迭代又将这些值。对于数组中的每个整数，函数认为kind该整数计算性能，并打印相应的说明。</p>
-
-<p>注意</p>
-
-<p>number.kind已经是已知的类型Int.Kind。由于这个原因，所有的Int.Kind情况下，值可以简写形式内侧switch语句，如.negative，而不是Int.Kind.negative。</p>
+<p>略</p>
 
 
 </div>

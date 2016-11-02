@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -246,6 +246,70 @@
  <div class="markdown-body">
 <h1>高级操作员</h1>
 
+<ul>
+<li>
+<a href="#toc_0">简介</a>
+</li>
+<li>
+<a href="#toc_1">位运算符</a>
+<ul>
+<li>
+<a href="#toc_2">按位NOT运算符</a>
+</li>
+<li>
+<a href="#toc_3">按位与运算符</a>
+</li>
+<li>
+<a href="#toc_4">位OR运算符</a>
+</li>
+<li>
+<a href="#toc_5">位异或运算</a>
+</li>
+<li>
+<a href="#toc_6">按位左和右移位操作符</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">溢出运营商</a>
+<ul>
+<li>
+<a href="#toc_8">值溢出</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_9">优先级和结合</a>
+</li>
+<li>
+<a href="#toc_10">操作方法：</a>
+<ul>
+<li>
+<a href="#toc_11">前缀和后缀运算</a>
+</li>
+<li>
+<a href="#toc_12">复合赋值运算符</a>
+</li>
+<li>
+<a href="#toc_13">等价运算符</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_14">运营商定制</a>
+<ul>
+<li>
+<a href="#toc_15">优先级自定义中缀运算符</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h1 id="toc_0">简介</h1>
+
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AdvancedOperators.html#//apple_ref/doc/uid/TP40014097-CH27-ID28">Advanced Operators 官方文档</a></p>
+
 <p>除了 ​​中所描述的运营商基本运算符，雨燕提供了执行更复杂的操作价值多种先进的运营商。这包括所有的按位与位移位算你将熟悉从C和Objective-C。</p>
 
 <p>不像用C算术运算符，斯威夫特算术运算符默认情况下不会溢出。溢出行为被捕获并报告为错误。要选择加入溢出行为，使用斯威夫特的第二组算术运算符溢出在默认情况下，如溢出加法运算符（&amp;+）。所有这些溢出运营商开始符号（&amp;）。</p>
@@ -254,13 +318,13 @@
 
 <p>你不仅限于预定义的运营商。斯威夫特让您自由定义自己的自定义中缀，前缀，后缀，并赋值运算符，自定义优先级和结合的值。这些运营商可以使用，并在你的代码像任何预定义的运营商采用，甚至可以扩展现有类型来支持您定义的运营商定制。</p>
 
-<p>位运算符</p>
+<h1 id="toc_1">位运算符</h1>
 
 <p>位运算符让你的数据结构中操纵单个原始数据位。它们通常在低级编程用于诸如图形编程和设备驱动器创建。当你与外部来源的原始数据，如超过自定义协议的通信数据编码和解码工作位运算符也可以是有用的。</p>
 
 <p>斯威夫特支持所有在C位运算符，如下所述。</p>
 
-<p>按位NOT运算符</p>
+<h2 id="toc_2">按位NOT运算符</h2>
 
 <p>在按位NOT运算符（~）反转号码的所有位：</p>
 
@@ -273,7 +337,7 @@ UInt8整数有8位，可以存储之间的任意值0和255。这个例子初始�
 
 <p>然后，按位NOT运算符是用来创建一个所谓的新常数invertedBits，它等于initialBits，但所有倒位。零成为的人，和个变成零。的值invertedBits就是11110000，它等于一个无符号十进制值240。</p>
 
-<p>按位与运算符</p>
+<h2 id="toc_3">按位与运算符</h2>
 
 <p>该位AND运算符（&amp;）结合了两个数字的位数。它返回一个新的数字，其位被设置为1仅当位均等于1在两个输入数字：</p>
 
@@ -282,8 +346,9 @@ UInt8整数有8位，可以存储之间的任意值0和255。这个例子初始�
 
 <p>let firstSixBits: UInt8 = 0b11111100<br/>
 let lastSixBits: UInt8  = 0b00111111<br/>
-let middleFourBits = firstSixBits &amp; lastSixBits  // equals 00111100<br/>
-位OR运算符</p>
+let middleFourBits = firstSixBits &amp; lastSixBits  // equals 00111100</p>
+
+<h2 id="toc_4">位OR运算符</h2>
 
 <p>该位OR运算符（|）两个数位进行比较。操作者返回一个新的数字，其位被设置为1，如果所述比特等于1在任一输入号码：</p>
 
@@ -292,8 +357,9 @@ let middleFourBits = firstSixBits &amp; lastSixBits  // equals 00111100<br/>
 
 <p>let someBits: UInt8 = 0b10110010<br/>
 let moreBits: UInt8 = 0b01011110<br/>
-let combinedbits = someBits | moreBits  // equals 11111110<br/>
-位异或运算</p>
+let combinedbits = someBits | moreBits  // equals 11111110</p>
+
+<h2 id="toc_5">位异或运算</h2>
 
 <p>的按位XOR运算符，或“异或运算符”（ <sup>），比较两个数的比特。操作者返回一个新的数字，其位被设置为1输入比特是不同的，其中和被设置为0在输入比特是相同的：</sup></p>
 
@@ -302,8 +368,9 @@ let combinedbits = someBits | moreBits  // equals 11111110<br/>
 
 <p>let firstBits: UInt8 = 0b00010100<br/>
 let otherBits: UInt8 = 0b00000101<br/>
-let outputBits = firstBits ^ otherBits  // equals 00010001<br/>
-按位左和右移位操作符</p>
+let outputBits = firstBits ^ otherBits  // equals 00010001</p>
+
+<h2 id="toc_6">按位左和右移位操作符</h2>
 
 <p>在按位左移位运算符（&lt;&lt;），并逐位向右移位运算（&gt;&gt;）是一个数向左或按一定数目的地方的右侧移动的所有位，根据下面定义的规则。</p>
 
@@ -376,7 +443,7 @@ let blueComponent = pink &amp; 0x0000FF           // blueComponent is 0x99, or 1
 
 <p>由于特殊的方式，正数和负数被存储时，它们中的右移位到移动他们更接近零。保持符号位这一转变过程中同样意味着负整数仍然为负作为它们的值越来越接近零。</p>
 
-<p>溢出运营商</p>
+<h1 id="toc_7">溢出运营商</h1>
 
 <p>如果您尝试插入一个数字，一个整型常量或不能认为数值变量，默认情况下斯威夫特报告错误，而不是允许创建一个无效值。这种行为给了，当你与那些过大或过小的数字工作额外的安全。</p>
 
@@ -392,8 +459,9 @@ potentialOverflow += 1<br/>
 
 <p>此外溢（&amp;+）<br/>
 溢出减法（&amp;-）<br/>
-溢出乘（&amp;*）<br/>
-值溢出</p>
+溢出乘（&amp;*）</p>
+
+<h2 id="toc_8">值溢出</h2>
 
 <p>号可在正和负方向溢出。</p>
 
@@ -426,7 +494,7 @@ signedOverflow = signedOverflow &amp;- 1<br/>
 <p>图片：../Art/overflowSignedSubtraction_2x.png<br/>
 对于有符号和无符号整数，溢出的正方向从最大有效的整数值返回到最小环绕，并溢流在负方向从最小值到最大环绕。</p>
 
-<p>优先级和结合</p>
+<h1 id="toc_9">优先级和结合</h1>
 
 <p>运算符的优先级提供了一些运营商比其他人更高的优先级; 这些运营商首先应用。</p>
 
@@ -460,7 +528,7 @@ signedOverflow = signedOverflow &amp;- 1<br/>
 
 <p>斯威夫特的运营商优先级和结合规则更简单，比在C和Objective-C中更容易预测。然而，这意味着它们不是完全一样的基于C的语言。要小心，以确保操作者的互动还表现在移植现有代码斯威夫特，当你想要的方式。</p>
 
-<p>操作方法：</p>
+<h1 id="toc_10">操作方法：</h1>
 
 <p>类和结构可以提供自己现有经营的实现。这被称为重载现有运营商。</p>
 
@@ -489,8 +557,9 @@ let combinedVector = vector + anotherVector<br/>
 // combinedVector is a Vector2D instance with values of (5.0, 5.0)<br/>
 此示例将在一起向量(3.0, 1.0)和(2.0, 4.0)使矢量(5.0, 5.0)，如下图所示。</p>
 
-<p>图片：../Art/vectorAddition_2x.png<br/>
-前缀和后缀运算</p>
+<p>图片：../Art/vectorAddition_2x.png</p>
+
+<h2 id="toc_11">前缀和后缀运算</h2>
 
 <p>上面显示的示例说明了一个二元中缀运算符的自定义实现。类和结构也可以提供标准的实现一元操作符。一元运算符对单一目标进行操作。他们是前缀，如果他们先于自己的目标（如-a）和后缀运营商，如果他们遵循自己的目标（如b!）。</p>
 
@@ -509,8 +578,9 @@ let combinedVector = vector + anotherVector<br/>
 let negative = -positive<br/>
 // negative is a Vector2D instance with values of (-3.0, -4.0)<br/>
 let alsoPositive = -negative<br/>
-// alsoPositive is a Vector2D instance with values of (3.0, 4.0)<br/>
-复合赋值运算符</p>
+// alsoPositive is a Vector2D instance with values of (3.0, 4.0)</p>
+
+<h2 id="toc_12">复合赋值运算符</h2>
 
 <p>复合赋值运算符组合分配（=）与另一个操作。例如，除了赋值运算符（+=）结合加法和分配到一个单一的操作。您标记复合赋值操作符的左输入参数类型inout，因为参数的值将直接从操作方法中进行修改。</p>
 
@@ -531,7 +601,7 @@ original += vectorToAdd<br/>
 
 <p>这是不可能超载默认的赋值运算符（=）。只有复合赋值运算符可以被重载。同样，三元条件运算符（a ? b : c）不能超载。</p>
 
-<p>等价运算符</p>
+<h2 id="toc_13">等价运算符</h2>
 
 <p>自定义类和结构没有收到默认实现的等效操作（被称为“等于”运算符==）和“不等于”运算符（!=）。这是不可能的斯威夫特猜测将有资格作为“平等”为您自定义的类型，因为“平等”的含义取决于角色，这些类型在代码中玩耍。</p>
 
@@ -554,8 +624,9 @@ let anotherTwoThree = Vector2D(x: 2.0, y: 3.0)<br/>
 if twoThree == anotherTwoThree {<br/>
     print(<q>These two vectors are equivalent.</q>)<br/>
 }<br/>
-// Prints <q>These two vectors are equivalent.</q><br/>
-运营商定制</p>
+// Prints <q>These two vectors are equivalent.</q></p>
+
+<h1 id="toc_14">运营商定制</h1>
 
 <p>你可以声明和实现自己的运营商定制，除了雨燕提供的标准的运营商。对于可以用于定义自定义操作符的字符的列表，请参见算。</p>
 
@@ -574,8 +645,9 @@ if twoThree == anotherTwoThree {<br/>
 <p>var toBeDoubled = Vector2D(x: 1.0, y: 4.0)<br/>
 let afterDoubling = +++toBeDoubled<br/>
 // toBeDoubled now has values of (2.0, 8.0)<br/>
-// afterDoubling also has values of (2.0, 8.0)<br/>
-优先级自定义中缀运算符</p>
+// afterDoubling also has values of (2.0, 8.0)</p>
+
+<h2 id="toc_15">优先级自定义中缀运算符</h2>
 
 <p>自缀运营商每属于一个优先级组。一个优先级组指定操作者的优先级相对于其他中缀运算符，以及操作者的关联性。见优先级和结合了这些特点如何影响缀运营商与其他运营商中缀互动的解释。</p>
 

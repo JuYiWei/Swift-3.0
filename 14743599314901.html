@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  此篇以下未整理仅谷歌翻译 - Swift 3.0 官方文档 自整理 - 说了是村长
+  初始化 - Swift 3.0 官方文档 自整理 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -244,7 +244,7 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1>此篇以下未整理仅谷歌翻译</h1>
+<h1>初始化</h1>
 
 <ul>
 <li>
@@ -296,47 +296,47 @@
 <a href="#toc_13">类继承和初始化</a>
 <ul>
 <li>
-<a href="#toc_14">语法指定和便利的初始化</a>
+<a href="#toc_14">指定和便利初始化</a>
 </li>
 <li>
-<a href="#toc_15">初始化代表团类的类型</a>
+<a href="#toc_15">初始化关系</a>
 </li>
 <li>
-<a href="#toc_16">两相初始化</a>
+<a href="#toc_16">两步初始化</a>
 </li>
 <li>
 <a href="#toc_17">初始化继承和重写</a>
 </li>
 <li>
-<a href="#toc_18">自动初始化程序继承</a>
+<a href="#toc_18">自动初始化继承</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="#toc_19">Failable初始化器</a>
+<a href="#toc_19">Failable初始化</a>
 <ul>
 <li>
-<a href="#toc_20">对于枚举Failable初始化器</a>
+<a href="#toc_20">枚举Failable初始化</a>
 </li>
 <li>
-<a href="#toc_21">Failable的初始化为枚举与原始值</a>
+<a href="#toc_21">枚举与原始值的Failable初始化</a>
 </li>
 <li>
-<a href="#toc_22">初始化失败的传播</a>
+<a href="#toc_22">初始化失败的传递</a>
 </li>
 <li>
-<a href="#toc_23">覆盖一个Failable初始化器</a>
+<a href="#toc_23">重写Failable初始化</a>
 </li>
 <li>
-<a href="#toc_24">初始化！Failable初始化器</a>
+<a href="#toc_24">隐式解析Failable初始化</a>
 </li>
 </ul>
 </li>
 <li>
-<a href="#toc_25">所需的初始化</a>
+<a href="#toc_25">必须的初始化</a>
 </li>
 <li>
-<a href="#toc_26">设置默认属性值与一个封闭或功能</a>
+<a href="#toc_26">设置默认属性值，闭包，函数</a>
 </li>
 </ul>
 
@@ -345,11 +345,14 @@
 
 <p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Initialization.html#//apple_ref/doc/uid/TP40014097-CH18-ID203">Initialization 官方文档</a></p>
 
-<p>初始化是制备类，结构或枚举使用的一个实例的过程。这一过程包括设置在该实例中的每个存储的属性的初始值和前执行新的实例即可使用所需的任何其他设置或初始化。</p>
+<ul>
+<li>初始化即创建实例，反之有销毁实例。</li>
+<li>初始化没有返回值。</li>
+</ul>
 
-<p>通过定义实现这个初始化过程初始化，这就像特殊的方法，可以调用创建特定类型的新实例。与Objective-C的初始化，初始化雨燕没有返回值。其主要作用是保证一个类型的新情况下，它们被用于在首次使用前被正确初始化。</p>
-
-<p>类类型的实例也可以实现deinitializer，它执行这个类的一个实例被释放之前任何自定义清理。有关deinitializers的更多信息，请参阅反初始化。</p>
+<blockquote>
+<p>有关<code>deinitializers</code>的更多信息，请参阅反初始化。</p>
+</blockquote>
 
 <h1 id="toc_1">存储属性初始值初始化</h1>
 
@@ -579,537 +582,352 @@ let centerRect = Rect(center: Point(x: 4.0, y: 4.0),
 
 <p>你不必提供便利的初始化，如果你的类不需要他们。创造便利初始化时的快捷方式常见的初始化模式会节省时间，或使类初始化更清晰的意图。</p>
 
-<h2 id="toc_14">语法指定和便利的初始化</h2>
+<h2 id="toc_14">指定和便利初始化</h2>
 
-<p>上课指定的初始值都写在以同样的方式为值类型一样简单初始化：</p>
+<ul>
+<li>指定初始化</li>
+</ul>
 
-<p>初始化（参数）{<br/>
-    声明<br/>
-}<br/>
-便利初始化都写在相同的风格，但与convenience改性剂放在前init关键字，用空格分隔：</p>
+<pre><code>init () {
 
-<p>便利 的init（参数）{<br/>
-    声明<br/>
-}</p>
+}
+</code></pre>
 
-<h2 id="toc_15">初始化代表团类的类型</h2>
+<ul>
+<li>便利初始化</li>
+</ul>
 
-<p>为了简化指定和便利的初始化之间的关系，斯威夫特适用于以下三个规则代表团初始化之间的调用：</p>
+<pre><code>convenience init () {
 
-<h2 id="toc_16">两相初始化</h2>
+}
+</code></pre>
 
-<p>在夫特类初始化是一个两阶段过程。在第一个阶段中，每个存储属性分配由引入它的类的初始值。一旦每个存储属性的初始状态已经确定，第二阶段开始，每类有机会定制前进一步新的实例被认为是准备使用它的存储性能。</p>
+<h2 id="toc_15">初始化关系</h2>
 
-<p>使用两阶段初始化过程使初始化安全，同时仍给予完全的灵活性，以每个类中的一类的层次结构。两相初始化防止它们被初始化之前被访问的属性值，并防止由另一个初始化被设置为不同的值出乎意料的属性值。</p>
+<ul>
+<li>指定初始化与便利初始化的关系：</li>
+</ul>
 
-<p>注意</p>
+<pre><code>指定初始化必须调用其直接超类的指定初始化。
+便利初始化必须调用从另一个初始化。
+便利初始最终必须调用指定初始化。
+</code></pre>
 
-<p>斯威夫特的两相初始化过程类似于在Objective-C的初始化。主要的区别是，在阶段1，Objective-C的分配为零或空值（如0或nil），以每个属性。斯威夫特的初始化流程是，它可以让你设置自定义的初始值更加灵活，并能与类型为应付这0或nil不是有效的默认值。</p>
+<h2 id="toc_16">两步初始化</h2>
 
-<p>斯威夫特的编译器执行四种有益的安全检查，以确保两相初始化完成，没有错误：</p>
+<ul>
+<li>也就是OC中的<code>alloc</code>和<code>init</code>，初始化分2步。Swift会执行安全检查，</li>
+</ul>
 
-<p>安全检查1<br/>
-个指定初始化必须确保所有同级车引入的属性都才代表了一个超类初始化初始化。</p>
+<pre><code>1 指定初始化必须确其引入的所有属性都初始化完成，之后才能将构造任务向上代理。
 
-<p>如上所述，为一个对象的存储器只考虑完全初始化一旦它的所有存储属性的初始状态是已知的。为了使这一规则得到满足，一个指定初始化必须确保所有其自身属性的递给了同比环比前被初始化。</p>
+2 指定初始化，必须先调用父类初始化，然后对属性设置新值，否则新值会被父类覆盖。
 
-<p>安全检查2<br/>
-要继承的属性赋值之前，指定初始化必须委派到一个超类初始化。如果不是这样，新的值指定初始化受让人将由超作为自身初始化的一部分覆盖。</p>
+3 便利初始化必须调用同一类的其他初始化，然后对属性设置新值，否则新值会被父类覆盖。
 
-<p>安全检查3<br/>
-要分配一个值之前的简便初始化必须委托给另外一个初始化的任何财产（包括由同一个类定义的属性）。如果没有，则新值的便利初始化受让人将被其自己的类的指定初始化覆盖。</p>
+4 初始化第一阶段完成之前，不能调用任何实例方法，不能读取任何实例属性的值。
+</code></pre>
 
-<p>安全检查4<br/>
-一个初始化不能调用任何实例方法，读取任何实例属性的值，或者是指self作为一个值，直到初始化后的第一阶段已完成。</p>
-
-<p>类的实例并不完全有效，直到第一阶段结束。属性只能被访问，和方法只能叫，一旦类实例是已知的在第一阶段结束时有效。</p>
-
-<p>下面是两相初始化如何发挥出来，根据上述四个安全检查：</p>
+<ul>
+<li>具体流程 </li>
+</ul>
 
 <p>阶段1</p>
 
-<p>一个指定的或方便初始化被称为一类。<br/>
-内存为类的新实例被分配。存储器尚未初始化。<br/>
-对于A级指定初始化证实，由该类引入的所有存储的属性有一个值。这些存储属性存储器现在初始化。<br/>
-指定初始化手开了一个超类的初始化执行相同的任务，为自己的存储性能。<br/>
-直到达到链的顶部这样下去了类继承链。<br/>
-一旦到达链的顶部，并在链中的最后一类已确保其所有存储属性具有值，该实例的存储器被认为是完全初始化，和第1阶段结束。<br/>
-阶段2</p>
+<pre><code>初始化被调用
+实例内存分配，但内存还未初始化
+其引入的所以存储属性赋予初始值，存储属性内存完成初始化
+调用父类初始化，父类属性完成初始化
+沿着初始化链向上执行
+到达初始化链顶部，确保所以存储属性都已赋值，则该实例内存完成初始化。
+</code></pre>
 
-<p>工作从链的顶部回落，链中的每个指定初始化具有进一步定制实例的选项。初始化器现在可以访问self并可以修改其属性，调用它的实例方法，等等。<br/>
-最后，在链中的任何方便的初始化必须定制实例并一起工作的选项self。<br/>
-以下是第1阶段如何寻找一个初始化调用了一个假想的子类和超类：</p>
+<p>阶段2</p>
 
-<p>图片：../Art/twoPhaseInitialization01_2x.png<br/>
-在这个例子中，初始化开始到子类便利初始化呼叫。这种便利的初始化还不能修改任何属性。它代表整个从同一类中的指定初始化。</p>
-
-<p>指定初始化确保所有子类的属性有一个值，按照安全检查1.然后调用其超类的指定初始化继续初始化环比上涨。</p>
-
-<p>超类的指定初始化确保所有超类属性有一个值。有没有进一步超进行初始化，因此不需要进一步下放。</p>
-
-<p>一旦超类的所有属性的初始值，它的内存被认为是完全初始化，和第一阶段已完成。</p>
-
-<p>以下是第2阶段如何查找相同的初始化电话：</p>
-
-<p>图片：../Art/twoPhaseInitialization02_2x.png<br/>
-超类的指定初始化现在有机会进一步定制实例（虽然它不具备）。</p>
-
-<p>一旦超类的指定初始化完成后，子类的指定初始化可以执行其他自定义（虽然再次，它不具备）。</p>
-
-<p>最后，一​​旦子类的指定初始化完成后，最初被称为方便初始化可以执行其他定制。</p>
+<pre><code>从初始化链顶部往下，每个初始化都可以定值实例
+父类初始化也有机会进一步定制实例（并没有必要）
+</code></pre>
 
 <h2 id="toc_17">初始化继承和重写</h2>
 
-<p>不像在Objective-C的子类，斯威夫特子类默认不继承父类的初始化。迅速的方法可防止在从一个超类的简单初始化由更专业化的子类继承的，用于创建不完全或正确初始化子类的新实例的情况。</p>
-
-<p>注意</p>
-
-<p>超初始化都继承在某些情况下，但只有当它是安全的，适当的这样做。欲了解更多信息，请参阅自动初始化程序继承下方。</p>
-
-<p>如果你想有一个自定义的子类来呈现一个或多个相同的初始化作为它的父类，你可以提供子类中的初始化的自定义实现。</p>
-
-<p>当你写一个匹配超类的子类初始化指定的初始化，您可以高效地提供的指定初始化的重写。因此，您必须编写override子类的初始化定义之前修改。这是真实的，即使你是一个覆盖自动提供默认初始值，如描述默认初始化器。</p>
-
-<p>与被覆盖的属性，方法或下标，则存在override修改提示斯威夫特检查超类具有匹配指定初始化被覆盖，并验证，作为适用于您的压倒一切的初始化参数已经指定。</p>
-
-<p>注意</p>
-
-<p>你总是写override覆盖超类指定初始化的时候，即使你的子类的实现初始化的是一个方便的初始修改。</p>
-
-<p>相反，如果你写一个匹配超类的子类初始化的便利初始化，即超方便初始化不能直接由你的子类调用，如同上面所描述的规则，初始化器代表团类的类型。因此，子类是不是（严格来说）提供超类初始化的重写。这样一来，你不写override提供了一个方便的超初始化的匹配实现时修改。</p>
-
-<p>下面的例子定义了一个基类Vehicle。这个基类声明了存储的属性称为numberOfWheels，用默认Int值0。该numberOfWheels属性由被称为计算的特性description来创建String的车辆的特征描述：</p>
-
-<p>class Vehicle {<br/>
-    var numberOfWheels = 0<br/>
-    var description: String {<br/>
-        return <q>(numberOfWheels) wheel(s)</q><br/>
-    }<br/>
-}<br/>
-本Vehicle类提供一个默认值其只存储性能，并且不提供任何自定义初始化本身。其结果是，它会自动接收到一个默认初始值，如描述默认初始化器。的默认初始值（当可用时）始终为一类指定初始化，并且可以被用来创建一个新的Vehicle具有一个实例numberOfWheels的0：</p>
-
-<p>let vehicle = Vehicle()<br/>
-print(<q>Vehicle: (vehicle.description)</q>)<br/>
-// Vehicle: 0 wheel(s)<br/>
-下面的例子定义的子类Vehicle叫做Bicycle：</p>
-
-<p>class Bicycle: Vehicle {<br/>
-    override init() {<br/>
-        super.init()<br/>
-        numberOfWheels = 2<br/>
-    }<br/>
-}<br/>
-该Bicycle子类定义自定义指定初始化，init()。这指定的初始化从匹配的超类指定初始化Bicycle，所以Bicycle这个初始版本标有override修改。</p>
-
-<p>该init()用于初始化Bicycle通过调用开始super.init()，这就要求缺省初始化Bicycle类的超类Vehicle。这确保了numberOfWheels继承的属性是由初始化Vehicle之前Bicycle有权修改属性的机会。呼叫后super.init()，原来的值numberOfWheels被替换为一个新的值2。</p>
-
-<p>如果创建的一个实例Bicycle，就可以调用它继承了description计算性能，看看其numberOfWheels性能已更新：</p>
-
-<p>let bicycle = Bicycle()<br/>
-print(<q>Bicycle: (bicycle.description)</q>)<br/>
-// Bicycle: 2 wheel(s)<br/>
-注意</p>
-
-<p>子类可以初始化过程中修改继承变量属性，但不能修改继承不变的属性。</p>
-
-<h2 id="toc_18">自动初始化程序继承</h2>
-
-<p>如上所述，子类默认不继承父类的初始化。然而，超类的初始化是，如果某些条件得到满足自动继承。在实践中，这意味着你不需要编写初始化覆盖在许多常见的场景，并可以继承以最小的努力超类初始化时，它是安全的这样做。</p>
-
-<p>假设你对你在子类中引入任何新的属性提供默认值，以下两条规则：</p>
-
-<p>规则1<br/>
-如果你的子类不定义任何指定的初始化程序，它会自动继承其所有的超指定初始化的。</p>
-
-<p>规则2<br/>
-如果你的子类提供了一个实现所有其超类指定的初始化-要么通过继承他们按规则1，或通过提供一个自定义实现作为其组成部分的定义，那么它会自动继承了所有超便利的初始化方法。</p>
-
-<p>这些规则适用，即使你的子类中增加了更多的便利初始化。</p>
-
-<p>注意</p>
-
-<p>子类可以实现超类指定初始化为方便子类初始化为满足第2条的一部分。</p>
-
-<p>指定和便利的初始化在行动</p>
-
-<p>下面的示例显示指定初始化，初始化的便利，并在行动中自动初始化继承。这个例子定义了三类所谓的层次结构Food，RecipeIngredient以及ShoppingListItem，并演示了如何自己初始化交互。</p>
-
-<p>在层次结构的基类被称为Food，这是一个简单的类来封装食料的名称。该Food课程介绍一个String叫做物业name并提供两个初始化创建Food实例：</p>
-
-<p>class Food {<br/>
-    var name: String<br/>
-    init(name: String) {<br/>
-        self.name = name<br/>
-    }<br/>
-    convenience init() {<br/>
-        self.init(name: <q>[Unnamed]</q>)<br/>
-    }<br/>
-}<br/>
-下图显示了初始化链Food类：</p>
-
-<p>图片：../Art/initializersExample01_2x.png<br/>
-类没有默认的成员逐一初始化，所以Food类提供了一个指定初始化这需要所谓的一个参数name。此初始化可用于创建新的Food具有特定名称的实例：</p>
-
-<p>let namedMeat = Food(name: <q>Bacon</q>)<br/>
-// namedMeat&#39;s name is <q>Bacon</q><br/>
-在init(name: String)从初始化Food类是提供一个指定的初始化，因为它确保新的所有存储性能Food的实例完全初始化。本Food类没有超类，所以init(name: String)初始化并不需要调用super.init()来完成它的初始化。</p>
-
-<p>该Food级还提供了一个方便的初始化，init()不带参数。该init()初始化通过委派跨越到一个新的食品提供了一个默认的占位符名称Food类的init(name: String)具有name价值[Unnamed]：</p>
-
-<p>let mysteryMeat = Food()<br/>
-// mysteryMeat&#39;s name is <q>[Unnamed]</q><br/>
-在层次结构中的第二类是的子类Food叫做RecipeIngredient。本RecipeIngredient类机型在烹饪配方的成分。它介绍了一种Int称为属性quantity（除了name它从继承属性Food）和定义了两个初始化用于创建RecipeIngredient实例：</p>
-
-<p>class RecipeIngredient: Food {<br/>
-    var quantity: Int<br/>
-    init(name: String, quantity: Int) {<br/>
-        self.quantity = quantity<br/>
-        super.init(name: name)<br/>
-    }<br/>
-    override convenience init(name: String) {<br/>
-        self.init(name: name, quantity: 1)<br/>
-    }<br/>
-}<br/>
-下图显示了初始化链RecipeIngredient类：</p>
-
-<p>图片：../Art/initializersExample02_2x.png<br/>
-该RecipeIngredient班 ​​有一个单一的指定初始化，init(name: String, quantity: Int)，可用于填充所有新的属性的RecipeIngredient实例。这个初始化通过指定传递启动quantity参数的quantity属性，它是由引入的唯一的新属性RecipeIngredient。这样做之后，初始化代表到init(name: String)该初始化的Food类。这个过程从满足安全检查1 两阶段初始化以上。</p>
-
-<p>RecipeIngredient还定义了一个方便的初始化，init(name: String)，这是用于创建RecipeIngredient按名称单独实例。这个便利初始假设的数量1对于任何RecipeIngredient被没有明确的数量创建的实例。这种便利初始化的定义，使RecipeIngredient情况更加快捷方便地创建，并创建多个单量时避免重复代码RecipeIngredient实例。这种便利的初始化只是对面的类的指定初始化代表，传递一个quantity值1。</p>
-
-<p>该init(name: String)所提供的便利初始化RecipeIngredient取相同的参数指定的初始化。由于这种便利的初始化覆盖从它的超类的指定初始化，它必须与被标记修饰符（如中所述初始化器继承和压倒一切）。 init(name: String) Foodoverride</p>
-
-<p>即使RecipeIngredient提供了init(name: String)初始的方便初始化，RecipeIngredient也仍然提供了所有其超类的指定初始化的实现。因此，RecipeIngredient自动继承其所有超类的初始化方便的了。</p>
-
-<p>在本实施例中，超类RecipeIngredient是Food，它有一个单一的便利初始化叫做init()。因此，这种初始化是通过继承RecipeIngredient。的继承的版本init()的功能完全相同的方式与Food版本，除了它委托给RecipeIngredient版本的init(name: String)，而不是Food版本。</p>
-
-<p>所有这三个初始值可以被用于创建新的RecipeIngredient实例：</p>
-
-<p>let oneMysteryItem = RecipeIngredient()<br/>
-let oneBacon = RecipeIngredient(name: <q>Bacon</q>)<br/>
-let sixEggs = RecipeIngredient(name: <q>Eggs</q>, quantity: 6)<br/>
-在层次结构中的第三个和最后类的子类RecipeIngredient叫做ShoppingListItem。在ShoppingListItem类模型，因为它出现在购物清单配方成分。</p>
-
-<p>在购物清单中的每个项目开始作为“未购买”。为了表示这个事实，ShoppingListItem引入了一个布尔属性称为purchased，用默认值false，ShoppingListItem还增加了计算的description特性，它提供的文字说明ShoppingListItem的实例：</p>
-
-<p>class ShoppingListItem: RecipeIngredient {<br/>
-    var purchased = false<br/>
-    var description: String {<br/>
-        var output = <q>(quantity) x (name)</q><br/>
-        output += purchased ? <q>✔</q> : <q>✘</q><br/>
-        return output<br/>
-    }<br/>
-}<br/>
-注意</p>
-
-<p>ShoppingListItem没有定义初始化提供一个初始值purchased，因为在一个购物清单的物品（如仿照这里）总是开始时未购买。</p>
-
-<p>因为它提供了所有属性，引入并没有定义任何初始化本身的默认值，ShoppingListItem自动继承所有自其超指定的和方便的初始化。</p>
-
-<p>下图显示了所有三类整体初始化链：</p>
-
-<p>图片：../Art/initializersExample03_2x.png<br/>
-您可以使用所有这三个继承初始化的创建一个新ShoppingListItem的实例：</p>
-
-<p>var breakfastList = [<br/>
-    ShoppingListItem(),<br/>
-    ShoppingListItem(name: <q>Bacon</q>),<br/>
-    ShoppingListItem(name: <q>Eggs</q>, quantity: 6),<br/>
-]<br/>
-breakfastList[0].name = <q>Orange juice</q><br/>
-breakfastList[0].purchased = true<br/>
-for item in breakfastList {<br/>
-    print(item.description)<br/>
-}<br/>
-// 1 x Orange juice ✔<br/>
-// 1 x Bacon ✘<br/>
-// 6 x Eggs ✘<br/>
-在这里，所谓的新阵列breakfastList由文字包含三个新的数组创建ShoppingListItem实例。类型阵列的被推断为[ShoppingListItem]。创建阵列之后，的名称ShoppingListItem在阵列的开始是从改变<q>[Unnamed]</q>到<q>Orange juice</q>与它被标记为已被购买。印刷阵列中的每个项目的描述表明，按照预期默认状态被置位。</p>
-
-<h1 id="toc_19">Failable初始化器</h1>
-
-<p>它有时是有益的定义一个类，结构或枚举它的初始化可能会失败。这种故障可能是由无效初始化参数值被触发，由于没有所需的外部资源的，或防止初始化得手一些其它条件。</p>
-
-<p>为了应对初始化条件可能会失败，定义一个或多个failable初始化为一类，结构或枚举定义的一部分。您可以通过放置一个问号后写failable初始化init关键字（init?）。</p>
-
-<p>注意</p>
-
-<p>你不能定义一个failable和相同的参数类型和名称的nonfailable初始化。</p>
-
-<p>一个failable初始化创建一个可选的它初始化类型的值。你写return nil一个failable初始化中，表示在该初始化失败可触发点。</p>
-
-<p>注意</p>
-
-<p>严格来说，初始化没有返回值。相反，它们的作用是保证self是由该初始化结束的时间充分和正确地初始化。虽然你写return nil触发一个初始化失败，您不要使用return关键字来表示初始化成功。</p>
-
-<p>下面的例子定义了一个名为结构Animal，具有恒定String​​叫做财产species。该Animal结构还限定与称为单参数failable初始化species。这个初始化检查，如果species传递给初始值是一个空字符串。如果找到一个空字符串，初始化失败被触发。否则，该species属性的值设置和初始化成功：</p>
-
-<p>struct Animal {<br/>
-    let species: String<br/>
-    init?(species: String) {<br/>
-        if species.isEmpty { return nil }<br/>
-        self.species = species<br/>
-    }<br/>
-}<br/>
-您可以使用此failable初始化尝试初始化一个新的Animal实例，并检查是否初始化成功：</p>
-
-<p>let someCreature = Animal(species: <q>Giraffe</q>)<br/>
-// someCreature is of type Animal?, not Animal</p>
-
-<p>if let giraffe = someCreature {<br/>
-    print(<q>An animal was initialized with a species of (giraffe.species)</q>)<br/>
-}<br/>
-// Prints <q>An animal was initialized with a species of Giraffe</q><br/>
-如果你传递一个空字符串值给failable初始化的species参数，初始化触发初始化失败：</p>
-
-<p>let anonymousCreature = Animal(species: &quot;&quot;)<br/>
-// anonymousCreature is of type Animal?, not Animal</p>
-
-<p>if anonymousCreature == nil {<br/>
-    print(<q>The anonymous creature could not be initialized</q>)<br/>
-}<br/>
-// Prints <q>The anonymous creature could not be initialized</q><br/>
-注意</p>
-
-<p>检查空字符串值（如<q>，而不是<q>Giraffe</q>）是不一样的检查nil，以指示不存在的可选 String值。在上面的例子中，一个空字符串（</q>）是一个有效的，非可选String。然而，这是不适合的动物有一个空字符串作为它的值species属性。为了模拟这种限制，如果一个空字符串发现failable初始化触发初始化失败。</p>
-
-<h2 id="toc_20">对于枚举Failable初始化器</h2>
-
-<p>可以使用一个failable初始化来选择基于一个或多个参数的适当枚举的情况下。然后初始化可如果提供的参数不匹配适当的枚举情况下失败。</p>
-
-<p>下面的例子定义了一个枚举TemperatureUnit，有三个可能的状态（kelvin，celsius，和fahrenheit）。一个failable初始化来找到一个合适的枚举情况下Character代表的温度符号值：</p>
-
-<p>enum TemperatureUnit {<br/>
-    case kelvin, celsius, fahrenheit<br/>
-    init?(symbol: Character) {<br/>
-        switch symbol {<br/>
-        case <q>K</q>:<br/>
-            self = .kelvin<br/>
-        case <q>C</q>:<br/>
-            self = .celsius<br/>
-        case <q>F</q>:<br/>
-            self = .fahrenheit<br/>
-        default:<br/>
-            return nil<br/>
-        }<br/>
-    }<br/>
-}<br/>
-您可以使用此failable初始化选择适当的枚举情况下的三种可能的状态，并导致初始化，如果该参数不符合这些国家的一个失败：</p>
-
-<p>let fahrenheitUnit = TemperatureUnit(symbol: <q>F</q>)<br/>
-if fahrenheitUnit != nil {<br/>
-    print(<q>This is a defined temperature unit, so initialization succeeded.</q>)<br/>
-}<br/>
-// Prints <q>This is a defined temperature unit, so initialization succeeded.</q></p>
-
-<p>let unknownUnit = TemperatureUnit(symbol: <q>X</q>)<br/>
-if unknownUnit == nil {<br/>
-    print(<q>This is not a defined temperature unit, so initialization failed.</q>)<br/>
-}<br/>
-// Prints <q>This is not a defined temperature unit, so initialization failed.</q></p>
-
-<h2 id="toc_21">Failable的初始化为枚举与原始值</h2>
-
-<p>与原始值枚举自动接收failable初始化，init?(rawValue:)，带有一个名为参数rawValue适当的原始值类型和选择，如果找到一个匹配的枚举情况下，如果没有匹配的值存在触发初始化失败。</p>
-
-<p>你可以重写TemperatureUnit例如从上面使用类型的原始数据Character，并采取优势init?(rawValue:)初始化：</p>
-
-<p>enum TemperatureUnit: Character {<br/>
-    case kelvin = <q>K</q>, celsius = <q>C</q>, fahrenheit = <q>F</q><br/>
-}</p>
-
-<p>let fahrenheitUnit = TemperatureUnit(rawValue: <q>F</q>)<br/>
-if fahrenheitUnit != nil {<br/>
-    print(<q>This is a defined temperature unit, so initialization succeeded.</q>)<br/>
-}<br/>
-// Prints <q>This is a defined temperature unit, so initialization succeeded.</q></p>
-
-<p>let unknownUnit = TemperatureUnit(rawValue: <q>X</q>)<br/>
-if unknownUnit == nil {<br/>
-    print(<q>This is not a defined temperature unit, so initialization failed.</q>)<br/>
-}<br/>
-// Prints <q>This is not a defined temperature unit, so initialization failed.</q></p>
-
-<h2 id="toc_22">初始化失败的传播</h2>
-
-<p>类，结构或枚举的failable初始化可以在委托同一类，结构或枚举另一个failable初始化。同样，一个子类failable初始化可以委派到一个超failable初始化。</p>
-
-<p>在这两种情况下，如果委派到使初始化失败另一个初始化，整个初始化过程立即失败，并且执行进一步的初始化代码。</p>
-
-<p>注意</p>
-
-<p>一个failable初始化也可以委托给nonfailable初始化。如果你需要一个潜在的故障状态添加到现有的初始化过程，不因其他原因无法使用此方法。</p>
-
-<p>下面的例子定义的一个子类Product叫CartItem。的CartItem。类车型在在线购物车中的项目CartItem介绍了调用的存储不变的性质quantity，并确保该属性始终具有至少一个值1：</p>
-
-<p>class Product {<br/>
-    let name: String<br/>
-    init?(name: String) {<br/>
-        if name.isEmpty { return nil }<br/>
-        self.name = name<br/>
-    }<br/>
-}</p>
-
-<p>class CartItem: Product {<br/>
-    let quantity: Int<br/>
-    init?(name: String, quantity: Int) {<br/>
-        if quantity &lt; 1 { return nil }<br/>
-        self.quantity = quantity<br/>
-        super.init(name: name)<br/>
-    }<br/>
-}<br/>
-该failable初始化为CartItem通过验证它已经收到了开始quantity的值1以上。如果quantity是无效的，整个初始化过程立即失败，并且不再执行进一步的初始化代码。同样，failable初始化的Product检查name，如果值，初始化过程立即失败name是空字符串。</p>
-
-<p>如果您创建CartItem一个非空的名称和数量实例1以上，初始化成功：</p>
-
-<p>if let twoSocks = CartItem(name: <q>sock</q>, quantity: 2) {<br/>
-    print(<q>Item: (twoSocks.name), quantity: (twoSocks.quantity)</q>)<br/>
-}<br/>
-// Prints <q>Item: sock, quantity: 2</q><br/>
-如果您尝试创建CartItem一个实例quantity的值0，则CartItem初始化引起的初始化失败：</p>
-
-<p>if let zeroShirts = CartItem(name: <q>shirt</q>, quantity: 0) {<br/>
-    print(<q>Item: (zeroShirts.name), quantity: (zeroShirts.quantity)</q>)<br/>
-} else {<br/>
-    print(<q>Unable to initialize zero shirts</q>)<br/>
-}<br/>
-// Prints <q>Unable to initialize zero shirts</q><br/>
-同样，如果您尝试创建CartItem一个空的实例name值，超类Product的初始化引起的初始化失败：</p>
-
-<p>if let oneUnnamed = CartItem(name: &quot;<q>, quantity: 1) {<br/>
-    print(</q>Item: (oneUnnamed.name), quantity: (oneUnnamed.quantity)<q>)<br/>
-} else {<br/>
-    print(</q>Unable to initialize one unnamed product<q>)<br/>
-}<br/>
-// Prints</q>Unable to initialize one unnamed product&quot;</p>
-
-<h2 id="toc_23">覆盖一个Failable初始化器</h2>
-
-<p>您可以在子类中覆盖超类failable初始化，就像任何其他初始化。另外，您可以覆盖一个子类的超failable初始化nonfailable初始化。这使您可以定义一个子类初始化它不能失败，即使超类的初始化允许失败。</p>
-
-<p>请注意，如果你重写了nonfailable子类初始化一个failable超初始化，只有这样，才能委托到超初始化很给力，解开了failable超初始化的结果。</p>
-
-<p>注意</p>
-
-<p>您可以覆盖一个failable初始化一个nonfailable初始化而不是周围的其他方式。</p>
-
-<p>下面的例子定义了一个名为类Document。此类模型可以与被初始化一个文件name要么是一个非空字符串值或属性nil，但不能是空字符串：</p>
-
-<p>class Document {<br/>
-    var name: String?<br/>
-    // this initializer creates a document with a nil name value<br/>
-    init() {}<br/>
-    // this initializer creates a document with a nonempty name value<br/>
-    init?(name: String) {<br/>
-        if name.isEmpty { return nil }<br/>
-        self.name = name<br/>
-    }<br/>
-}<br/>
-下面的例子定义的一个子类Document叫AutomaticallyNamedDocument。该AutomaticallyNamedDocument子类重写都是由引入的指定初始化的Document。这些覆盖确保一个AutomaticallyNamedDocument实例都有一个初始name值<q>[Untitled]</q>如果实例没有名字初始化，或者一个空字符串传递给init(name:)初始化：</p>
-
-<p>class AutomaticallyNamedDocument: Document {<br/>
-    override init() {<br/>
-        super.init()<br/>
-        self.name = <q>[Untitled]</q><br/>
-    }<br/>
-    override init(name: String) {<br/>
-        super.init()<br/>
-        if name.isEmpty {<br/>
-            self.name = <q>[Untitled]</q><br/>
-        } else {<br/>
-            self.name = name<br/>
-        }<br/>
-    }<br/>
-}<br/>
-在AutomaticallyNamedDocument覆盖其超 ​​类的failable init?(name:)与nonfailable初始化init(name:)初始化。因为AutomaticallyNamedDocument与在比其超类不同的方式空字符串的情况下对付，它的初始值并不需要失败，所以它提供了初始的一nonfailable版本代替。</p>
-
-<p>您可以使用强制解缠在初始化调用从超一failable初始化作为一个子类的初始化nonfailable的实现的一部分。例如，UntitledDocument下面的子类总是命名<q>[Untitled]</q>，它使用failable init(name:)初始化期间初始化从超类。</p>
-
-<p>class UntitledDocument: Document {<br/>
-    override init() {<br/>
-        super.init(name: <q>[Untitled]</q>)!<br/>
-    }<br/>
-}<br/>
-在这种情况下，如果init(name:)超类的初始化都曾经与一个空字符串作为名称叫，被迫展开操作将导致运行错误。但是，因为它被称为一个字符串常量，你可以看到初始化不会失败，所以在这种情况下，就不会发生运行时错误。</p>
-
-<h2 id="toc_24">初始化！Failable初始化器</h2>
-
-<p>您通常定义放置一个问号之后创建相应类型的可选实例的初始化failable init关键字（init?）。或者，您可以定义创建相应类型的隐式展开可选实例的初始化failable。由后放置一个惊叹号做这个init关键字（init!），而不是一个问号。</p>
-
-<p>您可以从委托init?到init!，反之亦然，你可以覆盖init?有init!，反之亦然。您也可以从授权init到init!，尽管这样做会引发一个断言，如果init!初始化导致初始化失败。</p>
-
-<h1 id="toc_25">所需的初始化</h1>
-
-<p>写required一个类初始化之前定义修改，以表明类的每个子类必须实现初始化：</p>
-
-<p>class SomeClass {<br/>
-    required init() {<br/>
-        // initializer implementation goes here<br/>
-    }<br/>
-}<br/>
-你还必须编写required每个子类中实现所需的初始化之前修改，以表明初始化要求适用于链条进一步子类。你不写override覆盖所需的指定初始化时修改：</p>
-
-<p>class SomeSubclass: SomeClass {<br/>
-    required init() {<br/>
-        // subclass implementation of the required initializer goes here<br/>
-    }<br/>
-}<br/>
-注意</p>
-
-<p>您没有提供一个明确的实施需要初始化，如果你可以继承初始化满足要求。</p>
-
-<h1 id="toc_26">设置默认属性值与一个封闭或功能</h1>
-
-<p>如果存储属性的默认值需要一些定制或设置，你可以使用一个关闭或全局函数提供的属性自定义的默认值。每当类型的新实例财产属于被初始化，关闭或函数被调用，其返回值被指定为属性的默认值。</p>
-
-<p>这些种类的封闭或功能的通常创建的类型相同值来表示所希望的初始状态下的特性，裁缝的临时值，然后返回到可以使用该临时值作为属性的默认值。</p>
-
-<p>下面是一个封闭如何被用来提供一个默认的属性值的骨架轮廓：</p>
-
-<p>class SomeClass {<br/>
-    let someProperty: SomeType = {<br/>
-        // create a default value for someProperty inside this closure<br/>
-        // someValue must be of the same type as SomeType<br/>
-        return someValue<br/>
-    }()<br/>
-}<br/>
-需要注意的是封闭的结束大括号后面跟着一对空括号。这告诉斯威夫特立即执行关闭。如果忽略这些括号，你想分配封闭自己的财产，而不是封闭的返回值。</p>
-
-<p>注意</p>
-
-<p>如果您使用闭包来初始化属性，记得实例的其余部分尚未在所执行的闭合点初始化。这意味着你不能从你的封内访问任何其他属性值，即使这些属性具有默认值。你也不能使用隐含self属性，或者调用任何实例的方法。</p>
-
-<p>下面的例子定义了一个名为结构Chessboard，其车型板盘棋。国际象棋是上播放一个8x8板，交替的黑色和白色方块。</p>
-
-<p>图片：../Art/chessBoard_2x.png<br/>
-为了表示这个游戏板，Chessboard结构有一个属性叫boardColors，这是64的阵列Bool值。的值true在数组表示一个黑色的正方形和值false代表一个白色正方形。数组中的第一项代表在董事会和数组中的最后一项左上角方形代表在董事会右下角广场。</p>
-
-<p>所述boardColors阵列初始化为闭合设立其颜色值：</p>
-
-<p>struct Chessboard {<br/>
-    let boardColors: [Bool] = {<br/>
-        var temporaryBoard = <a href="">Bool</a><br/>
-        var isBlack = false<br/>
-        for i in 1...8 {<br/>
-            for j in 1...8 {<br/>
-                temporaryBoard.append(isBlack)<br/>
-                isBlack = !isBlack<br/>
-            }<br/>
-            isBlack = !isBlack<br/>
-        }<br/>
-        return temporaryBoard<br/>
-    }()<br/>
-    func squareIsBlackAt(row: Int, column: Int) -&gt; Bool {<br/>
-        return boardColors[(row * 8) + column]<br/>
-    }<br/>
-}<br/>
-每当一个新Chessboard创建的实例，封闭被执行，并且缺省值boardColors被计算和返回。上面计算例子中的关闭和设置在所谓的临时数组在黑板上每平方米相应的颜色temporaryBoard，而一旦它的设置就完成了返回此临时数组作为封闭的返回值。返回的数组的值存储在boardColors可与该被查询squareIsBlackAtRow的效用函数：</p>
-
-<p>let board = Chessboard()<br/>
-print(board.squareIsBlackAt(row: 0, column: 1))<br/>
-// Prints <q>true</q><br/>
-print(board.squareIsBlackAt(row: 7, column: 7))<br/>
-// Prints <q>false</q></p>
+<ul>
+<li>Swift子类默认不继承父类的初始化。</li>
+<li>override标记子类重写。</li>
+</ul>
+
+<h2 id="toc_18">自动初始化继承</h2>
+
+<ul>
+<li>如果子类不定义任何指定的初始化程序，会自动继承其父类的指定初始化。</li>
+<li>如果子类提供了一个其父类指定的初始化，会自动继承了其父类的便利初始化。</li>
+</ul>
+
+<pre><code>class Food {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+    convenience init() {
+        self.init(name: &quot;[Unnamed]&quot;)
+    }
+}
+
+let namedMeat = Food(name: &quot;Bacon&quot;)
+let mysteryMeat = Food()
+</code></pre>
+
+<pre><code>class RecipeIngredient: Food {
+    var quantity: Int
+    init(name: String, quantity: Int) {
+        self.quantity = quantity
+        super.init(name: name)
+    }
+    override convenience init(name: String) {
+        self.init(name: name, quantity: 1)
+    }
+}
+
+let oneMysteryItem = RecipeIngredient()
+let oneBacon = RecipeIngredient(name: &quot;Bacon&quot;)
+let sixEggs = RecipeIngredient(name: &quot;Eggs&quot;, quantity: 6)
+</code></pre>
+
+<pre><code> RecipeIngredient {
+    var purchased = false
+    var description: String {
+        var output = &quot;\(quantity) x \(name)&quot;
+        output += purchased ? &quot; ✔&quot; : &quot; ✘&quot;
+        return output
+    }
+}
+
+var breakfastList = [
+    ShoppingListItem(),
+    ShoppingListItem(name: &quot;Bacon&quot;),
+    ShoppingListItem(name: &quot;Eggs&quot;, quantity: 6),
+]
+breakfastList[0].name = &quot;Orange juice&quot;
+breakfastList[0].purchased = true
+for item in breakfastList {
+    print(item.description)
+}
+</code></pre>
+
+<h1 id="toc_19">Failable初始化</h1>
+
+<ul>
+<li>初始化条件可能会失败，但是初始化本身是无返回的，使用类似可选类型<code>init?</code>。</li>
+<li>虽然写return nil触发初始化失败，但是不要使用return来表示初始化成功。</li>
+</ul>
+
+<pre><code>struct Animal {
+    let species: String
+    init?(species: String) {
+        if species.isEmpty { return nil }
+        self.species = species
+    }
+}
+
+let someCreature = Animal(species: &quot;Giraffe&quot;)
+if let giraffe = someCreature {
+    print(&quot;An animal was initialized with a species of \(giraffe.species)&quot;)
+}
+
+let anonymousCreature = Animal(species: &quot;&quot;) 
+if anonymousCreature == nil {
+    print(&quot;The anonymous creature could not be initialized&quot;)
+}
+</code></pre>
+
+<h2 id="toc_20">枚举Failable初始化</h2>
+
+<pre><code>enum TemperatureUnit {
+    case kelvin, celsius, fahrenheit
+    init?(symbol: Character) {
+        switch symbol {
+        case &quot;K&quot;:
+            self = .kelvin
+        case &quot;C&quot;:
+            self = .celsius
+        case &quot;F&quot;:
+            self = .fahrenheit
+        default:
+            return nil
+        }
+    }
+}
+
+let fahrenheitUnit = TemperatureUnit(symbol: &quot;F&quot;)
+if fahrenheitUnit != nil {
+    print(&quot;This is a defined temperature unit, so initialization succeeded.&quot;)
+}
+ 
+let unknownUnit = TemperatureUnit(symbol: &quot;X&quot;)
+if unknownUnit == nil {
+    print(&quot;This is not a defined temperature unit, so initialization failed.&quot;)
+}
+</code></pre>
+
+<h2 id="toc_21">枚举与原始值的Failable初始化</h2>
+
+<pre><code>enum TemperatureUnit: Character {
+    case kelvin = &quot;K&quot;, celsius = &quot;C&quot;, fahrenheit = &quot;F&quot;
+}
+ 
+let fahrenheitUnit = TemperatureUnit(rawValue: &quot;F&quot;)
+if fahrenheitUnit != nil {
+    print(&quot;This is a defined temperature unit, so initialization succeeded.&quot;)
+}
+ 
+let unknownUnit = TemperatureUnit(rawValue: &quot;X&quot;)
+if unknownUnit == nil {
+    print(&quot;This is not a defined temperature unit, so initialization failed.&quot;)
+}
+</code></pre>
+
+<h2 id="toc_22">初始化失败的传递</h2>
+
+<ul>
+<li>与初始化类似，父类失败同样返回失败。</li>
+</ul>
+
+<pre><code>class Product {
+    let name: String
+    init?(name: String) {
+        if name.isEmpty { return nil }
+        self.name = name
+    }
+}
+ 
+class CartItem: Product {
+    let quantity: Int
+    init?(name: String, quantity: Int) {
+        if quantity &lt; 1 { return nil }
+        self.quantity = quantity
+        super.init(name: name)
+    }
+}
+
+if let twoSocks = CartItem(name: &quot;sock&quot;, quantity: 2) {
+    print(&quot;Item: \(twoSocks.name), quantity: \(twoSocks.quantity)&quot;)
+}
+
+if let zeroShirts = CartItem(name: &quot;shirt&quot;, quantity: 0) {
+    print(&quot;Item: \(zeroShirts.name), quantity: \(zeroShirts.quantity)&quot;)
+} else {
+    print(&quot;Unable to initialize zero shirts&quot;)
+}
+
+if let oneUnnamed = CartItem(name: &quot;&quot;, quantity: 1) {
+    print(&quot;Item: \(oneUnnamed.name), quantity: \(oneUnnamed.quantity)&quot;)
+} else {
+    print(&quot;Unable to initialize one unnamed product&quot;)
+}
+</code></pre>
+
+<h2 id="toc_23">重写Failable初始化</h2>
+
+<ul>
+<li>重写初始化，父类可以返回失败，但子类不会。</li>
+</ul>
+
+<pre><code>class Document {
+    var name: String?
+    // this initializer creates a document with a nil name value
+    init() {}
+    // this initializer creates a document with a nonempty name value
+    init?(name: String) {
+        if name.isEmpty { return nil }
+        self.name = name
+    }
+}
+
+class AutomaticallyNamedDocument: Document {
+    override init() {
+        super.init()
+        self.name = &quot;[Untitled]&quot;
+    }
+    override init(name: String) {
+        super.init()
+        if name.isEmpty {
+            self.name = &quot;[Untitled]&quot;
+        } else {
+            self.name = name
+        }
+    }
+}
+ 
+class UntitledDocument: Document {
+    override init() {
+        super.init(name: &quot;[Untitled]&quot;)!
+    }
+}
+</code></pre>
+
+<h2 id="toc_24">隐式解析Failable初始化</h2>
+
+<ul>
+<li><code>init!</code>，同样的与可选类型基本一致。</li>
+</ul>
+
+<h1 id="toc_25">必须的初始化</h1>
+
+<ul>
+<li><code>required</code>表明类的每个子类必须实现初始化，子类不能重写。</li>
+</ul>
+
+<pre><code>class SomeClass {
+    required init() {
+        // initializer implementation goes here
+    }
+}
+
+class SomeSubclass: SomeClass {
+    required init() {
+        // subclass implementation of the required initializer goes here
+    }
+}
+</code></pre>
+
+<h1 id="toc_26">设置默认属性值，闭包，函数</h1>
+
+<ul>
+<li>闭包设置属性默认值</li>
+</ul>
+
+<pre><code>class SomeClass {
+    let someProperty: SomeType = {
+        // create a default value for someProperty inside this closure
+        // someValue must be of the same type as SomeType
+        return someValue
+    }()
+}
+</code></pre>
+
+<pre><code>struct Chessboard {
+    let boardColors: [Bool] = {
+        var temporaryBoard = [Bool]()
+        var isBlack = false
+        for i in 1...8 {
+            for j in 1...8 {
+                temporaryBoard.append(isBlack)
+                isBlack = !isBlack
+            }
+            isBlack = !isBlack
+        }
+        return temporaryBoard
+    }()
+    func squareIsBlackAt(row: Int, column: Int) -&gt; Bool {
+        return boardColors[(row * 8) + column]
+    }
+}
+
+let board = Chessboard()
+print(board.squareIsBlackAt(row: 0, column: 1))
+// Prints &quot;true&quot;
+print(board.squareIsBlackAt(row: 7, column: 7))
+// Prints &quot;false&quot;
+</code></pre>
 
 
 </div>

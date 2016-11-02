@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -246,82 +246,70 @@
  <div class="markdown-body">
 <h1>反初始化</h1>
 
-<p>一deinitializer一个类的实例被释放之前，立即调用。你写的deinitializers deinit关键字，类似于初始化如何与书面init关键字。Deinitializers只在类类型可用。</p>
+<ul>
+<li>
+<a href="#toc_0">简介</a>
+</li>
+<li>
+<a href="#toc_1">反初始化工作原理</a>
+</li>
+<li>
+<a href="#toc_2">反初始化举例</a>
+</li>
+</ul>
 
-<p>如何反初始化工作原理</p>
 
-<p>当他们不再需要，以释放资源雨燕自动将释放您的实例。斯威夫特经过处理实例的内存管理自动引用计数（ARC），如描述的自动引用计数。通常情况下你不需要的时候你的情况下被释放，以进行手动清除。但是，当你与自己的资源，那么您可能需要自己进行一些额外的清理工作。例如，如果你创建一个自定义类来打开一个文件，写一些数据，你可能需要关闭该文件类实例被释放之前。</p>
+<h1 id="toc_0">简介</h1>
 
-<p>类定义可以有每班最多一个deinitializer。该deinitializer不带任何参数，并没有括号写的是：</p>
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Deinitialization.html#//apple_ref/doc/uid/TP40014097-CH19-ID142">Deinitialization 官方文档</a></p>
 
-<p>deinit {<br/>
-    // perform the deinitialization<br/>
-}<br/>
-Deinitializers被自动调用，比如释放发生之前。你不允许调用deinitializer自己。超deinitializers由其子类继承，并且超deinitializer是在子类deinitializer执行结束自动调用。超deinitializers总是调用，即使一个子类不提供其自身deinitializer。</p>
+<ul>
+<li><code>deinitializer</code>类的实例被释放之前调用。</li>
+</ul>
 
-<p>因为一个实例不释放，直到其deinitializer被调用之后，一个deinitializer可以访问实例它被称为上和基于这些属性可以修改其行为的所有属性（如仰视需要被关闭的文件的文件名）。</p>
+<h1 id="toc_1">反初始化工作原理</h1>
 
-<p>在行动Deinitializers</p>
+<ul>
+<li>默认ARC内存管理，大部分情况下不需要手动管理实例的销毁。但是比如管理资源等不支持ARC的内存需要手动销毁。</li>
+<li><code>deinit</code>系统自动调用，无参数。</li>
+</ul>
 
-<p>下面是行动的deinitializer的一个例子。这个例子定义了两种新的，Bank和Player，一个简单的游戏。本Bank类管理一个虚构的货币，这绝不能有超过10,000的硬币在流通。有永远只能为一个Bank在游戏中，并因此Bank被实现为类型的属性和方法来存储和管理其当前状态类：</p>
+<pre><code>deinit {
+    // perform the deinitialization
+}
+</code></pre>
 
-<p>class Bank {<br/>
-    static var coinsInBank = 10_000<br/>
-    static func distribute(coins numberOfCoinsRequested: Int) -&gt; Int {<br/>
-        let numberOfCoinsToVend = min(numberOfCoinsRequested, coinsInBank)<br/>
-        coinsInBank -= numberOfCoinsToVend<br/>
-        return numberOfCoinsToVend<br/>
-    }<br/>
-    static func receive(coins: Int) {<br/>
-        coinsInBank += coins<br/>
-    }<br/>
-}<br/>
-Bank跟踪当前的硬币数量它与它持有的coinsInBank财产。它还提供了两个方法- distribute(coins:)和receive(coins:)-to处理硬币的分发和收集。</p>
+<h1 id="toc_2">反初始化举例</h1>
 
-<p>该distribute(coins:)方法检查，有足够的硬币在银行发行之前。如果没有足够的硬币，Bank返回除请求（并且如果没有硬币在银行左返回零），该数目的较小的数字。它返回一个整数值，以指示被提供的硬币的实际数目。</p>
+<ul>
+<li>玩家初始化时从银行取钱，玩家销毁时银行回收玩家剩余的钱。</li>
+</ul>
 
-<p>该receive(coins:)方法简单地增加硬币收到的号码放回银行的钱币商店。</p>
+<pre><code>class Bank {
+    static var coinsInBank = 10_000
+    static func distribute(coins numberOfCoinsRequested: Int) -&gt; Int {
+        let numberOfCoinsToVend = min(numberOfCoinsRequested, coinsInBank)
+        coinsInBank -= numberOfCoinsToVend
+        return numberOfCoinsToVend
+    }
+    static func receive(coins: Int) {
+        coinsInBank += coins
+    }
+}
 
-<p>本Player类描述了游戏中的球员 ​​。每个玩家都有一定数量的随时存储在自己的钱包里的硬币。这是由游戏者的表示coinsInPurse属性：</p>
-
-<p>class Player {<br/>
-    var coinsInPurse: Int<br/>
-    init(coins: Int) {<br/>
-        coinsInPurse = Bank.distribute(coins: coins)<br/>
-    }<br/>
-    func win(coins: Int) {<br/>
-        coinsInPurse += Bank.distribute(coins: coins)<br/>
-    }<br/>
-    deinit {<br/>
-        Bank.receive(coins: coinsInPurse)<br/>
-    }<br/>
-}<br/>
-每个Player实例被初始化为从初始化期间银行硬币的指定数目的起始津贴，虽然Player如果没有足够的硬币是可用的实例可以接收比数以内。</p>
-
-<p>在Player类定义了一个win(coins:)方法，以检索一定数量从银行硬币并将它们添加到该玩家的钱包。本Player类还实现了deinitializer，这被称为之前Player实例被释放。在这里，deinitializer简单地返回所有玩家的硬币银行：</p>
-
-<p>var playerOne: Player? = Player(coins: 100)<br/>
-print(<q>A new player has joined the game with (playerOne!.coinsInPurse) coins</q>)<br/>
-// Prints <q>A new player has joined the game with 100 coins</q><br/>
-print(<q>There are now (Bank.coinsInBank) coins left in the bank</q>)<br/>
-// Prints <q>There are now 9900 coins left in the bank</q><br/>
-一个新的Player实例被创建，为100个硬币的请求，如果他们都可用。这个Player实例被存储在可选的Player调用变量playerOne。一个可选变量用在这里，因为玩家可以在任何一点离开游戏。可选，您可以跟踪是否有目前在游戏中的球员 ​​。</p>
-
-<p>因为playerOne是一个可选的，它有资格以感叹号（!）时，它的coinsInPurse属性被访问到打印其硬币默认数量，每当它的winCoins(_:)方法被称为：</p>
-
-<p>playerOne!.win(coins: 2_000)<br/>
-print(<q>PlayerOne won 2000 coins &amp; now has (playerOne!.coinsInPurse) coins</q>)<br/>
-// Prints <q>PlayerOne won 2000 coins &amp; now has 2100 coins</q><br/>
-print(<q>The bank now only has (Bank.coinsInBank) coins left</q>)<br/>
-// Prints <q>The bank now only has 7900 coins left</q><br/>
-在这里，玩家赢得了2000硬币。玩家的钱包现在包含2100金币，而银行只有7900金币离开了。</p>
-
-<p>playerOne = nil<br/>
-print(<q>PlayerOne has left the game</q>)<br/>
-// Prints <q>PlayerOne has left the game</q><br/>
-print(<q>The bank now has (Bank.coinsInBank) coins</q>)<br/>
-// Prints <q>The bank now has 10000 coins</q><br/>
-玩家现在已经离开了游戏。这是通过设置可选的指示playerOne变量nil，意思是“没有Player实例。”在这种情况的发生的时刻，playerOne变量对参考Player实例是断开的。没有其他属性或变量仍参照Player实例，因此它在以释放其存储器释放。这种情况发生之前，其deinitializer自动调用，并且其硬币被返回到银行。</p>
+class Player {
+    var coinsInPurse: Int
+    init(coins: Int) {
+        coinsInPurse = Bank.distribute(coins: coins)
+    }
+    func win(coins: Int) {
+        coinsInPurse += Bank.distribute(coins: coins)
+    }
+    deinit {
+        Bank.receive(coins: coinsInPurse)
+    }
+}
+</code></pre>
 
 
 </div>
@@ -333,7 +321,7 @@ print(<q>The bank now has (Bank.coinsInBank) coins</q>)<br/>
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
-	        <a href="14743599314901.html"  title="Previous Post: 此篇以下未整理仅谷歌翻译">&laquo; 此篇以下未整理仅谷歌翻译</a>
+	        <a href="14743599314901.html"  title="Previous Post: 初始化">&laquo; 初始化</a>
 	    
 	</div>
   </div>

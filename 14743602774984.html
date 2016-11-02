@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -246,11 +246,13 @@
  <div class="markdown-body">
 <h1>泛型参数和参数</h1>
 
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GenericParametersAndArguments.html#//apple_ref/doc/uid/TP40014097-CH37-ID406">Generic Parameters and Arguments 官方文档</a></p>
+
 <p>本章介绍了泛型类型，函数和初始化参数和参数。当你声明一个泛型类型，函数或初始化，您可以指定类型参数的泛型类型，函数或初始化程序可以工作。这些类型参数作为由实际的具体类型参数替换创建了一个泛型类型的实例或一个泛型函数或初始化程序被调用时占位符。</p>
 
 <p>对于仿制药的斯威夫特概述，请参见泛型。</p>
 
-<p>泛型参数条款</p>
+<h1 id="toc_0">泛型参数条款</h1>
 
 <p>一个泛型参数子句指定泛型类型或函数的类型参数，对这些参数的任何相关的约束和要求一起。泛型参数子句中的尖括号（&lt;&gt;），并具有以下形式：</p>
 
@@ -271,8 +273,9 @@
 因为Int与Double，例如，既符合Comparable协议，该函数接受任一类型的参数。在泛型类型相反，当你使用一个通用的函数或初始化你不指定一个通用的说法条款。该类型的参数，而不是从传递给函数或初始化参数的类型推断。</p>
 
 <p>simpleMax(17, 42) // T is inferred to be Int<br/>
-simpleMax(3.14159, 2.71828) // T is inferred to be Double<br/>
-通用WHERE子句</p>
+simpleMax(3.14159, 2.71828) // T is inferred to be Double</p>
+
+<h2 id="toc_1">通用WHERE子句</h2>
 
 <p>您可以通过包括通用指定的类型参数及其相关类型的其他要求where一类或函数体的大括号之前条款的权利。一个普通的where条款包含的where关键字，后跟一个逗号分隔的一个或多个列表的要求。</p>
 
@@ -299,8 +302,9 @@ simpleMax(3.14159, 2.71828) // T is inferred to be Double<br/>
 需求 → 一致性，要求同型需求 ­<br/><br/>
 波及需求 → 类型标识符类型标识符 ­:­<br/>
 波及需求 → 类型标识符协议的组成型 ­:­<br/>
-同型需求 → 类型标识符类型==­<br/>
-一般的参数条款</p>
+同型需求 → 类型标识符类型==­</p>
+
+<h1 id="toc_2">一般的参数条款</h1>
 
 <p>一个一般的参数子句指定泛型类型的类型参数。一个通用的说法子句在尖括号（&lt;&gt;），并具有以下形式：</p>
 

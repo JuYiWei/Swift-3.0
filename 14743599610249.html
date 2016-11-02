@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -246,306 +246,233 @@
  <div class="markdown-body">
 <h1>可选链接</h1>
 
-<p>可选链接是查询和对一个可选目前，可能是调用的属性，方法，和下标处理nil。如果可选包含一个值，属性，方法，或下标调用成功; 如果可选的是nil，属性，方法，或下标调用返回nil。多个查询可以链接在一起，整个链条优雅地失败，如果链中的任何链接nil。</p>
+<ul>
+<li>
+<a href="#toc_0">可选类型表示与解析</a>
+</li>
+<li>
+<a href="#toc_1">定义模型类的可选链接</a>
+</li>
+<li>
+<a href="#toc_2">可选链接访问属性</a>
+</li>
+<li>
+<a href="#toc_3">可选链接调用方法</a>
+</li>
+<li>
+<a href="#toc_4">可选链接访问下标</a>
+<ul>
+<li>
+<a href="#toc_5">可选类型的访问下标</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_6">链接多级</a>
+</li>
+<li>
+<a href="#toc_7">链接上的方法返回可选类型</a>
+</li>
+</ul>
 
-<p>注意</p>
 
-<p>在斯威夫特可选链是类似短信nil在Objective-C，但在任何类型的工作方式，以及可检查的成功或失败。</p>
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html#//apple_ref/doc/uid/TP40014097-CH21-ID245">Optional Chaining 官方文档</a></p>
 
-<p>可选的链接作为替代强制解缠</p>
+<ul>
+<li>主要用于空值判断。</li>
+</ul>
 
-<p>您可以通过放置一个问号（指定可选链?上要调用一个属性，方法或下标如果可选是非可选值之后）nil。这非常类似于放置一个惊叹号（!可选的值之后），以迫使其价值的解缠。主要的区别是，当优雅可选可选链接失败nil而被迫解缠触发运行时错误时，可选的是，nil。</p>
+<h1 id="toc_0">可选类型表示与解析</h1>
 
-<p>为了反映一个事实，即可选链接可以在一个被称为nil值，可选的链接调用的结果始终是一个可选值，即使属性，方法，或下标您要查询回报非可选值。您可以使用此可选的返回值来检查可选的链接调用是否成功（返回可选包含一个值），还是没成功，由于nil在链（返回可选值是值nil）。</p>
+<ul>
+<li>可选类型使用<code>?</code>标记，可选类型值可以为nil。</li>
+</ul>
 
-<p>具体地，一个可选的链接调用的结果是相同的类型的预期回 ​​报值的，但包裹在一个可选的。通常返回的属性Int将返回一个Int?通过可选的链接访问时。</p>
+<pre><code>class Person {
+    var residence: Residence?
+}
+ 
+class Residence {
+    var numberOfRooms = 1
+}
+</code></pre>
 
-<p>接下来的几个代码片段演示如何选购链从强制解包不同，可以检查成功。</p>
+<ul>
+<li>当可选类型确定有值时，可以使用<code>!</code>隐式解析为有值。</li>
+</ul>
 
-<p>第一，两个类被称为Person和Residence定义如下：</p>
+<pre><code>
+var john = Person()
+john.residence = Residence(); // 如果没有初始化，下面代码将error
 
-<p>class Person {<br/>
-    var residence: Residence?<br/>
-}</p>
+var n = john.residence!.numberOfRooms
+</code></pre>
 
-<p>class Residence {<br/>
-    var numberOfRooms = 1<br/>
-}<br/>
-Residence实例有一个单一的Int属性调用numberOfRooms，使用默认值1。Person实例具有一个可选的residence类型的属性Residence?。</p>
+<ul>
+<li>可选绑定，结合if，使用定义常量或者变量的方式，赋值可选类型，如果可选类型有值，那么if条件成立。</li>
+</ul>
 
-<p>如果您创建一个新的Person实例，它的residence属性是默认初始化nil凭借是可选的。在下面的代码，john有一个residence的属性值nil：</p>
+<pre><code>if let roomCount = john.residence?.numberOfRooms {
+    print(&quot;John&#39;s residence has \(roomCount) room(s).&quot;)
+} else {
+    print(&quot;Unable to retrieve the number of rooms.&quot;)
+}
+</code></pre>
 
-<p>let john = Person()<br/>
-如果您试图访问numberOfRooms这个人的财产residence，通过放置一个惊叹号后residence，迫使其价值的解缠，你触发一个运行时错误，因为没有residence价值解开：</p>
+<h1 id="toc_1">定义模型类的可选链接</h1>
 
-<p>let roomCount = john.residence!.numberOfRooms<br/>
-// this triggers a runtime error<br/>
-上面的代码成功时john.residence具有非nil数值和将设置roomCount到一个Int含有间的适当数目的值。但是，当这个代码始终触发运行时错误residence是nil，如上述所示。</p>
+<ul>
+<li>并不清楚想要说啥</li>
+</ul>
 
-<p>可选链提供了另一种方式来访问的价值numberOfRooms。要使用可选的链接，到位感叹号的使用问号：</p>
+<pre><code>class Person {
+    var residence: Residence?
+}
 
-<p>if let roomCount = john.residence?.numberOfRooms {<br/>
-    print(<q>John&#39;s residence has (roomCount) room(s).</q>)<br/>
-} else {<br/>
-    print(<q>Unable to retrieve the number of rooms.</q>)<br/>
-}<br/>
-// Prints <q>Unable to retrieve the number of rooms.</q><br/>
-这告诉斯威夫特在可选的“产业链” residence财产和检索的值numberOfRooms，如果residence存在。</p>
+class Residence {
+    var rooms = [Room]()
+    var numberOfRooms: Int {
+        return rooms.count
+    }
+    subscript(i: Int) -&gt; Room {
+        get {
+            return rooms[i]
+        }
+        set {
+            rooms[i] = newValue
+        }
+    }
+    func printNumberOfRooms() {
+        print(&quot;The number of rooms is \(numberOfRooms)&quot;)
+    }
+    var address: Address?
+}
 
-<p>因为试图访问numberOfRooms有失败的可能，可选的链接尝试返回类型的值Int?，或“可选Int”。当residence是nil，如在上面的例子中，这个可选Int也将nil，以反映事实，这是不可能的访问numberOfRooms。可选的Int通过可选的绑定访问解开整数并指定非可选值的roomCount变量。</p>
+class Room {
+    let name: String
+    init(name: String) { self.name = name }
+}
 
-<p>请注意，这是真实的，即使numberOfRooms是一个非可选Int。它是通过可选的链查询的事实意味着调用numberOfRooms将始终返回一个Int?，而不是一个Int。</p>
+class Address {
+    var buildingName: String?
+    var buildingNumber: String?
+    var street: String?
+    func buildingIdentifier() -&gt; String? {
+        if buildingName != nil {
+            return buildingName
+        } else if buildingNumber != nil &amp;&amp; street != nil {
+            return &quot;\(buildingNumber) \(street)&quot;
+        } else {
+            return nil
+        }
+    }
+}
+</code></pre>
 
-<p>可以分配一个Residence实例john.residence，以便它不再具有nil值：</p>
+<h1 id="toc_2">可选链接访问属性</h1>
 
-<p>john.residence = Residence()<br/>
-john.residence现在包含一个实际的Residence例子，而不是nil。如果您尝试访问numberOfRooms与以前相同的可选链接，它现在将返回一个Int?包含默认numberOfRooms值1：</p>
-
-<p>if let roomCount = john.residence?.numberOfRooms {<br/>
-    print(<q>John&#39;s residence has (roomCount) room(s).</q>)<br/>
-} else {<br/>
-    print(<q>Unable to retrieve the number of rooms.</q>)<br/>
-}<br/>
-// Prints <q>John&#39;s residence has 1 room(s).</q><br/>
-定义模型类的可选链接</p>
-
-<p>您可以使用可选的链接通过调用是多个级别深的属性，方法和下标。这使您能够深入到相关类型的复杂模型内的子属性，并检查是否有可能访问这些子属性的属性，方法和下标。</p>
-
-<p>下面的代码片段定义几个后续示例使用了四个样板类，包括多级可选链接的例子。这些类经扩大Person并Residence通过添加模型从上方Room和Address类，与相 ​​关的属性，方法，和下标。</p>
-
-<p>的Person类以同样的方式定义如前：</p>
-
-<p>class Person {<br/>
-    var residence: Residence?<br/>
-}<br/>
-的Residence类是比以前更为复杂。这一次，Residence类定义变量属性称为rooms，这是与类型的空数组初始化[Room]：</p>
-
-<p>class Residence {<br/>
-    var rooms = <a href="">Room</a><br/>
-    var numberOfRooms: Int {<br/>
-        return rooms.count<br/>
-    }<br/>
-    subscript(i: Int) -&gt; Room {<br/>
-        get {<br/>
-            return rooms[i]<br/>
-        }<br/>
-        set {<br/>
-            rooms[i] = newValue<br/>
-        }<br/>
-    }<br/>
-    func printNumberOfRooms() {<br/>
-        print(<q>The number of rooms is (numberOfRooms)</q>)<br/>
-    }<br/>
-    var address: Address?<br/>
-}<br/>
-因为这个版本的Residence存储阵列Room的情况下，它的numberOfRooms属性被实现为计算属性，而不是一个存储属性。计算出的numberOfRooms属性只是返回的值count从属性rooms数组。</p>
-
-<p>作为一种快捷 ​​方式来访问其rooms阵，这个版本Residence提供了读写标，提供进入房间的请求的索引在rooms数组中。</p>
-
-<p>此版本Residence还提供了一个调用的方法printNumberOfRooms，它简单地打印在房间居住的人数。</p>
-
-<p>最后，Residence定义了一个称为可选属性address，与一个类型Address?。在Address此属性类的类型定义如下。</p>
-
-<p>在Room这个类使用rooms数组是一个简单的类有一个属性叫做name以及初始化该属性设置为一个合适的房间名称：</p>
-
-<p>class Room {<br/>
-    let name: String<br/>
-    init(name: String) { self.name = name }<br/>
-}<br/>
-此模型中的最后一类被称为Address。这个类有类型的三个可选属性String?。前两个特性，buildingName并且buildingNumber，是替代方式，以识别特定建筑物作为地址的一部分。第三个属性，street被用来命名该地址街道：</p>
-
-<p>class Address {<br/>
-    var buildingName: String?<br/>
-    var buildingNumber: String?<br/>
-    var street: String?<br/>
-    func buildingIdentifier() -&gt; String? {<br/>
-        if buildingName != nil {<br/>
-            return buildingName<br/>
-        } else if buildingNumber != nil &amp;&amp; street != nil {<br/>
-            return <q>(buildingNumber) (street)</q><br/>
-        } else {<br/>
-            return nil<br/>
-        }<br/>
-    }<br/>
-}<br/>
-该Address级还提供了一个调用的方法buildingIdentifier()，其中有一个返回类型String?。这种方法检查地址的属性，并返回buildingName，如果它有一个值，或buildingNumber与串联street如果两者都具有的值，或nil以其他方式。</p>
-
-<p>访问属性通过可选链接</p>
-
-<p>作为证明可选链接作为替代强制解缠，你可以使用可选的链接在一个可选值访问属性，并检查该属性的访问是成功的。</p>
-
-<p>使用上面定义的类来创建一个新Person的实例，并尝试访问其numberOfRooms财产之前：</p>
-
-<p>let john = Person()<br/>
-if let roomCount = john.residence?.numberOfRooms {<br/>
-    print(<q>John&#39;s residence has (roomCount) room(s).</q>)<br/>
-} else {<br/>
-    print(<q>Unable to retrieve the number of rooms.</q>)<br/>
-}<br/>
-// Prints <q>Unable to retrieve the number of rooms.</q><br/>
-因为john.residence是nil，这个可选链接呼叫以同样的方式作为之前失败。</p>
-
-<p>您也可以尝试通过可选的链接来设置属性值：</p>
-
-<p>let someAddress = Address()<br/>
-someAddress.buildingNumber = <q>29</q><br/>
-someAddress.street = <q>Acacia Road</q><br/>
-john.residence?.address = someAddress<br/>
-在这个例子中，尝试将address财产john.residence将会失败，因为john.residence目前nil。</p>
-
-<p>的分配是可选的链，这意味着没有对的右手侧的码的一部分=操作员进行评价。在前面的例子，这是不容易看到，someAddress不会求，因为访问一个恒定没有任何副作用。下面的清单做同样的任务，但它使用一个函数来创建地址。该函数打印“功能被称作”返回一个值，它可以让你看到的右侧是否之前=运营商进行了评估。</p>
-
-<p>func createAddress() -&gt; Address {<br/>
-    print(<q>Function was called.</q>)</p>
+<ul>
+<li>可选类型属性直接赋值，如果可选类型为nil，那么不会赋值。</li>
+</ul>
 
 <pre><code>let someAddress = Address()
 someAddress.buildingNumber = &quot;29&quot;
 someAddress.street = &quot;Acacia Road&quot;
-
-return someAddress
+john.residence?.address = someAddress
 </code></pre>
 
-<p>}<br/>
-john.residence?.address = createAddress()<br/>
-你可以告诉该createAddress()函数不叫，因为没有被打印出来。</p>
+<ul>
+<li>举例说明，不会赋值，不会log。</li>
+</ul>
 
-<p>通过调用链接选购方法</p>
+<pre><code>func createAddress() -&gt; Address {
+    print(&quot;Function was called.&quot;)
+    
+    let someAddress = Address()
+    someAddress.buildingNumber = &quot;29&quot;
+    someAddress.street = &quot;Acacia Road&quot;
+    
+    return someAddress
+}
+john.residence?.address = createAddress()
+</code></pre>
 
-<p>您可以使用可选的链接调用的可选值的方法，并检查方法调用是否成功。可以做到这一点，即使该方法没有定义返回值。</p>
+<h1 id="toc_3">可选链接调用方法</h1>
 
-<p>在printNumberOfRooms()对方法Residence类打印的当前值numberOfRooms。这里的方法看上去如何：</p>
+<pre><code>func printNumberOfRooms() {
+    print(&quot;The number of rooms is \(numberOfRooms)&quot;)
+}
 
-<p>func printNumberOfRooms() {<br/>
-    print(<q>The number of rooms is (numberOfRooms)</q>)<br/>
-}<br/>
-此方法不指定返回类型。然而，没有返回类型的函数和方法有一个隐含的返回类型Void，如描述的没有返回值的函数。这意味着，他们返回的值()，或空元组。</p>
+if john.residence?.printNumberOfRooms() != nil {
+    print(&quot;It was possible to print the number of rooms.&quot;)
+} else {
+    print(&quot;It was not possible to print the number of rooms.&quot;)
+}
+</code></pre>
 
-<p>如果你调用具有可选的链接可选值，此方法，该方法的返回类型将是Void?，不是Void，因为返回值始终是一个可选类型可选，通过链接调用时。这使您可以使用if语句来检查是否有可能调用printNumberOfRooms()方法，即使方法本身并不定义一个返回值。从比较的返回值printNumberOfRooms调用对nil，看是否该方法调用成功：</p>
+<ul>
+<li>设置属性类似</li>
+</ul>
 
-<p>if john.residence?.printNumberOfRooms() != nil {<br/>
-    print(<q>It was possible to print the number of rooms.</q>)<br/>
-} else {<br/>
-    print(<q>It was not possible to print the number of rooms.</q>)<br/>
-}<br/>
-// Prints <q>It was not possible to print the number of rooms.</q><br/>
-如果试图通过设置可选链接属性也是同样的道理。在上面的例子通过可选的链接访问属性试图设置address为值john.residence，即使residence属性nil。任何试图通过设置可选链接属性返回类型的值Void?，这使您可以比较的nil，看看如果属性设置成功：</p>
+<pre><code>if (john.residence?.address = someAddress) != nil {
+    print(&quot;It was possible to set the address.&quot;)
+} else {
+    print(&quot;It was not possible to set the address.&quot;)
+}
+</code></pre>
 
-<p>if (john.residence?.address = someAddress) != nil {<br/>
-    print(<q>It was possible to set the address.</q>)<br/>
-} else {<br/>
-    print(<q>It was not possible to set the address.</q>)<br/>
-}<br/>
-// Prints <q>It was not possible to set the address.</q><br/>
-访问下标通过可选链接</p>
+<h1 id="toc_4">可选链接访问下标</h1>
 
-<p>您可以使用可选的链接来尝试检索和设置上的一个可选值从标值，并检查通话标是否成功。</p>
+<ul>
+<li>效果类似。</li>
+</ul>
 
-<p>注意</p>
+<pre><code>if let firstRoomName = john.residence?[0].name {
+    print(&quot;The first room name is \(firstRoomName).&quot;)
+} else {
+    print(&quot;Unable to retrieve the first room name.&quot;)
+}
+</code></pre>
 
-<p>当您通过可选的链接一个可选值访问一个下标，您将问号之前的标的支架，而不是之后。可选链接问号始终是可选表达式的部分后紧跟。</p>
+<ul>
+<li>设置下标值，同理。</li>
+</ul>
 
-<p>下面的例子尝试检索在所述第一室的名称rooms的数组john.residence上使用的规定的下标属性Residence类。因为john.residence目前nil，标调用失败：</p>
+<pre><code>john.residence?[0] = Room(name: &quot;Bathroom&quot;)
+</code></pre>
 
-<p>if let firstRoomName = john.residence?[0].name {<br/>
-    print(<q>The first room name is (firstRoomName).</q>)<br/>
-} else {<br/>
-    print(<q>Unable to retrieve the first room name.</q>)<br/>
-}<br/>
-// Prints <q>Unable to retrieve the first room name.</q><br/>
-在这个下标调用可选的链接问号后立即放入john.residence，下标括号之前，因为john.residence是其可选的链接正在尝试的可选值。</p>
+<h2 id="toc_5">可选类型的访问下标</h2>
 
-<p>同样的，你可以尝试通过使用可选的链接下标来设置一个新值：</p>
+<pre><code>var testScores = [&quot;Dave&quot;: [86, 82, 84], &quot;Bev&quot;: [79, 94, 81]]
+testScores[&quot;Dave&quot;]?[0] = 91
+testScores[&quot;Bev&quot;]?[0] += 1
+testScores[&quot;Brian&quot;]?[0] = 72
+</code></pre>
 
-<p>john.residence?[0] = Room(name: <q>Bathroom</q>)<br/>
-此标设置尝试也失败了，因为residence目前nil。</p>
+<h1 id="toc_6">链接多级</h1>
 
-<p>如果您创建和实际分配Residence实例john.residence，与一个或多个Room它的实例rooms阵列，可以使用Residence标来访问在实际的项目rooms，通过可选的阵列链接：</p>
+<pre><code>if let johnsStreet = john.residence?.address?.street {
+    print(&quot;John&#39;s street name is \(johnsStreet).&quot;)
+} else {
+    print(&quot;Unable to retrieve the address.&quot;)
+}
+</code></pre>
 
-<p>let johnsHouse = Residence()<br/>
-johnsHouse.rooms.append(Room(name: <q>Living Room</q>))<br/>
-johnsHouse.rooms.append(Room(name: <q>Kitchen</q>))<br/>
-john.residence = johnsHouse</p>
+<h1 id="toc_7">链接上的方法返回可选类型</h1>
 
-<p>if let firstRoomName = john.residence?[0].name {<br/>
-    print(<q>The first room name is (firstRoomName).</q>)<br/>
-} else {<br/>
-    print(<q>Unable to retrieve the first room name.</q>)<br/>
-}<br/>
-// Prints <q>The first room name is Living Room.</q><br/>
-可选类型的访问下标</p>
+<pre><code>if let buildingIdentifier = john.residence?.address?.buildingIdentifier() {
+    print(&quot;John&#39;s building identifier is \(buildingIdentifier).&quot;)
+}
 
-<p>如果一个下标返回可选的值类型，如斯威夫特的重要标Dictionary型场所问号后标收盘支架在其可选的返回价值链：</p>
-
-<p>var testScores = [<q>Dave</q>: [86, 82, 84], <q>Bev</q>: [79, 94, 81]]<br/>
-testScores[<q>Dave</q>]?[0] = 91<br/>
-testScores[<q>Bev</q>]?[0] += 1<br/>
-testScores[<q>Brian</q>]?[0] = 72<br/>
-// the <q>Dave</q> array is now [91, 82, 84] and the <q>Bev</q> array is now [80, 94, 81]<br/>
-上面的例子定义了一个名为字典testScores，它包含映射两个键值对String关键的数组Int值。该示例使用可选的链接设置中的第一项<q>Dave</q>阵列91; 递增的第一项<q>Bev</q>阵列通过1; 并尝试设置为一个关键的数组中的第一项<q>Brian</q>。前两个电话成功，因为该testScores字典包含键<q>Dave</q>和<q>Bev</q>。第三个调用失败，因为testScores字典里没有包含一个关键<q>Brian</q>。</p>
-
-<p>链接链接多级</p>
-
-<p>您可以在模型中更深层次的可选链的多层次连接起来，深入到属性，方法和下标。然而，可选链的多个层面不返回的值增加可选性更多层次。</p>
-
-<p>把它的另一种方式：</p>
-
-<p>如果您尝试检索类型是不可选的，它会因为可选的链接变得可选。<br/>
-如果你正在试图检索的类型是已经可选的，它不会成为更多，因为链接的可选的。<br/>
-因此：</p>
-
-<p>如果您尝试检索Int通过可选的链接值，Int?总是返回，无论怎么链接的多层次使用。<br/>
-同样，如果您尝试检索Int?通过可选的链接值，Int?总是返回，无论怎么链接的多层次使用。<br/>
-下面的示例尝试访问street该财产address的财产residence的性质john。有2可选链接的水平在使用这里，以链穿过residence和address性质，这两者都是可选类型的：</p>
-
-<p>if let johnsStreet = john.residence?.address?.street {<br/>
-    print(<q>John&#39;s street name is (johnsStreet).</q>)<br/>
-} else {<br/>
-    print(<q>Unable to retrieve the address.</q>)<br/>
-}<br/>
-// Prints <q>Unable to retrieve the address.</q><br/>
-值john.residence目前包含一个有效的Residence实例。但是，该值john.residence.address是当前nil。正因为如此，调用john.residence?.address?.street失败。</p>
-
-<p>请注意，在上面的例子中，你正在试图获取的价值street属性。在此属性的类型是String?。的返回值john.residence?.address?.street是也因此String?，即使可选链接的两个级别，除了被施加到底层可选类型的属性。</p>
-
-<p>如果设置一个实际Address实例作为值john.residence.address，并设置该地址的实际值street属性，您可以访问的价值street通过多级可选链接属性：</p>
-
-<p>let johnsAddress = Address()<br/>
-johnsAddress.buildingName = <q>The Larches</q><br/>
-johnsAddress.street = <q>Laurel Street</q><br/>
-john.residence?.address = johnsAddress</p>
-
-<p>if let johnsStreet = john.residence?.address?.street {<br/>
-    print(<q>John&#39;s street name is (johnsStreet).</q>)<br/>
-} else {<br/>
-    print(<q>Unable to retrieve the address.</q>)<br/>
-}<br/>
-// Prints <q>John&#39;s street name is Laurel Street.</q><br/>
-在这个例子中，尝试将address的属性john.residence会成功，因为的值john.residence目前包含一个有效Residence实例。</p>
-
-<p>链接上的方法可选的返回值</p>
-
-<p>前面的例子展示了如何通过检索链接可选可选类型的属性值。您也可以使用可选的链接，如果需要调用返回可选类型的值的方法，并链上方法的返回值。</p>
-
-<p>下面的示例调用Address类的buildingIdentifier()通过可选的链接方法。此方法返回类型的值String?。如上所述，可选的链接后，调用此方法的最终返回类型也是String?：</p>
-
-<p>if let buildingIdentifier = john.residence?.address?.buildingIdentifier() {<br/>
-    print(<q>John&#39;s building identifier is (buildingIdentifier).</q>)<br/>
-}<br/>
-// Prints <q>John&#39;s building identifier is The Larches.</q><br/>
-如果你想在这个方法的返回值进行进一步的可选链接，将链接可选问号后，该方法的括号：</p>
-
-<p>if let beginsWithThe =<br/>
-    john.residence?.address?.buildingIdentifier()?.hasPrefix(<q>The</q>) {<br/>
-    if beginsWithThe {<br/>
-        print(<q>John&#39;s building identifier begins with &quot;The&quot;.</q>)<br/>
-    } else {<br/>
-        print(<q>John&#39;s building identifier does not begin with &quot;The&quot;.</q>)<br/>
-    }<br/>
-}<br/>
-// Prints <q>John&#39;s building identifier begins with</q>The<q>.</q><br/>
-注意</p>
-
-<p>在上面的例子中，您将可选链接问号后的括号内，因为你要串联上可选的值是buildingIdentifier()方法的返回值，而不是buildingIdentifier()方法本身。</p>
+if let beginsWithThe =
+    john.residence?.address?.buildingIdentifier()?.hasPrefix(&quot;The&quot;) {
+    if beginsWithThe {
+        print(&quot;John&#39;s building identifier begins with \&quot;The\&quot;.&quot;)
+    } else {
+        print(&quot;John&#39;s building identifier does not begin with \&quot;The\&quot;.&quot;)
+    }
+}
+</code></pre>
 
 
 </div>
@@ -565,7 +492,7 @@ john.residence?.address = johnsAddress</p>
 	<div class="text-right" style="padding:15px 0px;">
 		
 	        <a href="14743599754782.html" 
-	        title="Next Post: 错误处理">错误处理 &raquo;</a>
+	        title="Next Post: 错误处理 cool">错误处理 cool &raquo;</a>
 	    
 	</div>
   </div>

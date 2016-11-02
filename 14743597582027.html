@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -283,7 +283,7 @@
 <a href="#toc_10">默认参数值</a>
 </li>
 <li>
-<a href="#toc_11">可变参数的参数</a>
+<a href="#toc_11">可变的参数</a>
 </li>
 <li>
 <a href="#toc_12">inout参数</a>
@@ -317,12 +317,11 @@
 <h1 id="toc_1">函数的定义和调用</h1>
 
 <ul>
-<li>基础函数定义。<code>func</code>前缀表示函数，函数名称（参数1，参数2） -&gt; 返回类型。</li>
+<li>基础函数定义。<code>func</code>前缀表示函数，函数名称（参数1:参数1类型） -&gt; 返回类型。</li>
 </ul>
 
 <pre><code>func greet(person: String) -&gt; String {
-    let greeting = &quot;Hello, &quot; + person + &quot;!&quot;
-    return greeting
+     return &quot;Hello, &quot; + person + &quot;!&quot;
 }
 </code></pre>
 
@@ -330,8 +329,7 @@
 <li>函数调用</li>
 </ul>
 
-<pre><code>print(greet(person: &quot;Anna&quot;))
-print(greet(person: &quot;Brian&quot;))
+<pre><code>greet(person: &quot;Anna&quot;)
 </code></pre>
 
 <h1 id="toc_2">函数的参数和返回值</h1>
@@ -339,13 +337,14 @@ print(greet(person: &quot;Brian&quot;))
 <h2 id="toc_3">无参数</h2>
 
 <ul>
-<li>没有参数，但是包含参数的<code>()</code>，不能省略。</li>
+<li>没有参数，但是包含参数的<code>()</code>不能省略。</li>
 </ul>
 
 <pre><code>func sayHelloWorld() -&gt; String {
     return &quot;hello, world&quot;
 }
-print(sayHelloWorld())
+
+sayHelloWorld()
 </code></pre>
 
 <h2 id="toc_4">多参数</h2>
@@ -356,12 +355,13 @@ print(sayHelloWorld())
 
 <pre><code>func greet(person: String, alreadyGreeted: Bool) -&gt; String {
     if alreadyGreeted {
-        return greetAgain(person: person)
+        return person + &quot;怎么又是你。&quot;
     } else {
-        return greet(person: person)
+        return person + &quot;你好。&quot;
     }
 }
-print(greet(person: &quot;Tim&quot;, alreadyGreeted: true))
+
+greet(person: &quot;Tim&quot;, alreadyGreeted: true)
 </code></pre>
 
 <h2 id="toc_5">无返回</h2>
@@ -373,27 +373,26 @@ print(greet(person: &quot;Tim&quot;, alreadyGreeted: true))
 <pre><code>func greet(person: String) {
     print(&quot;Hello, \(person)!&quot;)
 }
+
 greet(person: &quot;Dave&quot;)
 </code></pre>
 
 <ul>
-<li>函数的返回值可以在调用时忽略。</li>
+<li>函数的返回值可以在调用时忽略，即有返回，但是不使用。</li>
 </ul>
 
 <pre><code>func printAndCount(string: String) -&gt; Int {
     print(string)
     return string.characters.count
 }
-func printWithoutCounting(string: String) {
-    let _ = printAndCount(string: string)
-}
+
 printAndCount(string: &quot;hello, world&quot;)
 </code></pre>
 
 <h2 id="toc_6">多返回</h2>
 
 <ul>
-<li>使用一个元组类型的返回类型，使函数返回多个值。</li>
+<li>使用一个元组类型作为返回类型，使函数返回多个值。</li>
 </ul>
 
 <pre><code>func minMax(array: [Int]) -&gt; (min: Int, max: Int) {
@@ -412,18 +411,13 @@ printAndCount(string: &quot;hello, world&quot;)
 
 <h2 id="toc_7">返回可选类型</h2>
 
-<pre><code>func minMax(array: [Int]) -&gt; (min: Int, max: Int)? {
-    if array.isEmpty { return nil }
-    var currentMin = array[0]
-    var currentMax = array[0]
-    for value in array[1..&lt;array.count] {
-        if value &lt; currentMin {
-            currentMin = value
-        } else if value &gt; currentMax {
-            currentMax = value
-        }
+<pre><code>func checkScore(score: Int) - Int? {
+    if score &gt; 100 || score &lt; 0 {
+        return nil
     }
-    return (currentMin, currentMax)
+    else {
+        return score
+    }
 }
 </code></pre>
 
@@ -431,8 +425,11 @@ printAndCount(string: &quot;hello, world&quot;)
 <li>使用可选绑定来，解析可选类型返回值的内容。</li>
 </ul>
 
-<pre><code>if let bounds = minMax(array: [8, -6, 2, 109, 3, 71]) {
-    print(&quot;min is \(bounds.min) and max is \(bounds.max)&quot;)
+<pre><code>if let score = checkScore(103) {
+    print(score)
+}
+else {
+     print(&quot;成绩异常&quot;)
 }
 </code></pre>
 
@@ -445,32 +442,33 @@ printAndCount(string: &quot;hello, world&quot;)
 <pre><code>func totalName(firstName a:String, lastName b:String) -&gt; String {
     return a + b
 }
+
 totalName(firstName: &quot;Li&quot;, lastName: &quot;Lei&quot;)
 </code></pre>
 
 <h2 id="toc_9">省略参数标签</h2>
 
 <pre><code>func someFunction(_ firstParameterName: Int, secondParameterName: Int) {
-    // In the function body, firstParameterName and secondParameterName
-    // refer to the argument values for the first and second parameters.
+     print(firstParameterName + secondParameterName)
 }
+
 someFunction(1, secondParameterName: 2)
 </code></pre>
 
 <h2 id="toc_10">默认参数值</h2>
 
 <pre><code>func cal(a : Int, b : Int = 18) -&gt; Int{
-    return a+b
+    return a + b
 }
 
 cal(a: 12)
 cal(a: 12, b: 12)
 </code></pre>
 
-<h2 id="toc_11">可变参数的参数</h2>
+<h2 id="toc_11">可变的参数</h2>
 
 <ul>
-<li>就是把参数变成了数组，且最多只能有一个可变参数。</li>
+<li>相当于把参数变成了数组，且最多只能有一个可变参数。</li>
 </ul>
 
 <pre><code>func sumof(_ numbers: Int...) -&gt; Int {
@@ -505,18 +503,13 @@ mySwap(a: &amp;a, b: &amp;b)
 <h1 id="toc_13">函数类型</h1>
 
 <ul>
-<li>2个Int类型的参数，并返回1个Int类型的数据。该函数类型为<code>(Int, Int) -&gt; Int</code>。</li>
+<li>根据函数的入参和返回值，定义了函数类型。例如<code>(Int, Int) -&gt; Int</code>。</li>
 </ul>
-
-<pre><code>func addTwoInts(_ a: Int, _ b: Int) -&gt; Int {
-    return a + b
-}
-</code></pre>
 
 <h2 id="toc_14">使用函数类型</h2>
 
 <ul>
-<li>根据函数类型，可以定义函数变量。</li>
+<li>根据函数类型，可以定义函数变量。例如<code>var 函数变量：函数类型 = 函数</code>。</li>
 </ul>
 
 <pre><code>func addTwo(a: Int, b: Int) -&gt; Int {
@@ -525,10 +518,15 @@ mySwap(a: &amp;a, b: &amp;b)
 
 var myfunc: (Int, Int) -&gt; Int = addTwo;
 
+addTwo(a: 2, b: 3)
 myfunc(2, 3)
 </code></pre>
 
 <h2 id="toc_15">函数类型作为参数</h2>
+
+<ul>
+<li>函数类型作为参数，调用时传入该函数类型的函数。</li>
+</ul>
 
 <pre><code>// 函数
 func addTwo(a: Int, b: Int) -&gt; Int {
@@ -546,6 +544,10 @@ myFunc(add: addTwo)
 
 <h2 id="toc_16">返回函数类型</h2>
 
+<ul>
+<li>与上述相反，返回函数类型，返回函数。</li>
+</ul>
+
 <pre><code>func addTwo(a: Int, b: Int) -&gt; Int {
     return a + b
 }
@@ -555,6 +557,10 @@ func myFunc() -&gt; (Int, Int)-&gt; Int {
 }
 
 myFunc()(1,2)
+
+// 同上，分解更容易理解。
+var addTwoFunc = myFunc()
+var i = addTwoFunc(1, 2)
 </code></pre>
 
 <h1 id="toc_17">嵌套函数</h1>

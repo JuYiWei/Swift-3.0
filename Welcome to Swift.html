@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  欢迎加入 Swift - Swift 3.0 官方文档 自整理 - 说了是村长
+  语法参考 - Swift 3.0 官方文档 自整理 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -248,23 +248,62 @@
 
 	
 		<div class="markdown-body">
-		<h1>关于 Swift</h1>
+		<h1>关于语言参考</h1>
 
-		<p>写之前：</p>
+		<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AboutTheLanguageReference.html#//apple_ref/doc/uid/TP40014097-CH29-ID345">About the Language Reference 官方文档</a></p>
 
-<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0">The Swift Programming Language (Swift 3) 官方文档</a></p>
+<p>这本书的部分描述了斯威夫特编程语言的形式语法。这里所描述的语法是为了帮助您了解更详细的语言，而不是让你直接实现解析器或编译器。</p>
 
-<ul>
-<li><p>Swift是一个新的编程语言适，用于开发iOS，MacOS，watchOS和tvOS应用程序。建立在C和Objective-C的基础之上，没有C兼容性的限制。采用了安全的编程模式，并增加了现代的功能，使编程更简单，更灵活，更有趣。支持成熟的Cocoa和Cocoa Touch框架。有机会带来不同的软件开发体验。</p></li>
-<li><p>Swift已经开发多年。苹果公司通过推进我们现有的编译器，调试器和框架的基础设施奠定了Swift的基础。我们简化了内存管理与自动引用计数（ARC）。我们的框架协议栈，建立在Foundation和Cocoa的基础上，已实现了现代化和整个标准化。Objective-C的本身已经发展到支持block，集合，模块，使框架更贴近现代化的编程语言。由于这个基础，我们现在可以引入苹果软件开发的未来的新的语言Swift中。</p></li>
-<li><p>SObjective-C的开发人员对wift应该比较熟悉。它采用的Objective-C可读性的命名参数，动态对象模型。提供了无缝接入现有的Cocoa框架，混合操作Objective-C代码。从这个共同点的基础上，结合了面向过程和面向对象，Swift引入了许多新的功能。</p></li>
-<li><p>Swift对新的程序员友好的。它是现代化的编程语言，类似现有的脚本语言。它支持playgrounds，这个创新的功能，无需构建和运行应用程序就能立即看到结果。</p></li>
-<li><p>Swift结合现代语言思维以及世界上优秀苹果工程师的智慧。编译器的性能得到优化，语言的发展进行了优化。它的设计从“hello，world”扩展到整个操作系统。这一切都使得Swift的开发者和苹果对为了充满希望。</p></li>
-<li><p>Swift是写的iOS，macOS，watchOS和tvOS应用一个很神奇的方式，并会继续发展新的特性和功能。我们对Swift的目标是雄心勃勃的。我们不能等待，看看你用它创造什么。 </p></li>
-</ul>
+<p>雨燕的语言是比较小的，因为很多常见的类型，函数和几乎无处不出现在雨燕代码运营商都在斯威夫特标准库实际上定义。尽管这些类型，函数和运营商不斯威夫特语言本身的一部分，他们在本书的这一部分的讨论和代码示例广泛使用。</p>
+
+<h1 id="toc_0">如何阅读语法</h1>
+
+<p>用来形容斯威夫特编程语言的形式语法的符号如下几个约定：</p>
+
+<p>一个箭头（→）用于标记语法制作和可以理解为“可以由”。<br/>
+句法类别以表示斜体文字出现在文法产生式规则的两侧。<br/>
+文字和标点用黑体字显示constant width的文字和只出现在语法产生式规则的右手边。<br/>
+（|）替代语法产生由竖线分隔。当替代产品有太长轻松地阅读，他们被分成上新生产线的多个语法产生式规则。<br/>
+在少数情况下，普通字体的文本用于描述一个文法产生式规则的右手边。<br/>
+可选的语法范畴和文字是由一个尾部标标注，选择。<br/>
+作为一个例子，一个消气部件设置器块的语法定义如下：</p>
+
+<p>一个GETTER，SETTER方法​​块语法</p>
+
+<p>吸气制定者块 → 消气条款二传手子句选择二传手子句消气条款 ­ {­}­  {­}­<br/>
+这个定义表明，一个getter，setter方法块可以由一个getter条款跟着一个可选的二传手条款，括在大括号，中或一个setter条款后跟一个getter条款，括在大括号。上面的文法产生等效于以下两个产生，其中所述替代明确阐明：</p>
+
+<p>一个GETTER，SETTER方法​​块语法</p>
+
+<p>吸气制定者块 → 消气条款二传手子句选择{­}­<br/>
+吸气制定者块 → 二传手子句消气条款 ­{­}­</p>
 
 
 		</div>
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
 	
 
  

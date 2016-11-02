@@ -83,7 +83,7 @@
           
             <li><a title="继承" href="14743598699234.html">继承</a></li>
           
-            <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+            <li><a title="初始化" href="14743599314901.html">初始化</a></li>
           
             <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
           
@@ -91,9 +91,9 @@
           
             <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
           
-            <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+            <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
           
-            <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+            <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
           
             <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
           
@@ -121,7 +121,7 @@
           
             <li><a title="表达式" href="14743601746767.html">表达式</a></li>
           
-            <li><a title="声明" href="14743601868497.html">声明</a></li>
+            <li><a title="语句？" href="14743601868497.html">语句？</a></li>
           
             <li><a title="声明" href="14743602139425.html">声明</a></li>
           
@@ -186,7 +186,7 @@
                         
                           <li><a title="继承" href="14743598699234.html">继承</a></li>
                         
-                          <li><a title="此篇以下未整理仅谷歌翻译" href="14743599314901.html">此篇以下未整理仅谷歌翻译</a></li>
+                          <li><a title="初始化" href="14743599314901.html">初始化</a></li>
                         
                           <li><a title="反初始化" href="14743599349637.html">反初始化</a></li>
                         
@@ -194,9 +194,9 @@
                         
                           <li><a title="可选链接" href="14743599610249.html">可选链接</a></li>
                         
-                          <li><a title="错误处理" href="14743599754782.html">错误处理</a></li>
+                          <li><a title="错误处理 cool" href="14743599754782.html">错误处理 cool</a></li>
                         
-                          <li><a title="类型转换" href="14743599908626.html">类型转换</a></li>
+                          <li><a title="类型转换 cool" href="14743599908626.html">类型转换 cool</a></li>
                         
                           <li><a title="嵌套类型" href="14743600051579.html">嵌套类型</a></li>
                         
@@ -222,7 +222,7 @@
                         
                           <li><a title="表达式" href="14743601746767.html">表达式</a></li>
                         
-                          <li><a title="声明" href="14743601868497.html">声明</a></li>
+                          <li><a title="语句？" href="14743601868497.html">语句？</a></li>
                         
                           <li><a title="声明" href="14743602139425.html">声明</a></li>
                         
@@ -246,6 +246,8 @@
  <div class="markdown-body">
 <h1>表达式</h1>
 
+<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Expressions.html#//apple_ref/doc/uid/TP40014097-CH32-ID383">Expressions 官方文档</a></p>
+
 <p>在夫特，有四种表达式：前缀表达式二进制表达式，主表达式和后缀表达式。计算表达式返回一个值，导致副作用，或两者。</p>
 
 <p>前缀和二进制表达式可以应用于运营商更小的表达式。主要表现在概念上是最简单的一种表达方式，他们提供了一种方法来访问值。后缀表达式，如前缀和二元表达式，让你建立使用后缀，如函数调用和成员访问更复杂的表达式。每一种表达中详细在下面的章节中描述。</p>
@@ -253,8 +255,9 @@
 <p>表达式语法</p>
 
 <p>表达 → 试运营商选择前缀表达二进制表达选择<br/>
-表达式列表 → 表达表达 表达列表 ­  ,­<br/>
-前缀表达式</p>
+表达式列表 → 表达表达 表达列表 ­  ,­</p>
+
+<h1 id="toc_0">前缀表达式</h1>
 
 <p>前缀表达式结合可选的前缀运算符与表达。前缀运营商需要一个参数，即跟随他们的表达。</p>
 
@@ -268,8 +271,9 @@
 
 <p>前缀表达 → 前缀运营商选择后缀表达式 ­<br/>
 前缀表达 → 在输出表达式 ­<br/>
-IN-OUT表达 → 标识符 ­&amp;­<br/>
-试运营</p>
+IN-OUT表达 → 标识符 ­&amp;­</p>
+
+<h2 id="toc_1">试运营</h2>
 
 <p>一个尝试表达包含的try运营商之后，可以抛出一个错误的表达式。它有以下形式：</p>
 
@@ -295,8 +299,9 @@ sum = (try someThrowingFunction()) + anotherThrowingFunction() // Error: try app
 
 <p>一试的表达语法</p>
 
-<p>试算子 → try­  try­?­  try­!­<br/>
-二进制表达式</p>
+<p>试算子 → try­  try­?­  try­!­</p>
+
+<h1 id="toc_2">二进制表达式</h1>
 
 <p>二进制表达式结合中缀的二进制运算符，它作为其左侧和右侧的参数的表达。它有以下形式：</p>
 
@@ -315,8 +320,9 @@ sum = (try someThrowingFunction()) + anotherThrowingFunction() // Error: try app
 二进制表达 → 赋值操作符试运营商选择前缀表达 ­<br/>
 二进制表达 → 有条件的运营商试运营商选择前缀表达 ­<br/>
 二进制表达 → 类型转换操作符 ­<br/>
-二进制表达式 → 二进制表达的二进制表达式选择<br/>
-赋值运算符</p>
+二进制表达式 → 二进制表达的二进制表达式选择</p>
+
+<h2 id="toc_3">赋值运算符</h2>
 
 <p>的赋值运算符设定为给定表达式的新值。它有以下形式：</p>
 
@@ -329,8 +335,9 @@ sum = (try someThrowingFunction()) + anotherThrowingFunction() // Error: try app
 
 <p>赋值运算符的语法</p>
 
-<p>赋值操作符 → =­<br/>
-三元条件运算符</p>
+<p>赋值操作符 → =­</p>
+
+<h2 id="toc_4">三元条件运算符</h2>
 
 <p>在三元条件运算符的计算结果为根据条件的值两个给定值之一。它有以下形式：</p>
 
@@ -341,8 +348,9 @@ sum = (try someThrowingFunction()) + anotherThrowingFunction() // Error: try app
 
 <p>有条件的经营者的语法</p>
 
-<p>有条件的运营商 → 试运营商选择的表达?­:­<br/>
-类型转换操作符</p>
+<p>有条件的运营商 → 试运营商选择的表达?­:­</p>
+
+<h2 id="toc_5">类型转换操作符</h2>
 
 <p>有四个类型铸造操作符：在is操作者的as操作者，所述as?操作者和as!操作者。</p>
 
@@ -381,8 +389,9 @@ f(y)<br/>
 <p>类型转换操作符 → 型 ­is­<br/>
 类型转换操作符 → 型 ­as­<br/>
 类型转换操作符 → 型 ­as­?­<br/>
-类型转换操作符 → 型 ­as­!­<br/>
-基本表达式</p>
+类型转换操作符 → 型 ­as­!­</p>
+
+<h1 id="toc_6">基本表达式</h1>
 
 <p>主要表现是最基本的一种表达方式。它们可被用作对自己的表情，并且它们可以与其它标记组合以使前缀表达式二进制表达式和后缀表达式。</p>
 
@@ -406,22 +415,22 @@ f(y)<br/>
 类型<br/>
 值</p>
 
-<h1 id="toc_0">file</h1>
+<h1 id="toc_7">file</h1>
 
 <p>String<br/>
 它所在的文件的名称。</p>
 
-<h1 id="toc_1">line</h1>
+<h1 id="toc_8">line</h1>
 
 <p>Int<br/>
 它出现的行号上。</p>
 
-<h1 id="toc_2">column</h1>
+<h1 id="toc_9">column</h1>
 
 <p>Int<br/>
 列号，其中它开始。</p>
 
-<h1 id="toc_3">function</h1>
+<h1 id="toc_10">function</h1>
 
 <p>String<br/>
 在它所在的声明的名称。<br/>
@@ -464,8 +473,9 @@ func myFunction() {<br/>
 字典字面项 → 表达的表达:­<br/>
 操场上，文字 → 表达表达 表达 表达#colorLiteral­(­red­:­,­green­:­,­blue­:­,­alpha­:­)­<br/>
 操场上，文字 → 表达 ­#fileLiteral­(­resourceName­:­)­<br/>
-操场上，文字 → 表达 ­#imageLiteral­(­resourceName­:­)­<br/>
-自我表达</p>
+操场上，文字 → 表达 ­#imageLiteral­(­resourceName­:­)­</p>
+
+<h2 id="toc_11">自我表达</h2>
 
 <p>的self表达是明确提及在其发生的类型的当前类型或实例。它有以下几种形式：</p>
 
@@ -497,8 +507,9 @@ func myFunction() {<br/>
 <p>自我表达 → 自我的方法表达自我标表达自我初始化表达式 ­ self­<br/><br/>
 自方法表达 → 标识符 ­self­.­<br/>
 自标表达 → 表达式列表 ­self­[­]­<br/>
-自初始表达 → self­.­init­<br/>
-超表达</p>
+自初始表达 → self­.­init­</p>
+
+<h2 id="toc_12">超表达</h2>
 
 <p>一个超表达可以用其超一类交互。它具有下列形式之一：</p>
 
@@ -514,8 +525,9 @@ func myFunction() {<br/>
 <p>超表达 → 超类方法表达式超 -标表达超类的初始化表达式 ­<br/><br/>
 超方法表达式 → 标识符 ­super­.­<br/>
 超-标表达 → 表达式列表 ­super­[­]­<br/>
-超类的初始化表达式 → super­.­init­<br/>
-表达闭幕</p>
+超类的初始化表达式 → super­.­init­</p>
+
+<h2 id="toc_13">表达闭幕</h2>
 
 <p>一个封闭表达式创建一个倒闭，也称为拉姆达或匿名函数在其他编程语言。就像一个函数声明，封闭包含它执行的语句，它捕获从封闭范围的常量和变量。它有以下形式：</p>
 
@@ -546,7 +558,7 @@ func myFunction() {<br/>
 <p>myFunction { \(0 + \)1 }<br/>
 有关传递闭包作为参数传递给函数的信息，请参阅函数调用表达式。</p>
 
-<p>捕获列表</p>
+<h2 id="toc_14">捕获列表</h2>
 
 <p>默认情况下，封闭的表达与捕捉到这些价值观强引用其周边范围的常量和变量。您可以使用捕捉清单明确地控制值是如何在封闭抓获。</p>
 
@@ -605,8 +617,9 @@ myFunction { [weak parent = self.parent] in print(parent!.title) }<br/>
 捕捉列表 → 捕捉列表项 ­[­]­<br/>
 捕捉列表项 → 捕获列表项捕获列表项捕获列表项 ­  ,­<br/>
 捕获列表项 → 捕捉符选择表达<br/>
-捕获说明 → weak­  unowned­  unowned(safe)­  unowned(unsafe)­<br/>
-隐成员表达式</p>
+捕获说明 → weak­  unowned­  unowned(safe)­  unowned(unsafe)­</p>
+
+<h2 id="toc_15">隐成员表达式</h2>
 
 <p>一个隐含的成员表达式是访问类型，成员如枚举情况或类型的方法，在上下文中，其中类型推断可以确定隐含类型的缩写方式。它有以下形式：</p>
 
@@ -617,8 +630,9 @@ myFunction { [weak parent = self.parent] in print(parent!.title) }<br/>
 x = .anotherValue<br/>
 一个隐含的成员表达式语法</p>
 
-<p>隐名成员表达 → 标识符 ­.­<br/>
-括号表达式</p>
+<p>隐名成员表达 → 标识符 ­.­</p>
+
+<h2 id="toc_16">括号表达式</h2>
 
 <p>一个括号表达式由逗号分隔的用括号括起表达式的列表中。每个表达式可以收到（可选的标识符，由冒号分隔:）。它有以下形式：</p>
 
@@ -630,8 +644,9 @@ x = .anotherValue<br/>
 <p>括号内的表达 → 表达元素列表选择(­)­<br/>
 表达元素列表 → 表达元素的表达元素的表达元素列表 ­  ,­<br/>
 表达元素 → 表情识别 表情  :­<br/>
-表达元素 → 运营商标识符 运营商  :­<br/>
-通配符表达式</p>
+表达元素 → 运营商标识符 运营商  :­</p>
+
+<h2 id="toc_17">通配符表达式</h2>
 
 <p>一个通配符表达式用来明确忽略分配过程中的值。例如，在下面的分配10被分配给x和20被忽略：</p>
 
@@ -639,16 +654,17 @@ x = .anotherValue<br/>
 // x is 10, and 20 is ignored<br/>
 通配符表达式语法</p>
 
-<p>通配符表达 → _­<br/>
-选择表达</p>
+<p>通配符表达 → _­</p>
+
+<h2 id="toc_18">选择表达</h2>
 
 <p>选择器表达式可以访问用来指一种方法或属性的getter或setter在Objective-C选择。</p>
 
-<h1 id="toc_4">selector（方法名）</h1>
+<h1 id="toc_19">selector（方法名）</h1>
 
-<h1 id="toc_5">selector（吸气：属性名）</h1>
+<h1 id="toc_20">selector（吸气：属性名）</h1>
 
-<h1 id="toc_6">selector（setter方法：属性名）</h1>
+<h1 id="toc_21">selector（setter方法：属性名）</h1>
 
 <p>该方法名和属性名必须是一个方法，或者说是在Objective-C运行提供一个属性的引用。选择器表达式的值是所述的一个实例Selector类型。例如：</p>
 
@@ -686,14 +702,16 @@ let anotherSelector = #selector(SomeClass.doSomething(_:) as (SomeClass) -&gt; (
 
 <p>选择表达 → 表达 ­#selector­(­)­<br/>
 选择表达 → 表达 ­#selector­(­getter:­)­<br/>
-选择表达 → 表达 ­#selector­(­setter:­)­<br/>
-关键路径表达式</p>
+选择表达 → 表达 ­#selector­(­setter:­)­</p>
+
+<h2 id="toc_22">关键路径表达式</h2>
 
 <p>关键路径表达式可以访问用来指一个属性在Objective-C在键 - 值编码和键 - 值观察的API使用的字符串。</p>
 
-<h1 id="toc_7">keyPath（属性名）</h1>
-
-<p>该属性名称必须是是在Objective-C运行提供一个属性的引用。在编译时，关键路径表达式是由一个字符串替换。例如：</p>
+<ul>
+<li>#keyPath（属性名）
+该属性名称必须是是在Objective-C运行提供一个属性的引用。在编译时，关键路径表达式是由一个字符串替换。例如：</li>
+</ul>
 
 <p>@objc class SomeClass: NSObject {<br/>
     var someProperty: Int<br/>
@@ -722,8 +740,9 @@ print(c.value(forKey: keyPath))<br/>
 
 <p>一个关键路径表达式语法</p>
 
-<p>关键路径表达式 → 表达 ­#keyPath­(­)­<br/>
-后缀表达式</p>
+<p>关键路径表达式 → 表达 ­#keyPath­(­)­</p>
+
+<h1 id="toc_23">后缀表达式</h1>
 
 <p>后缀表达式通过施加后缀操作员或其他后缀语法表达式形成。在语法上，每一次的表现也是一个后缀表达式。</p>
 
@@ -742,8 +761,9 @@ print(c.value(forKey: keyPath))<br/>
 后缀表达式 → 动态式表达 ­<br/>
 后缀表达式 → 下标表达式 ­<br/>
 后缀表达式 → 强制值表达式 ­<br/>
-后缀表达式 → 可选链表达 ­<br/>
-函数调用表达式</p>
+后缀表达式 → 可选链表达 ­</p>
+
+<h2 id="toc_24">函数调用表达式</h2>
 
 <p>一个函数调用表达式包含一个函数名后的函数的参数在括号中以逗号分隔的列表。函数调用表达式有以下形式：</p>
 
@@ -767,8 +787,9 @@ myData.someMethod {\)0 == 13}<br/>
 
 <p>函数调用表达 → 后缀表达式括号的表达式 ­<br/>
 函数调用表达 → 后缀表达式括号的表达式选择尾随封 ­<br/>
-尾随闭合 → 封表达 ­<br/>
-初始化表达式</p>
+尾随闭合 → 封表达 ­</p>
+
+<h2 id="toc_25">初始化表达式</h2>
 
 <p>一个初始化表达式提供访问类型的初始化。它有以下形式：</p>
 
@@ -798,8 +819,9 @@ let s4 = type(of: someValue)(data: 5)       // Error<br/>
 一个初始化表达式语法</p>
 
 <p>初始化表达式 → 后缀表达式 ­.­init­<br/>
-初始化表达式 → 后缀表达式参数 -名 ­.­init­(­)­<br/>
-明确表达会员</p>
+初始化表达式 → 后缀表达式参数 -名 ­.­init­(­)­</p>
+
+<h2 id="toc_26">明确表达会员</h2>
 
 <p>一个明确的成员表达式允许访问一个名为类型，一个元组，或模块的成员。它由一期（.项目及其成员的标识符之间）。</p>
 
@@ -846,8 +868,9 @@ let d: (Int, Bool) -&gt; Void  = instance.overloadedMethod(x:y:)  // Unambiguous
 显式成员表达 → 后缀表达式识别 仿制参数子句选择.­<br/>
 显式成员表达 → 后缀表达式识别 参数 ，名称 ­.­(­)­<br/>
 参数-名称 → 参数名称参数 ，名称选择<br/>
-参数名 → 标识 ­:­<br/>
-Postfix的自我表达</p>
+参数名 → 标识 ­:­</p>
+
+<h2 id="toc_27">Postfix的自我表达</h2>
 
 <p>符后缀self表达式包含一个表达式或类型的名称，后面紧跟.self。它有以下几种形式：</p>
 
@@ -859,8 +882,9 @@ Postfix的自我表达</p>
 
 <p>一个自我表达的语法</p>
 
-<p>后缀-自我表达 → 后缀表达式 ­.­self­<br/>
-动态类型的表达式</p>
+<p>后缀-自我表达 → 后缀表达式 ­.­self­</p>
+
+<h2 id="toc_28">动态类型的表达式</h2>
 
 <p>一个动态类型表达式包含类似于一种特殊的语法中的表达式的函数调用表达式。它有以下形式：</p>
 
@@ -884,8 +908,9 @@ type(of: someInstance).printClassName()<br/>
 // Prints <q>SomeSubClass</q><br/>
 动态类型的表达式语法</p>
 
-<p>动态型表达 → 表达 ­type­(­of­:­)­<br/>
-标表达式</p>
+<p>动态型表达 → 表达 ­type­(­of­:­)­</p>
+
+<h2 id="toc_29">标表达式</h2>
 
 <p>一个标表达式提供了使用getter和相应的标声明的二传手标访问。它有以下形式：</p>
 
@@ -896,8 +921,9 @@ type(of: someInstance).printClassName()<br/>
 
 <p>一个标表达式语法</p>
 
-<p>标表达 → 后缀表达式表达式列表 ­[­]­<br/>
-强制值表达式</p>
+<p>标表达 → 后缀表达式表达式列表 ­[­]­</p>
+
+<h2 id="toc_30">强制值表达式</h2>
 
 <p>一个强制值表达式解开一个可选的值，你一定不是nil。它有以下形式：</p>
 
@@ -915,8 +941,9 @@ someDictionary[<q>a</q>]![0] = 100<br/>
 // someDictionary is now [<q>b</q>: [10, 20], <q>a</q>: [100, 2, 3]]<br/>
 强制值表达式语法</p>
 
-<p>强制值表达式 → 后缀表达式 ­!­<br/>
-可选的链式表达</p>
+<p>强制值表达式 → 后缀表达式 ­!­</p>
+
+<h2 id="toc_31">可选的链式表达</h2>
 
 <p>一个可选的链式表达提供了后缀表达式中使用可选值简单的语法。它有以下形式：</p>
 
@@ -971,7 +998,7 @@ var someDictionary = [<q>a</q>: [1, 2, 3], <q>b</q>: [10, 20]]</p>
 	<div class="text-right" style="padding:15px 0px;">
 		
 	        <a href="14743601868497.html" 
-	        title="Next Post: 声明">声明 &raquo;</a>
+	        title="Next Post: 语句？">语句？ &raquo;</a>
 	    
 	</div>
   </div>
