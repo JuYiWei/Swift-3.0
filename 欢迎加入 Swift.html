@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  嵌套类型 待2 - Swift 3.0 官方文档 自整理 - 说了是村长
+  欢迎加入 Swift - Swift 3.0 官方文档 自整理 - 说了是村长
   
   </title>
  <meta name="description" content="说了是村长，Swift 3.0 中文版">
@@ -243,141 +243,28 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- <div class="markdown-body">
-<h1>嵌套类型 待2</h1>
-
-<ul>
-<li>
-<a href="#toc_0">简介</a>
-</li>
-<li>
-<a href="#toc_1">在行动嵌套类型</a>
-</li>
-<li>
-<a href="#toc_2">谈到嵌套类型</a>
-</li>
-</ul>
+ 
 
 
-<h1 id="toc_0">简介</h1>
+	
+		<div class="markdown-body">
+		<h1>关于 Swift</h1>
 
-<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/NestedTypes.html#//apple_ref/doc/uid/TP40014097-CH23-ID242">Nested Types 官方文档</a></p>
+		<p><a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0">The Swift Programming Language (Swift 3) 官方文档</a></p>
 
-<p>枚举通常为支持一个特定的类或结构的功能。同样地，它可以方便地定义工具类和结构纯粹是为了更复杂类型的范围内使用。要做到这一点，斯威夫特，可以定义嵌套类型，即嵌套支持他们所支持的类型的定义中枚举，类和结构。</p>
+<hr/>
 
-<p>嵌套其他类型中的一个类型，它支持的类型外括号内写它的定义。类型可以嵌套到尽可能多的水平是必需的。</p>
-
-<h1 id="toc_1">在行动嵌套类型</h1>
-
-<p>下面的例子定义了一个名为结构BlackjackCard，其型号扑克牌在二十一点游戏中使用。该BlackJack结构包含两个嵌套枚举类型叫Suit和Rank。</p>
-
-<p>在大酒杯，王牌卡有一方或11的值。此功能是通过一个叫做结构表示Values，这是嵌套在内部Rank枚举：</p>
-
-<p>struct BlackjackCard {</p>
-
-<pre><code>// nested Suit enumeration
-enum Suit: Character {
-    case spades = &quot;♠&quot;, hearts = &quot;♡&quot;, diamonds = &quot;♢&quot;, clubs = &quot;♣&quot;
-}
-
-// nested Rank enumeration
-enum Rank: Int {
-    case two = 2, three, four, five, six, seven, eight, nine, ten
-    case jack, queen, king, ace
-    struct Values {
-        let first: Int, second: Int?
-    }
-    var values: Values {
-        switch self {
-        case .ace:
-            return Values(first: 1, second: 11)
-        case .jack, .queen, .king:
-            return Values(first: 10, second: nil)
-        default:
-            return Values(first: self.rawValue, second: nil)
-        }
-    }
-}
-
-// BlackjackCard properties and methods
-let rank: Rank, suit: Suit
-var description: String {
-    var output = &quot;suit is \(suit.rawValue),&quot;
-    output += &quot; value is \(rank.values.first)&quot;
-    if let second = rank.values.second {
-        output += &quot; or \(second)&quot;
-    }
-    return output
-}
-</code></pre>
-
-<p>}<br/>
-该Suit枚举描述了四种常见的纸牌套装，具有共同的原始Character值来表示自己的符号。</p>
-
-<p>该Rank枚举描述了十三个可能扑克牌行列，与原料一起Int值来表示其面值。（这些原始Int值不用于杰克，皇后，国王和王牌卡。）</p>
-
-<p>如上述提到的，Rank枚举定义它自己的，被称为的进一步嵌套结构Values。这种结构封装的事实，大多数卡有一个值，但王牌卡有两个值。该Values结构定义了两个属性来表示这样的：</p>
-
-<p>first，类型 Int<br/>
-second的类型Int?，或“任选的Int”<br/>
-Rank也定义一个计算属性，values，它返回的一个实例Values结构。此计算性能考虑卡片的等级和初始化一个新的Values基于它的等级相应的值的实例。它采用特殊的值jack，queen，king，和ace。对于数字卡片，它采用了排名的原始Int价值。</p>
-
-<p>的BlackjackCard结构本身有两个属性- rank和suit。它还定义一个计算属性调用description，它使用存储在所述值rank与suit建立的名称和卡的值的描述。该description属性使用可选的绑定来检查是否有显示第二值，如果是这样，插入该第二个值附加描述细节。</p>
-
-<p>因为BlackjackCard是没有自定义初始化一个结构，它有一个隐含的成员逐一初始化，如描述的结构类型按成员初始化器。您可以使用此初始化初始化一个所谓的新常数theAceOfSpades：</p>
-
-<p>let theAceOfSpades = BlackjackCard(rank: .ace, suit: .spades)<br/>
-print(<q>theAceOfSpades: (theAceOfSpades.description)</q>)<br/>
-// Prints <q>theAceOfSpades: suit is ♠, value is 1 or 11</q><br/>
-即使Rank和Suit被内嵌套BlackjackCard，其类型可以从上下文中推断，所以本实例的初始化能够通过他们的情况名（指枚举例.ace和.spades单独）。在上面的例子中，description属性正确地报告黑桃A具有值1或11。</p>
-
-<h1 id="toc_2">谈到嵌套类型</h1>
-
-<p>使用嵌套类型及其定义上下文之外，可以在前面的名称与它嵌套在该类型的名称：</p>
-
-<p>let heartsSymbol = BlackjackCard.Suit.hearts.rawValue<br/>
-// heartsSymbol is <q>♡</q><br/>
-对于上面的例子，这使得的名字Suit，Rank和Values被保持故意短，因为它们的名称是自然由它们所限定的范围内限定。</p>
+<h3 id="toc_0">总之Swift很先进很牛逼，学就对了（官方大概就是这个意思）</h3>
 
 
-</div>
+		</div>
+	
 
-<br /><br />
-<hr />
+ 
+	
 
-<div class="row clearfix">
-  <div class="large-6 columns">
-	<div class="text-left" style="padding:15px 0px;">
-		
-	        <a href="14743599908626.html"  title="Previous Post: 类型转换 cool">&laquo; 类型转换 cool</a>
-	    
-	</div>
-  </div>
-  <div class="large-6 columns">
-	<div class="text-right" style="padding:15px 0px;">
-		
-	        <a href="14743600183280.html" 
-	        title="Next Post: 扩展 待2">扩展 待2 &raquo;</a>
-	    
-	</div>
-  </div>
-</div>
-
-<div class="row">
-<div style="padding:0px 0.93em;" class="share-comments">
-
-</div>
-</div>
-<script type="text/javascript">
-	$(function(){
-		var currentURL = '14743600051579.html';
-		$('#side-nav a').each(function(){
-			if($(this).attr('href') == currentURL){
-				$(this).parent().addClass('active');
-			}
-		});
-	});
-</script>  
+  
+  
 </div></div>
 
 
