@@ -1,0 +1,982 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Guide - 【Swift 5】居然是村长
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="【Swift 5】居然是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">【Swift 5】居然是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 【Swift 5】居然是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>Guide</label></li>
+
+          
+            <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+          
+            <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+          
+            <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+          
+            <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+          
+            <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+          
+            <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+          
+            <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+          
+            <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+          
+            <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+          
+            <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+          
+            <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+          
+            <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+          
+            <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+          
+            <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+          
+            <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+          
+            <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+          
+            <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+          
+            <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+          
+            <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+          
+            <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+          
+            <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+          
+            <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+          
+            <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+          
+            <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+          
+            <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+          
+            <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+          
+            <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Reference</label></li>
+
+          
+            <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+          
+            <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+          
+            <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+          
+            <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+          
+            <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+          
+            <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+          
+            <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+          
+            <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+          
+            <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+          
+            <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>Guide</span></li>
+                        
+                          <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+                        
+                          <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+                        
+                          <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+                        
+                          <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+                        
+                          <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+                        
+                          <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+                        
+                          <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+                        
+                          <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+                        
+                          <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+                        
+                          <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+                        
+                          <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+                        
+                          <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+                        
+                          <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+                        
+                          <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+                        
+                          <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+                        
+                          <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+                        
+                          <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+                        
+                          <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+                        
+                          <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+                        
+                          <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+                        
+                          <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+                        
+                          <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+                        
+                          <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+                        
+                          <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+                        
+                          <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+                        
+                          <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+                        
+                          <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Reference</span></li>
+                        
+                          <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+                        
+                          <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+                        
+                          <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+                        
+                          <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+                        
+                          <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+                        
+                          <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+                        
+                          <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+                        
+                          <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+                        
+                          <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+                        
+                          <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ 
+
+
+	
+		<div class="markdown-body">
+		<h1>1、The Basics</h1>
+
+		<ul>
+<li>
+<a href="#toc_0">1 Constants and Variables</a>
+<ul>
+<li>
+<a href="#toc_1">1.1 Declaring Constants and Variables</a>
+</li>
+<li>
+<a href="#toc_2">1.2 Type Annotations</a>
+</li>
+<li>
+<a href="#toc_3">1.3 Naming Constants and Variables</a>
+</li>
+<li>
+<a href="#toc_4">1.4 Printing Constants and Variables</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_5">2 Comments</a>
+</li>
+<li>
+<a href="#toc_6">3 Semicolons</a>
+</li>
+<li>
+<a href="#toc_7">4 Integers</a>
+<ul>
+<li>
+<a href="#toc_8">4.1 Integer Bounds</a>
+</li>
+<li>
+<a href="#toc_9">4.2 Int</a>
+</li>
+<li>
+<a href="#toc_10">4.3 UInt</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_11">5 Floating-Point Numbers</a>
+</li>
+<li>
+<a href="#toc_12">6 Type Safety and Type Inference</a>
+</li>
+<li>
+<a href="#toc_13">7 Numeric Literals</a>
+</li>
+<li>
+<a href="#toc_14">8 Numeric Type Conversion</a>
+<ul>
+<li>
+<a href="#toc_15">8.1 Integer Conversion</a>
+</li>
+<li>
+<a href="#toc_16">8.2 Integer and Floating-Point Conversion</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_17">9 Type Aliases</a>
+</li>
+<li>
+<a href="#toc_18">10 Booleans</a>
+</li>
+<li>
+<a href="#toc_19">11 Tuples</a>
+</li>
+<li>
+<a href="#toc_20">12 Optionals</a>
+<ul>
+<li>
+<a href="#toc_21">12.1 nil</a>
+</li>
+<li>
+<a href="#toc_22">12.2 If Statements and Forced Unwrapping</a>
+</li>
+<li>
+<a href="#toc_23">12.3 Optional Binding</a>
+</li>
+<li>
+<a href="#toc_24">12.4 Implicitly Unwrapped Optionals</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_25">13 Error Handling</a>
+</li>
+<li>
+<a href="#toc_26">14 Assertions and Preconditions</a>
+<ul>
+<li>
+<a href="#toc_27">14.1 Debugging with Assertions</a>
+</li>
+<li>
+<a href="#toc_28">14.2 Enforcing Preconditions</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3 id="toc_0">1 Constants and Variables</h3>
+
+<h4 id="toc_1">1.1 Declaring Constants and Variables</h4>
+
+<ul>
+<li>定义大众化了：let：常量 var：变量</li>
+</ul>
+
+<pre><code>let maximumNumberOfLoginAttempts = 10
+var currentLoginAttempt = 0
+</code></pre>
+
+<pre><code>var x = 0.0, y = 0.0, z = 0.0
+</code></pre>
+
+<h4 id="toc_2">1.2 Type Annotations</h4>
+
+<ul>
+<li>定义可指定类型，赋值时类型不同会报错</li>
+</ul>
+
+<pre><code>var welcomeMessage: String
+</code></pre>
+
+<pre><code>welcomeMessage = &quot;Hello&quot;
+</code></pre>
+
+<pre><code>var red, green, blue: Double
+</code></pre>
+
+<h4 id="toc_3">1.3 Naming Constants and Variables</h4>
+
+<ul>
+<li>命名空间真大，中文编程吗？不建议使用</li>
+</ul>
+
+<pre><code>let π = 3.14159
+let 你好 = &quot;你好世界&quot;
+let 🐶🐮 = &quot;dogcow&quot;
+</code></pre>
+
+<ul>
+<li>常量赋值报错</li>
+</ul>
+
+<pre><code>var friendlyWelcome = &quot;Hello!&quot;
+friendlyWelcome = &quot;Bonjour!&quot;
+// friendlyWelcome is now &quot;Bonjour!&quot;
+</code></pre>
+
+<pre><code>let languageName = &quot;Swift&quot;
+languageName = &quot;Swift++&quot;
+// This is a compile-time error: languageName cannot be changed.
+</code></pre>
+
+<h4 id="toc_4">1.4 Printing Constants and Variables</h4>
+
+<ul>
+<li>内容输出也比 OC 简单多了</li>
+</ul>
+
+<pre><code>print(friendlyWelcome)
+// Prints &quot;Bonjour!&quot;
+</code></pre>
+
+<pre><code>print(&quot;The current value of friendlyWelcome is \(friendlyWelcome)&quot;)
+// Prints &quot;The current value of friendlyWelcome is Bonjour!&quot;
+</code></pre>
+
+<h3 id="toc_5">2 Comments</h3>
+
+<ul>
+<li>常规注视</li>
+</ul>
+
+<pre><code>// This is a comment.
+</code></pre>
+
+<pre><code>/* This is also a comment
+but is written over multiple lines. */
+</code></pre>
+
+<pre><code>/* This is the start of the first multiline comment.
+ /* This is the second, nested multiline comment. */
+This is the end of the first multiline comment. */
+</code></pre>
+
+<h3 id="toc_6">3 Semicolons</h3>
+
+<ul>
+<li>一行多语句需要分号分割；但规范应该不建议一行多语句；也就是说不需要写分号了；</li>
+</ul>
+
+<pre><code>let cat = &quot;🐱&quot;; print(cat)
+
+// Prints &quot;🐱&quot;
+</code></pre>
+
+<h3 id="toc_7">4 Integers</h3>
+
+<h4 id="toc_8">4.1 Integer Bounds</h4>
+
+<ul>
+<li>数据边界</li>
+</ul>
+
+<pre><code>let minValue = UInt8.min  // minValue is equal to 0, and is of type UInt8
+let maxValue = UInt8.max  // maxValue is equal to 255, and is of type UInt8
+</code></pre>
+
+<h4 id="toc_9">4.2 Int</h4>
+
+<blockquote>
+<p>自动区分 32、64 位</p>
+</blockquote>
+
+<h4 id="toc_10">4.3 UInt</h4>
+
+<blockquote>
+<p>自动区分 32、64 位</p>
+</blockquote>
+
+<h3 id="toc_11">5 Floating-Point Numbers</h3>
+
+<pre><code>Float：32 位
+Double：64 位（默认）
+</code></pre>
+
+<h3 id="toc_12">6 Type Safety and Type Inference</h3>
+
+<ul>
+<li>类型安全：初始化后，类型不可变</li>
+</ul>
+
+<pre><code>let meaningOfLife = 42
+// meaningOfLife is inferred to be of type Int
+</code></pre>
+
+<pre><code>let pi = 3.14159
+// pi is inferred to be of type Double
+</code></pre>
+
+<ul>
+<li>类型推断：初始化类型不指定时，会自动推断类型</li>
+</ul>
+
+<pre><code>let anotherPi = 3 + 0.14159
+// anotherPi is also inferred to be of type Double
+</code></pre>
+
+<h3 id="toc_13">7 Numeric Literals</h3>
+
+<ul>
+<li>进制</li>
+</ul>
+
+<pre><code>let decimalInteger = 17
+let binaryInteger = 0b10001       // 17 in binary notation
+let octalInteger = 0o21           // 17 in octal notation
+let hexadecimalInteger = 0x11     // 17 in hexadecimal notation
+</code></pre>
+
+<ul>
+<li>科学记数法</li>
+</ul>
+
+<pre><code>let decimalDouble = 12.1875
+let exponentDouble = 1.21875e1 // 10^1
+let hexadecimalDouble = 0xC.3p0 // 2^0
+</code></pre>
+
+<ul>
+<li>数据可视化，方便数位数</li>
+</ul>
+
+<pre><code>let paddedDouble = 000123.456
+let oneMillion = 1_000_000
+let justOverOneMillion = 1_000_000.000_000_1
+</code></pre>
+
+<h3 id="toc_14">8 Numeric Type Conversion</h3>
+
+<h4 id="toc_15">8.1 Integer Conversion</h4>
+
+<ul>
+<li>数据越界报错</li>
+</ul>
+
+<pre><code>let cannotBeNegative: UInt8 = -1
+// UInt8 cannot store negative numbers, and so this will report an error
+let tooBig: Int8 = Int8.max + 1
+// Int8 cannot store a number larger than its maximum value,
+// and so this will also report an error
+</code></pre>
+
+<ul>
+<li>类型强转：不同类型不能计算</li>
+</ul>
+
+<pre><code>let twoThousand: UInt16 = 2_000
+let one: UInt8 = 1
+let twoThousandAndOne = twoThousand + UInt16(one)
+</code></pre>
+
+<h4 id="toc_16">8.2 Integer and Floating-Point Conversion</h4>
+
+<ul>
+<li>Int\Float 类型转换</li>
+</ul>
+
+<pre><code>let three = 3
+let pointOneFourOneFiveNine = 0.14159
+let pi = Double(three) + pointOneFourOneFiveNine
+// pi equals 3.14159, and is inferred to be of type Double
+</code></pre>
+
+<pre><code>let integerPi = Int(pi)
+// integerPi equals 3, and is inferred to be of type Int
+</code></pre>
+
+<h3 id="toc_17">9 Type Aliases</h3>
+
+<ul>
+<li>类型别名</li>
+</ul>
+
+<pre><code>typealias AudioSample = UInt16
+</code></pre>
+
+<pre><code>var maxAmplitudeFound = AudioSample.min
+// maxAmplitudeFound is now 0
+</code></pre>
+
+<h3 id="toc_18">10 Booleans</h3>
+
+<ul>
+<li>true/false，且不再是 OC YES（1）/NO（0）</li>
+</ul>
+
+<pre><code>let orangesAreOrange = true
+let turnipsAreDelicious = false
+</code></pre>
+
+<pre><code>if turnipsAreDelicious {
+    print(&quot;Mmm, tasty turnips!&quot;)
+} else {
+    print(&quot;Eww, turnips are horrible.&quot;)
+}
+
+// Prints &quot;Eww, turnips are horrible.&quot;
+</code></pre>
+
+<ul>
+<li>Int 类型不能用来判断了，不再是 OC 的强转 BOOL 类型</li>
+</ul>
+
+<pre><code>let i = 1
+if i {
+    // this example will not compile, and will report an error
+}
+</code></pre>
+
+<pre><code>let i = 1
+if i == 1 {
+    // this example will compile successfully
+}
+</code></pre>
+
+<h3 id="toc_19">11 Tuples</h3>
+
+<ul>
+<li>元组，支持不同类型的集合</li>
+</ul>
+
+<pre><code>let http404Error = (404, &quot;Not Found&quot;)
+// http404Error is of type (Int, String), and equals (404, &quot;Not Found&quot;)
+</code></pre>
+
+<ul>
+<li>取值，使用 key-value 容器</li>
+</ul>
+
+<pre><code>let (statusCode, statusMessage) = http404Error
+print(&quot;The status code is \(statusCode)&quot;)
+// Prints &quot;The status code is 404&quot;
+print(&quot;The status message is \(statusMessage)&quot;)
+// Prints &quot;The status message is Not Found&quot;
+</code></pre>
+
+<ul>
+<li>取值忽略</li>
+</ul>
+
+<pre><code>let (justTheStatusCode, _) = http404Error
+print(&quot;The status code is \(justTheStatusCode)&quot;)
+// Prints &quot;The status code is 404&quot;
+</code></pre>
+
+<ul>
+<li>index 取值</li>
+</ul>
+
+<pre><code>print(&quot;The status code is \(http404Error.0)&quot;)
+// Prints &quot;The status code is 404&quot;
+print(&quot;The status message is \(http404Error.1)&quot;)
+// Prints &quot;The status message is Not Found&quot;
+</code></pre>
+
+<ul>
+<li>定义时带 key</li>
+</ul>
+
+<pre><code>let http200Status = (statusCode: 200, description: &quot;OK&quot;)
+</code></pre>
+
+<pre><code>print(&quot;The status code is \(http200Status.statusCode)&quot;)
+// Prints &quot;The status code is 200&quot;
+print(&quot;The status message is \(http200Status.description)&quot;)
+// Prints &quot;The status message is OK&quot;
+</code></pre>
+
+<h3 id="toc_20">12 Optionals</h3>
+
+<ul>
+<li>可选类型：处理缺失情况，有值，或者没有值(nil)</li>
+</ul>
+
+<pre><code>let possibleNumber = &quot;123&quot;
+let convertedNumber = Int(possibleNumber)
+// convertedNumber is inferred to be of type &quot;Int?&quot;, or &quot;optional Int&quot;
+
+// 补充完整：等价于
+let convertedNumber: Int? = Int(possibleNumber)
+或者
+let convertedNumber: Optional&lt;Int&gt; = Int(possibleNumber)
+</code></pre>
+
+<blockquote>
+<p>上述转换中： <br/>
+String 可转换成 Int 时，convertedNumber = Int<br/>
+String 不可转换成 Int 时，convertedNumber = nil<br/>
+so<br/>
+convertedNumber 此时的类型是 Optional 而不是 Int，因为它不能确定<br/>
+在使用 convertedNumber 时，需要判断他的类型，也就是可选类型解析</p>
+</blockquote>
+
+<h4 id="toc_21">12.1 nil</h4>
+
+<ul>
+<li>nil：没有值</li>
+</ul>
+
+<pre><code>var serverResponseCode: Int? = 404
+// serverResponseCode contains an actual Int value of 404
+serverResponseCode = nil
+// serverResponseCode now contains no value
+</code></pre>
+
+<ul>
+<li>可选类型，默认 nil</li>
+</ul>
+
+<pre><code>var surveyAnswer: String?
+// surveyAnswer is automatically set to nil
+</code></pre>
+
+<h4 id="toc_22">12.2 If Statements and Forced Unwrapping</h4>
+
+<ul>
+<li><code>!=nil</code> 的判断</li>
+</ul>
+
+<pre><code>if convertedNumber != nil {
+    print(&quot;convertedNumber contains some integer value.&quot;)
+}
+// Prints &quot;convertedNumber contains some integer value.&quot;
+</code></pre>
+
+<pre><code>if convertedNumber != nil {
+    print(&quot;convertedNumber has an integer value of \(convertedNumber!).&quot;)
+}
+// Prints &quot;convertedNumber has an integer value of 123.&quot;
+</code></pre>
+
+<h4 id="toc_23">12.3 Optional Binding</h4>
+
+<ul>
+<li>可选绑定，强转表达式可用作条件判断？表达式本身有 BOOL 类型？</li>
+</ul>
+
+<pre><code>if let actualNumber = Int(possibleNumber) {
+    print(&quot;The string \&quot;\(possibleNumber)\&quot; has an integer value of \(actualNumber)&quot;)
+} else {
+    print(&quot;The string \&quot;\(possibleNumber)\&quot; could not be converted to an integer&quot;)
+}
+
+// Prints &quot;The string &quot;123&quot; has an integer value of 123&quot;
+</code></pre>
+
+<ul>
+<li>骚操作</li>
+</ul>
+
+<pre><code>if let firstNumber = Int(&quot;4&quot;), let secondNumber = Int(&quot;42&quot;), firstNumber &lt; secondNumber &amp;&amp; secondNumber &lt; 100 {
+    print(&quot;\(firstNumber) &lt; \(secondNumber) &lt; 100&quot;)
+}
+
+// Prints &quot;4 &lt; 42 &lt; 100&quot;
+
+
+if let firstNumber = Int(&quot;4&quot;) {
+    if let secondNumber = Int(&quot;42&quot;) {
+        if firstNumber &lt; secondNumber &amp;&amp; secondNumber &lt; 100 {
+            print(&quot;\(firstNumber) &lt; \(secondNumber) &lt; 100&quot;)
+        }
+    }
+}
+
+// Prints &quot;4 &lt; 42 &lt; 100&quot;
+</code></pre>
+
+<h4 id="toc_24">12.4 Implicitly Unwrapped Optionals</h4>
+
+<ul>
+<li>强制解析，因为我知道它就是个 String，所以不判断，使用 <code>!</code> 强制解析成 String</li>
+</ul>
+
+<pre><code>let possibleString: String? = &quot;An optional string.&quot;
+let forcedString: String = possibleString! // requires an exclamation mark
+
+
+let assumedString: String! = &quot;An implicitly unwrapped optional string.&quot;
+let implicitString: String = assumedString // no need for an exclamation mark
+</code></pre>
+
+<pre><code>if assumedString != nil {
+    print(assumedString!)
+}
+// Prints &quot;An implicitly unwrapped optional string.&quot;
+</code></pre>
+
+<pre><code>if let definiteString = assumedString {
+    print(definiteString)
+}
+// Prints &quot;An implicitly unwrapped optional string.&quot;
+</code></pre>
+
+<blockquote>
+<p>强制解析可能报错，因为是自己认为一定不可能 nil，而做的强制解析，强制解析后类型正确，但依旧可能是 nil</p>
+</blockquote>
+
+<h3 id="toc_25">13 Error Handling</h3>
+
+<ul>
+<li>throw-do-catch 形式，随大流，好开发</li>
+</ul>
+
+<pre><code>func canThrowAnError() throws {
+    // this function may or may not throw an error
+}
+</code></pre>
+
+<pre><code>do {
+    try canThrowAnError()
+    // no error was thrown
+} catch {
+    // an error was thrown
+}
+</code></pre>
+
+<pre><code>func makeASandwich() throws {
+    // ...
+}
+
+
+do {
+    try makeASandwich()
+    eatASandwich()
+} catch SandwichError.outOfCleanDishes {
+    washDishes()
+} catch SandwichError.missingIngredients(let ingredients) {
+    buyGroceries(ingredients)
+}
+</code></pre>
+
+<h3 id="toc_26">14 Assertions and Preconditions</h3>
+
+<h4 id="toc_27">14.1 Debugging with Assertions</h4>
+
+<blockquote>
+<p>基本与 OC Assert 一致，参数条件为正确的情况</p>
+</blockquote>
+
+<pre><code>let age = -3
+assert(age &gt;= 0, &quot;A person&#39;s age can&#39;t be less than zero.&quot;)
+// This assertion fails because -3 is not &gt;= 0.
+</code></pre>
+
+<pre><code>assert(age &gt;= 0)
+</code></pre>
+
+<pre><code>if age &gt; 10 {
+    print(&quot;You can ride the roller-coaster or the ferris wheel.&quot;)
+} else if age &gt;= 0 {
+    print(&quot;You can ride the ferris wheel.&quot;)
+} else {
+    assertionFailure(&quot;A person&#39;s age can&#39;t be less than zero.&quot;)
+}
+</code></pre>
+
+<h4 id="toc_28">14.2 Enforcing Preconditions</h4>
+
+<ul>
+<li>约等于 <code>assert</code> 线上环境可用，暂时不明白区别</li>
+</ul>
+
+<pre><code>// In the implementation of a subscript...
+precondition(index &gt; 0, &quot;Index must be greater than zero.&quot;)
+</code></pre>
+
+
+		</div>
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+  
+  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

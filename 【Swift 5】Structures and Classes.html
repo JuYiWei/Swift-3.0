@@ -1,0 +1,457 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Structures and Classes - 【Swift 5】居然是村长
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="【Swift 5】居然是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">【Swift 5】居然是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 【Swift 5】居然是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>Guide</label></li>
+
+          
+            <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+          
+            <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+          
+            <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+          
+            <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+          
+            <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+          
+            <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+          
+            <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+          
+            <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+          
+            <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+          
+            <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+          
+            <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+          
+            <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+          
+            <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+          
+            <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+          
+            <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+          
+            <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+          
+            <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+          
+            <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+          
+            <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+          
+            <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+          
+            <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+          
+            <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+          
+            <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+          
+            <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+          
+            <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+          
+            <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+          
+            <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Reference</label></li>
+
+          
+            <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+          
+            <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+          
+            <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+          
+            <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+          
+            <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+          
+            <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+          
+            <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+          
+            <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+          
+            <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+          
+            <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>Guide</span></li>
+                        
+                          <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+                        
+                          <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+                        
+                          <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+                        
+                          <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+                        
+                          <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+                        
+                          <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+                        
+                          <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+                        
+                          <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+                        
+                          <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+                        
+                          <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+                        
+                          <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+                        
+                          <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+                        
+                          <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+                        
+                          <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+                        
+                          <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+                        
+                          <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+                        
+                          <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+                        
+                          <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+                        
+                          <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+                        
+                          <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+                        
+                          <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+                        
+                          <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+                        
+                          <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+                        
+                          <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+                        
+                          <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+                        
+                          <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+                        
+                          <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Reference</span></li>
+                        
+                          <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+                        
+                          <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+                        
+                          <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+                        
+                          <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+                        
+                          <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+                        
+                          <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+                        
+                          <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+                        
+                          <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+                        
+                          <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+                        
+                          <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>Structures and Classes</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1 Comparing Structures and Classes</a>
+<ul>
+<li>
+<a href="#toc_1">1.1 Definition Syntax</a>
+</li>
+<li>
+<a href="#toc_2">1.2 Structure and Class Instances</a>
+</li>
+<li>
+<a href="#toc_3">1.3 Accessing Properties</a>
+</li>
+<li>
+<a href="#toc_4">1.4 Memberwise Initializers for Structure Types</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_5">2 Structures and Enumerations Are Value Types</a>
+</li>
+<li>
+<a href="#toc_6">3 Classes Are Reference Types</a>
+<ul>
+<li>
+<a href="#toc_7">3.1 Identity Operators</a>
+</li>
+<li>
+<a href="#toc_8">3.2 Pointers</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3 id="toc_0">1 Comparing Structures and Classes</h3>
+
+<h4 id="toc_1">1.1 Definition Syntax</h4>
+
+<pre><code>struct SomeStructure {
+    // structure definition goes here
+}
+class SomeClass {
+    // class definition goes here
+}
+</code></pre>
+
+<pre><code>struct Resolution {
+    var width = 0
+    var height = 0
+}
+class VideoMode {
+    var resolution = Resolution()
+    var interlaced = false
+    var frameRate = 0.0
+    var name: String?
+}
+</code></pre>
+
+<h4 id="toc_2">1.2 Structure and Class Instances</h4>
+
+<pre><code>let someResolution = Resolution()
+let someVideoMode = VideoMode()
+</code></pre>
+
+<h4 id="toc_3">1.3 Accessing Properties</h4>
+
+<pre><code>print(&quot;The width of someResolution is \(someResolution.width)&quot;)
+// Prints &quot;The width of someResolution is 0&quot;
+</code></pre>
+
+<pre><code>print(&quot;The width of someVideoMode is \(someVideoMode.resolution.width)&quot;)
+// Prints &quot;The width of someVideoMode is 0&quot;
+</code></pre>
+
+<pre><code>someVideoMode.resolution.width = 1280
+print(&quot;The width of someVideoMode is now \(someVideoMode.resolution.width)&quot;)
+// Prints &quot;The width of someVideoMode is now 1280&quot;
+</code></pre>
+
+<h4 id="toc_4">1.4 Memberwise Initializers for Structure Types</h4>
+
+<pre><code>let vga = Resolution(width: 640, height: 480)
+</code></pre>
+
+<h3 id="toc_5">2 Structures and Enumerations Are Value Types</h3>
+
+<pre><code>let hd = Resolution(width: 1920, height: 1080)
+var cinema = hd
+</code></pre>
+
+<pre><code>cinema.width = 2048
+</code></pre>
+
+<pre><code>print(&quot;cinema is now \(cinema.width) pixels wide&quot;)
+// Prints &quot;cinema is now 2048 pixels wide&quot;
+</code></pre>
+
+<pre><code>print(&quot;hd is still \(hd.width) pixels wide&quot;)
+// Prints &quot;hd is still 1920 pixels wide&quot;
+</code></pre>
+
+<pre><code>enum CompassPoint {
+    case north, south, east, west
+    mutating func turnNorth() {
+        self = .north
+    }
+}
+var currentDirection = CompassPoint.west
+let rememberedDirection = currentDirection
+currentDirection.turnNorth()
+
+print(&quot;The current direction is \(currentDirection)&quot;)
+print(&quot;The remembered direction is \(rememberedDirection)&quot;)
+// Prints &quot;The current direction is north&quot;
+// Prints &quot;The remembered direction is west&quot;
+</code></pre>
+
+<h3 id="toc_6">3 Classes Are Reference Types</h3>
+
+<pre><code>let tenEighty = VideoMode()
+tenEighty.resolution = hd
+tenEighty.interlaced = true
+tenEighty.name = &quot;1080i&quot;
+tenEighty.frameRate = 25.0
+</code></pre>
+
+<pre><code>let alsoTenEighty = tenEighty
+alsoTenEighty.frameRate = 30.0
+</code></pre>
+
+<pre><code>print(&quot;The frameRate property of tenEighty is now \(tenEighty.frameRate)&quot;)
+// Prints &quot;The frameRate property of tenEighty is now 30.0&quot;
+</code></pre>
+
+<h4 id="toc_7">3.1 Identity Operators</h4>
+
+<pre><code>if tenEighty === alsoTenEighty {
+    print(&quot;tenEighty and alsoTenEighty refer to the same VideoMode instance.&quot;)
+}
+// Prints &quot;tenEighty and alsoTenEighty refer to the same VideoMode instance.&quot;
+</code></pre>
+
+<h4 id="toc_8">3.2 Pointers</h4>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Enumeration.html"  title="Previous Post: Enumeration">&laquo; Enumeration</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Properties.html" 
+	        title="Next Post: Properties">Properties &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

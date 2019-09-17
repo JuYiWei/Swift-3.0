@@ -1,0 +1,953 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Initialization - 【Swift 5】居然是村长
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="【Swift 5】居然是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">【Swift 5】居然是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 【Swift 5】居然是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>Guide</label></li>
+
+          
+            <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+          
+            <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+          
+            <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+          
+            <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+          
+            <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+          
+            <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+          
+            <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+          
+            <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+          
+            <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+          
+            <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+          
+            <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+          
+            <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+          
+            <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+          
+            <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+          
+            <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+          
+            <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+          
+            <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+          
+            <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+          
+            <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+          
+            <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+          
+            <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+          
+            <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+          
+            <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+          
+            <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+          
+            <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+          
+            <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+          
+            <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Reference</label></li>
+
+          
+            <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+          
+            <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+          
+            <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+          
+            <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+          
+            <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+          
+            <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+          
+            <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+          
+            <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+          
+            <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+          
+            <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>Guide</span></li>
+                        
+                          <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+                        
+                          <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+                        
+                          <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+                        
+                          <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+                        
+                          <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+                        
+                          <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+                        
+                          <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+                        
+                          <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+                        
+                          <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+                        
+                          <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+                        
+                          <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+                        
+                          <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+                        
+                          <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+                        
+                          <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+                        
+                          <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+                        
+                          <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+                        
+                          <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+                        
+                          <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+                        
+                          <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+                        
+                          <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+                        
+                          <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+                        
+                          <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+                        
+                          <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+                        
+                          <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+                        
+                          <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+                        
+                          <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+                        
+                          <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Reference</span></li>
+                        
+                          <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+                        
+                          <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+                        
+                          <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+                        
+                          <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+                        
+                          <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+                        
+                          <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+                        
+                          <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+                        
+                          <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+                        
+                          <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+                        
+                          <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>Initialization</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1 Setting Initial Values for Stored Properties</a>
+<ul>
+<li>
+<a href="#toc_1">1.1 Initializers</a>
+</li>
+<li>
+<a href="#toc_2">1.2 Default Property Values</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_3">2 Customizing Initialization</a>
+<ul>
+<li>
+<a href="#toc_4">2.1 Initialization Parameters</a>
+</li>
+<li>
+<a href="#toc_5">2.2 Parameter Names and Argument Labels</a>
+</li>
+<li>
+<a href="#toc_6">2.3 Initializer Parameters Without Argument Labels</a>
+</li>
+<li>
+<a href="#toc_7">2.4 Optional Property Types</a>
+</li>
+<li>
+<a href="#toc_8">2.5 Assigning Constant Properties During Initialization</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_9">3 Default Initializers</a>
+<ul>
+<li>
+<a href="#toc_10">3.1 Memberwise Initializers for Structure Types</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_11">4 Initializer Delegation for Value Types</a>
+</li>
+<li>
+<a href="#toc_12">5 Class Inheritance and Initialization</a>
+<ul>
+<li>
+<a href="#toc_13">5.1 Designated Initializers and Convenience Initializers</a>
+</li>
+<li>
+<a href="#toc_14">5.2 Syntax for Designated and Convenience Initializers</a>
+</li>
+<li>
+<a href="#toc_15">5.3 Initializer Delegation for Class Types</a>
+</li>
+<li>
+<a href="#toc_16">5.4 Two-Phase Initialization</a>
+</li>
+<li>
+<a href="#toc_17">5.5 Initializer Inheritance and Overriding</a>
+</li>
+<li>
+<a href="#toc_18">5.6 Automatic Initializer Inheritance</a>
+</li>
+<li>
+<a href="#toc_19">5.7 Designated and Convenience Initializers in Action</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_20">6 Failable Initializers</a>
+<ul>
+<li>
+<a href="#toc_21">6.1 Failable Initializers for Enumerations</a>
+</li>
+<li>
+<a href="#toc_22">6.2 Failable Initializers for Enumerations with Raw Values</a>
+</li>
+<li>
+<a href="#toc_23">6.3 Propagation of Initialization Failure</a>
+</li>
+<li>
+<a href="#toc_24">6.4 Overriding a Failable Initializer</a>
+</li>
+<li>
+<a href="#toc_25">6.5 The init! Failable Initializer</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_26">7 Required Initializers</a>
+</li>
+<li>
+<a href="#toc_27">8 Setting a Default Property Value with a Closure or Function</a>
+</li>
+</ul>
+
+
+<h3 id="toc_0">1 Setting Initial Values for Stored Properties</h3>
+
+<h4 id="toc_1">1.1 Initializers</h4>
+
+<pre><code>init() {
+    // perform some initialization here
+}
+</code></pre>
+
+<pre><code>struct Fahrenheit {
+    var temperature: Double
+    init() {
+        temperature = 32.0
+    }
+}
+var f = Fahrenheit()
+print(&quot;The default temperature is \(f.temperature)° Fahrenheit&quot;)
+// Prints &quot;The default temperature is 32.0° Fahrenheit&quot;
+</code></pre>
+
+<h4 id="toc_2">1.2 Default Property Values</h4>
+
+<pre><code>struct Fahrenheit {
+    var temperature = 32.0
+}
+</code></pre>
+
+<h3 id="toc_3">2 Customizing Initialization</h3>
+
+<h4 id="toc_4">2.1 Initialization Parameters</h4>
+
+<pre><code>struct Celsius {
+    var temperatureInCelsius: Double
+    init(fromFahrenheit fahrenheit: Double) {
+        temperatureInCelsius = (fahrenheit - 32.0) / 1.8
+    }
+    init(fromKelvin kelvin: Double) {
+        temperatureInCelsius = kelvin - 273.15
+    }
+}
+let boilingPointOfWater = Celsius(fromFahrenheit: 212.0)
+// boilingPointOfWater.temperatureInCelsius is 100.0
+let freezingPointOfWater = Celsius(fromKelvin: 273.15)
+// freezingPointOfWater.temperatureInCelsius is 0.0
+</code></pre>
+
+<h4 id="toc_5">2.2 Parameter Names and Argument Labels</h4>
+
+<pre><code>struct Color {
+    let red, green, blue: Double
+    init(red: Double, green: Double, blue: Double) {
+        self.red   = red
+        self.green = green
+        self.blue  = blue
+    }
+    init(white: Double) {
+        red   = white
+        green = white
+        blue  = white
+    }
+}
+</code></pre>
+
+<pre><code>let magenta = Color(red: 1.0, green: 0.0, blue: 1.0)
+let halfGray = Color(white: 0.5)
+</code></pre>
+
+<pre><code>let veryGreen = Color(0.0, 1.0, 0.0)
+// this reports a compile-time error - argument labels are required
+</code></pre>
+
+<h4 id="toc_6">2.3 Initializer Parameters Without Argument Labels</h4>
+
+<pre><code>struct Celsius {
+    var temperatureInCelsius: Double
+    init(fromFahrenheit fahrenheit: Double) {
+        temperatureInCelsius = (fahrenheit - 32.0) / 1.8
+    }
+    init(fromKelvin kelvin: Double) {
+        temperatureInCelsius = kelvin - 273.15
+    }
+    init(_ celsius: Double) {
+        temperatureInCelsius = celsius
+    }
+}
+let bodyTemperature = Celsius(37.0)
+// bodyTemperature.temperatureInCelsius is 37.0
+</code></pre>
+
+<h4 id="toc_7">2.4 Optional Property Types</h4>
+
+<pre><code>class SurveyQuestion {
+    var text: String
+    var response: String?
+    init(text: String) {
+        self.text = text
+    }
+    func ask() {
+        print(text)
+    }
+}
+let cheeseQuestion = SurveyQuestion(text: &quot;Do you like cheese?&quot;)
+cheeseQuestion.ask()
+// Prints &quot;Do you like cheese?&quot;
+cheeseQuestion.response = &quot;Yes, I do like cheese.&quot;
+</code></pre>
+
+<h4 id="toc_8">2.5 Assigning Constant Properties During Initialization</h4>
+
+<pre><code>class SurveyQuestion {
+    let text: String
+    var response: String?
+    init(text: String) {
+        self.text = text
+    }
+    func ask() {
+        print(text)
+    }
+}
+let beetsQuestion = SurveyQuestion(text: &quot;How about beets?&quot;)
+beetsQuestion.ask()
+// Prints &quot;How about beets?&quot;
+beetsQuestion.response = &quot;I also like beets. (But not with cheese.)&quot;
+</code></pre>
+
+<h3 id="toc_9">3 Default Initializers</h3>
+
+<pre><code>class ShoppingListItem {
+    var name: String?
+    var quantity = 1
+    var purchased = false
+}
+var item = ShoppingListItem()
+</code></pre>
+
+<h4 id="toc_10">3.1 Memberwise Initializers for Structure Types</h4>
+
+<pre><code>struct Size {
+    var width = 0.0, height = 0.0
+}
+let twoByTwo = Size(width: 2.0, height: 2.0)
+</code></pre>
+
+<pre><code>let zeroByTwo = Size(height: 2.0)
+print(zeroByTwo.width, zeroByTwo.height)
+// Prints &quot;0.0 2.0&quot;
+
+let zeroByZero = Size()
+print(zeroByZero.width, zeroByZero.height)
+// Prints &quot;0.0 0.0&quot;
+</code></pre>
+
+<h3 id="toc_11">4 Initializer Delegation for Value Types</h3>
+
+<pre><code>struct Size {
+    var width = 0.0, height = 0.0
+}
+struct Point {
+    var x = 0.0, y = 0.0
+}
+</code></pre>
+
+<pre><code>struct Rect {
+    var origin = Point()
+    var size = Size()
+    init() {}
+    init(origin: Point, size: Size) {
+        self.origin = origin
+        self.size = size
+    }
+    init(center: Point, size: Size) {
+        let originX = center.x - (size.width / 2)
+        let originY = center.y - (size.height / 2)
+        self.init(origin: Point(x: originX, y: originY), size: size)
+    }
+}
+</code></pre>
+
+<pre><code>let basicRect = Rect()
+// basicRect&#39;s origin is (0.0, 0.0) and its size is (0.0, 0.0)
+</code></pre>
+
+<pre><code>let originRect = Rect(origin: Point(x: 2.0, y: 2.0),
+                      size: Size(width: 5.0, height: 5.0))
+// originRect&#39;s origin is (2.0, 2.0) and its size is (5.0, 5.0)
+</code></pre>
+
+<pre><code>let centerRect = Rect(center: Point(x: 4.0, y: 4.0),
+                      size: Size(width: 3.0, height: 3.0))
+// centerRect&#39;s origin is (2.5, 2.5) and its size is (3.0, 3.0)
+</code></pre>
+
+<h3 id="toc_12">5 Class Inheritance and Initialization</h3>
+
+<h4 id="toc_13">5.1 Designated Initializers and Convenience Initializers</h4>
+
+<h4 id="toc_14">5.2 Syntax for Designated and Convenience Initializers</h4>
+
+<h4 id="toc_15">5.3 Initializer Delegation for Class Types</h4>
+
+<h4 id="toc_16">5.4 Two-Phase Initialization</h4>
+
+<h4 id="toc_17">5.5 Initializer Inheritance and Overriding</h4>
+
+<pre><code>class Vehicle {
+    var numberOfWheels = 0
+    var description: String {
+        return &quot;\(numberOfWheels) wheel(s)&quot;
+    }
+}
+</code></pre>
+
+<pre><code>let vehicle = Vehicle()
+print(&quot;Vehicle: \(vehicle.description)&quot;)
+// Vehicle: 0 wheel(s)
+</code></pre>
+
+<pre><code>class Bicycle: Vehicle {
+    override init() {
+        super.init()
+        numberOfWheels = 2
+    }
+}
+</code></pre>
+
+<pre><code>let bicycle = Bicycle()
+print(&quot;Bicycle: \(bicycle.description)&quot;)
+// Bicycle: 2 wheel(s)
+</code></pre>
+
+<pre><code>class Hoverboard: Vehicle {
+    var color: String
+    init(color: String) {
+        self.color = color
+        // super.init() implicitly called here
+    }
+    override var description: String {
+        return &quot;\(super.description) in a beautiful \(color)&quot;
+    }
+}
+</code></pre>
+
+<pre><code>let hoverboard = Hoverboard(color: &quot;silver&quot;)
+print(&quot;Hoverboard: \(hoverboard.description)&quot;)
+// Hoverboard: 0 wheel(s) in a beautiful silver
+</code></pre>
+
+<h4 id="toc_18">5.6 Automatic Initializer Inheritance</h4>
+
+<h4 id="toc_19">5.7 Designated and Convenience Initializers in Action</h4>
+
+<pre><code>class Food {
+    var name: String
+    init(name: String) {
+        self.name = name
+    }
+    convenience init() {
+        self.init(name: &quot;[Unnamed]&quot;)
+    }
+}
+</code></pre>
+
+<pre><code>let namedMeat = Food(name: &quot;Bacon&quot;)
+// namedMeat&#39;s name is &quot;Bacon&quot;
+</code></pre>
+
+<pre><code>let mysteryMeat = Food()
+// mysteryMeat&#39;s name is &quot;[Unnamed]&quot;
+</code></pre>
+
+<pre><code>class RecipeIngredient: Food {
+    var quantity: Int
+    init(name: String, quantity: Int) {
+        self.quantity = quantity
+        super.init(name: name)
+    }
+    override convenience init(name: String) {
+        self.init(name: name, quantity: 1)
+    }
+}
+</code></pre>
+
+<pre><code>let oneMysteryItem = RecipeIngredient()
+let oneBacon = RecipeIngredient(name: &quot;Bacon&quot;)
+let sixEggs = RecipeIngredient(name: &quot;Eggs&quot;, quantity: 6)
+</code></pre>
+
+<pre><code>class ShoppingListItem: RecipeIngredient {
+    var purchased = false
+    var description: String {
+        var output = &quot;\(quantity) x \(name)&quot;
+        output += purchased ? &quot; ✔&quot; : &quot; ✘&quot;
+        return output
+    }
+}
+</code></pre>
+
+<pre><code>var breakfastList = [
+    ShoppingListItem(),
+    ShoppingListItem(name: &quot;Bacon&quot;),
+    ShoppingListItem(name: &quot;Eggs&quot;, quantity: 6),
+]
+breakfastList[0].name = &quot;Orange juice&quot;
+breakfastList[0].purchased = true
+for item in breakfastList {
+    print(item.description)
+}
+// 1 x Orange juice ✔
+// 1 x Bacon ✘
+// 6 x Eggs ✘
+</code></pre>
+
+<h3 id="toc_20">6 Failable Initializers</h3>
+
+<pre><code>let wholeNumber: Double = 12345.0
+let pi = 3.14159
+
+if let valueMaintained = Int(exactly: wholeNumber) {
+    print(&quot;\(wholeNumber) conversion to Int maintains value of \(valueMaintained)&quot;)
+}
+// Prints &quot;12345.0 conversion to Int maintains value of 12345&quot;
+
+let valueChanged = Int(exactly: pi)
+// valueChanged is of type Int?, not Int
+
+if valueChanged == nil {
+    print(&quot;\(pi) conversion to Int does not maintain value&quot;)
+}
+// Prints &quot;3.14159 conversion to Int does not maintain value&quot;
+</code></pre>
+
+<pre><code>struct Animal {
+    let species: String
+    init?(species: String) {
+        if species.isEmpty { return nil }
+        self.species = species
+    }
+}
+</code></pre>
+
+<pre><code>let someCreature = Animal(species: &quot;Giraffe&quot;)
+// someCreature is of type Animal?, not Animal
+
+if let giraffe = someCreature {
+    print(&quot;An animal was initialized with a species of \(giraffe.species)&quot;)
+}
+// Prints &quot;An animal was initialized with a species of Giraffe&quot;
+</code></pre>
+
+<pre><code>let anonymousCreature = Animal(species: &quot;&quot;)
+// anonymousCreature is of type Animal?, not Animal
+
+if anonymousCreature == nil {
+    print(&quot;The anonymous creature could not be initialized&quot;)
+}
+// Prints &quot;The anonymous creature could not be initialized&quot;
+</code></pre>
+
+<h4 id="toc_21">6.1 Failable Initializers for Enumerations</h4>
+
+<pre><code>enum TemperatureUnit {
+    case kelvin, celsius, fahrenheit
+    init?(symbol: Character) {
+        switch symbol {
+        case &quot;K&quot;:
+            self = .kelvin
+        case &quot;C&quot;:
+            self = .celsius
+        case &quot;F&quot;:
+            self = .fahrenheit
+        default:
+            return nil
+        }
+    }
+}
+</code></pre>
+
+<pre><code>let fahrenheitUnit = TemperatureUnit(symbol: &quot;F&quot;)
+if fahrenheitUnit != nil {
+    print(&quot;This is a defined temperature unit, so initialization succeeded.&quot;)
+}
+// Prints &quot;This is a defined temperature unit, so initialization succeeded.&quot;
+
+let unknownUnit = TemperatureUnit(symbol: &quot;X&quot;)
+if unknownUnit == nil {
+    print(&quot;This is not a defined temperature unit, so initialization failed.&quot;)
+}
+// Prints &quot;This is not a defined temperature unit, so initialization failed.&quot;
+</code></pre>
+
+<h4 id="toc_22">6.2 Failable Initializers for Enumerations with Raw Values</h4>
+
+<pre><code>enum TemperatureUnit: Character {
+    case kelvin = &quot;K&quot;, celsius = &quot;C&quot;, fahrenheit = &quot;F&quot;
+}
+
+let fahrenheitUnit = TemperatureUnit(rawValue: &quot;F&quot;)
+if fahrenheitUnit != nil {
+    print(&quot;This is a defined temperature unit, so initialization succeeded.&quot;)
+}
+// Prints &quot;This is a defined temperature unit, so initialization succeeded.&quot;
+
+let unknownUnit = TemperatureUnit(rawValue: &quot;X&quot;)
+if unknownUnit == nil {
+    print(&quot;This is not a defined temperature unit, so initialization failed.&quot;)
+}
+// Prints &quot;This is not a defined temperature unit, so initialization failed.&quot;
+</code></pre>
+
+<h4 id="toc_23">6.3 Propagation of Initialization Failure</h4>
+
+<pre><code>class Product {
+    let name: String
+    init?(name: String) {
+        if name.isEmpty { return nil }
+        self.name = name
+    }
+}
+
+class CartItem: Product {
+    let quantity: Int
+    init?(name: String, quantity: Int) {
+        if quantity &lt; 1 { return nil }
+        self.quantity = quantity
+        super.init(name: name)
+    }
+}
+</code></pre>
+
+<pre><code>if let twoSocks = CartItem(name: &quot;sock&quot;, quantity: 2) {
+    print(&quot;Item: \(twoSocks.name), quantity: \(twoSocks.quantity)&quot;)
+}
+// Prints &quot;Item: sock, quantity: 2&quot;
+</code></pre>
+
+<pre><code>if let zeroShirts = CartItem(name: &quot;shirt&quot;, quantity: 0) {
+    print(&quot;Item: \(zeroShirts.name), quantity: \(zeroShirts.quantity)&quot;)
+} else {
+    print(&quot;Unable to initialize zero shirts&quot;)
+}
+// Prints &quot;Unable to initialize zero shirts&quot;
+</code></pre>
+
+<pre><code>if let oneUnnamed = CartItem(name: &quot;&quot;, quantity: 1) {
+    print(&quot;Item: \(oneUnnamed.name), quantity: \(oneUnnamed.quantity)&quot;)
+} else {
+    print(&quot;Unable to initialize one unnamed product&quot;)
+}
+// Prints &quot;Unable to initialize one unnamed product&quot;
+</code></pre>
+
+<h4 id="toc_24">6.4 Overriding a Failable Initializer</h4>
+
+<pre><code>class Document {
+    var name: String?
+    // this initializer creates a document with a nil name value
+    init() {}
+    // this initializer creates a document with a nonempty name value
+    init?(name: String) {
+        if name.isEmpty { return nil }
+        self.name = name
+    }
+}
+</code></pre>
+
+<pre><code>class AutomaticallyNamedDocument: Document {
+    override init() {
+        super.init()
+        self.name = &quot;[Untitled]&quot;
+    }
+    override init(name: String) {
+        super.init()
+        if name.isEmpty {
+            self.name = &quot;[Untitled]&quot;
+        } else {
+            self.name = name
+        }
+    }
+}
+</code></pre>
+
+<pre><code>class UntitledDocument: Document {
+    override init() {
+        super.init(name: &quot;[Untitled]&quot;)!
+    }
+}
+</code></pre>
+
+<h4 id="toc_25">6.5 The init! Failable Initializer</h4>
+
+<h3 id="toc_26">7 Required Initializers</h3>
+
+<pre><code>class SomeClass {
+    required init() {
+        // initializer implementation goes here
+    }
+}
+</code></pre>
+
+<pre><code>class SomeSubclass: SomeClass {
+    required init() {
+        // subclass implementation of the required initializer goes here
+    }
+}
+</code></pre>
+
+<h3 id="toc_27">8 Setting a Default Property Value with a Closure or Function</h3>
+
+<pre><code>class SomeClass {
+    let someProperty: SomeType = {
+        // create a default value for someProperty inside this closure
+        // someValue must be of the same type as SomeType
+        return someValue
+    }()
+}
+</code></pre>
+
+<pre><code>struct Chessboard {
+    let boardColors: [Bool] = {
+        var temporaryBoard = [Bool]()
+        var isBlack = false
+        for i in 1...8 {
+            for j in 1...8 {
+                temporaryBoard.append(isBlack)
+                isBlack = !isBlack
+            }
+            isBlack = !isBlack
+        }
+        return temporaryBoard
+    }()
+    func squareIsBlackAt(row: Int, column: Int) -&gt; Bool {
+        return boardColors[(row * 8) + column]
+    }
+}
+</code></pre>
+
+<pre><code>let board = Chessboard()
+print(board.squareIsBlackAt(row: 0, column: 1))
+// Prints &quot;true&quot;
+print(board.squareIsBlackAt(row: 7, column: 7))
+// Prints &quot;false&quot;
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Inheritance.html"  title="Previous Post: Inheritance">&laquo; Inheritance</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Deinitialization.html" 
+	        title="Next Post: Deinitialization">Deinitialization &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '%E3%80%90Swift%205%E3%80%91Initialization.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

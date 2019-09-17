@@ -1,0 +1,681 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Declarations - 【Swift 5】居然是村长
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="【Swift 5】居然是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">【Swift 5】居然是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 【Swift 5】居然是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>Guide</label></li>
+
+          
+            <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+          
+            <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+          
+            <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+          
+            <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+          
+            <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+          
+            <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+          
+            <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+          
+            <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+          
+            <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+          
+            <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+          
+            <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+          
+            <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+          
+            <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+          
+            <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+          
+            <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+          
+            <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+          
+            <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+          
+            <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+          
+            <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+          
+            <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+          
+            <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+          
+            <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+          
+            <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+          
+            <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+          
+            <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+          
+            <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+          
+            <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Reference</label></li>
+
+          
+            <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+          
+            <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+          
+            <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+          
+            <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+          
+            <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+          
+            <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+          
+            <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+          
+            <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+          
+            <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+          
+            <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>Guide</span></li>
+                        
+                          <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+                        
+                          <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+                        
+                          <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+                        
+                          <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+                        
+                          <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+                        
+                          <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+                        
+                          <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+                        
+                          <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+                        
+                          <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+                        
+                          <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+                        
+                          <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+                        
+                          <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+                        
+                          <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+                        
+                          <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+                        
+                          <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+                        
+                          <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+                        
+                          <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+                        
+                          <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+                        
+                          <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+                        
+                          <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+                        
+                          <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+                        
+                          <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+                        
+                          <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+                        
+                          <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+                        
+                          <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+                        
+                          <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+                        
+                          <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Reference</span></li>
+                        
+                          <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+                        
+                          <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+                        
+                          <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+                        
+                          <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+                        
+                          <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+                        
+                          <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+                        
+                          <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+                        
+                          <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+                        
+                          <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+                        
+                          <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>Declarations</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1 Top-Level Code</a>
+</li>
+<li>
+<a href="#toc_1">2 Code Blocks</a>
+</li>
+<li>
+<a href="#toc_2">3 Import Declaration</a>
+</li>
+<li>
+<a href="#toc_3">4 Constant Declaration</a>
+</li>
+<li>
+<a href="#toc_4">5 Variable Declaration</a>
+<ul>
+<li>
+<a href="#toc_5">5.1 Stored Variables and Stored Variable Properties</a>
+</li>
+<li>
+<a href="#toc_6">5.2 Computed Variables and Computed Properties</a>
+</li>
+<li>
+<a href="#toc_7">5.3 Stored Variable Observers and Property Observers</a>
+</li>
+<li>
+<a href="#toc_8">5.4 Type Variable Properties</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_9">6 Type Alias Declaration</a>
+</li>
+<li>
+<a href="#toc_10">7 Function Declaration</a>
+<ul>
+<li>
+<a href="#toc_11">7.1 Parameter Names</a>
+</li>
+<li>
+<a href="#toc_12">7.2 In-Out Parameters</a>
+</li>
+<li>
+<a href="#toc_13">7.3 Special Kinds of Parameters</a>
+</li>
+<li>
+<a href="#toc_14">7.4 Special Kinds of Methods</a>
+</li>
+<li>
+<a href="#toc_15">7.5 Throwing Functions and Methods</a>
+</li>
+<li>
+<a href="#toc_16">7.6 Rethrowing Functions and Methods</a>
+</li>
+<li>
+<a href="#toc_17">7.7 Functions that Never Return</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_18">8 Enumeration Declaration</a>
+<ul>
+<li>
+<a href="#toc_19">8.1 Enumerations with Cases of Any Type</a>
+</li>
+<li>
+<a href="#toc_20">8.2 Enumerations with Cases of a Raw-Value Type</a>
+</li>
+<li>
+<a href="#toc_21">8.3 Accessing Enumeration Cases</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_22">9 Structure Declaration</a>
+</li>
+<li>
+<a href="#toc_23">10 Class Declaration</a>
+</li>
+<li>
+<a href="#toc_24">11 Protocol Declaration</a>
+<ul>
+<li>
+<a href="#toc_25">11.1 Protocol Property Declaration</a>
+</li>
+<li>
+<a href="#toc_26">11.2 Protocol Method Declaration</a>
+</li>
+<li>
+<a href="#toc_27">11.3 Protocol Initializer Declaration</a>
+</li>
+<li>
+<a href="#toc_28">11.4 Protocol Subscript Declaration</a>
+</li>
+<li>
+<a href="#toc_29">11.5 Protocol Associated Type Declaration</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_30">12 Initializer Declaration</a>
+<ul>
+<li>
+<a href="#toc_31">12.1 Failable Initializers</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_32">13 Deinitializer Declaration</a>
+</li>
+<li>
+<a href="#toc_33">14 Extension Declaration</a>
+<ul>
+<li>
+<a href="#toc_34">14.1 Conditional Conformance</a>
+</li>
+<li>
+<a href="#toc_35">14.2 Protocol Conformance Must Not Be Redundant</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_36">15 Subscript Declaration</a>
+<ul>
+<li>
+<a href="#toc_37">15.1 Type Subscript Declarations</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_38">16 Operator Declaration</a>
+</li>
+<li>
+<a href="#toc_39">17 Precedence Group Declaration</a>
+</li>
+<li>
+<a href="#toc_40">18 Declaration Modifiers</a>
+<ul>
+<li>
+<a href="#toc_41">18.1 Access Control Levels</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3 id="toc_0">1 Top-Level Code</h3>
+
+<h3 id="toc_1">2 Code Blocks</h3>
+
+<h3 id="toc_2">3 Import Declaration</h3>
+
+<h3 id="toc_3">4 Constant Declaration</h3>
+
+<pre><code>let (firstNumber, secondNumber) = (10, 42)
+</code></pre>
+
+<pre><code>print(&quot;The first number is \(firstNumber).&quot;)
+// Prints &quot;The first number is 10.&quot;
+print(&quot;The second number is \(secondNumber).&quot;)
+// Prints &quot;The second number is 42.&quot;
+</code></pre>
+
+<h3 id="toc_4">5 Variable Declaration</h3>
+
+<h4 id="toc_5">5.1 Stored Variables and Stored Variable Properties</h4>
+
+<h4 id="toc_6">5.2 Computed Variables and Computed Properties</h4>
+
+<h4 id="toc_7">5.3 Stored Variable Observers and Property Observers</h4>
+
+<h4 id="toc_8">5.4 Type Variable Properties</h4>
+
+<h3 id="toc_9">6 Type Alias Declaration</h3>
+
+<pre><code>typealias StringDictionary&lt;Value&gt; = Dictionary&lt;String, Value&gt;
+
+// The following dictionaries have the same type.
+var dictionary1: StringDictionary&lt;Int&gt; = [:]
+var dictionary2: Dictionary&lt;String, Int&gt; = [:]
+</code></pre>
+
+<pre><code>typealias DictionaryOfInts&lt;Key: Hashable&gt; = Dictionary&lt;Key, Int&gt;
+</code></pre>
+
+<pre><code>typealias Diccionario = Dictionary
+</code></pre>
+
+<pre><code>protocol Sequence {
+    associatedtype Iterator: IteratorProtocol
+    typealias Element = Iterator.Element
+}
+
+func sum&lt;T: Sequence&gt;(_ sequence: T) -&gt; Int where T.Element == Int {
+    // ...
+}
+</code></pre>
+
+<h3 id="toc_10">7 Function Declaration</h3>
+
+<h4 id="toc_11">7.1 Parameter Names</h4>
+
+<pre><code>func f(x: Int, y: Int) -&gt; Int { return x + y }
+f(x: 1, y: 2) // both x and y are labeled
+</code></pre>
+
+<pre><code>func repeatGreeting(_ greeting: String, count n: Int) { /* Greet n times */ }
+repeatGreeting(&quot;Hello, world!&quot;, count: 2) //  count is labeled, greeting is not
+</code></pre>
+
+<h4 id="toc_12">7.2 In-Out Parameters</h4>
+
+<pre><code>func someFunction(a: inout Int) -&gt; () -&gt; Int {
+    return { [a] in return a + 1 }
+}
+</code></pre>
+
+<pre><code>func multithreadedFunction(queue: DispatchQueue, x: inout Int) {
+    // Make a local copy and manually copy it back.
+    var localX = x
+    defer { x = localX }
+
+    // Operate on localX asynchronously, then wait before returning.
+    queue.async { someMutatingOperation(&amp;localX) }
+    queue.sync {}
+}
+</code></pre>
+
+<h4 id="toc_13">7.3 Special Kinds of Parameters</h4>
+
+<pre><code>func f(x: Int = 42) -&gt; Int { return x }
+f()       // Valid, uses default value
+f(x: 7)   // Valid, uses the value provided
+f(7)      // Invalid, missing argument label
+</code></pre>
+
+<h4 id="toc_14">7.4 Special Kinds of Methods</h4>
+
+<h4 id="toc_15">7.5 Throwing Functions and Methods</h4>
+
+<h4 id="toc_16">7.6 Rethrowing Functions and Methods</h4>
+
+<pre><code>func someFunction(callback: () throws -&gt; Void) rethrows {
+    try callback()
+}
+</code></pre>
+
+<pre><code>func alwaysThrows() throws {
+    throw SomeError.error
+}
+func someFunction(callback: () throws -&gt; Void) rethrows {
+    do {
+        try callback()
+        try alwaysThrows()  // Invalid, alwaysThrows() isn&#39;t a throwing parameter
+    } catch {
+        throw AnotherError.error
+    }
+}
+</code></pre>
+
+<h4 id="toc_17">7.7 Functions that Never Return</h4>
+
+<h3 id="toc_18">8 Enumeration Declaration</h3>
+
+<h4 id="toc_19">8.1 Enumerations with Cases of Any Type</h4>
+
+<pre><code>enum Number {
+    case integer(Int)
+    case real(Double)
+}
+let f = Number.integer
+// f is a function of type (Int) -&gt; Number
+
+// Apply f to create an array of Number instances with integer values
+let evenInts: [Number] = [0, 2, 4, 6].map(f)
+</code></pre>
+
+<h4 id="toc_20">8.2 Enumerations with Cases of a Raw-Value Type</h4>
+
+<pre><code>enum ExampleEnum: Int {
+    case a, b, c = 5, d
+}
+</code></pre>
+
+<pre><code>enum GamePlayMode: String {
+    case cooperative, individual, competitive
+}
+</code></pre>
+
+<h4 id="toc_21">8.3 Accessing Enumeration Cases</h4>
+
+<h3 id="toc_22">9 Structure Declaration</h3>
+
+<h3 id="toc_23">10 Class Declaration</h3>
+
+<h3 id="toc_24">11 Protocol Declaration</h3>
+
+<pre><code>protocol SomeProtocol: AnyObject {
+    /* Protocol members go here */
+}
+</code></pre>
+
+<h4 id="toc_25">11.1 Protocol Property Declaration</h4>
+
+<h4 id="toc_26">11.2 Protocol Method Declaration</h4>
+
+<h4 id="toc_27">11.3 Protocol Initializer Declaration</h4>
+
+<h4 id="toc_28">11.4 Protocol Subscript Declaration</h4>
+
+<h4 id="toc_29">11.5 Protocol Associated Type Declaration</h4>
+
+<pre><code>protocol SomeProtocol {
+    associatedtype SomeType
+}
+
+protocol SubProtocolA: SomeProtocol {
+    // This syntax produces a warning.
+    associatedtype SomeType: Equatable
+}
+
+// This syntax is preferred.
+protocol SubProtocolB: SomeProtocol where SomeType: Equatable { }
+</code></pre>
+
+<h3 id="toc_30">12 Initializer Declaration</h3>
+
+<h4 id="toc_31">12.1 Failable Initializers</h4>
+
+<pre><code>struct SomeStruct {
+    let property: String
+    // produces an optional instance of &#39;SomeStruct&#39;
+    init?(input: String) {
+        if input.isEmpty {
+            // discard &#39;self&#39; and return &#39;nil&#39;
+            return nil
+        }
+        property = input
+    }
+}
+</code></pre>
+
+<pre><code>if let actualInstance = SomeStruct(input: &quot;Hello&quot;) {
+    // do something with the instance of &#39;SomeStruct&#39;
+} else {
+    // initialization of &#39;SomeStruct&#39; failed and the initializer returned &#39;nil&#39;
+}
+</code></pre>
+
+<h3 id="toc_32">13 Deinitializer Declaration</h3>
+
+<h3 id="toc_33">14 Extension Declaration</h3>
+
+<h4 id="toc_34">14.1 Conditional Conformance</h4>
+
+<h4 id="toc_35">14.2 Protocol Conformance Must Not Be Redundant</h4>
+
+<h3 id="toc_36">15 Subscript Declaration</h3>
+
+<h4 id="toc_37">15.1 Type Subscript Declarations</h4>
+
+<h3 id="toc_38">16 Operator Declaration</h3>
+
+<h3 id="toc_39">17 Precedence Group Declaration</h3>
+
+<h3 id="toc_40">18 Declaration Modifiers</h3>
+
+<h4 id="toc_41">18.1 Access Control Levels</h4>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Statements.html"  title="Previous Post: Statements">&laquo; Statements</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Attributes.html" 
+	        title="Next Post: Attributes">Attributes &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '%E3%80%90Swift%205%E3%80%91Declarations.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

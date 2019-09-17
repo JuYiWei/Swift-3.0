@@ -1,0 +1,1077 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  3、Strings and Characters - 【Swift 5】居然是村长
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="【Swift 5】居然是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">【Swift 5】居然是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 【Swift 5】居然是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>Guide</label></li>
+
+          
+            <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+          
+            <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+          
+            <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+          
+            <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+          
+            <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+          
+            <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+          
+            <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+          
+            <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+          
+            <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+          
+            <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+          
+            <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+          
+            <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+          
+            <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+          
+            <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+          
+            <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+          
+            <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+          
+            <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+          
+            <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+          
+            <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+          
+            <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+          
+            <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+          
+            <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+          
+            <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+          
+            <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+          
+            <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+          
+            <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+          
+            <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Reference</label></li>
+
+          
+            <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+          
+            <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+          
+            <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+          
+            <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+          
+            <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+          
+            <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+          
+            <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+          
+            <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+          
+            <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+          
+            <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>Guide</span></li>
+                        
+                          <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+                        
+                          <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+                        
+                          <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+                        
+                          <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+                        
+                          <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+                        
+                          <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+                        
+                          <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+                        
+                          <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+                        
+                          <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+                        
+                          <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+                        
+                          <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+                        
+                          <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+                        
+                          <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+                        
+                          <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+                        
+                          <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+                        
+                          <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+                        
+                          <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+                        
+                          <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+                        
+                          <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+                        
+                          <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+                        
+                          <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+                        
+                          <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+                        
+                          <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+                        
+                          <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+                        
+                          <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+                        
+                          <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+                        
+                          <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Reference</span></li>
+                        
+                          <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+                        
+                          <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+                        
+                          <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+                        
+                          <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+                        
+                          <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+                        
+                          <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+                        
+                          <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+                        
+                          <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+                        
+                          <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+                        
+                          <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>3、Strings and Characters</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1 String Literals</a>
+<ul>
+<li>
+<a href="#toc_1">1.1 Multiline String Literals</a>
+</li>
+<li>
+<a href="#toc_2">1.2 Special Characters in String Literals</a>
+</li>
+<li>
+<a href="#toc_3">1.3 Extended String Delimiters</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_4">2 Initializing an Empty String</a>
+</li>
+<li>
+<a href="#toc_5">3 String Mutability</a>
+</li>
+<li>
+<a href="#toc_6">4 Strings Are Value Types</a>
+</li>
+<li>
+<a href="#toc_7">5 Working with Characters</a>
+</li>
+<li>
+<a href="#toc_8">6 Concatenating Strings and Characters</a>
+</li>
+<li>
+<a href="#toc_9">7 String Interpolation</a>
+</li>
+<li>
+<a href="#toc_10">8 Unicode</a>
+<ul>
+<li>
+<a href="#toc_11">8.1 Unicode Scalar Values</a>
+</li>
+<li>
+<a href="#toc_12">8.2 Extended Grapheme Clusters</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_13">9 Counting Characters</a>
+</li>
+<li>
+<a href="#toc_14">10 Accessing and Modifying a String</a>
+<ul>
+<li>
+<a href="#toc_15">10.1 String Indices</a>
+</li>
+<li>
+<a href="#toc_16">10.2 Inserting and Removing</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_17">11 Substrings</a>
+</li>
+<li>
+<a href="#toc_18">12 Comparing Strings</a>
+<ul>
+<li>
+<a href="#toc_19">12.1 String and Character Equality</a>
+</li>
+<li>
+<a href="#toc_20">12.2 Prefix and Suffix Equality</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_21">13 Unicode Representations of Strings</a>
+<ul>
+<li>
+<a href="#toc_22">13.1 UTF-8 Representation</a>
+</li>
+<li>
+<a href="#toc_23">13.2 UTF-16 Representation</a>
+</li>
+<li>
+<a href="#toc_24">13.3 Unicode Scalar Representation</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3 id="toc_0">1 String Literals</h3>
+
+<ul>
+<li>字面量，没啥说的</li>
+</ul>
+
+<pre><code>let someString = &quot;Some string literal value&quot;
+</code></pre>
+
+<h4 id="toc_1">1.1 Multiline String Literals</h4>
+
+<ul>
+<li>多行字符串，<code>&quot;&quot;&quot;</code> 包含即可实现分行，实际应该是自动补充了 <code>\n</code></li>
+</ul>
+
+<pre><code>let quotation = &quot;&quot;&quot;
+
+The White Rabbit put on his spectacles.  &quot;Where shall I begin,
+
+please your Majesty?&quot; he asked.
+
+
+
+&quot;Begin at the beginning,&quot; the King said gravely, &quot;and go on
+
+till you come to the end; then stop.&quot;
+
+&quot;&quot;&quot;
+</code></pre>
+
+<pre><code>let singleLineString = &quot;These are the same.&quot;
+
+let multilineString = &quot;&quot;&quot;
+
+These are the same.
+
+&quot;&quot;&quot;
+</code></pre>
+
+<ul>
+<li>参考一般的宏定义在末位加的 <code>\</code></li>
+</ul>
+
+<pre><code>let softWrappedQuotation = &quot;&quot;&quot;
+
+The White Rabbit put on his spectacles.  &quot;Where shall I begin, \
+
+please your Majesty?&quot; he asked.
+
+
+
+&quot;Begin at the beginning,&quot; the King said gravely, &quot;and go on \
+
+till you come to the end; then stop.&quot;
+
+&quot;&quot;&quot;
+</code></pre>
+
+<ul>
+<li>空行其实就是加了 <code>\n</code></li>
+</ul>
+
+<pre><code>let lineBreaks = &quot;&quot;&quot;
+
+
+
+This string starts with a line break.
+
+It also ends with a line break.
+
+
+
+&quot;&quot;&quot;
+</code></pre>
+
+<h4 id="toc_2">1.2 Special Characters in String Literals</h4>
+
+<ul>
+<li>转义字符照样使用，特殊符号可使用 <code>\u{0x}</code> 包含</li>
+</ul>
+
+<pre><code>let wiseWords = &quot;\&quot;Imagination is more important than knowledge\&quot; - Einstein&quot;
+
+// &quot;Imagination is more important than knowledge&quot; - Einstein
+
+let dollarSign = &quot;\u{24}&quot;        // $,  Unicode scalar U+0024
+
+let blackHeart = &quot;\u{2665}&quot;      // ♥,  Unicode scalar U+2665
+
+let sparklingHeart = &quot;\u{1F496}&quot; // 💖, Unicode scalar U+1F496
+</code></pre>
+
+<ul>
+<li>连续多个 <code>&quot;</code> 可用一个 <code>\</code> 一起转义了</li>
+</ul>
+
+<pre><code>let threeDoubleQuotationMarks = &quot;&quot;&quot;
+
+Escaping the first quotation mark \&quot;&quot;&quot;
+
+Escaping all three quotation marks \&quot;\&quot;\&quot;
+
+&quot;&quot;&quot;
+</code></pre>
+
+<h4 id="toc_3">1.3 Extended String Delimiters</h4>
+
+<ul>
+<li><code>#&quot;&quot;&quot;</code> 包含，中间内容都不要转义了。。。</li>
+</ul>
+
+<pre><code>let threeMoreDoubleQuotationMarks = #&quot;&quot;&quot;
+
+Here are three more double quotes: &quot;&quot;&quot;
+
+&quot;&quot;&quot;#
+</code></pre>
+
+<h3 id="toc_4">2 Initializing an Empty String</h3>
+
+<ul>
+<li>初始化空字符串，而不是 nil</li>
+</ul>
+
+<pre><code>var emptyString = &quot;&quot;               // empty string literal
+
+var anotherEmptyString = String()  // initializer syntax
+
+// these two strings are both empty, and are equivalent to each other
+</code></pre>
+
+<pre><code>if emptyString.isEmpty {
+
+    print(&quot;Nothing to see here&quot;)
+
+}
+
+// Prints &quot;Nothing to see here&quot;
+</code></pre>
+
+<h3 id="toc_5">3 String Mutability</h3>
+
+<ul>
+<li>可变字符串，已经不再是 OC 那种需要特殊定义的类型了，直接拿来就拼</li>
+</ul>
+
+<pre><code>var variableString = &quot;Horse&quot;
+
+variableString += &quot; and carriage&quot;
+
+// variableString is now &quot;Horse and carriage&quot;
+
+
+
+let constantString = &quot;Highlander&quot;
+
+constantString += &quot; and another Highlander&quot;
+
+// this reports a compile-time error - a constant string cannot be modified
+</code></pre>
+
+<h3 id="toc_6">4 Strings Are Value Types</h3>
+
+<ul>
+<li>String 是值类型，传递时使用的都是 copy 而不是本身</li>
+</ul>
+
+<h3 id="toc_7">5 Working with Characters</h3>
+
+<ul>
+<li>String 还能直接用成数组，直接遍历字符</li>
+</ul>
+
+<pre><code>for character in &quot;Dog!🐶&quot; {
+
+    print(character)
+
+}
+
+// D
+
+// o
+
+// g
+
+// !
+
+// 🐶
+</code></pre>
+
+<pre><code>let exclamationMark: Character = &quot;!&quot;
+</code></pre>
+
+<ul>
+<li>相互转换</li>
+</ul>
+
+<pre><code>let catCharacters: [Character] = [&quot;C&quot;, &quot;a&quot;, &quot;t&quot;, &quot;!&quot;, &quot;🐱&quot;]
+
+let catString = String(catCharacters)
+
+print(catString)
+
+// Prints &quot;Cat!🐱&quot;
+</code></pre>
+
+<h3 id="toc_8">6 Concatenating Strings and Characters</h3>
+
+<ul>
+<li>同类型直接使用运算拼接；不同类型使用函数拼接</li>
+</ul>
+
+<pre><code>let string1 = &quot;hello&quot;
+
+let string2 = &quot; there&quot;
+
+var welcome = string1 + string2
+
+// welcome now equals &quot;hello there&quot;
+</code></pre>
+
+<pre><code>var instruction = &quot;look over&quot;
+
+instruction += string2
+
+// instruction now equals &quot;look over there&quot;
+</code></pre>
+
+<pre><code>let exclamationMark: Character = &quot;!&quot;
+
+welcome.append(exclamationMark)
+
+// welcome now equals &quot;hello there!&quot;
+</code></pre>
+
+<pre><code>let badStart = &quot;&quot;&quot;
+
+one
+
+two
+
+&quot;&quot;&quot;
+
+let end = &quot;&quot;&quot;
+
+three
+
+&quot;&quot;&quot;
+
+print(badStart + end)
+
+// Prints two lines:
+
+// one
+
+// twothree
+
+
+
+let goodStart = &quot;&quot;&quot;
+
+one
+
+two
+
+
+
+&quot;&quot;&quot;
+
+print(goodStart + end)
+
+// Prints three lines:
+
+// one
+
+// two
+
+// three
+</code></pre>
+
+<h3 id="toc_9">7 String Interpolation</h3>
+
+<ul>
+<li>比起 OC 的 <code>%@</code> 替换看起来舒服多了；还支持内部进行基础运算；</li>
+</ul>
+
+<pre><code>let multiplier = 3
+
+let message = &quot;\(multiplier) times 2.5 is \(Double(multiplier) * 2.5)&quot;
+
+// message is &quot;3 times 2.5 is 7.5&quot;
+</code></pre>
+
+<ul>
+<li><code>#</code> 包围内容，忽略转义与运算，直接显示</li>
+</ul>
+
+<pre><code>print(#&quot;Write an interpolated string in Swift using \(multiplier).&quot;#)
+
+// Prints &quot;Write an interpolated string in Swift using \(multiplier).&quot;
+</code></pre>
+
+<pre><code>print(#&quot;6 times 7 is \#(6 * 7).&quot;#)
+
+// Prints &quot;6 times 7 is 42.&quot;
+</code></pre>
+
+<h3 id="toc_10">8 Unicode</h3>
+
+<ul>
+<li>做特殊文本处理的需要详细了解下</li>
+</ul>
+
+<h4 id="toc_11">8.1 Unicode Scalar Values</h4>
+
+<h4 id="toc_12">8.2 Extended Grapheme Clusters</h4>
+
+<pre><code>let eAcute: Character = &quot;\u{E9}&quot;                         // é
+
+let combinedEAcute: Character = &quot;\u{65}\u{301}&quot;          // e followed by ́
+
+// eAcute is é, combinedEAcute is é
+</code></pre>
+
+<pre><code>let precomposed: Character = &quot;\u{D55C}&quot;                  // 한
+
+let decomposed: Character = &quot;\u{1112}\u{1161}\u{11AB}&quot;   // ᄒ, ᅡ, ᆫ
+
+// precomposed is 한, decomposed is 한
+</code></pre>
+
+<pre><code>let enclosedEAcute: Character = &quot;\u{E9}\u{20DD}&quot;
+
+// enclosedEAcute is é⃝
+</code></pre>
+
+<pre><code>let regionalIndicatorForUS: Character = &quot;\u{1F1FA}\u{1F1F8}&quot;
+
+// regionalIndicatorForUS is 🇺🇸
+</code></pre>
+
+<h3 id="toc_13">9 Counting Characters</h3>
+
+<pre><code>let unusualMenagerie = &quot;Koala 🐨, Snail 🐌, Penguin 🐧, Dromedary 🐪&quot;
+
+print(&quot;unusualMenagerie has \(unusualMenagerie.count) characters&quot;)
+
+// Prints &quot;unusualMenagerie has 40 characters&quot;
+</code></pre>
+
+<pre><code>var word = &quot;cafe&quot;
+
+print(&quot;the number of characters in \(word) is \(word.count)&quot;)
+
+// Prints &quot;the number of characters in cafe is 4&quot;
+
+
+
+word += &quot;\u{301}&quot;    // COMBINING ACUTE ACCENT, U+0301
+
+
+
+print(&quot;the number of characters in \(word) is \(word.count)&quot;)
+
+// Prints &quot;the number of characters in café is 4&quot;
+</code></pre>
+
+<h3 id="toc_14">10 Accessing and Modifying a String</h3>
+
+<h4 id="toc_15">10.1 String Indices</h4>
+
+<ul>
+<li>字符串索引</li>
+</ul>
+
+<pre><code>let greeting = &quot;Guten Tag!&quot;
+
+greeting[greeting.startIndex]
+
+// G
+
+greeting[greeting.index(before: greeting.endIndex)]
+
+// !
+
+greeting[greeting.index(after: greeting.startIndex)]
+
+// u
+
+let index = greeting.index(greeting.startIndex, offsetBy: 7)
+
+greeting[index]
+
+// a
+</code></pre>
+
+<ul>
+<li>防止越界</li>
+</ul>
+
+<pre><code>greeting[greeting.endIndex] // Error
+
+greeting.index(after: greeting.endIndex) // Error
+</code></pre>
+
+<ul>
+<li>索引遍历</li>
+</ul>
+
+<pre><code>for index in greeting.indices {
+
+    print(&quot;\(greeting[index]) &quot;, terminator: &quot;&quot;)
+
+}
+
+// Prints &quot;G u t e n   T a g ! &quot;
+</code></pre>
+
+<h4 id="toc_16">10.2 Inserting and Removing</h4>
+
+<ul>
+<li>插入</li>
+</ul>
+
+<pre><code>var welcome = &quot;hello&quot;
+
+welcome.insert(&quot;!&quot;, at: welcome.endIndex)
+
+// welcome now equals &quot;hello!&quot;
+
+
+
+welcome.insert(contentsOf: &quot; there&quot;, at: welcome.index(before: welcome.endIndex))
+
+// welcome now equals &quot;hello there!&quot;
+</code></pre>
+
+<ul>
+<li>移除</li>
+</ul>
+
+<pre><code>welcome.remove(at: welcome.index(before: welcome.endIndex))
+
+// welcome now equals &quot;hello there&quot;
+
+
+
+let range = welcome.index(welcome.endIndex, offsetBy: -6)..&lt;welcome.endIndex
+
+welcome.removeSubrange(range)
+
+// welcome now equals &quot;hello&quot;
+</code></pre>
+
+<h3 id="toc_17">11 Substrings</h3>
+
+<ul>
+<li>截取</li>
+</ul>
+
+<pre><code>let greeting = &quot;Hello, world!&quot;
+
+let index = greeting.firstIndex(of: &quot;,&quot;) ?? greeting.endIndex
+
+let beginning = greeting[..&lt;index]
+
+// beginning is &quot;Hello&quot;
+
+
+
+// Convert the result to a String for long-term storage.
+
+let newString = String(beginning)
+</code></pre>
+
+<h3 id="toc_18">12 Comparing Strings</h3>
+
+<h4 id="toc_19">12.1 String and Character Equality</h4>
+
+<ul>
+<li>一般字符比较</li>
+</ul>
+
+<pre><code>let quotation = &quot;We&#39;re a lot alike, you and I.&quot;
+
+let sameQuotation = &quot;We&#39;re a lot alike, you and I.&quot;
+
+if quotation == sameQuotation {
+
+    print(&quot;These two strings are considered equal&quot;)
+
+}
+
+// Prints &quot;These two strings are considered equal&quot;
+</code></pre>
+
+<ul>
+<li>unicode 比较</li>
+</ul>
+
+<pre><code>// &quot;Voulez-vous un café?&quot; using LATIN SMALL LETTER E WITH ACUTE
+
+let eAcuteQuestion = &quot;Voulez-vous un caf\u{E9}?&quot;
+
+
+
+// &quot;Voulez-vous un café?&quot; using LATIN SMALL LETTER E and COMBINING ACUTE ACCENT
+
+let combinedEAcuteQuestion = &quot;Voulez-vous un caf\u{65}\u{301}?&quot;
+
+
+
+if eAcuteQuestion == combinedEAcuteQuestion {
+
+    print(&quot;These two strings are considered equal&quot;)
+
+}
+
+// Prints &quot;These two strings are considered equal&quot;
+</code></pre>
+
+<pre><code>let latinCapitalLetterA: Character = &quot;\u{41}&quot;
+
+
+
+let cyrillicCapitalLetterA: Character = &quot;\u{0410}&quot;
+
+
+
+if latinCapitalLetterA != cyrillicCapitalLetterA {
+
+    print(&quot;These two characters are not equivalent.&quot;)
+
+}
+
+// Prints &quot;These two characters are not equivalent.&quot;
+</code></pre>
+
+<h4 id="toc_20">12.2 Prefix and Suffix Equality</h4>
+
+<ul>
+<li>前缀后缀</li>
+</ul>
+
+<pre><code>let romeoAndJuliet = [
+
+    &quot;Act 1 Scene 1: Verona, A public place&quot;,
+
+    &quot;Act 1 Scene 2: Capulet&#39;s mansion&quot;,
+
+    &quot;Act 1 Scene 3: A room in Capulet&#39;s mansion&quot;,
+
+    &quot;Act 1 Scene 4: A street outside Capulet&#39;s mansion&quot;,
+
+    &quot;Act 1 Scene 5: The Great Hall in Capulet&#39;s mansion&quot;,
+
+    &quot;Act 2 Scene 1: Outside Capulet&#39;s mansion&quot;,
+
+    &quot;Act 2 Scene 2: Capulet&#39;s orchard&quot;,
+
+    &quot;Act 2 Scene 3: Outside Friar Lawrence&#39;s cell&quot;,
+
+    &quot;Act 2 Scene 4: A street in Verona&quot;,
+
+    &quot;Act 2 Scene 5: Capulet&#39;s mansion&quot;,
+
+    &quot;Act 2 Scene 6: Friar Lawrence&#39;s cell&quot;
+
+]
+</code></pre>
+
+<pre><code>var act1SceneCount = 0
+
+for scene in romeoAndJuliet {
+
+    if scene.hasPrefix(&quot;Act 1 &quot;) {
+
+        act1SceneCount += 1
+
+    }
+
+}
+
+print(&quot;There are \(act1SceneCount) scenes in Act 1&quot;)
+
+// Prints &quot;There are 5 scenes in Act 1&quot;
+</code></pre>
+
+<pre><code>var mansionCount = 0
+
+var cellCount = 0
+
+for scene in romeoAndJuliet {
+
+    if scene.hasSuffix(&quot;Capulet&#39;s mansion&quot;) {
+
+        mansionCount += 1
+
+    } else if scene.hasSuffix(&quot;Friar Lawrence&#39;s cell&quot;) {
+
+        cellCount += 1
+
+    }
+
+}
+
+print(&quot;\(mansionCount) mansion scenes; \(cellCount) cell scenes&quot;)
+
+// Prints &quot;6 mansion scenes; 2 cell scenes&quot;
+</code></pre>
+
+<h3 id="toc_21">13 Unicode Representations of Strings</h3>
+
+<pre><code>let dogString = &quot;Dog‼🐶&quot;
+</code></pre>
+
+<h4 id="toc_22">13.1 UTF-8 Representation</h4>
+
+<pre><code>for codeUnit in dogString.utf8 {
+
+    print(&quot;\(codeUnit) &quot;, terminator: &quot;&quot;)
+
+}
+
+print(&quot;&quot;)
+
+// Prints &quot;68 111 103 226 128 188 240 159 144 182 &quot;
+</code></pre>
+
+<h4 id="toc_23">13.2 UTF-16 Representation</h4>
+
+<pre><code>for codeUnit in dogString.utf16 {
+
+    print(&quot;\(codeUnit) &quot;, terminator: &quot;&quot;)
+
+}
+
+print(&quot;&quot;)
+
+// Prints &quot;68 111 103 8252 55357 56374 &quot;
+</code></pre>
+
+<h4 id="toc_24">13.3 Unicode Scalar Representation</h4>
+
+<ul>
+<li>全量：21-bit Unicode，等价于 UTF-32</li>
+</ul>
+
+<pre><code>for scalar in dogString.unicodeScalars {
+
+    print(&quot;\(scalar.value) &quot;, terminator: &quot;&quot;)
+
+}
+
+print(&quot;&quot;)
+
+// Prints &quot;68 111 103 8252 128054 &quot;
+</code></pre>
+
+<pre><code>for scalar in dogString.unicodeScalars {
+
+    print(&quot;\(scalar) &quot;)
+
+}
+
+// D
+
+// o
+
+// g
+
+// ‼
+
+// 🐶
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html"  title="Previous Post: 2、Basic Operators">&laquo; 2、Basic Operators</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html" 
+	        title="Next Post: 4、Collection Types">4、Collection Types &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

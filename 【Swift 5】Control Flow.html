@@ -1,0 +1,697 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  5、Control Flow - 【Swift 5】居然是村长
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="【Swift 5】居然是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">【Swift 5】居然是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 【Swift 5】居然是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>Guide</label></li>
+
+          
+            <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+          
+            <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+          
+            <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+          
+            <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+          
+            <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+          
+            <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+          
+            <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+          
+            <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+          
+            <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+          
+            <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+          
+            <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+          
+            <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+          
+            <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+          
+            <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+          
+            <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+          
+            <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+          
+            <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+          
+            <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+          
+            <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+          
+            <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+          
+            <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+          
+            <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+          
+            <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+          
+            <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+          
+            <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+          
+            <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+          
+            <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Reference</label></li>
+
+          
+            <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+          
+            <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+          
+            <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+          
+            <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+          
+            <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+          
+            <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+          
+            <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+          
+            <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+          
+            <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+          
+            <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>Guide</span></li>
+                        
+                          <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+                        
+                          <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+                        
+                          <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+                        
+                          <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+                        
+                          <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+                        
+                          <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+                        
+                          <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+                        
+                          <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+                        
+                          <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+                        
+                          <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+                        
+                          <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+                        
+                          <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+                        
+                          <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+                        
+                          <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+                        
+                          <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+                        
+                          <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+                        
+                          <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+                        
+                          <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+                        
+                          <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+                        
+                          <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+                        
+                          <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+                        
+                          <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+                        
+                          <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+                        
+                          <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+                        
+                          <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+                        
+                          <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+                        
+                          <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Reference</span></li>
+                        
+                          <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+                        
+                          <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+                        
+                          <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+                        
+                          <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+                        
+                          <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+                        
+                          <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+                        
+                          <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+                        
+                          <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+                        
+                          <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+                        
+                          <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>5、Control Flow</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1 For-In Loops</a>
+</li>
+<li>
+<a href="#toc_1">2 While Loops</a>
+<ul>
+<li>
+<a href="#toc_2">2.1 While</a>
+</li>
+<li>
+<a href="#toc_3">2.2 Repeat-While</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_4">3 Conditional Statements</a>
+<ul>
+<li>
+<a href="#toc_5">3.1 If</a>
+</li>
+<li>
+<a href="#toc_6">3.2 Switch</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">4 Control Transfer Statements</a>
+<ul>
+<li>
+<a href="#toc_8">4.1 Continue</a>
+</li>
+<li>
+<a href="#toc_9">4.2 Break</a>
+</li>
+<li>
+<a href="#toc_10">4.3 Fallthrough</a>
+</li>
+<li>
+<a href="#toc_11">4.4 Labeled Statements</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_12">5 Early Exit</a>
+</li>
+<li>
+<a href="#toc_13">6 Checking API Availability</a>
+</li>
+</ul>
+
+
+<h3 id="toc_0">1 For-In Loops</h3>
+
+<ul>
+<li>数组遍历</li>
+</ul>
+
+<pre><code>let names = [&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;]
+for name in names {
+    print(&quot;Hello, \(name)!&quot;)
+}
+// Hello, Anna!
+// Hello, Alex!
+// Hello, Brian!
+// Hello, Jack!
+</code></pre>
+
+<ul>
+<li>字典遍历</li>
+</ul>
+
+<pre><code>let numberOfLegs = [&quot;spider&quot;: 8, &quot;ant&quot;: 6, &quot;cat&quot;: 4]
+for (animalName, legCount) in numberOfLegs {
+    print(&quot;\(animalName)s have \(legCount) legs&quot;)
+}
+// cats have 4 legs
+// ants have 6 legs
+// spiders have 8 legs
+</code></pre>
+
+<ul>
+<li>范围遍历</li>
+</ul>
+
+<pre><code>for index in 1...5 {
+    print(&quot;\(index) times 5 is \(index * 5)&quot;)
+}
+// 1 times 5 is 5
+// 2 times 5 is 10
+// 3 times 5 is 15
+// 4 times 5 is 20
+// 5 times 5 is 25
+</code></pre>
+
+<ul>
+<li>遍历忽略取值</li>
+</ul>
+
+<pre><code>let base = 3
+let power = 10
+var answer = 1
+for _ in 1...power {
+    answer *= base
+}
+print(&quot;\(base) to the power of \(power) is \(answer)&quot;)
+// Prints &quot;3 to the power of 10 is 59049&quot;
+</code></pre>
+
+<ul>
+<li>单边范围遍历</li>
+</ul>
+
+<pre><code>let minutes = 60
+for tickMark in 0..&lt;minutes {
+    // render the tick mark each minute (60 times)
+}
+</code></pre>
+
+<ul>
+<li>范围条件遍历</li>
+</ul>
+
+<pre><code>let minuteInterval = 5
+for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
+    // render the tick mark every 5 minutes (0, 5, 10, 15 ... 45, 50, 55)
+}
+</code></pre>
+
+<ul>
+<li>范围条件遍历</li>
+</ul>
+
+<pre><code>let hours = 12
+let hourInterval = 3
+for tickMark in stride(from: 3, through: hours, by: hourInterval) {
+    // render the tick mark every 3 hours (3, 6, 9, 12)
+}
+</code></pre>
+
+<h3 id="toc_1">2 While Loops</h3>
+
+<h4 id="toc_2">2.1 While</h4>
+
+<ul>
+<li>while</li>
+</ul>
+
+<pre><code>let finalSquare = 25
+var board = [Int](repeating: 0, count: finalSquare + 1)
+</code></pre>
+
+<pre><code>board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
+board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
+</code></pre>
+
+<pre><code>var square = 0
+var diceRoll = 0
+while square &lt; finalSquare {
+    // roll the dice
+    diceRoll += 1
+    if diceRoll == 7 { diceRoll = 1 }
+    // move by the rolled amount
+    square += diceRoll
+    if square &lt; board.count {
+        // if we&#39;re still on the board, move up or down for a snake or a ladder
+        square += board[square]
+    }
+}
+print(&quot;Game over!&quot;)
+</code></pre>
+
+<h4 id="toc_3">2.2 Repeat-While</h4>
+
+<ul>
+<li>do-while</li>
+</ul>
+
+<pre><code>let finalSquare = 25
+var board = [Int](repeating: 0, count: finalSquare + 1)
+board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
+board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
+var square = 0
+var diceRoll = 0
+</code></pre>
+
+<pre><code>repeat {
+    // move up or down for a snake or ladder
+    square += board[square]
+    // roll the dice
+    diceRoll += 1
+    if diceRoll == 7 { diceRoll = 1 }
+    // move by the rolled amount
+    square += diceRoll
+} while square &lt; finalSquare
+print(&quot;Game over!&quot;)
+</code></pre>
+
+<h3 id="toc_4">3 Conditional Statements</h3>
+
+<h4 id="toc_5">3.1 If</h4>
+
+<pre><code>var temperatureInFahrenheit = 30
+if temperatureInFahrenheit &lt;= 32 {
+    print(&quot;It&#39;s very cold. Consider wearing a scarf.&quot;)
+}
+// Prints &quot;It&#39;s very cold. Consider wearing a scarf.&quot;
+</code></pre>
+
+<pre><code>temperatureInFahrenheit = 40
+if temperatureInFahrenheit &lt;= 32 {
+    print(&quot;It&#39;s very cold. Consider wearing a scarf.&quot;)
+} else {
+    print(&quot;It&#39;s not that cold. Wear a t-shirt.&quot;)
+}
+// Prints &quot;It&#39;s not that cold. Wear a t-shirt.&quot;
+</code></pre>
+
+<pre><code>temperatureInFahrenheit = 90
+if temperatureInFahrenheit &lt;= 32 {
+    print(&quot;It&#39;s very cold. Consider wearing a scarf.&quot;)
+} else if temperatureInFahrenheit &gt;= 86 {
+    print(&quot;It&#39;s really warm. Don&#39;t forget to wear sunscreen.&quot;)
+} else {
+    print(&quot;It&#39;s not that cold. Wear a t-shirt.&quot;)
+}
+// Prints &quot;It&#39;s really warm. Don&#39;t forget to wear sunscreen.&quot;
+</code></pre>
+
+<pre><code>temperatureInFahrenheit = 72
+if temperatureInFahrenheit &lt;= 32 {
+    print(&quot;It&#39;s very cold. Consider wearing a scarf.&quot;)
+} else if temperatureInFahrenheit &gt;= 86 {
+    print(&quot;It&#39;s really warm. Don&#39;t forget to wear sunscreen.&quot;)
+}
+</code></pre>
+
+<h4 id="toc_6">3.2 Switch</h4>
+
+<ul>
+<li>这个比较特殊，默认自带 <code>break</code>，不要 <code>break</code> 使用 <code>fallthrough</code> </li>
+<li>一反常态，但是确实少写很多 <code>break</code>，平时一般还真是都 <code>break</code> 的，默认也不错</li>
+</ul>
+
+<pre><code>let someCharacter: Character = &quot;z&quot;
+switch someCharacter {
+case &quot;a&quot;:
+    print(&quot;The first letter of the alphabet&quot;)
+case &quot;z&quot;:
+    print(&quot;The last letter of the alphabet&quot;)
+default:
+    print(&quot;Some other character&quot;)
+}
+// Prints &quot;The last letter of the alphabet&quot;
+</code></pre>
+
+<blockquote>
+<p>fallthrough 在本文后面讲</p>
+</blockquote>
+
+<h3 id="toc_7">4 Control Transfer Statements</h3>
+
+<ul>
+<li>控制符</li>
+</ul>
+
+<h4 id="toc_8">4.1 Continue</h4>
+
+<ul>
+<li>常规 continue</li>
+</ul>
+
+<pre><code>let puzzleInput = &quot;great minds think alike&quot;
+var puzzleOutput = &quot;&quot;
+let charactersToRemove: [Character] = [&quot;a&quot;, &quot;e&quot;, &quot;i&quot;, &quot;o&quot;, &quot;u&quot;, &quot; &quot;]
+for character in puzzleInput {
+    if charactersToRemove.contains(character) {
+        continue
+    }
+    puzzleOutput.append(character)
+}
+print(puzzleOutput)
+// Prints &quot;grtmndsthnklk&quot;
+</code></pre>
+
+<h4 id="toc_9">4.2 Break</h4>
+
+<ul>
+<li>一般 break，switch 默认 break 了</li>
+</ul>
+
+<h4 id="toc_10">4.3 Fallthrough</h4>
+
+<ul>
+<li>switch 默认 break，使用 fallthrough 打破常规</li>
+</ul>
+
+<pre><code>let integerToDescribe = 5
+var description = &quot;The number \(integerToDescribe) is&quot;
+switch integerToDescribe {
+case 2, 3, 5, 7, 11, 13, 17, 19:
+    description += &quot; a prime number, and also&quot;
+    fallthrough
+default:
+    description += &quot; an integer.&quot;
+}
+print(description)
+// Prints &quot;The number 5 is a prime number, and also an integer.&quot;
+</code></pre>
+
+<h4 id="toc_11">4.4 Labeled Statements</h4>
+
+<ul>
+<li>为循环、条件添加命名，以供嵌套使用时 跳出正确的环</li>
+</ul>
+
+<pre><code>let finalSquare = 25
+var board = [Int](repeating: 0, count: finalSquare + 1)
+board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
+board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
+var square = 0
+var diceRoll = 0
+</code></pre>
+
+<pre><code>gameLoop: while square != finalSquare {
+    diceRoll += 1
+    if diceRoll == 7 { diceRoll = 1 }
+    switch square + diceRoll {
+    case finalSquare:
+        // diceRoll will move us to the final square, so the game is over
+        break gameLoop
+    case let newSquare where newSquare &gt; finalSquare:
+        // diceRoll will move us beyond the final square, so roll again
+        continue gameLoop
+    default:
+        // this is a valid move, so find out its effect
+        square += diceRoll
+        square += board[square]
+    }
+}
+print(&quot;Game over!&quot;)
+</code></pre>
+
+<h3 id="toc_12">5 Early Exit</h3>
+
+<ul>
+<li>常规 return</li>
+</ul>
+
+<pre><code>func greet(person: [String: String]) {
+    guard let name = person[&quot;name&quot;] else {
+        return
+    }
+
+    print(&quot;Hello \(name)!&quot;)
+
+    guard let location = person[&quot;location&quot;] else {
+        print(&quot;I hope the weather is nice near you.&quot;)
+        return
+    }
+
+    print(&quot;I hope the weather is nice in \(location).&quot;)
+}
+
+greet(person: [&quot;name&quot;: &quot;John&quot;])
+// Prints &quot;Hello John!&quot;
+// Prints &quot;I hope the weather is nice near you.&quot;
+greet(person: [&quot;name&quot;: &quot;Jane&quot;, &quot;location&quot;: &quot;Cupertino&quot;])
+// Prints &quot;Hello Jane!&quot;
+// Prints &quot;I hope the weather is nice in Cupertino.&quot;
+</code></pre>
+
+<h3 id="toc_13">6 Checking API Availability</h3>
+
+<ul>
+<li>检查 API 是否可用，OC 也可以直接用</li>
+</ul>
+
+<pre><code>if #available(iOS 10, macOS 10.12, *) {
+    // Use iOS 10 APIs on iOS, and use macOS 10.12 APIs on macOS
+} else {
+    // Fall back to earlier iOS and macOS APIs
+}
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html"  title="Previous Post: 4、Collection Types">&laquo; 4、Collection Types</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Functions.html" 
+	        title="Next Post: 6、Functions【ing】">6、Functions【ing】 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '%E3%80%90Swift%205%E3%80%91Control%20Flow.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

@@ -1,0 +1,947 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Protocols - 【Swift 5】居然是村长
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="【Swift 5】居然是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">【Swift 5】居然是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 【Swift 5】居然是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>Guide</label></li>
+
+          
+            <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+          
+            <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+          
+            <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+          
+            <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+          
+            <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+          
+            <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+          
+            <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+          
+            <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+          
+            <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+          
+            <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+          
+            <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+          
+            <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+          
+            <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+          
+            <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+          
+            <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+          
+            <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+          
+            <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+          
+            <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+          
+            <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+          
+            <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+          
+            <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+          
+            <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+          
+            <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+          
+            <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+          
+            <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+          
+            <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+          
+            <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Reference</label></li>
+
+          
+            <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+          
+            <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+          
+            <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+          
+            <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+          
+            <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+          
+            <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+          
+            <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+          
+            <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+          
+            <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+          
+            <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>Guide</span></li>
+                        
+                          <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+                        
+                          <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+                        
+                          <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+                        
+                          <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+                        
+                          <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+                        
+                          <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+                        
+                          <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+                        
+                          <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+                        
+                          <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+                        
+                          <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+                        
+                          <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+                        
+                          <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+                        
+                          <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+                        
+                          <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+                        
+                          <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+                        
+                          <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+                        
+                          <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+                        
+                          <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+                        
+                          <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+                        
+                          <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+                        
+                          <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+                        
+                          <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+                        
+                          <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+                        
+                          <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+                        
+                          <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+                        
+                          <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+                        
+                          <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Reference</span></li>
+                        
+                          <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+                        
+                          <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+                        
+                          <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+                        
+                          <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+                        
+                          <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+                        
+                          <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+                        
+                          <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+                        
+                          <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+                        
+                          <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+                        
+                          <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>Protocols</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1 Protocol Syntax</a>
+</li>
+<li>
+<a href="#toc_1">2 Property Requirements</a>
+</li>
+<li>
+<a href="#toc_2">3 Method Requirements</a>
+</li>
+<li>
+<a href="#toc_3">4 Mutating Method Requirements</a>
+</li>
+<li>
+<a href="#toc_4">5 Initializer Requirements</a>
+<ul>
+<li>
+<a href="#toc_5">5.1 Class Implementations of Protocol Initializer Requirements</a>
+</li>
+<li>
+<a href="#toc_6">5.2 Failable Initializer Requirements</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">6 Protocols as Types</a>
+</li>
+<li>
+<a href="#toc_8">7 Delegation</a>
+</li>
+<li>
+<a href="#toc_9">8 Adding Protocol Conformance with an Extension</a>
+<ul>
+<li>
+<a href="#toc_10">8.1 Conditionally Conforming to a Protocol</a>
+</li>
+<li>
+<a href="#toc_11">8.2 Declaring Protocol Adoption with an Extension</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_12">9 Collections of Protocol Types</a>
+</li>
+<li>
+<a href="#toc_13">10 Protocol Inheritance</a>
+</li>
+<li>
+<a href="#toc_14">11 Class-Only Protocols</a>
+</li>
+<li>
+<a href="#toc_15">12 Protocol Composition</a>
+</li>
+<li>
+<a href="#toc_16">13 Checking for Protocol Conformance</a>
+</li>
+<li>
+<a href="#toc_17">14 Optional Protocol Requirements</a>
+</li>
+<li>
+<a href="#toc_18">15 Protocol Extensions</a>
+<ul>
+<li>
+<a href="#toc_19">15.1 Providing Default Implementations</a>
+</li>
+<li>
+<a href="#toc_20">15.2 Adding Constraints to Protocol Extensions</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3 id="toc_0">1 Protocol Syntax</h3>
+
+<pre><code>protocol SomeProtocol {
+    // protocol definition goes here
+}
+</code></pre>
+
+<pre><code>struct SomeStructure: FirstProtocol, AnotherProtocol {
+    // structure definition goes here
+}
+</code></pre>
+
+<pre><code>class SomeClass: SomeSuperclass, FirstProtocol, AnotherProtocol {
+    // class definition goes here
+}
+</code></pre>
+
+<h3 id="toc_1">2 Property Requirements</h3>
+
+<pre><code>protocol SomeProtocol {
+    var mustBeSettable: Int { get set }
+    var doesNotNeedToBeSettable: Int { get }
+}
+</code></pre>
+
+<pre><code>protocol AnotherProtocol {
+    static var someTypeProperty: Int { get set }
+}
+</code></pre>
+
+<pre><code>protocol FullyNamed {
+    var fullName: String { get }
+}
+</code></pre>
+
+<pre><code>struct Person: FullyNamed {
+    var fullName: String
+}
+let john = Person(fullName: &quot;John Appleseed&quot;)
+// john.fullName is &quot;John Appleseed&quot;
+</code></pre>
+
+<pre><code>class Starship: FullyNamed {
+    var prefix: String?
+    var name: String
+    init(name: String, prefix: String? = nil) {
+        self.name = name
+        self.prefix = prefix
+    }
+    var fullName: String {
+        return (prefix != nil ? prefix! + &quot; &quot; : &quot;&quot;) + name
+    }
+}
+var ncc1701 = Starship(name: &quot;Enterprise&quot;, prefix: &quot;USS&quot;)
+// ncc1701.fullName is &quot;USS Enterprise&quot;
+</code></pre>
+
+<h3 id="toc_2">3 Method Requirements</h3>
+
+<pre><code>protocol SomeProtocol {
+    static func someTypeMethod()
+}
+</code></pre>
+
+<pre><code>protocol RandomNumberGenerator {
+    func random() -&gt; Double
+}
+</code></pre>
+
+<pre><code>class LinearCongruentialGenerator: RandomNumberGenerator {
+    var lastRandom = 42.0
+    let m = 139968.0
+    let a = 3877.0
+    let c = 29573.0
+    func random() -&gt; Double {
+        lastRandom = ((lastRandom * a + c).truncatingRemainder(dividingBy:m))
+        return lastRandom / m
+    }
+}
+let generator = LinearCongruentialGenerator()
+print(&quot;Here&#39;s a random number: \(generator.random())&quot;)
+// Prints &quot;Here&#39;s a random number: 0.3746499199817101&quot;
+print(&quot;And another one: \(generator.random())&quot;)
+// Prints &quot;And another one: 0.729023776863283&quot;
+</code></pre>
+
+<h3 id="toc_3">4 Mutating Method Requirements</h3>
+
+<pre><code>protocol Togglable {
+    mutating func toggle()
+}
+</code></pre>
+
+<pre><code>enum OnOffSwitch: Togglable {
+    case off, on
+    mutating func toggle() {
+        switch self {
+        case .off:
+            self = .on
+        case .on:
+            self = .off
+        }
+    }
+}
+var lightSwitch = OnOffSwitch.off
+lightSwitch.toggle()
+// lightSwitch is now equal to .on
+</code></pre>
+
+<h3 id="toc_4">5 Initializer Requirements</h3>
+
+<pre><code>protocol SomeProtocol {
+    init(someParameter: Int)
+}
+</code></pre>
+
+<h4 id="toc_5">5.1 Class Implementations of Protocol Initializer Requirements</h4>
+
+<pre><code>class SomeClass: SomeProtocol {
+    required init(someParameter: Int) {
+        // initializer implementation goes here
+    }
+}
+</code></pre>
+
+<pre><code>protocol SomeProtocol {
+    init()
+}
+
+class SomeSuperClass {
+    init() {
+        // initializer implementation goes here
+    }
+}
+
+class SomeSubClass: SomeSuperClass, SomeProtocol {
+    // &quot;required&quot; from SomeProtocol conformance; &quot;override&quot; from SomeSuperClass
+    required override init() {
+        // initializer implementation goes here
+    }
+}
+</code></pre>
+
+<h4 id="toc_6">5.2 Failable Initializer Requirements</h4>
+
+<h3 id="toc_7">6 Protocols as Types</h3>
+
+<pre><code>class Dice {
+    let sides: Int
+    let generator: RandomNumberGenerator
+    init(sides: Int, generator: RandomNumberGenerator) {
+        self.sides = sides
+        self.generator = generator
+    }
+    func roll() -&gt; Int {
+        return Int(generator.random() * Double(sides)) + 1
+    }
+}
+</code></pre>
+
+<pre><code>var d6 = Dice(sides: 6, generator: LinearCongruentialGenerator())
+for _ in 1...5 {
+    print(&quot;Random dice roll is \(d6.roll())&quot;)
+}
+// Random dice roll is 3
+// Random dice roll is 5
+// Random dice roll is 4
+// Random dice roll is 5
+// Random dice roll is 4
+</code></pre>
+
+<h3 id="toc_8">7 Delegation</h3>
+
+<pre><code>protocol DiceGame {
+    var dice: Dice { get }
+    func play()
+}
+protocol DiceGameDelegate: AnyObject {
+    func gameDidStart(_ game: DiceGame)
+    func game(_ game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int)
+    func gameDidEnd(_ game: DiceGame)
+}
+</code></pre>
+
+<pre><code>class SnakesAndLadders: DiceGame {
+    let finalSquare = 25
+    let dice = Dice(sides: 6, generator: LinearCongruentialGenerator())
+    var square = 0
+    var board: [Int]
+    init() {
+        board = Array(repeating: 0, count: finalSquare + 1)
+        board[03] = +08; board[06] = +11; board[09] = +09; board[10] = +02
+        board[14] = -10; board[19] = -11; board[22] = -02; board[24] = -08
+    }
+    weak var delegate: DiceGameDelegate?
+    func play() {
+        square = 0
+        delegate?.gameDidStart(self)
+        gameLoop: while square != finalSquare {
+            let diceRoll = dice.roll()
+            delegate?.game(self, didStartNewTurnWithDiceRoll: diceRoll)
+            switch square + diceRoll {
+            case finalSquare:
+                break gameLoop
+            case let newSquare where newSquare &gt; finalSquare:
+                continue gameLoop
+            default:
+                square += diceRoll
+                square += board[square]
+            }
+        }
+        delegate?.gameDidEnd(self)
+    }
+}
+</code></pre>
+
+<pre><code>class DiceGameTracker: DiceGameDelegate {
+    var numberOfTurns = 0
+    func gameDidStart(_ game: DiceGame) {
+        numberOfTurns = 0
+        if game is SnakesAndLadders {
+            print(&quot;Started a new game of Snakes and Ladders&quot;)
+        }
+        print(&quot;The game is using a \(game.dice.sides)-sided dice&quot;)
+    }
+    func game(_ game: DiceGame, didStartNewTurnWithDiceRoll diceRoll: Int) {
+        numberOfTurns += 1
+        print(&quot;Rolled a \(diceRoll)&quot;)
+    }
+    func gameDidEnd(_ game: DiceGame) {
+        print(&quot;The game lasted for \(numberOfTurns) turns&quot;)
+    }
+}
+</code></pre>
+
+<pre><code>let tracker = DiceGameTracker()
+let game = SnakesAndLadders()
+game.delegate = tracker
+game.play()
+// Started a new game of Snakes and Ladders
+// The game is using a 6-sided dice
+// Rolled a 3
+// Rolled a 5
+// Rolled a 4
+// Rolled a 5
+// The game lasted for 4 turns
+</code></pre>
+
+<h3 id="toc_9">8 Adding Protocol Conformance with an Extension</h3>
+
+<pre><code>protocol TextRepresentable {
+    var textualDescription: String { get }
+}
+</code></pre>
+
+<pre><code>extension Dice: TextRepresentable {
+    var textualDescription: String {
+        return &quot;A \(sides)-sided dice&quot;
+    }
+}
+</code></pre>
+
+<pre><code>let d12 = Dice(sides: 12, generator: LinearCongruentialGenerator())
+print(d12.textualDescription)
+// Prints &quot;A 12-sided dice&quot;
+</code></pre>
+
+<pre><code>extension SnakesAndLadders: TextRepresentable {
+    var textualDescription: String {
+        return &quot;A game of Snakes and Ladders with \(finalSquare) squares&quot;
+    }
+}
+print(game.textualDescription)
+// Prints &quot;A game of Snakes and Ladders with 25 squares&quot;
+</code></pre>
+
+<h4 id="toc_10">8.1 Conditionally Conforming to a Protocol</h4>
+
+<pre><code>extension Array: TextRepresentable where Element: TextRepresentable {
+    var textualDescription: String {
+        let itemsAsText = self.map { $0.textualDescription }
+        return &quot;[&quot; + itemsAsText.joined(separator: &quot;, &quot;) + &quot;]&quot;
+    }
+}
+let myDice = [d6, d12]
+print(myDice.textualDescription)
+// Prints &quot;[A 6-sided dice, A 12-sided dice]&quot;
+</code></pre>
+
+<h4 id="toc_11">8.2 Declaring Protocol Adoption with an Extension</h4>
+
+<pre><code>struct Hamster {
+    var name: String
+    var textualDescription: String {
+        return &quot;A hamster named \(name)&quot;
+    }
+}
+extension Hamster: TextRepresentable {}
+</code></pre>
+
+<pre><code>let simonTheHamster = Hamster(name: &quot;Simon&quot;)
+let somethingTextRepresentable: TextRepresentable = simonTheHamster
+print(somethingTextRepresentable.textualDescription)
+// Prints &quot;A hamster named Simon&quot;
+</code></pre>
+
+<h3 id="toc_12">9 Collections of Protocol Types</h3>
+
+<pre><code>let things: [TextRepresentable] = [game, d12, simonTheHamster]
+</code></pre>
+
+<pre><code>for thing in things {
+    print(thing.textualDescription)
+}
+// A game of Snakes and Ladders with 25 squares
+// A 12-sided dice
+// A hamster named Simon
+</code></pre>
+
+<h3 id="toc_13">10 Protocol Inheritance</h3>
+
+<pre><code>protocol InheritingProtocol: SomeProtocol, AnotherProtocol {
+    // protocol definition goes here
+}
+</code></pre>
+
+<pre><code>protocol PrettyTextRepresentable: TextRepresentable {
+    var prettyTextualDescription: String { get }
+}
+</code></pre>
+
+<pre><code>extension SnakesAndLadders: PrettyTextRepresentable {
+    var prettyTextualDescription: String {
+        var output = textualDescription + &quot;:\n&quot;
+        for index in 1...finalSquare {
+            switch board[index] {
+            case let ladder where ladder &gt; 0:
+                output += &quot;▲ &quot;
+            case let snake where snake &lt; 0:
+                output += &quot;▼ &quot;
+            default:
+                output += &quot;○ &quot;
+            }
+        }
+        return output
+    }
+}
+</code></pre>
+
+<pre><code>print(game.prettyTextualDescription)
+// A game of Snakes and Ladders with 25 squares:
+// ○ ○ ▲ ○ ○ ▲ ○ ○ ▲ ▲ ○ ○ ○ ▼ ○ ○ ○ ○ ▼ ○ ○ ▼ ○ ▼ ○
+</code></pre>
+
+<h3 id="toc_14">11 Class-Only Protocols</h3>
+
+<pre><code>protocol SomeClassOnlyProtocol: AnyObject, SomeInheritedProtocol {
+    // class-only protocol definition goes here
+}
+</code></pre>
+
+<h3 id="toc_15">12 Protocol Composition</h3>
+
+<pre><code>protocol Named {
+    var name: String { get }
+}
+protocol Aged {
+    var age: Int { get }
+}
+struct Person: Named, Aged {
+    var name: String
+    var age: Int
+}
+func wishHappyBirthday(to celebrator: Named &amp; Aged) {
+    print(&quot;Happy birthday, \(celebrator.name), you&#39;re \(celebrator.age)!&quot;)
+}
+let birthdayPerson = Person(name: &quot;Malcolm&quot;, age: 21)
+wishHappyBirthday(to: birthdayPerson)
+// Prints &quot;Happy birthday, Malcolm, you&#39;re 21!&quot;
+</code></pre>
+
+<pre><code>class Location {
+    var latitude: Double
+    var longitude: Double
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
+}
+class City: Location, Named {
+    var name: String
+    init(name: String, latitude: Double, longitude: Double) {
+        self.name = name
+        super.init(latitude: latitude, longitude: longitude)
+    }
+}
+func beginConcert(in location: Location &amp; Named) {
+    print(&quot;Hello, \(location.name)!&quot;)
+}
+
+let seattle = City(name: &quot;Seattle&quot;, latitude: 47.6, longitude: -122.3)
+beginConcert(in: seattle)
+// Prints &quot;Hello, Seattle!&quot;
+</code></pre>
+
+<h3 id="toc_16">13 Checking for Protocol Conformance</h3>
+
+<pre><code>protocol HasArea {
+    var area: Double { get }
+}
+</code></pre>
+
+<pre><code>class Circle: HasArea {
+    let pi = 3.1415927
+    var radius: Double
+    var area: Double { return pi * radius * radius }
+    init(radius: Double) { self.radius = radius }
+}
+class Country: HasArea {
+    var area: Double
+    init(area: Double) { self.area = area }
+}
+</code></pre>
+
+<pre><code>class Animal {
+    var legs: Int
+    init(legs: Int) { self.legs = legs }
+}
+</code></pre>
+
+<pre><code>let objects: [AnyObject] = [
+    Circle(radius: 2.0),
+    Country(area: 243_610),
+    Animal(legs: 4)
+]
+</code></pre>
+
+<pre><code>for object in objects {
+    if let objectWithArea = object as? HasArea {
+        print(&quot;Area is \(objectWithArea.area)&quot;)
+    } else {
+        print(&quot;Something that doesn&#39;t have an area&quot;)
+    }
+}
+// Area is 12.5663708
+// Area is 243610.0
+// Something that doesn&#39;t have an area
+</code></pre>
+
+<h3 id="toc_17">14 Optional Protocol Requirements</h3>
+
+<pre><code>@objc protocol CounterDataSource {
+    @objc optional func increment(forCount count: Int) -&gt; Int
+    @objc optional var fixedIncrement: Int { get }
+}
+</code></pre>
+
+<pre><code>class Counter {
+    var count = 0
+    var dataSource: CounterDataSource?
+    func increment() {
+        if let amount = dataSource?.increment?(forCount: count) {
+            count += amount
+        } else if let amount = dataSource?.fixedIncrement {
+            count += amount
+        }
+    }
+}
+</code></pre>
+
+<pre><code>class ThreeSource: NSObject, CounterDataSource {
+    let fixedIncrement = 3
+}
+</code></pre>
+
+<pre><code>var counter = Counter()
+counter.dataSource = ThreeSource()
+for _ in 1...4 {
+    counter.increment()
+    print(counter.count)
+}
+// 3
+// 6
+// 9
+// 12
+</code></pre>
+
+<pre><code>class TowardsZeroSource: NSObject, CounterDataSource {
+    func increment(forCount count: Int) -&gt; Int {
+        if count == 0 {
+            return 0
+        } else if count &lt; 0 {
+            return 1
+        } else {
+            return -1
+        }
+    }
+}
+</code></pre>
+
+<pre><code>counter.count = -4
+counter.dataSource = TowardsZeroSource()
+for _ in 1...5 {
+    counter.increment()
+    print(counter.count)
+}
+// -3
+// -2
+// -1
+// 0
+// 0
+</code></pre>
+
+<h3 id="toc_18">15 Protocol Extensions</h3>
+
+<pre><code>extension RandomNumberGenerator {
+    func randomBool() -&gt; Bool {
+        return random() &gt; 0.5
+    }
+}
+</code></pre>
+
+<pre><code>let generator = LinearCongruentialGenerator()
+print(&quot;Here&#39;s a random number: \(generator.random())&quot;)
+// Prints &quot;Here&#39;s a random number: 0.3746499199817101&quot;
+print(&quot;And here&#39;s a random Boolean: \(generator.randomBool())&quot;)
+// Prints &quot;And here&#39;s a random Boolean: true&quot;
+</code></pre>
+
+<h4 id="toc_19">15.1 Providing Default Implementations</h4>
+
+<pre><code>extension PrettyTextRepresentable  {
+    var prettyTextualDescription: String {
+        return textualDescription
+    }
+}
+</code></pre>
+
+<h4 id="toc_20">15.2 Adding Constraints to Protocol Extensions</h4>
+
+<pre><code>extension Collection where Element: Equatable {
+    func allEqual() -&gt; Bool {
+        for element in self {
+            if element != self.first {
+                return false
+            }
+        }
+        return true
+    }
+}
+</code></pre>
+
+<pre><code>let equalNumbers = [100, 100, 100, 100, 100]
+let differentNumbers = [100, 100, 200, 100, 200]
+</code></pre>
+
+<pre><code>print(equalNumbers.allEqual())
+// Prints &quot;true&quot;
+print(differentNumbers.allEqual())
+// Prints &quot;false&quot;
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Extensions.html"  title="Previous Post: Extensions">&laquo; Extensions</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Generics.html" 
+	        title="Next Post: Generics">Generics &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '%E3%80%90Swift%205%E3%80%91Protocols.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

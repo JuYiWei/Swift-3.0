@@ -1,0 +1,780 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  2、Basic Operators - 【Swift 5】居然是村长
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="【Swift 5】居然是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">【Swift 5】居然是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 【Swift 5】居然是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>Guide</label></li>
+
+          
+            <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+          
+            <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+          
+            <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+          
+            <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+          
+            <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+          
+            <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+          
+            <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+          
+            <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+          
+            <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+          
+            <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+          
+            <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+          
+            <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+          
+            <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+          
+            <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+          
+            <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+          
+            <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+          
+            <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+          
+            <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+          
+            <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+          
+            <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+          
+            <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+          
+            <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+          
+            <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+          
+            <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+          
+            <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+          
+            <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+          
+            <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Reference</label></li>
+
+          
+            <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+          
+            <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+          
+            <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+          
+            <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+          
+            <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+          
+            <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+          
+            <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+          
+            <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+          
+            <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+          
+            <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>Guide</span></li>
+                        
+                          <li><a title="1、The Basics" href="%E3%80%90Swift%205%E3%80%91The%20Basics.html">1、The Basics</a></li>
+                        
+                          <li><a title="2、Basic Operators" href="%E3%80%90Swift%205%E3%80%91Basic%20Operators.html">2、Basic Operators</a></li>
+                        
+                          <li><a title="3、Strings and Characters" href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html">3、Strings and Characters</a></li>
+                        
+                          <li><a title="4、Collection Types" href="%E3%80%90Swift%205%E3%80%91Collection%20Types.html">4、Collection Types</a></li>
+                        
+                          <li><a title="5、Control Flow" href="%E3%80%90Swift%205%E3%80%91Control%20Flow.html">5、Control Flow</a></li>
+                        
+                          <li><a title="6、Functions【ing】" href="%E3%80%90Swift%205%E3%80%91Functions.html">6、Functions【ing】</a></li>
+                        
+                          <li><a title="Closures" href="%E3%80%90Swift%205%E3%80%91Closures.html">Closures</a></li>
+                        
+                          <li><a title="Enumeration" href="%E3%80%90Swift%205%E3%80%91Enumeration.html">Enumeration</a></li>
+                        
+                          <li><a title="Structures and Classes" href="%E3%80%90Swift%205%E3%80%91Structures%20and%20Classes.html">Structures and Classes</a></li>
+                        
+                          <li><a title="Properties" href="%E3%80%90Swift%205%E3%80%91Properties.html">Properties</a></li>
+                        
+                          <li><a title="Methods" href="%E3%80%90Swift%205%E3%80%91Methods.html">Methods</a></li>
+                        
+                          <li><a title="Subscripts" href="%E3%80%90Swift%205%E3%80%91Subscripts.html">Subscripts</a></li>
+                        
+                          <li><a title="Inheritance" href="%E3%80%90Swift%205%E3%80%91Inheritance.html">Inheritance</a></li>
+                        
+                          <li><a title="Initialization" href="%E3%80%90Swift%205%E3%80%91Initialization.html">Initialization</a></li>
+                        
+                          <li><a title="Deinitialization" href="%E3%80%90Swift%205%E3%80%91Deinitialization.html">Deinitialization</a></li>
+                        
+                          <li><a title="Optional Chaining" href="%E3%80%90Swift%205%E3%80%91Optional%20Chaining.html">Optional Chaining</a></li>
+                        
+                          <li><a title="Error Handling" href="%E3%80%90Swift%205%E3%80%91Error%20Handling.html">Error Handling</a></li>
+                        
+                          <li><a title="Type Casting" href="%E3%80%90Swift%205%E3%80%91Type%20Casting.html">Type Casting</a></li>
+                        
+                          <li><a title="Nested Types" href="%E3%80%90Swift%205%E3%80%91Nested%20Types.html">Nested Types</a></li>
+                        
+                          <li><a title="Extensions" href="%E3%80%90Swift%205%E3%80%91Extensions.html">Extensions</a></li>
+                        
+                          <li><a title="Protocols" href="%E3%80%90Swift%205%E3%80%91Protocols.html">Protocols</a></li>
+                        
+                          <li><a title="Generics" href="%E3%80%90Swift%205%E3%80%91Generics.html">Generics</a></li>
+                        
+                          <li><a title="Opaque Types" href="%E3%80%90Swift%205%E3%80%91Opaque%20Types.html">Opaque Types</a></li>
+                        
+                          <li><a title="Automatic Reference Counting" href="%E3%80%90Swift%205%E3%80%91Automatic%20Reference%20Counting.html">Automatic Reference Counting</a></li>
+                        
+                          <li><a title="Memory Safety" href="%E3%80%90Swift%205%E3%80%91Memory%20Safety.html">Memory Safety</a></li>
+                        
+                          <li><a title="Access Control" href="%E3%80%90Swift%205%E3%80%91Access%20Control.html">Access Control</a></li>
+                        
+                          <li><a title="Advanced Operators" href="%E3%80%90Swift%205%E3%80%91Advanced%20Operators.html">Advanced Operators</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Reference</span></li>
+                        
+                          <li><a title="About the Language Reference" href="%E3%80%90Swift%205%E3%80%91About%20the%20Language%20Reference.html">About the Language Reference</a></li>
+                        
+                          <li><a title="Lexical Structure" href="%E3%80%90Swift%205%E3%80%91Lexical%20Structure.html">Lexical Structure</a></li>
+                        
+                          <li><a title="Types" href="%E3%80%90Swift%205%E3%80%91Types.html">Types</a></li>
+                        
+                          <li><a title="Expressions" href="%E3%80%90Swift%205%E3%80%91Expressions.html">Expressions</a></li>
+                        
+                          <li><a title="Statements" href="%E3%80%90Swift%205%E3%80%91Statements.html">Statements</a></li>
+                        
+                          <li><a title="Declarations" href="%E3%80%90Swift%205%E3%80%91Declarations.html">Declarations</a></li>
+                        
+                          <li><a title="Attributes" href="%E3%80%90Swift%205%E3%80%91Attributes.html">Attributes</a></li>
+                        
+                          <li><a title="Patterns" href="%E3%80%90Swift%205%E3%80%91Patterns.html">Patterns</a></li>
+                        
+                          <li><a title="Generic Parameters and Arguments" href="%E3%80%90Swift%205%E3%80%91Generic%20Parameters%20and%20Arguments.html">Generic Parameters and Arguments</a></li>
+                        
+                          <li><a title="Summary of the Grammar" href="%E3%80%90Swift%205%E3%80%91Summary%20of%20the%20Grammar.html">Summary of the Grammar</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>2、Basic Operators</h1>
+
+<ul>
+<li>
+<a href="#toc_0">1 Terminology</a>
+</li>
+<li>
+<a href="#toc_1">2 Assignment Operator</a>
+</li>
+<li>
+<a href="#toc_2">3 Arithmetic Operators</a>
+<ul>
+<li>
+<a href="#toc_3">3.1 Remainder Operator</a>
+</li>
+<li>
+<a href="#toc_4">3.2 Unary Minus Operator</a>
+</li>
+<li>
+<a href="#toc_5">3.3 Unary Plus Operator</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_6">4 Compound Assignment Operators</a>
+</li>
+<li>
+<a href="#toc_7">5 Comparison Operators</a>
+</li>
+<li>
+<a href="#toc_8">6 Ternary Conditional Operator</a>
+</li>
+<li>
+<a href="#toc_9">7 Nil-Coalescing Operator</a>
+</li>
+<li>
+<a href="#toc_10">8 Range Operators</a>
+<ul>
+<li>
+<a href="#toc_11">8.1 Closed Range Operator</a>
+</li>
+<li>
+<a href="#toc_12">8.2 Half-Open Range Operator</a>
+</li>
+<li>
+<a href="#toc_13">8.3 One-Sided Ranges</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_14">9 Logical Operators</a>
+<ul>
+<li>
+<a href="#toc_15">9.1 Logical NOT Operator</a>
+</li>
+<li>
+<a href="#toc_16">9.2 Logical AND Operator</a>
+</li>
+<li>
+<a href="#toc_17">9.3 Logical OR Operator</a>
+</li>
+<li>
+<a href="#toc_18">9.4 Combining Logical Operators</a>
+</li>
+<li>
+<a href="#toc_19">9.5 Explicit Parentheses</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3 id="toc_0">1 Terminology</h3>
+
+<ul>
+<li>基本术语略</li>
+</ul>
+
+<h3 id="toc_1">2 Assignment Operator</h3>
+
+<ul>
+<li>基本赋值</li>
+</ul>
+
+<pre><code>let b = 10
+
+var a = 5
+
+a = b
+
+// a is now equal to 10
+</code></pre>
+
+<pre><code>let (x, y) = (1, 2)
+
+// x is equal to 1, and y is equal to 2
+</code></pre>
+
+<pre><code>if x = y {
+
+    // This is not valid, because x = y does not return a value.
+
+}
+</code></pre>
+
+<h3 id="toc_2">3 Arithmetic Operators</h3>
+
+<ul>
+<li>基础算术</li>
+</ul>
+
+<pre><code>1 + 2       // equals 3
+
+5 - 3       // equals 2
+
+2 * 3       // equals 6
+
+10.0 / 2.5  // equals 4.0
+</code></pre>
+
+<ul>
+<li>字符串可直接拼接，JS 啊</li>
+</ul>
+
+<pre><code>&quot;hello, &quot; + &quot;world&quot;  // equals &quot;hello, world&quot;
+</code></pre>
+
+<h4 id="toc_3">3.1 Remainder Operator</h4>
+
+<pre><code>9 % 4    // equals 1
+</code></pre>
+
+<pre><code>-9 % 4   // equals -1
+</code></pre>
+
+<h4 id="toc_4">3.2 Unary Minus Operator</h4>
+
+<pre><code>let three = 3
+
+let minusThree = -three       // minusThree equals -3
+
+let plusThree = -minusThree   // plusThree equals 3, or &quot;minus minus three&quot;
+</code></pre>
+
+<h4 id="toc_5">3.3 Unary Plus Operator</h4>
+
+<pre><code>let minusSix = -6
+
+let alsoMinusSix = +minusSix  // alsoMinusSix equals -6
+</code></pre>
+
+<h3 id="toc_6">4 Compound Assignment Operators</h3>
+
+<pre><code>var a = 1
+
+a += 2
+
+// a is now equal to 3
+</code></pre>
+
+<h3 id="toc_7">5 Comparison Operators</h3>
+
+<pre><code>1 == 1   // true because 1 is equal to 1
+
+2 != 1   // true because 2 is not equal to 1
+
+2 &gt; 1    // true because 2 is greater than 1
+
+1 &lt; 2    // true because 1 is less than 2
+
+1 &gt;= 1   // true because 1 is greater than or equal to 1
+
+2 &lt;= 1   // false because 2 is not less than or equal to 1
+</code></pre>
+
+<pre><code>let name = &quot;world&quot;
+
+if name == &quot;world&quot; {
+
+    print(&quot;hello, world&quot;)
+
+} else {
+
+    print(&quot;I&#39;m sorry \(name), but I don&#39;t recognize you&quot;)
+
+}
+
+// Prints &quot;hello, world&quot;, because name is indeed equal to &quot;world&quot;.
+</code></pre>
+
+<pre><code>(1, &quot;zebra&quot;) &lt; (2, &quot;apple&quot;)   // true because 1 is less than 2; &quot;zebra&quot; and &quot;apple&quot; are not compared
+
+(3, &quot;apple&quot;) &lt; (3, &quot;bird&quot;)    // true because 3 is equal to 3, and &quot;apple&quot; is less than &quot;bird&quot;
+
+(4, &quot;dog&quot;) == (4, &quot;dog&quot;)      // true because 4 is equal to 4, and &quot;dog&quot; is equal to &quot;dog&quot;
+</code></pre>
+
+<pre><code>(&quot;blue&quot;, -1) &lt; (&quot;purple&quot;, 1)        // OK, evaluates to true
+
+(&quot;blue&quot;, false) &lt; (&quot;purple&quot;, true)  // Error because &lt; can&#39;t compare Boolean values
+</code></pre>
+
+<h3 id="toc_8">6 Ternary Conditional Operator</h3>
+
+<pre><code>if question {
+
+    answer1
+
+} else {
+
+    answer2
+
+}
+</code></pre>
+
+<pre><code>let contentHeight = 40
+
+let hasHeader = true
+
+let rowHeight = contentHeight + (hasHeader ? 50 : 20)
+
+// rowHeight is equal to 90
+</code></pre>
+
+<pre><code>let contentHeight = 40
+
+let hasHeader = true
+
+let rowHeight: Int
+
+if hasHeader {
+
+    rowHeight = contentHeight + 50
+
+} else {
+
+    rowHeight = contentHeight + 20
+
+}
+
+// rowHeight is equal to 90
+</code></pre>
+
+<h3 id="toc_9">7 Nil-Coalescing Operator</h3>
+
+<ul>
+<li>一般的三元运算</li>
+</ul>
+
+<pre><code>a != nil ? a! : b
+</code></pre>
+
+<ul>
+<li>结合可选类型，支持简写！</li>
+</ul>
+
+<pre><code>let defaultColorName = &quot;red&quot;
+
+var userDefinedColorName: String?   // defaults to nil
+
+
+
+var colorNameToUse = userDefinedColorName ?? defaultColorName
+
+// userDefinedColorName is nil, so colorNameToUse is set to the default of &quot;red&quot;
+</code></pre>
+
+<pre><code>userDefinedColorName = &quot;green&quot;
+
+colorNameToUse = userDefinedColorName ?? defaultColorName
+
+// userDefinedColorName is not nil, so colorNameToUse is set to &quot;green&quot;
+
+
+// 等价于
+var colorNameToUse2 = userDefinedColorName != nil ? userDefinedColorName! : defaultColorName
+</code></pre>
+
+<h3 id="toc_10">8 Range Operators</h3>
+
+<ul>
+<li>相比 OC 的 NSRange 对象可简化多了</li>
+</ul>
+
+<h4 id="toc_11">8.1 Closed Range Operator</h4>
+
+<ul>
+<li>双边范围</li>
+</ul>
+
+<pre><code>for index in 1...5 {
+
+    print(&quot;\(index) times 5 is \(index * 5)&quot;)
+
+}
+
+// 1 times 5 is 5
+
+// 2 times 5 is 10
+
+// 3 times 5 is 15
+
+// 4 times 5 is 20
+
+// 5 times 5 is 25
+</code></pre>
+
+<h4 id="toc_12">8.2 Half-Open Range Operator</h4>
+
+<ul>
+<li>半开放范围，一般用在列表遍历，注意是 2 个 <code>.</code> 一个 <code>&lt;</code> 号？</li>
+</ul>
+
+<pre><code>let names = [&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;]
+
+let count = names.count
+
+for i in 0..&lt;count {
+
+    print(&quot;Person \(i + 1) is called \(names[i])&quot;)
+
+}
+
+// Person 1 is called Anna
+
+// Person 2 is called Alex
+
+// Person 3 is called Brian
+
+// Person 4 is called Jack
+</code></pre>
+
+<h4 id="toc_13">8.3 One-Sided Ranges</h4>
+
+<ul>
+<li>单边范围</li>
+</ul>
+
+<pre><code>for name in names[2...] {
+
+    print(name)
+
+}
+
+// Brian
+
+// Jack
+
+
+
+for name in names[...2] {
+
+    print(name)
+
+}
+
+// Anna
+
+// Alex
+
+// Brian
+</code></pre>
+
+<pre><code>for name in names[..&lt;2] {
+
+    print(name)
+
+}
+
+// Anna
+
+// Alex
+</code></pre>
+
+<pre><code>let range = ...5
+
+range.contains(7)   // false
+
+range.contains(4)   // true
+
+range.contains(-1)  // true
+</code></pre>
+
+<h3 id="toc_14">9 Logical Operators</h3>
+
+<ul>
+<li>逻辑操作，基本类似</li>
+</ul>
+
+<h4 id="toc_15">9.1 Logical NOT Operator</h4>
+
+<pre><code>let allowedEntry = false
+
+if !allowedEntry {
+
+    print(&quot;ACCESS DENIED&quot;)
+
+}
+
+// Prints &quot;ACCESS DENIED&quot;
+</code></pre>
+
+<h4 id="toc_16">9.2 Logical AND Operator</h4>
+
+<pre><code>let enteredDoorCode = true
+
+let passedRetinaScan = false
+
+if enteredDoorCode &amp;&amp; passedRetinaScan {
+
+    print(&quot;Welcome!&quot;)
+
+} else {
+
+    print(&quot;ACCESS DENIED&quot;)
+
+}
+
+// Prints &quot;ACCESS DENIED&quot;
+</code></pre>
+
+<h4 id="toc_17">9.3 Logical OR Operator</h4>
+
+<pre><code>let hasDoorKey = false
+
+let knowsOverridePassword = true
+
+if hasDoorKey || knowsOverridePassword {
+
+    print(&quot;Welcome!&quot;)
+
+} else {
+
+    print(&quot;ACCESS DENIED&quot;)
+
+}
+
+// Prints &quot;Welcome!&quot;
+</code></pre>
+
+<h4 id="toc_18">9.4 Combining Logical Operators</h4>
+
+<pre><code>if enteredDoorCode &amp;&amp; passedRetinaScan || hasDoorKey || knowsOverridePassword {
+
+    print(&quot;Welcome!&quot;)
+
+} else {
+
+    print(&quot;ACCESS DENIED&quot;)
+
+}
+
+// Prints &quot;Welcome!&quot;
+</code></pre>
+
+<h4 id="toc_19">9.5 Explicit Parentheses</h4>
+
+<pre><code>if (enteredDoorCode &amp;&amp; passedRetinaScan) || hasDoorKey || knowsOverridePassword {
+
+    print(&quot;Welcome!&quot;)
+
+} else {
+
+    print(&quot;ACCESS DENIED&quot;)
+
+}
+
+// Prints &quot;Welcome!&quot;
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91The%20Basics.html"  title="Previous Post: 1、The Basics">&laquo; 1、The Basics</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90Swift%205%E3%80%91Strings%20and%20Characters.html" 
+	        title="Next Post: 3、Strings and Characters">3、Strings and Characters &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '%E3%80%90Swift%205%E3%80%91Basic%20Operators.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>
